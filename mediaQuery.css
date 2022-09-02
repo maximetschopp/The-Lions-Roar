@@ -1,0 +1,28 @@
+
+@media only screen and (min-width: 800px){
+    #publication-container{
+        min-width: 780px;
+        min-height: 280px;
+        max-width: 100vh;
+    }
+    #logo{
+        min-width: 500px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    #publication-container{
+        min-width: 400px;
+        min-height: 280px;
+        width: 92% !important;
+    }
+    #logo{
+        min-width: 500px;
+    }
+    h1{
+        font-size: calc(5.7vw + 5px);
+    }
+    h2{
+        font-size: calc(2.35vw + 4px);
+    }
+}

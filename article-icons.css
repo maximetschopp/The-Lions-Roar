@@ -1,3 +1,12 @@
+h3{
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: calc(1.2vh + 16px - 9px);
+    margin: 0;
+    text-align: right;
+}
+
 
 .vid{
     position: relative;
@@ -6,7 +15,9 @@
     background-repeat: no-repeat;
     border-radius: 20px;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
+    aspect-ratio: 16/9;
+    margin: auto;
     overflow: hidden;
 }
 .thumbnail{

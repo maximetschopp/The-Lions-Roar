@@ -28,13 +28,6 @@ h2{
     font-size: calc(1.9vh + 16px - 9px);
 
 }
-h3{
-    font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: calc(1.2vh + 16px - 9px);
-    margin: 0;
-}
 
 
 #logo{
@@ -55,9 +48,12 @@ h3{
 
 #splash-section {
     display: flex;
-    position: relative;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0%;
+    left: 0%;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
 }
 
@@ -84,7 +80,7 @@ h3{
     position: relative;
     height: 36vh;
     width: 76%;
-    margin: auto;
+    margin: calc(50vh - (36vh /2)) auto auto auto; /*centered but uses value for transition to work */
     /*padding-top: 50vh;
     transform: translate(0, -20%);*/
 
@@ -92,9 +88,8 @@ h3{
 }
 .publication-container-expanded{
     height: 66vh !important;
-
+    margin: 10vh auto auto auto !important;
     transition: all 0.15s ease-in-out;
-
 }
 
 #publication-grid{
@@ -103,9 +98,12 @@ h3{
     width: 100%;
     height: 100%;
     margin: auto;
+
+    transition: all 0.15s ease-in-out;
 }
 .publication-grid-minimized{
-    height: 60% !important;
+    height: 55% !important;
+    transition: all 0.15s ease-in-out;
 }
 
 .main-article-desc-container{
@@ -141,16 +139,16 @@ h3{
 #extra-articles-grid{
     display: none;
     grid-template-rows: 1fr 1fr 1fr;
+    gap: 1vh;
     width: 80%;
-    height: 40%;
-    margin: auto;
+    height: auto;
+    margin: 3vh auto auto auto;
 }
 .extra-articles-grid-shown{
     display: grid !important;
     width: 100%;
     height: 100%;
 }
-
 
 .extra-article{
     width: 100%;
@@ -159,5 +157,5 @@ h3{
 }
 .extra-article-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 28.8% auto;
 }

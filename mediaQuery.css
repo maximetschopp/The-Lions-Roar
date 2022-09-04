@@ -2,8 +2,9 @@
 @media only screen and (min-width: 800px){
     #publication-container{
         min-width: 780px;
-        min-height: 280px;
+        min-height: 250px;
         max-width: 100vh;
+        transition: all 0.15s ease-in-out;
     }
     #logo{
         min-width: 500px;
@@ -13,16 +14,17 @@
 @media only screen and (max-width: 800px){
     #publication-container{
         min-width: 400px;
-        min-height: 280px;
+        min-height: 250px;
         width: 92% !important;
+        transition: all 0.15s ease-in-out;
     }
     #logo{
         min-width: 500px;
     }
     h1{
-        font-size: calc(5.7vw + 5px);
+        font-size: calc(5.7vw + 5px) !important;
     }
     h2{
-        font-size: calc(2.35vw + 4px);
+        font-size: calc(2.35vw + 4px) !important;
     }
 }

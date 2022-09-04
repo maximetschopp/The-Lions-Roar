@@ -32,9 +32,11 @@ function expandArticle(button){
 
     // replace the get ids with just one parent object
 
-    // toggle Logo
+    // toggle Logo & bg
     var logo = document.getElementById('logo');
     logo.classList.toggle('logoMinimized');
+    var logoBg = document.getElementById('logoBg');
+    logoBg.classList.toggle('logoBgHidden');
 
     var splashContainer = document.getElementById('publication-container');
     splashContainer.classList.toggle('publication-container-expanded');

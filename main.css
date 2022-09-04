@@ -10,6 +10,7 @@ body{
     font-size: calc(1.425vh + 12px - 6px);
     width: 100%;
     height: 100%;
+    
 }
 
 
@@ -33,10 +34,14 @@ h2{
 #logo{
     width: 80vh;
     height: auto;
-    position: absolute;
+    position: fixed;
     top: 11%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%); 
+    z-index: 999;
+    /*
+    position: absolute;
+    */
     transition: all 0.15s ease-in-out;
 }
 .logoMinimized{
@@ -45,11 +50,31 @@ h2{
     min-width: 0px !important;
     transition: all 0.15s ease-in-out;
 }
+#logoBg{
+    position: fixed;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -7%); 
+    z-index: 998;
+    width: 35vh;
+    aspect-ratio: 28/4;
+    border-radius: calc((35vh/40)*4);
+    background-color: white;
+    filter: drop-shadow(0 0 5px white);
+}
+#logo:hover + #logoBg{
+    border: 1px solid black;
+}
+#logoBg:hover{
+    border: 1px solid black;
+}
+.logoBgHidden{
+    display: none !important;
+}
 
 #splash-section {
     display: flex;
-    position: sticky;
-    position: -webkit-sticky;
+    position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
@@ -100,6 +125,7 @@ h2{
     margin: auto;
 
     transition: all 0.15s ease-in-out;
+    overflow: visible;
 }
 .publication-grid-minimized{
     height: 55% !important;
@@ -134,6 +160,10 @@ h2{
     -webkit-filter: drop-shadow(0px 3px 15px rgba(0,0,0,0.23));
     /*padding: 1.75vh 6vw 1.75vh 6vw;*/
     
+}
+.ExtrasButton:hover{
+    transform: translate(-50%, -0.75vh);
+    transition: all 0.075s ease-in;
 }
 
 #extra-articles-grid{

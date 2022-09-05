@@ -18,7 +18,7 @@ h1{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: calc(5.7vh + 37px - 25.65px);
+    font-size: calc(3.2vh + 37px - 25.65px);
     margin-top: 4vh;
     margin-bottom: 1vh;
 }
@@ -168,7 +168,7 @@ h2{
 #extra-articles-grid{
     display: none;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 1vh;
+    gap: 2vh;
     width: 80%;
     height: auto;
     margin: 3vh auto auto auto;
@@ -186,5 +186,6 @@ h2{
 }
 .extra-article-grid{
     display: grid;
+    gap: 2vh;
     grid-template-columns: 32% auto;
 }

@@ -23,11 +23,10 @@ function addPublication(year, month, week, isAfter){
     var publicationContainer = document.createElement("div");
     publicationContainer.classList.add("publication-container");
 
-    // Create publicationGrid
+    // Create PUBLICATION GRID
+    // PUBLICATION GRID includes the icon and the description
     var publicationGrid = document.createElement("div");
     publicationGrid.classList.add("publication-grid");
-
-    // MAIN ARTICLE SECTION includes the icon and the description
     // add Main Article Icon
     var articleIcon = generateArticleIcon("video", "https://www.youtube.com/watch?v=HLzq3NDCdvU");
     publicationGrid.appendChild(articleIcon);
@@ -48,9 +47,10 @@ function addPublication(year, month, week, isAfter){
     mainArticleDescription.appendChild(mainArticleTitle);
     mainArticleDescription.appendChild(extrasButton);
     mainArticleDescriptionContainer.appendChild(mainArticleDescription);
-    
     publicationGrid.appendChild(mainArticleDescriptionContainer); 
 
+    // Create EXTRA ARTICLES
+    // EXTRA ARTICLES contains a list of extra articles
 
     publicationContainer.appendChild(publicationGrid);
     // appends the publication to the end of the document FOR NOW

@@ -1,3 +1,24 @@
 [
-    
+    {
+        "year": 2022,
+        "month": 8,
+        "week": 2,
+        "d_week": 9,
+        "url": "https://youtu.be/dQw4w9WgXcQ",
+        "release_timestamp": 35424357834,
+        "subarticles": [
+            {
+                "url": null,
+                "date": "bar",
+                "author": "baz",
+                "type": "article/video/image/audio/other",
+                "thumbnail": "spam",
+                "tags": [
+                    "foo",
+                    "bar",
+                    "baz"
+                ]
+            }
+        ]
+    }
 ]

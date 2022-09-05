@@ -11,7 +11,7 @@ function ready() {
 
 function loadThumbnails(vidId, link){
     var video = document.getElementsByClassName("vid")[0];
-    var thumbnail = video.getElementsByClassName('.thumbnail')[0];
+    var thumbnail = document.getElementsByClassName('.thumbnail')[0];
     var youtube_video_id = link.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
     console.log(youtube_video_id);
 

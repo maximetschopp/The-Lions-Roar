@@ -7,8 +7,16 @@ function ready() {
 }
 
 function addPublication(year, month, week, isAfter){
-    // isAfter is a bool to see if the publication should be loaded in before
-    // or after the current publication that the user in on (viewing)
+    // STRUCTURE FOR A PUBLICATION IS: 
+    //                              Publication container
+    //                                       ||
+    //                  |-------------------------------------------|
+    //             publcation grid                          extra articles grid
+    //                  |                                           |
+    //    |------------------------|                       List of extra articles
+    // Main Article Icon      Main Article Desc                     |
+    //                                                  |------------------------|
+    //                                           Article Icon              Article Desc 
 
     
     // Create publication container
@@ -21,7 +29,7 @@ function addPublication(year, month, week, isAfter){
 
     // MAIN ARTICLE SECTION includes the icon and the description
     // add Main Article Icon
-    var articleIcon = generateArticleIcon("video", "https://img.youtube.com/vi/59j_Flbaqds/0.jpg");
+    var articleIcon = generateArticleIcon("video", "https://www.youtube.com/watch?v=HLzq3NDCdvU");
     publicationGrid.appendChild(articleIcon);
     // add Main Article Description
     var mainArticleDescriptionContainer = document.createElement("div");
@@ -34,6 +42,7 @@ function addPublication(year, month, week, isAfter){
     var extrasButton = document.createElement("div");
     extrasButton.classList.add("ExtrasButton");
     extrasButton.innerHTML = "Extras";
+    extrasButton.onclick = "expandArticle(this)";
 
     mainArticleDescription.appendChild(mainArticleDate);
     mainArticleDescription.appendChild(mainArticleTitle);
@@ -56,7 +65,11 @@ function generateArticleIcon(type, link){
         vid.classList.add("vid");
         var thumbnail = document.createElement("img");
         thumbnail.classList.add("thumbnail");
-        thumbnail.src = link;
+
+        // gets the thumbnail from the video url
+        var youtube_video_id = link.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+
+        thumbnail.src = "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
 
         vid.appendChild(thumbnail);
         return vid;

@@ -125,7 +125,6 @@ h2{
     margin: auto;
 
     transition: all 0.15s ease-in-out;
-    overflow: visible;
 }
 .publication-grid-minimized{
     height: 55% !important;
@@ -162,7 +161,7 @@ h2{
     
 }
 .ExtrasButton:hover{
-    transform: translate(-50%, -0.75vh);
+    transform: translate(-50%, -1vh) scale(110%);
     transition: all 0.075s ease-in;
 }
 
@@ -187,5 +186,5 @@ h2{
 }
 .extra-article-grid{
     display: grid;
-    grid-template-columns: 28.8% auto;
+    grid-template-columns: 32% auto;
 }

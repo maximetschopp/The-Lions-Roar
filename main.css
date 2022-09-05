@@ -112,7 +112,7 @@ h2{
     transition: all 0.15s ease-in-out;
 }
 .publication-container-expanded{
-    height: 66vh !important;
+    height: auto;
     margin: 10vh auto auto auto !important;
     transition: all 0.15s ease-in-out;
 }
@@ -127,7 +127,6 @@ h2{
     transition: all 0.15s ease-in-out;
 }
 .publication-grid-minimized{
-    height: 55% !important;
     transition: all 0.15s ease-in-out;
 }
 
@@ -161,7 +160,7 @@ h2{
     
 }
 .ExtrasButton:hover{
-    transform: translate(-50%, -1vh) scale(110%);
+    transform: translate(-50%, 0) scale(110%);
     transition: all 0.075s ease-in;
 }
 

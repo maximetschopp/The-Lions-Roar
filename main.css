@@ -13,7 +13,6 @@ body{
     
 }
 
-
 h1{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
@@ -112,7 +111,7 @@ h2{
     transition: all 0.15s ease-in-out;
 }
 .publication-container-expanded{
-    height: auto;
+    height: auto !important;
     margin: 10vh auto auto auto !important;
     transition: all 0.15s ease-in-out;
 }
@@ -167,10 +166,10 @@ h2{
 #extra-articles-grid{
     display: none;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 2vh;
+    gap: calc(0.5vh + 10px);
     width: 80%;
     height: auto;
-    margin: 3vh auto auto auto;
+    margin: calc(0.5vh + 21px) auto auto auto;
 }
 .extra-articles-grid-shown{
     display: grid !important;

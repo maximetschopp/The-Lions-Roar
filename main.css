@@ -99,7 +99,7 @@ h2{
 }
 
 
-#publication-container{
+.publication-container{
     display: block;
     position: relative;
     height: 36vh;
@@ -116,7 +116,7 @@ h2{
     transition: all 0.15s ease-in-out;
 }
 
-#publication-grid{
+.publication-grid{
     display: grid;
     grid-template-columns: 60% 40%;
     width: 100%;
@@ -163,7 +163,7 @@ h2{
     transition: all 0.075s ease-in;
 }
 
-#extra-articles-grid{
+.extra-articles-grid{
     display: none;
     grid-template-rows: 1fr 1fr 1fr;
     gap: calc(0.5vh + 10px);
@@ -173,7 +173,6 @@ h2{
 }
 .extra-articles-grid-shown{
     display: grid !important;
-    width: 100%;
     height: 100%;
 }
 

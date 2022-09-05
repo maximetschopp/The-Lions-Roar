@@ -5,13 +5,13 @@ function ready() {
     console.log("DOMContentLoaded");
 
 
-    loadThumbnails("splash-vid", "https://www.youtube.com/watch?v=59j_Flbaqds");
+    loadThumbnails("vid", "https://www.youtube.com/watch?v=59j_Flbaqds");
     
 }
 
 function loadThumbnails(vidId, link){
-    var video = $('#' + vidId);
-    var thumbnail = video.find('.thumbnail');
+    var video = document.getElementsByClassName("vid")[0];
+    var thumbnail = video.getElementsByClassName('.thumbnail')[0];
     var youtube_video_id = link.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
     console.log(youtube_video_id);
 
@@ -38,13 +38,13 @@ function expandArticle(button){
     var logoBg = document.getElementById('logoBg');
     logoBg.classList.toggle('logoBgHidden');
 
-    var splashContainer = document.getElementById('publication-container');
+    var splashContainer = document.getElementsByClassName('publication-container')[0];
     splashContainer.classList.toggle('publication-container-expanded');
 
-    var mainArticleGrid = document.getElementById('publication-grid');
+    var mainArticleGrid = document.getElementsByClassName('publication-grid')[0];
     mainArticleGrid.classList.toggle('publication-grid-minimized');
 
-    var extraArticlesGrid = document.getElementById('extra-articles-grid');
+    var extraArticlesGrid = document.getElementsByClassName('extra-articles-grid')[0];
     extraArticlesGrid.classList.toggle('extra-articles-grid-shown');
 
 }

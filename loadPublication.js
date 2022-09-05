@@ -10,13 +10,13 @@ function addPublication(year, month, week, isAfter){
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
     //                                       ||
-    //                  |-------------------------------------------|
-    //             publcation grid                          extra articles grid
-    //                  |                                           |
-    //    |------------------------|                       List of extra articles
-    // Main Article Icon      Main Article Desc                     |
-    //                                                  |------------------------|
-    //                                           Article Icon              Article Desc 
+    //                  |-----------------------------------|
+    //             publcation grid                   extra articles grid
+    //                  |                                   |
+    //    |------------------------|                 List of extra articles
+    // Main Article Icon      Main Article Desc             |
+    //                                             |-----------------|
+    //                                     Article Icon            Article Desc 
 
     
     // Create publication container

@@ -32,6 +32,9 @@ function addPublication(data, year, month, week, isAfter){
         //title, author, date, url, type, thumbnail, tags
         extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://www.youtube.com/watch?v=HLzq3NDCdvU", "video", null, []));
         extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "image", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
+        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "text", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
+        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "audio", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
+        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "link", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
     }
 
     publicationContainer.appendChild(publicationGrid);
@@ -57,8 +60,13 @@ function generateArticleIcon(type, url, thumbnail){
         } else {
             thumbnailImage.src = thumbnail;
         }
-
         vidIcon.appendChild(thumbnailImage);
+
+        var centeredIcon = document.createElement("img");
+        centeredIcon.classList.add("centered-icon");
+        centeredIcon.src = "resources/Icons/video_icon_fill.svg";
+        vidIcon.appendChild(centeredIcon);
+
         return vidIcon;
     } 
     else if (type == "image") {
@@ -69,15 +77,46 @@ function generateArticleIcon(type, url, thumbnail){
         thumbnailImage.src = thumbnail;
 
         imageIcon.appendChild(thumbnailImage);
+
+        var centeredIcon = document.createElement("img");
+        centeredIcon.classList.add("centered-icon");
+        centeredIcon.src = "resources/Icons/image_icon_fill.svg";
+        imageIcon.appendChild(centeredIcon);
+
         return imageIcon;
     }
     else if (type == "audio") {
         var audioIcon = document.createElement("div");
         audioIcon.classList.add("audio-icon-container");
+
+        var centeredIcon = document.createElement("img");
+        centeredIcon.classList.add("centered-icon");
+        centeredIcon.src = "resources/Icons/audio_icon_fill.svg";
+        audioIcon.appendChild(centeredIcon);
+
+        return audioIcon;
     }
     else if (type == "text") {
-        var audioIcon = document.createElement("div");
-        audioIcon.classList.add("text-icon-container");
+        var textIcon = document.createElement("div");
+        textIcon.classList.add("text-icon-container");
+
+        var centeredIcon = document.createElement("img");
+        centeredIcon.classList.add("centered-icon");
+        centeredIcon.src = "resources/Icons/text_icon_fill.svg";
+        textIcon.appendChild(centeredIcon);
+
+        return textIcon;
+    } // else its a link 
+    else if(type == "link" || type == null){
+        var linkIcon = document.createElement("div");
+        linkIcon.classList.add("text-icon-container");
+
+        var centeredIcon = document.createElement("img");
+        centeredIcon.classList.add("centered-icon");
+        centeredIcon.src = "resources/Icons/link_icon_fill.svg";
+        linkIcon.appendChild(centeredIcon);
+
+        return linkIcon;
     }
 }
 

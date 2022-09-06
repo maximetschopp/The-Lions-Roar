@@ -1,4 +1,6 @@
 function addPublication(data, year, month, week, isAfter){
+
+    console.log(data);
     console.log("addPublication: " + year + " " + month + " " + week + " " + isAfter);
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
@@ -144,7 +146,6 @@ async function parseTheJson(url) {
     
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
 
     return response;
 }
@@ -156,7 +157,8 @@ async function ready() {
     .then(console.log(data));
     */
 
-    data = parseTheJson('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json');
+    const data = parseTheJson('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json');
+
 
     addPublication(data, 2022, 9, 1, true);
 

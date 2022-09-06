@@ -156,7 +156,7 @@ async function ready() {
     .then(console.log(data));
     */
 
-    data = parseTheJson('./data.json');
+    data = parseTheJson('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json');
 
     addPublication(data, 2022, 9, 1, true);
 

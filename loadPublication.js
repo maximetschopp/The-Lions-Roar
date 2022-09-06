@@ -2,11 +2,12 @@ document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
 
-    addPublication();
+    addPublication(2022, 9, 1, true);
 
 }
 
 function addPublication(year, month, week, isAfter){
+    console.log("addPublication: " + year + " " + month + " " + week + " " + isAfter);
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
     //                                       ||
@@ -41,7 +42,7 @@ function addPublication(year, month, week, isAfter){
     var extrasButton = document.createElement("div");
     extrasButton.classList.add("ExtrasButton");
     extrasButton.innerHTML = "Extras";
-    extrasButton.onclick = "expandArticle(this)";
+    extrasButton.onclick = function(){expandArticle(this)};
 
     mainArticleDescription.appendChild(mainArticleDate);
     mainArticleDescription.appendChild(mainArticleTitle);

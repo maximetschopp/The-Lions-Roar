@@ -5,7 +5,7 @@ function ready() {
     console.log("DOMContentLoaded");
 
 
-    loadThumbnails("vid", "https://www.youtube.com/watch?v=59j_Flbaqds");
+    //loadThumbnails("vid", "https://www.youtube.com/watch?v=59j_Flbaqds");
     
 }
 
@@ -22,15 +22,15 @@ function loadThumbnails(vidId, link){
 
 function expandArticle(button){
 
-    // replace button text
+    console.log("expanding article");
+    console.log(button);
 
+    // replace button text
     if(button.innerHTML != "Hide Extras"){
         button.innerHTML = "Hide Extras";
     } else {
         button.innerHTML = "Extras";
     }
-
-    // replace the get ids with just one parent object
 
     // toggle Logo & bg
     var logo = document.getElementById('logo');
@@ -38,13 +38,14 @@ function expandArticle(button){
     var logoBg = document.getElementById('logoBg');
     logoBg.classList.toggle('logoBgHidden');
 
-    var splashContainer = document.getElementsByClassName('publication-container')[0];
+    // toggle the grids
+    var splashContainer = button.closest('.publication-container');
     splashContainer.classList.toggle('publication-container-expanded');
 
-    var mainArticleGrid = document.getElementsByClassName('publication-grid')[0];
+    var mainArticleGrid = button.closest('.publication-grid');
     mainArticleGrid.classList.toggle('publication-grid-minimized');
 
-    var extraArticlesGrid = document.getElementsByClassName('extra-articles-grid')[0];
+    var extraArticlesGrid = splashContainer.getElementsByClassName('extra-articles-grid')[0];
     extraArticlesGrid.classList.toggle('extra-articles-grid-shown');
 
 }

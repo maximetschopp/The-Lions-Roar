@@ -8,13 +8,75 @@
         "main_article_url": "https://youtu.be/dQw4w9WgXcQ",
         "main_article_type" : "video",
         "release_timestamp": 35424357834,
-        "articles": [
-            {
+        "articles": [{
                 "title" : "Name of the article",
                 "author": "Maxime Tschopp",
                 "date": "21 September",
                 "url": null,
                 "type": "image",
+                "thumbnail": "https://commons.wikimedia.org/wiki/File:Image_created_with_a_mobile_phone.png#/media/Fichier:Image_created_with_a_mobile_phone.png",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "text",
+                "thumbnail": "https://commons.wikimedia.org/wiki/File:Image_created_with_a_mobile_phone.png#/media/Fichier:Image_created_with_a_mobile_phone.png",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "video",
+                "thumbnail": "https://commons.wikimedia.org/wiki/File:Image_created_with_a_mobile_phone.png#/media/Fichier:Image_created_with_a_mobile_phone.png",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "audio",
                 "thumbnail": "https://commons.wikimedia.org/wiki/File:Image_created_with_a_mobile_phone.png#/media/Fichier:Image_created_with_a_mobile_phone.png",
                 "tags": [
                     "Upper School",

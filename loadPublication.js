@@ -19,13 +19,15 @@ function addPublication(year, month, week, isAfter){
     //                                             |-----------------|
     //                                     Article Icon            Article Desc 
 
+    //----------------------------------------------------------------
+    //                      JSON PARSER
+    //----------------------------------------------------------------
     
     // Create publication container
     var publicationContainer = document.createElement("div");
     publicationContainer.classList.add("publication-container");
 
     // Create PUBLICATION GRID / MAIN ARTICLE
-    // PUBLICATION GRID includes the icon and the description
     var publicationGrid = generateMainArticle("Title", "Date", "https://www.youtube.com/watch?v=HLzq3NDCdvU", "video", null);
 
     // Create EXTRA ARTICLES

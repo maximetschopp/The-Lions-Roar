@@ -1,12 +1,4 @@
-document.addEventListener("DOMContentLoaded", ready);
-
-function ready() {
-
-    addPublication(2022, 9, 1, true);
-
-}
-
-function addPublication(year, month, week, isAfter){
+function addPublication(data, year, month, week, isAfter){
     console.log("addPublication: " + year + " " + month + " " + week + " " + isAfter);
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
@@ -147,3 +139,29 @@ function generateArticle(title, author, date, url, type, thumbnail, tags){
     
     return article;
 }
+
+async function parseTheJson(url) {
+    
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+
+    return response;
+}
+
+async function ready() {
+
+    /*const response = fetch('./data.json')
+    .then((data) => function(){response.json()})
+    .then(console.log(data));
+    */
+
+    data = parseTheJson('./data.json');
+
+    addPublication(data, 2022, 9, 1, true);
+
+}
+
+var data = null;
+
+document.addEventListener("DOMContentLoaded", ready);

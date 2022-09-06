@@ -32,10 +32,10 @@ function addPublication(year, month, week, isAfter){
     // EXTRA ARTICLES contains a list of extra articles
     var extraArticlesGrid = document.createElement('div');
     extraArticlesGrid.className = 'extra-articles-grid';
-
     for (let numArticles = 0; numArticles < 2; numArticles++) {      /// GET THE NUMBER OF EXTRA ARTICLES
         //title, author, date, url, type, thumbnail, tags
         extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://www.youtube.com/watch?v=HLzq3NDCdvU", "video", null, []));
+        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "image", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
     }
 
     publicationContainer.appendChild(publicationGrid);
@@ -48,18 +48,32 @@ function addPublication(year, month, week, isAfter){
 
 function generateArticleIcon(type, url, thumbnail){
     if(type == "video"){
-        var vid = document.createElement("div");
-        vid.classList.add("vid");
-        var thumbnail = document.createElement("img");
-        thumbnail.classList.add("thumbnail");
+        var vidIcon = document.createElement("div");
+        vidIcon.classList.add("video-icon-container");
+        var thumbnailImage = document.createElement("img");
+        thumbnailImage.classList.add("thumbnail");
 
         // gets the thumbnail from the video url
-        var youtube_video_id = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+        if(thumbnail == null) {
+            var youtube_video_id = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
+            thumbnailImage.src = "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
+        } else {
+            thumbnailImage.src = thumbnail;
+        }
+        
 
-        thumbnail.src = "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
 
-        vid.appendChild(thumbnail);
-        return vid;
+        vidIcon.appendChild(thumbnailImage);
+        return vidIcon;
+    } else if (type == "image") {
+        var imageIcon = document.createElement("div");
+        imageIcon.classList.add("image-icon-container");
+        var thumbnailImage = document.createElement("img");
+        thumbnailImage.classList.add("thumbnail");
+        thumbnailImage.src = thumbnail;
+
+        imageIcon.appendChild(thumbnailImage);
+        return imageIcon;
     }
 }
 

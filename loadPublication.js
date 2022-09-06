@@ -53,19 +53,19 @@ function generateArticleIcon(type, url, thumbnail){
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
 
-        // gets the thumbnail from the video url
+        // checks if there is an alternative thumbnail available
+        // if not, then gets the thumbnail from the video url (youtube servers)
         if(thumbnail == null) {
             var youtube_video_id = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
             thumbnailImage.src = "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
         } else {
             thumbnailImage.src = thumbnail;
         }
-        
-
 
         vidIcon.appendChild(thumbnailImage);
         return vidIcon;
-    } else if (type == "image") {
+    } 
+    else if (type == "image") {
         var imageIcon = document.createElement("div");
         imageIcon.classList.add("image-icon-container");
         var thumbnailImage = document.createElement("img");
@@ -74,6 +74,14 @@ function generateArticleIcon(type, url, thumbnail){
 
         imageIcon.appendChild(thumbnailImage);
         return imageIcon;
+    }
+    else if (type == "audio") {
+        var audioIcon = document.createElement("div");
+        audioIcon.classList.add("audio-icon-container");
+    }
+    else if (type == "text") {
+        var audioIcon = document.createElement("div");
+        audioIcon.classList.add("text-icon-container");
     }
 }
 

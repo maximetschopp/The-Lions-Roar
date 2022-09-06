@@ -36,13 +36,13 @@ function addPublication(year, month, week, isAfter){
     mainArticleDescriptionContainer.classList.add("main-article-desc-container");
     var mainArticleDescription = document.createElement("div");
     var mainArticleDate = document.createElement("h1");
-    mainArticleDate.innerHTML = "5 Sep";
+    mainArticleDate.innerHTML = "5 Sep";                             /// GET THE DATE OF THE PUBLICATION
     var mainArticleTitle = document.createElement("h2");
-    mainArticleTitle.innerHTML = "Title of video here";
+    mainArticleTitle.innerHTML = "Title of Main Article here";       /// GET THE TITLE OF MAIN ARTICLE
     var extrasButton = document.createElement("div");
     extrasButton.classList.add("ExtrasButton");
     extrasButton.innerHTML = "Extras";
-    extrasButton.onclick = function(){expandArticle(this)};
+    extrasButton.onclick = function(){toggleExpandArticle(this)};
 
     mainArticleDescription.appendChild(mainArticleDate);
     mainArticleDescription.appendChild(mainArticleTitle);
@@ -52,8 +52,15 @@ function addPublication(year, month, week, isAfter){
 
     // Create EXTRA ARTICLES
     // EXTRA ARTICLES contains a list of extra articles
+    var extraArticlesGrid = document.createElement('div');
+    extraArticlesGrid.className = 'extra-articles-grid';
+    
+    for (let numArticles = 0; numArticles < 2; numArticles++) {      /// GET THE NUMBER OF EXTRA ARTICLES
+        generateArticle();
+    }
 
     publicationContainer.appendChild(publicationGrid);
+    publicationContainer.appendChild(extraArticlesGrid);
     // appends the publication to the end of the document FOR NOW
     // isAfter is a bool to see if the publication should be loaded in before
     // or after the current publication that the user in on (viewing)
@@ -75,4 +82,8 @@ function generateArticleIcon(type, link){
         vid.appendChild(thumbnail);
         return vid;
     }
+}
+
+function generateArticle(){
+
 }

@@ -3,20 +3,31 @@
         "year": 2022,
         "month": 8,
         "week": 2,
-        "d_week": 9,
-        "url": "https://youtu.be/dQw4w9WgXcQ",
+        "main_article_title" : "Name of the main article",
+        "main_article_date" : "September 6",
+        "main_article_url": "https://youtu.be/dQw4w9WgXcQ",
+        "main_article_type" : "video",
         "release_timestamp": 35424357834,
-        "subarticles": [
+        "articles": [
             {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
                 "url": null,
-                "date": "bar",
-                "author": "baz",
-                "type": "article/video/image/audio/other",
-                "thumbnail": "spam",
+                "type": "image",
+                "thumbnail": "https://commons.wikimedia.org/wiki/File:Image_created_with_a_mobile_phone.png#/media/Fichier:Image_created_with_a_mobile_phone.png",
                 "tags": [
-                    "foo",
-                    "bar",
-                    "baz"
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
                 ]
             }
         ]

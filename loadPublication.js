@@ -67,6 +67,15 @@ function generateArticleIcon(type, url, thumbnail) {
     if (type == "video") {
         var vidIcon = document.createElement("div");
         vidIcon.classList.add("video-icon-container");
+
+        if (url != null) {
+            vidIcon.addEventListener(
+                "click",
+                function (url) {
+                    window.open(url);
+                }.bind(this, url)
+            );
+        }
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
 
@@ -186,7 +195,14 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     article.classList.add("extra-article");
     var articleGrid = document.createElement("div");
     articleGrid.classList.add("extra-article-grid");
-
+    if (url != null) {
+        article.addEventListener(
+            "click",
+            function (url) {
+                window.open(url);
+            }.bind(this, url)
+        );
+    }
     var icon = generateArticleIcon(type, url, thumbnail);
     articleGrid.appendChild(icon);
 

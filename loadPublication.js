@@ -180,19 +180,6 @@ function generateArticle(title, author, date, url, type, thumbnail, tags){
     return article;
 }
 
-function getPublicationData(data, year, month, week){
-    var publicationData = null;
-    console.log("Hello:" + data)
-
-    for(publication in data){
-        if(publication["year"] == year && publication["month"] == month && publication["week"] == week){
-            publicationData = publication;
-        }
-    }
-
-    return publicationData;
-}
-
 async function ready() {
 
     /*const response = fetch('./data.json')

@@ -99,9 +99,9 @@
     {
         "year": 2022,
         "month": 9,
-        "week": 2,
+        "week": 3,
         "main_article_title" : "Name of the main article",
-        "main_article_date" : "September 13",
+        "main_article_date" : "September 20",
         "main_article_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "main_article_thumbnail" : null,
         "main_article_type" : "video",
@@ -196,9 +196,9 @@
     {
         "year": 2022,
         "month": 9,
-        "week": 3,
+        "week": 2,
         "main_article_title" : "Name of the main article",
-        "main_article_date" : "September 20",
+        "main_article_date" : "September 13",
         "main_article_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "main_article_thumbnail" : null,
         "main_article_type" : "video",
@@ -289,5 +289,5 @@
                 ]
             }
         ]
-    }
+    } 
 ]

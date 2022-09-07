@@ -1,6 +1,14 @@
 function addPublication(data, year, month, week, isAfter){
 
     console.log(data);
+
+    const publicationData = getPublicationData(data, year, month, week);
+
+    if(publicationData == null){
+        console.warn("publication is null " + year + " " + month + " " + week)
+    }
+    console.log(publicationData);
+
     console.log("addPublication: " + year + " " + month + " " + week + " " + isAfter);
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
@@ -181,12 +189,16 @@ function generateArticle(title, author, date, url, type, thumbnail, tags){
     return article;
 }
 
-async function parseTheJson(url) {
-    
-    const response = await fetch(url);
-    const data = await response.json();
+function getPublicationData(data, year, month, week){
+    var publicationData = null;
 
-    return response;
+    for(publication in data){
+        if(publication["year"] == year && publication["month"] == month && publication["week"] == week){
+            publicationData = publication;
+        }
+    }
+
+    return publicationData;
 }
 
 async function ready() {
@@ -196,8 +208,8 @@ async function ready() {
     .then(console.log(data));
     */
 
-    const data = parseTheJson('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json');
-
+    const response = await fetch("./data.json").then();
+    const data = await response.json();
 
     addPublication(data, 2022, 9, 1, true);
 

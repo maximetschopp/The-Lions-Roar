@@ -55,6 +55,7 @@ function generateArticleIcon(type, url, thumbnail){
         // checks if there is an alternative thumbnail available
         // if not, then gets the thumbnail from the video url (youtube servers)
         if(thumbnail == null) {
+            console.log(url);
             var youtube_video_id = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
             thumbnailImage.src = "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
         } else {

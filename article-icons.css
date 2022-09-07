@@ -29,13 +29,13 @@ h4{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    filter: contrast(100%) blur(2%);
+    filter: contrast(1);
     object-fit: cover;
     transition: all 0.15s ease-in-out;
 }
 .thumbnail:hover{
-    filter: contrast(110%) blur(0%) !important;
-    transition: all 0.45s ease-in-out;
+    filter: contrast(1.1) !important;
+    transition: all 0.15s ease-in-out;
 }
 .centered-icon{
     position: absolute;

@@ -6,6 +6,7 @@
         "main_article_title" : "Name of the main article",
         "main_article_date" : "September 6",
         "main_article_url": "https://youtu.be/dQw4w9WgXcQ",
+        "main_article_thumbnail" : null,
         "main_article_type" : "video",
         "release_timestamp": 35424357834,
         "articles": [{

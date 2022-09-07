@@ -1,6 +1,7 @@
 function addPublication(publication){
 
-    console.log("addPublication: " + publication);
+    console.log("addPublication:");
+    console.log(publication);
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
     //                                       ||
@@ -21,7 +22,7 @@ function addPublication(publication){
     publicationContainer.classList.add("publication-container");
 
     // Create PUBLICATION GRID / MAIN ARTICLE
-    var publicationGrid = generateMainArticle("Title", "Date", "https://www.youtube.com/watch?v=HLzq3NDCdvU", "video", null);
+    var publicationGrid = generateMainArticle(publication["main_article_title"], publication["main_article_date"], publication["main_article_url"], publication["main_article_type"], publication["main_article_thumbnail"]);
 
     // Create EXTRA ARTICLES
     // EXTRA ARTICLES contains a list of extra articles

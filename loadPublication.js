@@ -1,8 +1,7 @@
-function addPublication(publication){
-
+function addPublication(publication) {
     console.log("addPublication:");
     console.log(publication);
-    // STRUCTURE FOR A PUBLICATION IS: 
+    // STRUCTURE FOR A PUBLICATION IS:
     //                              Publication container
     //                                       ||
     //                  |-----------------------------------|
@@ -11,28 +10,49 @@ function addPublication(publication){
     //    |------------------------|                 List of extra articles
     // Main Article Icon      Main Article Desc             |
     //                                             |-----------------|
-    //                                     Article Icon            Article Desc 
+    //                                     Article Icon            Article Desc
 
     //----------------------------------------------------------------
     //                      JSON PARSER
     //----------------------------------------------------------------
-    
+
     // Create publication container
     var publicationContainer = document.createElement("div");
     publicationContainer.classList.add("publication-container");
 
     // Create PUBLICATION GRID / MAIN ARTICLE
-    var publicationGrid = generateMainArticle(publication["main_article_title"], publication["main_article_date"], publication["main_article_url"], publication["main_article_type"], publication["main_article_thumbnail"]);
+    var publicationGrid = generateMainArticle(
+        publication["main_article_title"],
+        publication["main_article_date"],
+        publication["main_article_url"],
+        publication["main_article_type"],
+        publication["main_article_thumbnail"]
+    );
 
     // Create EXTRA ARTICLES
     // EXTRA ARTICLES contains a list of extra articles
-    var extraArticlesGrid = document.createElement('div');
-    extraArticlesGrid.className = 'extra-articles-grid';
-    for (let numArticles = 0; numArticles < publication["articles"].length; numArticles++) {      /// GET THE NUMBER OF EXTRA ARTICLES
+    var extraArticlesGrid = document.createElement("div");
+    extraArticlesGrid.className = "extra-articles-grid";
+    for (
+        let numArticles = 0;
+        numArticles < publication["articles"].length;
+        numArticles++
+    ) {
+        /// GET THE NUMBER OF EXTRA ARTICLES
         //title, author, date, url, type, thumbnail, tags
         article = publication["articles"][numArticles];
         console.log(article);
-        extraArticlesGrid.appendChild(generateArticle(article["title"], article["author"], article["date"], article["url"], article["type"], article["thumbnail"], article["tags"]));
+        extraArticlesGrid.appendChild(
+            generateArticle(
+                article["title"],
+                article["author"],
+                article["date"],
+                article["url"],
+                article["type"],
+                article["thumbnail"],
+                article["tags"]
+            )
+        );
     }
 
     publicationContainer.appendChild(publicationGrid);
@@ -43,8 +63,8 @@ function addPublication(publication){
     document.body.appendChild(publicationContainer);
 }
 
-function generateArticleIcon(type, url, thumbnail){
-    if(type == "video"){
+function generateArticleIcon(type, url, thumbnail) {
+    if (type == "video") {
         var vidIcon = document.createElement("div");
         vidIcon.classList.add("video-icon-container");
         var thumbnailImage = document.createElement("img");
@@ -52,10 +72,13 @@ function generateArticleIcon(type, url, thumbnail){
 
         // checks if there is an alternative thumbnail available
         // if not, then gets the thumbnail from the video url (youtube servers)
-        if(thumbnail == null) {
+        if (thumbnail == null) {
             console.log(url);
-            var youtube_video_id = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/).pop();
-            thumbnailImage.src = "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
+            var youtube_video_id = url
+                .match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/)
+                .pop();
+            thumbnailImage.src =
+                "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
         } else {
             thumbnailImage.src = thumbnail;
         }
@@ -67,8 +90,7 @@ function generateArticleIcon(type, url, thumbnail){
         vidIcon.appendChild(centeredIcon);
 
         return vidIcon;
-    } 
-    else if (type == "image") {
+    } else if (type == "image") {
         var imageIcon = document.createElement("div");
         imageIcon.classList.add("image-icon-container");
         var thumbnailImage = document.createElement("img");
@@ -83,8 +105,7 @@ function generateArticleIcon(type, url, thumbnail){
         imageIcon.appendChild(centeredIcon);
 
         return imageIcon;
-    }
-    else if (type == "audio") {
+    } else if (type == "audio") {
         var audioIcon = document.createElement("div");
         audioIcon.classList.add("audio-icon-container");
 
@@ -94,19 +115,26 @@ function generateArticleIcon(type, url, thumbnail){
         audioIcon.appendChild(centeredIcon);
 
         return audioIcon;
-    }
-    else if (type == "text") {
+    } else if (type == "text") {
         var textIcon = document.createElement("div");
         textIcon.classList.add("text-icon-container");
-
+        var thumbnailImage = document.createElement("img");
+        thumbnailImage.classList.add("thumbnail");
+        if (thumbnail == null) {
+            thumbnailImage.src =
+                "resources/default_thumbnails/text_thumbnail.png";
+        } else {
+            thumbnailImage.src = thumbnail;
+        }
+        textIcon.appendChild(thumbnailImage);
         var centeredIcon = document.createElement("img");
         centeredIcon.classList.add("centered-icon");
         centeredIcon.src = "resources/Icons/text_icon_fill.svg";
         textIcon.appendChild(centeredIcon);
 
         return textIcon;
-    } // else its a link 
-    else if(type == "link" || type == null){
+    } // else its a link
+    else if (type == "link" || type == null) {
         var linkIcon = document.createElement("div");
         linkIcon.classList.add("text-icon-container");
 
@@ -129,32 +157,35 @@ function generateMainArticle(title, date, url, type, thumbnail) {
     publicationGrid.appendChild(articleIcon);
     // add Main Article Description
     var mainArticleDescriptionContainer = document.createElement("div");
-    mainArticleDescriptionContainer.classList.add("main-article-desc-container");
+    mainArticleDescriptionContainer.classList.add(
+        "main-article-desc-container"
+    );
     var mainArticleDescription = document.createElement("div");
     var mainArticleDate = document.createElement("h1");
-    mainArticleDate.innerHTML = date;                                /// GET THE DATE OF THE PUBLICATION
+    mainArticleDate.innerHTML = date; /// GET THE DATE OF THE PUBLICATION
     var mainArticleTitle = document.createElement("h2");
-    mainArticleTitle.innerHTML = title;                              /// GET THE TITLE OF MAIN ARTICLE
+    mainArticleTitle.innerHTML = title; /// GET THE TITLE OF MAIN ARTICLE
     var extrasButton = document.createElement("div");
     extrasButton.classList.add("ExtrasButton");
     extrasButton.innerHTML = "Extras";
-    extrasButton.onclick = function(){toggleExpandArticle(this)};
+    extrasButton.onclick = function () {
+        toggleExpandArticle(this);
+    };
 
     mainArticleDescription.appendChild(mainArticleDate);
     mainArticleDescription.appendChild(mainArticleTitle);
     mainArticleDescription.appendChild(extrasButton);
     mainArticleDescriptionContainer.appendChild(mainArticleDescription);
-    publicationGrid.appendChild(mainArticleDescriptionContainer); 
+    publicationGrid.appendChild(mainArticleDescriptionContainer);
 
     return publicationGrid;
 }
 
-function generateArticle(title, author, date, url, type, thumbnail, tags){
+function generateArticle(title, author, date, url, type, thumbnail, tags) {
     var article = document.createElement("div");
     article.classList.add("extra-article");
     var articleGrid = document.createElement("div");
     articleGrid.classList.add("extra-article-grid");
-
 
     var icon = generateArticleIcon(type, url, thumbnail);
     articleGrid.appendChild(icon);
@@ -174,31 +205,38 @@ function generateArticle(title, author, date, url, type, thumbnail, tags){
 
     articleGrid.appendChild(descriptionContainer);
 
-
     article.appendChild(articleGrid);
-    
+
     return article;
 }
 
 async function ready() {
-
     /*const response = fetch('./data.json')
     .then((data) => function(){response.json()})
     .then(console.log(data));
     */
-    fetch('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json'+ '?' + new Date().getTime())
-    .then((response) => response.json())
-    .then((data) => {
+    fetch(
+        "https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json" +
+            "?" +
+            new Date().getTime()
+    )
+        .then((response) => response.json())
+        .then((data) => {
             //sort data by date
-            data.sort(function(a, b) {
-                return b["year"]*12*6+b["month"]*6+b["week"]-a["year"]*12*6-a["month"]*6-a["week"];
+            data.sort(function (a, b) {
+                return (
+                    b["year"] * 12 * 6 +
+                    b["month"] * 6 +
+                    b["week"] -
+                    a["year"] * 12 * 6 -
+                    a["month"] * 6 -
+                    a["week"]
+                );
             });
             for (let i = 0; i < data.length; i++) {
                 addPublication(data[i]);
             }
-        }
-    );
-
+        });
 }
 
 var data = null;

@@ -94,5 +94,197 @@
                 ]
             }
         ]
+    },
+    {
+        "year": 2022,
+        "month": 9,
+        "week": 2,
+        "main_article_title" : "Name of the main article",
+        "main_article_date" : "September 6",
+        "main_article_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "main_article_thumbnail" : null,
+        "main_article_type" : "video",
+        "release_timestamp": 35424357834,
+        "articles": [{
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "image",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Astra_Rocket_3.0_flight_1_launch_campaign_66.jpg",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "text",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/31/Dr._Goddard_Series_L-C_rocket_-_top.jpg",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "video",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "audio",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Chinese_rocket.png",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            }
+        ]
+    },
+    {
+        "year": 2022,
+        "month": 9,
+        "week": 3,
+        "main_article_title" : "Name of the main article",
+        "main_article_date" : "September 6",
+        "main_article_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "main_article_thumbnail" : null,
+        "main_article_type" : "video",
+        "release_timestamp": 35424357834,
+        "articles": [{
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "image",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Astra_Rocket_3.0_flight_1_launch_campaign_66.jpg",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "text",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/31/Dr._Goddard_Series_L-C_rocket_-_top.jpg",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "video",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            },
+            {
+                "title" : "Name of the article",
+                "author": "Maxime Tschopp",
+                "date": "21 September",
+                "url": null,
+                "type": "audio",
+                "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Chinese_rocket.png",
+                "tags": [
+                    "Upper School",
+                    "Middle School",
+                    "Lower School",
+                    "Sport",
+                    "Science",
+                    "Math",
+                    "English",
+                    "German",
+                    "French",
+                    "Spanish",
+                    "Physics"
+                ]
+            }
+        ]
     }
 ]

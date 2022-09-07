@@ -1,6 +1,6 @@
-function addPublication(publication, isAfter){
+function addPublication(publication){
 
-    console.log("addPublication: " + publication + " " + isAfter);
+    console.log("addPublication: " + publication);
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
     //                                       ||
@@ -190,9 +190,15 @@ async function ready() {
     fetch("https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json")
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
-        addPublication(data, 2022, 9, 1, true);
-    });
+            //sort data by date
+            data.sort(function(a, b) {
+                return a["year"]*12*6+a["month"]*6+a["week"]-b["year"]*12*6-b["month"]*6-b["week"];
+            });
+            for (let i = 0; i < data.length; i++) {
+                addPublication(data[i]);
+            }
+        }
+    );
 
 }
 

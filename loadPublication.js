@@ -1,15 +1,6 @@
-function addPublication(data, year, month, week, isAfter){
+function addPublication(publication, isAfter){
 
-    console.log(data);
-
-    const publicationData = getPublicationData(data, year, month, week);
-
-    if(publicationData == null){
-        console.warn("publication is null " + year + " " + month + " " + week)
-    }
-    console.log(publicationData);
-
-    console.log("addPublication: " + year + " " + month + " " + week + " " + isAfter);
+    console.log("addPublication: " + publication + " " + isAfter);
     // STRUCTURE FOR A PUBLICATION IS: 
     //                              Publication container
     //                                       ||
@@ -191,6 +182,7 @@ function generateArticle(title, author, date, url, type, thumbnail, tags){
 
 function getPublicationData(data, year, month, week){
     var publicationData = null;
+    console.log("Hello:" + data)
 
     for(publication in data){
         if(publication["year"] == year && publication["month"] == month && publication["week"] == week){
@@ -212,6 +204,7 @@ async function ready() {
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
+        addPublication(data, 2022, 9, 1, true);
     });
 
 }

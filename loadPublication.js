@@ -28,13 +28,11 @@ function addPublication(publication){
     // EXTRA ARTICLES contains a list of extra articles
     var extraArticlesGrid = document.createElement('div');
     extraArticlesGrid.className = 'extra-articles-grid';
-    for (let numArticles = 0; numArticles < 2; numArticles++) {      /// GET THE NUMBER OF EXTRA ARTICLES
+    for (let numArticles = 0; numArticles < publication["articles"].length; numArticles++) {      /// GET THE NUMBER OF EXTRA ARTICLES
         //title, author, date, url, type, thumbnail, tags
-        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://www.youtube.com/watch?v=HLzq3NDCdvU", "video", null, []));
-        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "image", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
-        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "text", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
-        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "audio", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
-        extraArticlesGrid.appendChild(generateArticle("Name of the article", "Maxime Tschopp", "21 Sep", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", "link", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Wroclaw-_Most_Grunwaldzki.jpg/1200px-Wroclaw-_Most_Grunwaldzki.jpg", []));
+        article = publication["articles"][numArticles];
+        console.log(article);
+        extraArticlesGrid.appendChild(generateArticle(article["title"], article["author"], article["date"], article["url"], article["type"], article["thumbnail"], article["tags"]));
     }
 
     publicationContainer.appendChild(publicationGrid);

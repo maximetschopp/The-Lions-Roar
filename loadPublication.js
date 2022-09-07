@@ -208,10 +208,11 @@ async function ready() {
     .then(console.log(data));
     */
 
-    const response = await fetch("./data.json").then();
-    const data = await response.json();
-
-    addPublication(data, 2022, 9, 1, true);
+    fetch("https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json")
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    });
 
 }
 

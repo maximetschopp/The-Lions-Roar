@@ -187,8 +187,7 @@ async function ready() {
     .then((data) => function(){response.json()})
     .then(console.log(data));
     */
-
-    fetch("https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json")
+    fetch('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json'+ '?' + new Date().getTime())
     .then((response) => response.json())
     .then((data) => {
             //sort data by date

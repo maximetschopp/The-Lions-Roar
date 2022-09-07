@@ -40,8 +40,7 @@ function addPublication(publication) {
     ) {
         /// GET THE NUMBER OF EXTRA ARTICLES
         //title, author, date, url, type, thumbnail, tags
-        article = publication["articles"][numArticles];
-        console.log(article);
+        article = publication["articles"][numArticles]; 
         extraArticlesGrid.appendChild(
             generateArticle(
                 article["title"],
@@ -82,7 +81,6 @@ function generateArticleIcon(type, url, thumbnail) {
         // checks if there is an alternative thumbnail available
         // if not, then gets the thumbnail from the video url (youtube servers)
         if (thumbnail == null) {
-            console.log(url);
             var youtube_video_id = url
                 .match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/)
                 .pop();

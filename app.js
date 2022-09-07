@@ -13,7 +13,7 @@ window.addEventListener("scroll", (e) => {
 
 function updateExpanded() {
   // toggle Logo & bg
-  if (expanded + scroll / 100 < 1) {
+  if (expanded + scroll / 60 < 1) { // change 100 to 60 to make the minimizing of logo faster
     var logo = document.getElementById("logo");
     logo.classList.remove("logoMinimized");
     var logoBg = document.getElementById("logoBg");

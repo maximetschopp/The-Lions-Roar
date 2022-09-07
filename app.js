@@ -3,7 +3,6 @@ function ready() {
   console.log("DOMContentLoaded");
 }
 
-var lastExpanded = null;
 var expanded = 0;
 var scroll = 0;
 window.addEventListener("scroll", (e) => {
@@ -41,6 +40,11 @@ function toggleExpandArticle(button) {
     expanded--;
   }
   updateExpanded();
+  if(expanded > 0){
+    document.getElementById("spacer").classList.add("spacerMinimized");
+  } else {
+    document.getElementById("spacer").classList.remove("spacerMinimized");
+  }
   // toggle the grids
   var splashContainer = button.closest(".publication-container");
   splashContainer.classList.toggle("publication-container-expanded");
@@ -48,11 +52,7 @@ function toggleExpandArticle(button) {
   var mainArticleGrid = button.closest(".publication-grid");
   mainArticleGrid.classList.toggle("publication-grid-minimized");
 
-  var extraArticlesGrid = splashContainer.getElementsByClassName(
-    "extra-articles-grid"
-  )[0];
+  var extraArticlesGrid = splashContainer.getElementsByClassName("extra-articles-grid")[0];
   extraArticlesGrid.classList.toggle("extra-articles-grid-shown");
 
-  lastExpanded = button; // SO we can close the previous one when the user
-  // click on a new one in the infinite scrolling
 }

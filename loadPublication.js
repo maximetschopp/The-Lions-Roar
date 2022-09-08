@@ -143,7 +143,7 @@ function generateArticleIcon(type, url, thumbnail) {
     } // else its a link
     else if (type == "link" || type == null) {
         var linkIcon = document.createElement("div");
-        linkIcon.classList.add("text-icon-container");
+        linkIcon.classList.add("link-icon-container");
 
         var centeredIcon = document.createElement("img");
         centeredIcon.classList.add("centered-icon");
@@ -152,6 +152,7 @@ function generateArticleIcon(type, url, thumbnail) {
 
         return linkIcon;
     }
+    console.warn(type + "article type is not supported");
 }
 
 function generateMainArticle(title, date, url, type, thumbnail) {
@@ -193,6 +194,7 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     article.classList.add("extra-article");
     var articleGrid = document.createElement("div");
     articleGrid.classList.add("extra-article-grid");
+    console.log("article type: " + type);
     if (url != null) {
         article.addEventListener(
             "click",

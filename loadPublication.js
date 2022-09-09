@@ -226,6 +226,38 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     return article;
 }
 
+function generateSidebar(dates){
+    var sidebarObj = document.getElementById('sidebar');
+    console.log(dates);
+    var yearKeys = Object.keys(dates);
+    console.log(yearKeys);
+
+    for(let i = yearKeys.length - 1; i >= 0; i--) {
+        var yeartxt = document.createElement('p');
+        yeartxt.innerText = yearKeys[i];
+        yeartxt.classList.add('sidebar-year');
+        sidebarObj.appendChild(yeartxt);
+
+        var monthKeys = Object.keys(dates[yearKeys[i]]);
+        console.log(monthKeys);
+
+        for (let f = monthKeys.length - 1; f >= 0; f--) {
+            var monthtxt = document.createElement('p');
+            var monthNames = ["Janruary", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            monthtxt.innerText = monthNames[monthKeys[f] - 1];
+            monthtxt.classList.add('sidebar-month');
+            sidebarObj.appendChild(monthtxt);
+
+            for (let j = dates[yearKeys[i]][monthKeys[f]].length -1; j >= 0; j--) {
+                var weektxt = document.createElement('p');
+                weektxt.innerText = "week " + dates[yearKeys[i]][monthKeys[f]][j];
+                weektxt.classList.add('sidebar-week');
+                sidebarObj.appendChild(weektxt);
+            }
+        }
+    }
+}
+
 async function ready() {
     /*const response = fetch('./data.json')
     .then((data) => function(){response.json()})
@@ -251,10 +283,25 @@ async function ready() {
             });
             for (let i = 0; i < data.length; i++) {
                 addPublication(data[i]);
+
+                // check for new date for the sidebarDates
+                year = data[i]["year"];
+                month = data[i]["month"];
+                week = data[i]["week"];
+                if(!(year in sidebarDates)){
+                    sidebarDates[year] = {};
+                }
+                if(!(month in sidebarDates[year])){
+                    sidebarDates[year][month] = [];
+                }
+                sidebarDates[year][month].push(week);
             }
+
+            generateSidebar(sidebarDates);
         });
 }
 
 var data = null;
+var sidebarDates = {};
 
 document.addEventListener("DOMContentLoaded", ready);

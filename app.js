@@ -59,20 +59,22 @@ function toggleExpandArticle(button) {
 
 function clickedOnDate(date){
   console.log(date.innerHTML);
+
+  var scrollOffset = window.innerHeight * 0.1;
   
   if(date.innerHTML == "week 1"){
     //document.getElementsByClassName('publication-container')[2].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    var y = document.getElementsByClassName('publication-container')[2].getBoundingClientRect().top + window.scrollY;
+    var y = document.getElementsByClassName('publication-container')[2].offsetTop - scrollOffset;
     window.scrollTo({ top: y, behavior: 'smooth'});
   } 
   if(date.innerHTML == "week 2"){
     //document.getElementsByClassName('publication-container')[1].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    var y = document.getElementsByClassName('publication-container')[1].getBoundingClientRect().top + window.scrollY;
+    var y = document.getElementsByClassName('publication-container')[1].offsetTop - scrollOffset;
     window.scrollTo({ top: y, behavior: 'smooth'});
   } 
   if(date.innerHTML == "week 3"){
     //document.getElementsByClassName('publication-container')[0].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    var y = document.getElementsByClassName('publication-container')[0].getBoundingClientRect().top + window.scrollY;
+    var y = document.getElementsByClassName('publication-container')[0].offsetTop;
     window.scrollTo({ top: y, behavior: 'smooth'});
   } 
 }

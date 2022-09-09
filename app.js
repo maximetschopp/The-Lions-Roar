@@ -56,3 +56,8 @@ function toggleExpandArticle(button) {
   extraArticlesGrid.classList.toggle("extra-articles-grid-shown");
 
 }
+
+function clickedOnDate(date){
+  console.log(date.innerHTML);
+  //date.scrollIntoView({behavior: 'smooth'});
+}

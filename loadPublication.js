@@ -233,28 +233,43 @@ function generateSidebar(dates){
     console.log(yearKeys);
 
     for(let i = yearKeys.length - 1; i >= 0; i--) {
+        var yeardiv = document.createElement('div');
         var yeartxt = document.createElement('p');
         yeartxt.innerText = yearKeys[i];
         yeartxt.classList.add('sidebar-year');
-        sidebarObj.appendChild(yeartxt);
+        yeartxt.addEventListener("click", function(){
+            clickedOnDate(this);
+        });
+        yeardiv.appendChild(yeartxt);
 
         var monthKeys = Object.keys(dates[yearKeys[i]]);
         console.log(monthKeys);
 
         for (let f = monthKeys.length - 1; f >= 0; f--) {
+            var monthDiv = document.createElement('div');
             var monthtxt = document.createElement('p');
             var monthNames = ["Janruary", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             monthtxt.innerText = monthNames[monthKeys[f] - 1];
             monthtxt.classList.add('sidebar-month');
-            sidebarObj.appendChild(monthtxt);
+            monthtxt.addEventListener("click", function(){
+                clickedOnDate(this);
+            });
+            monthDiv.appendChild(monthtxt);
 
-            for (let j = dates[yearKeys[i]][monthKeys[f]].length -1; j >= 0; j--) {
+            for (let j = 0; j < dates[yearKeys[i]][monthKeys[f]].length; j++) {
+                var weekDiv = document.createElement("div");
                 var weektxt = document.createElement('p');
                 weektxt.innerText = "week " + dates[yearKeys[i]][monthKeys[f]][j];
                 weektxt.classList.add('sidebar-week');
-                sidebarObj.appendChild(weektxt);
+                weektxt.addEventListener("click", function(){
+                    clickedOnDate(this);
+                });
+                weekDiv.appendChild(weektxt);
+                monthDiv.appendChild(weektxt);
             }
+            yeardiv.appendChild(monthDiv);
         }
+        sidebarObj.appendChild(yeardiv);
     }
 }
 

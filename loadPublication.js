@@ -229,6 +229,8 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
 function generateSidebar(dates){
     var sidebarObj = document.getElementById('sidebar');
     console.log(dates);
+
+
     var yearKeys = Object.keys(dates);
     console.log(yearKeys);
 
@@ -271,6 +273,17 @@ function generateSidebar(dates){
         }
         sidebarObj.appendChild(yeardiv);
     }
+
+    var before2022div = document.createElement('div');
+    var before2022a = document.createElement('a');
+    var before2022txt = document.createElement('p');
+    before2022a.href = 'https://lionsjournal.ch/';
+    before2022txt.innerText = "<2022";
+    before2022txt.classList.add('sidebar-year');
+    before2022a.setAttribute('target', '_blank');
+    before2022a.appendChild(before2022txt);
+    before2022div.appendChild(before2022a);
+    sidebarObj.appendChild(before2022div);
 }
 
 async function ready() {

@@ -5,11 +5,11 @@ window.mobileAndTabletCheck = function () {
 };
 
 if (mobileAndTabletCheck()) {
-    if (window.location.pathname.substring(thePath.lastIndexOf('/') + 1) == ''){
+    if (window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) == ''){
         window.location = "./m";
     }
 }else{
-    if (window.location.pathname.substring(thePath.lastIndexOf('/') + 1) == 'm'){
+    if (window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) == 'm'){
         window.location = "../";
     }
 }

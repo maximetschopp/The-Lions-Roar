@@ -62,14 +62,17 @@ function clickedOnDate(date){
   
   if(date.innerHTML == "week 1"){
     //document.getElementsByClassName('publication-container')[2].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    window.scrollTo({ top: document.getElementsByClassName('publication-container')[2]-70, behavior: 'smooth'});
+    var y = document.getElementsByClassName('publication-container')[2].getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: y, behavior: 'smooth'});
   } 
   if(date.innerHTML == "week 2"){
     //document.getElementsByClassName('publication-container')[1].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    window.scrollTo({ top: document.getElementsByClassName('publication-container')[1], behavior: 'smooth'});
+    var y = document.getElementsByClassName('publication-container')[1].getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: y, behavior: 'smooth'});
   } 
   if(date.innerHTML == "week 3"){
     //document.getElementsByClassName('publication-container')[0].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    window.scrollTo({ top: document.getElementsByClassName('publication-container')[0], behavior: 'smooth'});
+    var y = document.getElementsByClassName('publication-container')[0].getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: y, behavior: 'smooth'});
   } 
 }

@@ -59,5 +59,17 @@ function toggleExpandArticle(button) {
 
 function clickedOnDate(date){
   console.log(date.innerHTML);
-  //date.scrollIntoView({behavior: 'smooth'});
+  
+  if(date.innerHTML == "week 1"){
+    //document.getElementsByClassName('publication-container')[2].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+    window.scrollTo({ top: document.getElementsByClassName('publication-container')[2]-70, behavior: 'smooth'});
+  } 
+  if(date.innerHTML == "week 2"){
+    //document.getElementsByClassName('publication-container')[1].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+    window.scrollTo({ top: document.getElementsByClassName('publication-container')[1], behavior: 'smooth'});
+  } 
+  if(date.innerHTML == "week 3"){
+    //document.getElementsByClassName('publication-container')[0].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+    window.scrollTo({ top: document.getElementsByClassName('publication-container')[0], behavior: 'smooth'});
+  } 
 }

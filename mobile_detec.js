@@ -5,7 +5,11 @@ window.mobileAndTabletCheck = function () {
 };
 
 if (mobileAndTabletCheck()) {
-    window.location = "/m";
+    if (window.location.pathname.substring(thePath.lastIndexOf('/') + 1) == ''){
+        window.location = "./m";
+    }
 }else{
-    window.location = "/";
+    if (window.location.pathname.substring(thePath.lastIndexOf('/') + 1) == 'm'){
+        window.location = "../";
+    }
 }

@@ -5,6 +5,9 @@ function ready() {
 
 var expanded = 0;
 var scroll = 0;
+var lastExpandedSiderbarItem = null;
+var lastExpandedSiderbarItemType = "year";
+
 window.addEventListener("scroll", (e) => {
   scroll = this.scrollY;
   updateExpanded();
@@ -57,24 +60,66 @@ function toggleExpandArticle(button) {
 
 }
 
-function clickedOnDate(date){
-  console.log(date.innerHTML);
+function clickedOnSidebar(itemClicked, year, month, week){
+  console.log("year " + year + " month " + month + " week " + week);
 
-  var scrollOffset = window.innerHeight * 0.1;
+  var type = null;
+  // Update Bold text
+  //itemClicked.classList.toggle("sidebar-bold");
+  if(month == null && week == null){
+    type = "year";
+  } else if(week == null){
+    type = "month";
+  } else {
+    type = "week";
+  }
+
+  if(type == "year"){
+    toggleExpandedSidebar(itemClicked, year, null, null, type);
+  } else if (type == "month"){
+    toggleExpandedSidebar(itemClicked, year, month, null, type);
+  } else if (type == "week"){
+    toggleExpandedSidebar(itemClicked, year, month, week, type);
+    scrollToArticle(year, month, week);
+  }
+
+
+
+  lastExpandedSiderbarItem = itemClicked;
+  lastExpandedSiderbarItemType = type;
+}
+
+function toggleExpandedSidebar(itemClicked, year, month, week, type){
   
-  if(date.innerHTML == "week 1"){
-    //document.getElementsByClassName('publication-container')[2].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    var y = document.getElementsByClassName('publication-container')[2].offsetTop - scrollOffset;
-    window.scrollTo({ top: y, behavior: 'smooth'});
-  } 
-  if(date.innerHTML == "week 2"){
-    //document.getElementsByClassName('publication-container')[1].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    var y = document.getElementsByClassName('publication-container')[1].offsetTop - scrollOffset;
-    window.scrollTo({ top: y, behavior: 'smooth'});
-  } 
-  if(date.innerHTML == "week 3"){
-    //document.getElementsByClassName('publication-container')[0].scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-    var y = document.getElementsByClassName('publication-container')[0].offsetTop;
-    window.scrollTo({ top: y, behavior: 'smooth'});
-  } 
+  // clear previous bold
+  if (lastExpandedSiderbarItem != null && lastExpandedSiderbarItemType != null){
+    if(lastExpandedSiderbarItemType == "year"){
+      lastExpandedSiderbarItem.classList.remove("sidebar-bold");
+    } else if (lastExpandedSiderbarItemType == "month"){
+      lastExpandedSiderbarItem.classList.remove("sidebar-bold");
+      lastExpandedSiderbarItem.parentElement.getElementsByClassName("sidebar-month")[0].classList.remove("sidebar-bold");
+    } else if (lastExpandedSiderbarItemType == "week"){
+      lastExpandedSiderbarItem.classList.remove("sidebar-bold");
+      lastExpandedSiderbarItem.parentElement.getElementsByClassName("sidebar-month")[0].classList.remove("sidebar-bold");
+      lastExpandedSiderbarItem.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.remove("sidebar-bold");
+    }
+  }
+  // bold the selected text
+  if(type == "year"){
+    itemClicked.classList.add("sidebar-bold");
+  } else if (type == "month"){
+    itemClicked.classList.add("sidebar-bold");
+    itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.add("sidebar-bold");
+  } else if (type == "week"){
+    itemClicked.classList.add("sidebar-bold");
+    itemClicked.parentElement.getElementsByClassName("sidebar-month")[0].classList.add("sidebar-bold");
+    itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.add("sidebar-bold");
+  }
+}
+
+function scrollToArticle(year, month, week){
+  var scrollOffset = window.innerHeight * 0.1;
+
+  //var y = document.getElementsByClassName('publication-container')[2].offsetTop - scrollOffset;
+  //window.scrollTo({ top: y, behavior: 'smooth'});
 }

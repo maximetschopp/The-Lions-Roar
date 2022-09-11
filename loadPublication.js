@@ -1,6 +1,6 @@
 function addPublication(publication) {
-    console.log("addPublication:");
-    console.log(publication);
+    //console.log("addPublication:");
+    //console.log(publication);
     // STRUCTURE FOR A PUBLICATION IS:
     //                              Publication container
     //                                       ||
@@ -194,7 +194,6 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     article.classList.add("extra-article");
     var articleGrid = document.createElement("div");
     articleGrid.classList.add("extra-article-grid");
-    console.log("article type: " + type);
     if (url != null) {
         article.addEventListener(
             "click",
@@ -232,20 +231,25 @@ function generateSidebar(dates){
 
 
     var yearKeys = Object.keys(dates);
-    console.log(yearKeys);
+    //console.log(yearKeys);
 
+    // YEAR
     for(let i = yearKeys.length - 1; i >= 0; i--) {
         var yeardiv = document.createElement('div');
         var yeartxt = document.createElement('p');
         yeartxt.innerText = yearKeys[i];
         yeartxt.classList.add('sidebar-year');
+
+        console.log(dates[yearKeys[i]]);
+
         yeartxt.addEventListener("click", function(){
-            clickedOnDate(this);
+            clickedOnSidebar(this, yearKeys[i], null, null);
         });
         yeardiv.appendChild(yeartxt);
 
+        // MONTH
         var monthKeys = Object.keys(dates[yearKeys[i]]);
-        console.log(monthKeys);
+        //console.log(monthKeys);
 
         for (let f = monthKeys.length - 1; f >= 0; f--) {
             var monthDiv = document.createElement('div');
@@ -254,17 +258,22 @@ function generateSidebar(dates){
             monthtxt.innerText = monthNames[monthKeys[f] - 1];
             monthtxt.classList.add('sidebar-month');
             monthtxt.addEventListener("click", function(){
-                clickedOnDate(this);
+                clickedOnSidebar(this, yearKeys[i], monthKeys[f], null);
             });
             monthDiv.appendChild(monthtxt);
 
+            // WEEK
             for (let j = 0; j < dates[yearKeys[i]][monthKeys[f]].length; j++) {
                 var weekDiv = document.createElement("div");
                 var weektxt = document.createElement('p');
                 weektxt.innerText = "week " + dates[yearKeys[i]][monthKeys[f]][j];
                 weektxt.classList.add('sidebar-week');
                 weektxt.addEventListener("click", function(){
-                    clickedOnDate(this);
+                    clickedOnSidebar(this, 
+                        yearKeys[i],                        // year
+                        monthKeys[f],                       // month 
+                        dates[yearKeys[i]][monthKeys[f]][j] // week
+                        );
                 });
                 weekDiv.appendChild(weektxt);
                 monthDiv.appendChild(weektxt);
@@ -274,6 +283,7 @@ function generateSidebar(dates){
         sidebarObj.appendChild(yeardiv);
     }
 
+    // the link to the previous website
     var before2022div = document.createElement('div');
     var before2022a = document.createElement('a');
     var before2022txt = document.createElement('p');
@@ -324,7 +334,8 @@ async function ready() {
                 }
                 sidebarDates[year][month].push(week);
             }
-
+            console.log("data");
+            console.log(data);
             generateSidebar(sidebarDates);
         });
 }

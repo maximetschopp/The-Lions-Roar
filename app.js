@@ -61,7 +61,7 @@ function toggleExpandArticle(button) {
 }
 
 function clickedOnSidebar(itemClicked, year, month, week){
-  console.log("year " + year + " month " + month + " week " + week);
+  //console.log("year " + year + " month " + month + " week " + week);
 
   var type = null;
   // Update Bold text
@@ -93,6 +93,8 @@ function toggleExpandedSidebar(itemClicked, year, month, week, type){
   
   // clear previous bold && collapse 
   if (lastExpandedSiderbarItem != null && lastExpandedSiderbarItemType != null){
+    
+    collapseAll();
 
     if(lastExpandedSiderbarItemType == "year"){
       lastExpandedSiderbarItem.classList.remove("sidebar-bold");
@@ -107,6 +109,8 @@ function toggleExpandedSidebar(itemClicked, year, month, week, type){
       lastExpandedSiderbarItem.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.remove("sidebar-bold");
     }
   }
+
+  
   // bold the selected text && expand
   if(type == "year"){
     itemClicked.classList.add("sidebar-bold");
@@ -129,4 +133,8 @@ function scrollToArticle(year, month, week){
 
   //var y = document.getElementsByClassName('publication-container')[2].offsetTop - scrollOffset;
   //window.scrollTo({ top: y, behavior: 'smooth'});
+}
+
+function collapseAll(){
+  
 }

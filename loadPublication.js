@@ -227,7 +227,7 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
 
 function generateSidebar(dates){
     var sidebarObj = document.getElementById('sidebar');
-    console.log(dates);
+    //console.log(dates);
 
 
     var yearKeys = Object.keys(dates);
@@ -240,7 +240,7 @@ function generateSidebar(dates){
         yeartxt.innerText = yearKeys[i];
         yeartxt.classList.add('sidebar-year');
 
-        console.log(dates[yearKeys[i]]);
+        //console.log(dates[yearKeys[i]]);
 
         yeartxt.addEventListener("click", function(){
             clickedOnSidebar(this, yearKeys[i], null, null);

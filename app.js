@@ -94,8 +94,6 @@ function toggleExpandedSidebar(itemClicked, year, month, week, type){
   // clear previous bold && collapse 
   if (lastExpandedSiderbarItem != null && lastExpandedSiderbarItemType != null){
 
-    lastExpandedSiderbarItem.classList.add("hidden");
-
     if(lastExpandedSiderbarItemType == "year"){
       lastExpandedSiderbarItem.classList.remove("sidebar-bold");
     } 
@@ -112,24 +110,17 @@ function toggleExpandedSidebar(itemClicked, year, month, week, type){
   // bold the selected text && expand
   if(type == "year"){
     itemClicked.classList.add("sidebar-bold");
-    
-    itemClicked.classList.remove("hidden");
   } 
   else if (type == "month"){
     itemClicked.classList.add("sidebar-bold");
     itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.add("sidebar-bold");
     
-    itemClicked.classList.remove("hidden");
-    itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.remove("hidden");
   } 
   else if (type == "week"){
     itemClicked.classList.add("sidebar-bold");
     itemClicked.parentElement.getElementsByClassName("sidebar-month")[0].classList.add("sidebar-bold");
     itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.add("sidebar-bold");
     
-    itemClicked.classList.remove("hidden");
-    itemClicked.parentElement.getElementsByClassName("sidebar-month")[0].classList.remove("hidden");
-    itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.remove("hidden");
   }
 }
 

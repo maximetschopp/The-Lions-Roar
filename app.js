@@ -83,47 +83,35 @@ function clickedOnSidebar(itemClicked, year, month, week){
     scrollToArticle(year, month, week);
   }
 
-
-
-  lastExpandedSiderbarItem = itemClicked;
-  lastExpandedSiderbarItemType = type;
+  //lastExpandedSiderbarItem = itemClicked;
+  //lastExpandedSiderbarItemType = type;
 }
 
 function toggleExpandedSidebar(itemClicked, year, month, week, type){
   
   // clear previous bold && collapse 
-  if (lastExpandedSiderbarItem != null && lastExpandedSiderbarItemType != null){
-    
-    collapseAll();
-
-    if(lastExpandedSiderbarItemType == "year"){
-      lastExpandedSiderbarItem.classList.remove("sidebar-bold");
-    } 
-    else if (lastExpandedSiderbarItemType == "month"){
-      lastExpandedSiderbarItem.classList.remove("sidebar-bold");
-      lastExpandedSiderbarItem.parentElement.getElementsByClassName("sidebar-month")[0].classList.remove("sidebar-bold");
-    } 
-    else if (lastExpandedSiderbarItemType == "week"){
-      lastExpandedSiderbarItem.classList.remove("sidebar-bold");
-      lastExpandedSiderbarItem.parentElement.getElementsByClassName("sidebar-month")[0].classList.remove("sidebar-bold");
-      lastExpandedSiderbarItem.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.remove("sidebar-bold");
-    }
-  }
+  collapseAll();
 
   
   // bold the selected text && expand
+  console.log(type);
   if(type == "year"){
     itemClicked.classList.add("sidebar-bold");
+    itemClicked.children[0].classList.add("sidebar-bold");
+    itemClicked.children[0].children[0].classList.add("sidebar-bold");
   } 
   else if (type == "month"){
+    itemClicked.children[0].classList.add("sidebar-bold");
+    console.log(itemClicked.children[0]);
     itemClicked.classList.add("sidebar-bold");
-    itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.add("sidebar-bold");
-    
+    console.log(itemClicked);
+    itemClicked.parentElement.classList.add("sidebar-bold");
+    console.log(itemClicked.parentElement);
   } 
   else if (type == "week"){
     itemClicked.classList.add("sidebar-bold");
-    itemClicked.parentElement.getElementsByClassName("sidebar-month")[0].classList.add("sidebar-bold");
-    itemClicked.parentElement.parentElement.getElementsByClassName("sidebar-year")[0].classList.add("sidebar-bold");
+    itemClicked.parentElement.classList.add("sidebar-bold");
+    itemClicked.parentElement.parentElement.classList.add("sidebar-bold");
     
   }
 }
@@ -136,5 +124,23 @@ function scrollToArticle(year, month, week){
 }
 
 function collapseAll(){
+  // it does not collapse the year
+  var sidebar = document.getElementById('sidebar');
+  console.log(sidebar);
+  for( let a = 0; a < sidebar.children.length; a++){
+    var yearDiv = sidebar[a]; 
+    yearDiv.classList.remove("sidebar-bold");
+
+    for (let b = 0; b < yearDiv.children.length; b++){
+      var monthDiv = yearDiv[b]; 
+      monthDiv.classList.remove("sidebar-bold");
+
+      for(let c = 0; c < monthDiv.children.length; c++){
+        var weekDiv = monthDiv[b]; 
+        weekDiv.classList.remove("sidebar-bold");
+      }
+
+    }
+  }
   
 }

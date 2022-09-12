@@ -236,16 +236,17 @@ function generateSidebar(dates){
     // YEAR
     for(let i = yearKeys.length - 1; i >= 0; i--) {
         var yeardiv = document.createElement('div');
-        var yeartxt = document.createElement('p');
-        yeartxt.innerText = yearKeys[i];
-        yeartxt.classList.add('sidebar-year');
+        //var yeartxt = document.createElement('p');
+        yeardiv.innerText = yearKeys[i];
+        yeardiv.classList.add('sidebar-year');
 
         //console.log(dates[yearKeys[i]]);
 
-        yeartxt.addEventListener("click", function(){
+        yeardiv.addEventListener("click", function(e){
             clickedOnSidebar(this, yearKeys[i], null, null);
+            e.stopPropagation();
         });
-        yeardiv.appendChild(yeartxt);
+        //yeardiv.appendChild(yeartxt);
 
         // MONTH
         var monthKeys = Object.keys(dates[yearKeys[i]]);
@@ -253,30 +254,32 @@ function generateSidebar(dates){
 
         for (let f = monthKeys.length - 1; f >= 0; f--) {
             var monthDiv = document.createElement('div');
-            var monthtxt = document.createElement('p');
+            //var monthtxt = document.createElement('p');
             var monthNames = ["Janruary", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            monthtxt.innerText = monthNames[monthKeys[f] - 1];
-            monthtxt.classList.add('sidebar-month');
-            monthtxt.addEventListener("click", function(){
+            monthDiv.innerText = monthNames[monthKeys[f] - 1];
+            monthDiv.classList.add('sidebar-month');
+            monthDiv.addEventListener("click", function(e){
                 clickedOnSidebar(this, yearKeys[i], monthKeys[f], null);
+                    e.stopPropagation();
             });
-            monthDiv.appendChild(monthtxt);
+            //monthDiv.appendChild(monthtxt);
 
             // WEEK
             for (let j = 0; j < dates[yearKeys[i]][monthKeys[f]].length; j++) {
                 var weekDiv = document.createElement("div");
-                var weektxt = document.createElement('p');
-                weektxt.innerText = "week " + dates[yearKeys[i]][monthKeys[f]][j];
-                weektxt.classList.add('sidebar-week');
-                weektxt.addEventListener("click", function(){
+                //var weektxt = document.createElement('p');
+                weekDiv.innerText = "week " + dates[yearKeys[i]][monthKeys[f]][j];
+                weekDiv.classList.add('sidebar-week');
+                weekDiv.addEventListener("click", function(e){
                     clickedOnSidebar(this, 
                         yearKeys[i],                        // year
                         monthKeys[f],                       // month 
                         dates[yearKeys[i]][monthKeys[f]][j] // week
                         );
+                    e.stopPropagation();
                 });
-                weekDiv.appendChild(weektxt);
-                monthDiv.appendChild(weektxt);
+                //weekDiv.appendChild(weektxt);
+                monthDiv.appendChild(weekDiv);
             }
             yeardiv.appendChild(monthDiv);
         }

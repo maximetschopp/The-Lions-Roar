@@ -128,15 +128,15 @@ function collapseAll(){
   var sidebar = document.getElementById('sidebar');
   console.log(sidebar);
   for( let a = 0; a < sidebar.children.length; a++){
-    var yearDiv = sidebar[a]; 
+    var yearDiv = sidebar.children[a]; 
     yearDiv.classList.remove("sidebar-bold");
 
     for (let b = 0; b < yearDiv.children.length; b++){
-      var monthDiv = yearDiv[b]; 
+      var monthDiv = yearDiv.children[b]; 
       monthDiv.classList.remove("sidebar-bold");
 
       for(let c = 0; c < monthDiv.children.length; c++){
-        var weekDiv = monthDiv[b]; 
+        var weekDiv = monthDiv.children[c]; 
         weekDiv.classList.remove("sidebar-bold");
       }
 

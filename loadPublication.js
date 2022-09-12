@@ -302,7 +302,7 @@ async function ready() {
     .then(console.log(data));
     */
     fetch(
-        "https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/data.json" +
+        "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json" +
             "?" +
             new Date().getTime()
     )

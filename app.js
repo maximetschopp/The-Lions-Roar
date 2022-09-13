@@ -118,6 +118,11 @@ function toggleExpandedSidebar(itemClicked, year, month, week, type){
     itemClicked.classList.remove("hidden");
     itemClicked.parentElement.classList.add("sidebar-bold");
 
+    // reveal all other months in the year
+    for (let i = 0; i < itemClicked.parentElement.children.length; i++) {
+      itemClicked.parentElement.children[i].classList.remove("hidden");
+    }
+    
     // reveal all the weeks in the selected month
     for (let f = 0; f < itemClicked.children.length; f++) {
       itemClicked.children[f].classList.remove("hidden");
@@ -135,6 +140,11 @@ function toggleExpandedSidebar(itemClicked, year, month, week, type){
     // reveal all the sibling weeks in the selected month
     for (let f = 0; f < itemClicked.parentElement.children.length; f++) {
       itemClicked.parentElement.children[f].classList.remove("hidden");
+    }
+
+    // reveal all other months in the year
+    for (let i = 0; i < itemClicked.parentElement.parentElement.children.length; i++) {
+      itemClicked.parentElement.parentElement.children[i].classList.remove("hidden");
     }
   }
 }

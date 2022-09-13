@@ -241,7 +241,7 @@ function generateSidebar(dates) {
     //console.log(dates);
 
     var yearKeys = Object.keys(dates);
-    //console.log(yearKeys);
+    console.log(yearKeys);
 
     // YEAR
     for (let i = yearKeys.length - 1; i >= 0; i--) {
@@ -294,6 +294,11 @@ function generateSidebar(dates) {
                 weekDiv.innerText =
                     "week " + dates[yearKeys[i]][monthKeys[f]][j];
                 weekDiv.classList.add("sidebar-week");
+
+                console.log(yearKeys[i] + " i: " + i);
+                console.log(monthKeys[f] + " f: " + f);
+                console.log(dates[yearKeys[i]][monthKeys[f]][j] + " j: " + j);
+
                 weekDiv.addEventListener("click", function (e) {
                     clickedOnSidebar(
                         this,

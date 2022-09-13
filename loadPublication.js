@@ -19,7 +19,13 @@ function addPublication(publication) {
     // Create publication container
     var publicationContainer = document.createElement("div");
     publicationContainer.classList.add("publication-container");
-
+    if (publication["release_timestamp"] > Date.now()) {
+        publicationContainer.classList.add("hidden");
+        console.log(publication);
+        setTimeout((publicationContainer) => {
+            publicationContainer.classList.remove("hidden");
+        }, publication["release_timestamp"] - Date.now());
+    }
     // Create PUBLICATION GRID / MAIN ARTICLE
     var publicationGrid = generateMainArticle(
         publication["main_article_title"],
@@ -40,7 +46,7 @@ function addPublication(publication) {
     ) {
         /// GET THE NUMBER OF EXTRA ARTICLES
         //title, author, date, url, type, thumbnail, tags
-        article = publication["articles"][numArticles]; 
+        article = publication["articles"][numArticles];
         extraArticlesGrid.appendChild(
             generateArticle(
                 article["title"],
@@ -225,24 +231,23 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     return article;
 }
 
-function generateSidebar(dates){
-    var sidebarObj = document.getElementById('sidebar');
+function generateSidebar(dates) {
+    var sidebarObj = document.getElementById("sidebar");
     //console.log(dates);
-
 
     var yearKeys = Object.keys(dates);
     //console.log(yearKeys);
 
     // YEAR
-    for(let i = yearKeys.length - 1; i >= 0; i--) {
-        var yeardiv = document.createElement('div');
+    for (let i = yearKeys.length - 1; i >= 0; i--) {
+        var yeardiv = document.createElement("div");
         //var yeartxt = document.createElement('p');
         yeardiv.innerText = yearKeys[i];
-        yeardiv.classList.add('sidebar-year');
+        yeardiv.classList.add("sidebar-year");
 
         //console.log(dates[yearKeys[i]]);
 
-        yeardiv.addEventListener("click", function(e){
+        yeardiv.addEventListener("click", function (e) {
             clickedOnSidebar(this, yearKeys[i], null, null);
             e.stopPropagation();
         });
@@ -253,14 +258,27 @@ function generateSidebar(dates){
         //console.log(monthKeys);
 
         for (let f = monthKeys.length - 1; f >= 0; f--) {
-            var monthDiv = document.createElement('div');
+            var monthDiv = document.createElement("div");
             //var monthtxt = document.createElement('p');
-            var monthNames = ["Janruary", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var monthNames = [
+                "Janruary",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ];
             monthDiv.innerText = monthNames[monthKeys[f] - 1];
-            monthDiv.classList.add('sidebar-month');
-            monthDiv.addEventListener("click", function(e){
+            monthDiv.classList.add("sidebar-month");
+            monthDiv.addEventListener("click", function (e) {
                 clickedOnSidebar(this, yearKeys[i], monthKeys[f], null);
-                    e.stopPropagation();
+                e.stopPropagation();
             });
             //monthDiv.appendChild(monthtxt);
 
@@ -268,14 +286,16 @@ function generateSidebar(dates){
             for (let j = 0; j < dates[yearKeys[i]][monthKeys[f]].length; j++) {
                 var weekDiv = document.createElement("div");
                 //var weektxt = document.createElement('p');
-                weekDiv.innerText = "week " + dates[yearKeys[i]][monthKeys[f]][j];
-                weekDiv.classList.add('sidebar-week');
-                weekDiv.addEventListener("click", function(e){
-                    clickedOnSidebar(this, 
-                        yearKeys[i],                        // year
-                        monthKeys[f],                       // month 
+                weekDiv.innerText =
+                    "week " + dates[yearKeys[i]][monthKeys[f]][j];
+                weekDiv.classList.add("sidebar-week");
+                weekDiv.addEventListener("click", function (e) {
+                    clickedOnSidebar(
+                        this,
+                        yearKeys[i], // year
+                        monthKeys[f], // month
                         dates[yearKeys[i]][monthKeys[f]][j] // week
-                        );
+                    );
                     e.stopPropagation();
                 });
                 //weekDiv.appendChild(weektxt);
@@ -303,7 +323,7 @@ async function ready() {
     */
     fetch(
         "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json" +
-            "?" +
+            "?id=" +
             new Date().getTime()
     )
         .then((response) => response.json())
@@ -326,10 +346,10 @@ async function ready() {
                 year = data[i]["year"];
                 month = data[i]["month"];
                 week = data[i]["week"];
-                if(!(year in sidebarDates)){
+                if (!(year in sidebarDates)) {
                     sidebarDates[year] = {};
                 }
-                if(!(month in sidebarDates[year])){
+                if (!(month in sidebarDates[year])) {
                     sidebarDates[year][month] = [];
                 }
                 sidebarDates[year][month].push(week);

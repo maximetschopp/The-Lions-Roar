@@ -207,13 +207,19 @@ h2{
     top: 50%;
     left: 0%;
     transform: translate(0, -50%);
-    margin-left: 13px;
+    padding-left: 13px;
+    padding-right: 13px;
     z-index: 999;
+    /*border: 1px solid black;*/
+    border-left: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 0px 20px 20px 0px;
 }
 .sidebar-year{
     position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
     font-size: calc(0.9vh + 6px);
     line-height: calc(2.4vh + 13px);
@@ -226,10 +232,10 @@ h2{
 .sidebar-month{
     position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
-    font-size: calc(0.7vh + 5px);
-    line-height: calc(1.5vh + 9px);
+    font-size: calc(0.8vh + 5.5px);
+    line-height: calc(1.4vh + 9px);
     margin: 0;
     text-align: left;
     margin-left: 10px;
@@ -240,10 +246,10 @@ h2{
 .sidebar-week{
     position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: calc(0.7vh + 5px);
     font-style: normal;
-    font-size: calc(0.8vh + 5px);
-    line-height: calc(1.2vh + 7px);
+    line-height: calc(1.4vh + 9px);
     margin: 0;
     text-align: left;
     margin-left: 15px;
@@ -252,7 +258,8 @@ h2{
     cursor: pointer;
 }
 .sidebar-bold{
-    font-weight: 700 !important;
+    font-weight: 500 !important;
+    font-style: italic;
 }
 
 a{

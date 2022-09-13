@@ -238,7 +238,7 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
 
 function generateSidebar(dates) {
     var sidebarObj = document.getElementById("sidebar");
-    //console.log(dates);
+    console.log(dates);
 
     var yearKeys = Object.keys(dates);
     console.log(yearKeys);
@@ -294,10 +294,6 @@ function generateSidebar(dates) {
                 weekDiv.innerText =
                     "week " + dates[yearKeys[i]][monthKeys[f]][j];
                 weekDiv.classList.add("sidebar-week");
-
-                console.log(yearKeys[i] + " i: " + i);
-                console.log(monthKeys[f] + " f: " + f);
-                console.log(dates[yearKeys[i]][monthKeys[f]][j] + " j: " + j);
 
                 weekDiv.addEventListener("click", function (e) {
                     clickedOnSidebar(

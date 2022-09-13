@@ -26,13 +26,15 @@ function addPublication(publication) {
             publicationContainer.classList.remove("hidden");
         }, publication["release_timestamp"] - Date.now());
     }
+
     // Create PUBLICATION GRID / MAIN ARTICLE
     var publicationGrid = generateMainArticle(
         publication["main_article_title"],
         publication["main_article_date"],
         publication["main_article_url"],
         publication["main_article_type"],
-        publication["main_article_thumbnail"]
+        publication["main_article_thumbnail"],
+        publication["articles"].length > 0
     );
 
     // Create EXTRA ARTICLES
@@ -161,7 +163,7 @@ function generateArticleIcon(type, url, thumbnail) {
     console.warn(type + "article type is not supported");
 }
 
-function generateMainArticle(title, date, url, type, thumbnail) {
+function generateMainArticle(title, date, url, type, thumbnail, hasExtraArticles) {
     // Create PUBLICATION GRID
     // PUBLICATION GRID includes the icon and the description
     var publicationGrid = document.createElement("div");
@@ -179,16 +181,19 @@ function generateMainArticle(title, date, url, type, thumbnail) {
     mainArticleDate.innerHTML = date; /// GET THE DATE OF THE PUBLICATION
     var mainArticleTitle = document.createElement("h2");
     mainArticleTitle.innerHTML = title; /// GET THE TITLE OF MAIN ARTICLE
-    var extrasButton = document.createElement("div");
-    extrasButton.classList.add("ExtrasButton");
-    extrasButton.innerHTML = "Extras";
-    extrasButton.onclick = function () {
-        toggleExpandArticle(this);
-    };
+    
+    if(hasExtraArticles){
+        var extrasButton = document.createElement("div");
+        extrasButton.classList.add("ExtrasButton");
+        extrasButton.innerHTML = "Extras";
+        extrasButton.onclick = function () {
+            toggleExpandArticle(this);
+        };
+        mainArticleDescription.appendChild(extrasButton);
+    }
 
     mainArticleDescription.appendChild(mainArticleDate);
     mainArticleDescription.appendChild(mainArticleTitle);
-    mainArticleDescription.appendChild(extrasButton);
     mainArticleDescriptionContainer.appendChild(mainArticleDescription);
     publicationGrid.appendChild(mainArticleDescriptionContainer);
 

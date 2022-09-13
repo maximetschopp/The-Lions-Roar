@@ -288,14 +288,11 @@ function generateSidebar(dates){
 
     // the link to the previous website
     var before2022div = document.createElement('div');
-    var before2022a = document.createElement('a');
-    var before2022txt = document.createElement('p');
-    before2022a.href = 'https://lionsjournal.ch/';
-    before2022txt.innerText = "<2022";
-    before2022txt.classList.add('sidebar-year');
-    before2022a.setAttribute('target', '_blank');
-    before2022a.appendChild(before2022txt);
-    before2022div.appendChild(before2022a);
+    before2022div.innerText = "<2022";
+    before2022div.classList.add('sidebar-year');
+    before2022div.addEventListener("click", function(){
+        window.open('https://lionsjournal.ch/', '_blank').focus();
+    });
     sidebarObj.appendChild(before2022div);
 }
 

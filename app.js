@@ -9,11 +9,18 @@ var expanded = 0;
 var scroll = 0;
 var lastExpandedSiderbarItem = null;
 var lastExpandedSiderbarItemType = "year";
+var addedScroll = 0;
 
-window.addEventListener("scroll", (e) => {
-    scroll = this.scrollY;
+window.addEventListener("scroll", (e) => {});
+
+setInterval(() => {
+    addedScroll = lerp(
+        addedScroll,
+        Math.min(1, expanded) * window.innerHeight * 0.4,
+        0.05
+    );
     updateExpanded();
-});
+}, 1);
 
 function lerp(a, b, p) {
     return a * (1 - p) + b * p;
@@ -32,15 +39,17 @@ function scale(min_in, max_in, min_out, max_out, value) {
 
 function updateExpanded() {
     // toggle Logo & bg
-
+    scroll = this.scrollY;
+    let useScroll = scroll + addedScroll;
     var logo = document.getElementById("logo");
     var logoBg = document.getElementById("logoBg");
     logo.style.top =
-        lerp(11, 2, scale(0, window.innerHeight * 0.3, 0, 1, scroll)) + "%";
+        lerp(11, 2, scale(0, window.innerHeight * 0.3, 0, 1, useScroll)) + "%";
     logo.style.width =
-        lerp(80, 30, scale(0, window.innerHeight * 0.3, 0, 1, scroll)) + "vh";
+        lerp(80, 30, scale(0, window.innerHeight * 0.3, 0, 1, useScroll)) +
+        "vh";
 
-    if (scroll >= window.innerHeight * 0.3) {
+    if (useScroll >= window.innerHeight * 0.3) {
         logoBg.classList.remove("logoBgHidden");
     } else {
         logoBg.classList.add("logoBgHidden");

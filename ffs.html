@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="mobile_detec.js"></script>
+        <script>
+            let queryString = window.location.search;
+            let urlParams = new URLSearchParams(queryString);
+            if (urlParams.get('force') != 'true'){
+                if (mobileAndTabletCheck()){
+                    window.location.href = "./m";
+                } else {
+                    if (!IsSafari()){ 
+                        window.location.href = "./";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        FOR FUCKS SAKE SAFARI WHY YOU MAKE ME DO THIS
+    </body>
+</html>

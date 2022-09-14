@@ -17,8 +17,14 @@
         <script>
             let queryString = window.location.search;
             let urlParams = new URLSearchParams(queryString);
-            if (mobileAndTabletCheck() && urlParams.get('force') != 'true'){
-                window.location.href = "m";
+            if (urlParams.get('force') != 'true'){
+                if (mobileAndTabletCheck()){
+                    window.location.href = "m";
+                } else {
+                    if (IsSafari()){
+                        window.location.href = "ffs";
+                    }
+                }
             }
         </script>
         <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>

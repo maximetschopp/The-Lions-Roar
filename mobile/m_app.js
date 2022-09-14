@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", ready);
 function ready() {
-  console.log("DOMContentLoaded");
-  loadMainArticle();
+    console.log("DOMContentLoaded");
+    loadMainArticle();
 }
 
-function loadMainArticle(year, month, week){
+function loadMainArticle(year, month, week) {
     var mainArticleContainer = document.getElementById("mainArticleContainer");
-    mainArticleContainer.appendChild(generateArticleIcon("video", "https://www.youtube.com/watch?v=b-_yIBuFXyM"));
+    mainArticleContainer.appendChild(
+        generateArticleIcon(
+            "video",
+            "https://www.youtube.com/watch?v=b-_yIBuFXyM"
+        )
+    );
 }
 
 function generateArticleIcon(type, url, thumbnail) {
@@ -99,5 +104,5 @@ function generateArticleIcon(type, url, thumbnail) {
 
         return linkIcon;
     }
-    console.warn(type + "article type is not supported");
+    console.warn(type + " article type is not supported");
 }

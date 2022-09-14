@@ -182,8 +182,8 @@ function generateMainArticle(title, date, url, type, thumbnail, hasExtraArticles
     mainArticleDate.innerHTML = date; /// GET THE DATE OF THE PUBLICATION
     var mainArticleTitle = document.createElement("h2");
     mainArticleTitle.innerHTML = title; /// GET THE TITLE OF MAIN ARTICLE
-    
-    if(hasExtraArticles){
+
+    if (hasExtraArticles) {
         var extrasButton = document.createElement("div");
         extrasButton.classList.add("ExtrasButton");
         extrasButton.innerHTML = "Extras";
@@ -240,19 +240,60 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
 var yearKeys = null;
 var monthKeys = null;
 
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 function generateSidebar(dates) {
     var sidebarObj = document.getElementById("sidebar");
     console.log(dates);
+    let lastYear = null;
+    let lastMonth = null;
+    let thisYear = null;
+    let thisMonth = null;
     yearKeys = Object.keys(dates);
-    foreach(yearKeys, function (year) {
-        var element = document.createElement("div");
+    yearKeys.reverse().forEach(year => {
+        monthKeys = Object.keys(dates[year]);
+        monthKeys.reverse().forEach(month => {
+            dates[year][month].forEach(week => {
+                if (year != lastYear) {
+                    var element = document.createElement("div");
+                    element.classList.add("sidebar-year");
+                    element.innerHTML = year;
+                    sidebarObj.appendChild(element);
+                    lastYear = year;
+                    element.onclick = function(year, month, week){expandSidebarItem(year, month, week);}.bind(this, year, month, week);
+                    thisYear = element;
+                }
+                if (month != lastMonth) {
+                    var element = document.createElement("div");
+                    element.classList.add("sidebar-month");
+                    element.innerHTML = months[month - 1];
+                    sidebarObj.appendChild(element);
+                    lastMonth = month;
+                    element.onclick = function(year, month, week){expandSidebarItem(year, month, week);}.bind(this, year, month, week);
+                    thisMonth = element;
+                }
+                var element = document.createElement("div");
+                element.classList.add("sidebar-week");
+                element.innerHTML = "Week "+week;
+                sidebarObj.appendChild(element);
+                element.onclick = function(year, month, week){expandSidebarItem(year, month, week);}.bind(this, year, month, week);
+                thisYear.classList.add("sidebar-cd-"+year+"_"+month+"_"+week);
+                thisMonth.classList.add("sidebar-cd-"+year+"_"+month+"_"+week);
+                element.classList.add("sidebar-cd-"+year+"_"+month+"_"+week);
+                thisYear.classList.add("sidebar-cd-"+year+"_"+month);
+                thisMonth.classList.add("sidebar-cd-"+year+"_"+month);
+                element.classList.add("sidebar-cd-"+year+"_"+month);
+                thisYear.classList.add("sidebar-cd-"+year);
+                thisMonth.classList.add("sidebar-cd-"+year);
+            });
+        });
     });
 
     // the link to the previous website
     var before2022div = document.createElement('div');
     before2022div.innerText = "<2022";
     before2022div.classList.add('sidebar-year');
-    before2022div.addEventListener("click", function(){
+    before2022div.addEventListener("click", function () {
         window.open('https://lionsjournal.ch/', '_blank').focus();
     });
     sidebarObj.appendChild(before2022div);
@@ -266,8 +307,8 @@ async function ready() {
     */
     fetch(
         "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json" +
-            "?id=" +
-            new Date().getTime()
+        "?id=" +
+        new Date().getTime()
     )
         .then((response) => response.json())
         .then((data) => {

@@ -212,8 +212,6 @@ h2{
     z-index: 999;
     /*border: 1px solid black;*/
     border-left: none;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     border-radius: 0px 20px 20px 0px;
 }
 .sidebar-year{

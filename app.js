@@ -9,7 +9,30 @@ var lastExpandedSiderbarItem = null;
 var lastExpandedSiderbarItemType = "year";
 var addedScroll = 0;
 
-window.addEventListener("scroll", (e) => {});
+window.addEventListener("scroll", (e) => {
+    let elements = document.getElementsByClassName("publication-container");
+    let closest = null;
+    let verticalOffset = null;
+    for (let i = 0; i < elements.length; i++) {
+        let element = elements[i];
+        let rect = element.getBoundingClientRect();
+        //calculate the distance between the element and the top of the page
+        let offset = Math.abs(
+            (rect.top + rect.bottom) / 2 - window.innerHeight * 0.35
+        );
+        if (verticalOffset == null || offset < verticalOffset) {
+            verticalOffset = offset;
+            closest = element;
+            // console.log(offset, closest);
+        }
+    }
+    if (closest != null) {
+        let year = closest.getAttribute("year");
+        let month = closest.getAttribute("month");
+        let week = closest.getAttribute("week");
+        expandSidebarItem(year, month, week, false);
+    }
+});
 
 setInterval(() => {
     addedScroll = lerp(
@@ -143,7 +166,7 @@ function expandSidebarItem(year, month, week, need_scroll) {
 }
 
 function collapseAll() {
-    var elements = document.getElementById("sidebar").children;
+    var elements = document.getElementById("sidebar_text_container").children;
     for (let i = 0; i < elements.length; i++) {
         elements[i].classList.remove("sidebar-bold");
         if (elements[i].classList.contains("sidebar-year")) {

@@ -215,10 +215,14 @@ h2{
     transform: translate(0, -50%);
     padding-left: 13px;
     padding-right: 13px;
-    z-index: 999;
+    z-index: 5;
     /*border: 1px solid black;*/
     border-left: none;
     border-radius: 0px 20px 20px 0px;
+    backdrop-filter: blur(10px);
+}
+#sidebar_text_container {
+    z-index: 10;
 }
 .sidebar-year{
     position: relative;

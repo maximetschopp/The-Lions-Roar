@@ -28,6 +28,9 @@ function addPublication(publication) {
             "-" +
             publication["week"]
     );
+    publicationContainer.setAttribute("year", publication["year"]);
+    publicationContainer.setAttribute("month", publication["month"]);
+    publicationContainer.setAttribute("week", publication["week"]);
     publicationContainer.classList.add("publication-container");
     // publication release delay is quite broken, I'll get to it later.
     // if (publication["release_timestamp"] > Date.now()) {
@@ -273,7 +276,7 @@ var months = [
 ];
 
 function generateSidebar(dates) {
-    var sidebarObj = document.getElementById("sidebar");
+    var sidebarObj = document.getElementById("sidebar_text_container");
     let lastYear = null;
     let lastMonth = null;
     let thisYear = null;

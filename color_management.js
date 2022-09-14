@@ -3,6 +3,11 @@ if (colortype == null) {
     colortype = 0;
 }
 
+// Christmas
+// Swiss national day
+// Chinese new year
+// halloween
+
 console.log(colortype);
 document.addEventListener("DOMContentLoaded", function () {
     if (colortype == 1) {

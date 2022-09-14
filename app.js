@@ -1,3 +1,5 @@
+// Made by Maxime Tschopp && Nikita Lurye
+
 document.addEventListener("DOMContentLoaded", ready);
 function ready() {
     console.log("DOMContentLoaded");
@@ -55,33 +57,38 @@ function toggleExpandArticle(button) {
     var mainArticleGrid = button.closest(".publication-grid");
     mainArticleGrid.classList.toggle("publication-grid-minimized");
 
-    var extraArticlesGrid = splashContainer.getElementsByClassName("extra-articles-grid")[0];
+    var extraArticlesGrid = splashContainer.getElementsByClassName(
+        "extra-articles-grid"
+    )[0];
     extraArticlesGrid.classList.toggle("extra-articles-grid-shown");
-
 }
 
 function expandSidebarItem(year, month, week) {
     collapseAll();
-    var elements = document.getElementsByClassName("sidebar-cd-" + year+"_"+month+"_"+week);
-    Array.prototype.slice.call(elements).forEach(element => {
+    var elements = document.getElementsByClassName(
+        "sidebar-cd-" + year + "_" + month + "_" + week
+    );
+    Array.prototype.slice.call(elements).forEach((element) => {
         element.classList.remove("hidden");
         element.classList.add("sidebar-bold");
     });
-    var elements = document.getElementsByClassName("sidebar-cd-" + year+"_"+month);
-    Array.prototype.slice.call(elements).forEach(element => {
+    var elements = document.getElementsByClassName(
+        "sidebar-cd-" + year + "_" + month
+    );
+    Array.prototype.slice.call(elements).forEach((element) => {
         element.classList.remove("hidden");
     });
     var elements = document.getElementsByClassName("sidebar-cd-" + year);
-    Array.prototype.slice.call(elements).forEach(element => {
+    Array.prototype.slice.call(elements).forEach((element) => {
         element.classList.remove("hidden");
     });
 }
 
-function collapseAll(){
+function collapseAll() {
     var elements = document.getElementById("sidebar").children;
-    for(let i = 0; i < elements.length; i++){
+    for (let i = 0; i < elements.length; i++) {
         elements[i].classList.remove("sidebar-bold");
-        if (elements[i].classList.contains("sidebar-year")){
+        if (elements[i].classList.contains("sidebar-year")) {
             continue;
         }
         elements[i].classList.add("hidden");

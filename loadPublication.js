@@ -1,3 +1,5 @@
+// Made by Maxime Tschopp && Nikita Lurye
+
 function addPublication(publication) {
     //console.log("addPublication:");
     //console.log(publication);
@@ -164,7 +166,14 @@ function generateArticleIcon(type, url, thumbnail) {
     console.warn(type + "article type is not supported");
 }
 
-function generateMainArticle(title, date, url, type, thumbnail, hasExtraArticles) {
+function generateMainArticle(
+    title,
+    date,
+    url,
+    type,
+    thumbnail,
+    hasExtraArticles
+) {
     // Create PUBLICATION GRID
     // PUBLICATION GRID includes the icon and the description
     var publicationGrid = document.createElement("div");
@@ -240,7 +249,20 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
 var yearKeys = null;
 var monthKeys = null;
 
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
 
 function generateSidebar(dates) {
     var sidebarObj = document.getElementById("sidebar");
@@ -253,17 +275,19 @@ function generateSidebar(dates) {
     let topMonth = null;
     let topWeek = null;
     yearKeys = Object.keys(dates);
-    yearKeys.reverse().forEach(year => {
+    yearKeys.reverse().forEach((year) => {
         monthKeys = Object.keys(dates[year]);
-        monthKeys.reverse().forEach(month => {
-            dates[year][month].forEach(week => {
+        monthKeys.reverse().forEach((month) => {
+            dates[year][month].forEach((week) => {
                 if (year != lastYear) {
                     var element = document.createElement("div");
                     element.classList.add("sidebar-year");
                     element.innerHTML = year;
                     sidebarObj.appendChild(element);
                     lastYear = year;
-                    element.onclick = function(year, month, week){expandSidebarItem(year, month, week);}.bind(this, year, month, week);
+                    element.onclick = function (year, month, week) {
+                        expandSidebarItem(year, month, week);
+                    }.bind(this, year, month, week);
                     thisYear = element;
                 }
                 if (month != lastMonth) {
@@ -272,7 +296,9 @@ function generateSidebar(dates) {
                     element.innerHTML = months[month - 1];
                     sidebarObj.appendChild(element);
                     lastMonth = month;
-                    element.onclick = function(year, month, week){expandSidebarItem(year, month, week);}.bind(this, year, month, week);
+                    element.onclick = function (year, month, week) {
+                        expandSidebarItem(year, month, week);
+                    }.bind(this, year, month, week);
                     thisMonth = element;
                 }
                 if (topYear == null) {
@@ -282,42 +308,49 @@ function generateSidebar(dates) {
                 }
                 var element = document.createElement("div");
                 element.classList.add("sidebar-week");
-                element.innerHTML = "Week "+week;
+                element.innerHTML = "Week " + week;
                 sidebarObj.appendChild(element);
-                element.onclick = function(year, month, week){expandSidebarItem(year, month, week);}.bind(this, year, month, week);
-                thisYear.classList.add("sidebar-cd-"+year+"_"+month+"_"+week);
-                thisMonth.classList.add("sidebar-cd-"+year+"_"+month+"_"+week);
-                element.classList.add("sidebar-cd-"+year+"_"+month+"_"+week);
-                thisYear.classList.add("sidebar-cd-"+year+"_"+month);
-                thisMonth.classList.add("sidebar-cd-"+year+"_"+month);
-                element.classList.add("sidebar-cd-"+year+"_"+month);
-                thisYear.classList.add("sidebar-cd-"+year);
-                thisMonth.classList.add("sidebar-cd-"+year);
+                element.onclick = function (year, month, week) {
+                    expandSidebarItem(year, month, week);
+                }.bind(this, year, month, week);
+                thisYear.classList.add(
+                    "sidebar-cd-" + year + "_" + month + "_" + week
+                );
+                thisMonth.classList.add(
+                    "sidebar-cd-" + year + "_" + month + "_" + week
+                );
+                element.classList.add(
+                    "sidebar-cd-" + year + "_" + month + "_" + week
+                );
+                thisYear.classList.add("sidebar-cd-" + year + "_" + month);
+                thisMonth.classList.add("sidebar-cd-" + year + "_" + month);
+                element.classList.add("sidebar-cd-" + year + "_" + month);
+                thisYear.classList.add("sidebar-cd-" + year);
+                thisMonth.classList.add("sidebar-cd-" + year);
             });
         });
     });
     expandSidebarItem(topYear, topMonth, topWeek);
     // the link to the previous website
-    var before2022div = document.createElement('div');
+    var before2022div = document.createElement("div");
     before2022div.innerText = "<2022";
-    before2022div.classList.add('sidebar-year');
+    before2022div.classList.add("sidebar-year");
     before2022div.addEventListener("click", function () {
-        window.open('https://lionsjournal.ch/', '_blank').focus();
+        window.open("https://lionsjournal.ch/", "_blank").focus();
     });
     sidebarObj.appendChild(before2022div);
 }
 
-
 async function ready() {
-    document.getElementsByTagName("body")[0].style.overflow="hidden";
+    document.getElementsByTagName("body")[0].style.overflow = "hidden";
     /*const response = fetch('./data.json')
     .then((data) => function(){response.json()})
     .then(console.log(data));
     */
     fetch(
         "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json" +
-        "?id=" +
-        new Date().getTime()
+            "?id=" +
+            new Date().getTime()
     )
         .then((response) => response.json())
         .then((data) => {
@@ -351,7 +384,9 @@ async function ready() {
             console.log(data);
             generateSidebar(sidebarDates);
         });
-    setTimeout(() => {showPage();}, 100);
+    setTimeout(() => {
+        showPage();
+    }, 100);
 }
 
 var data = null;

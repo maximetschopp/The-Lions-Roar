@@ -67,12 +67,10 @@ h2{
 }
 #logo:hover + #logoBg{
     border: 1px solid black;
-    transform: translate(-50%, -7%) scale(1.05);
     transition: all 1s ease-in-out;
 }
 #logoBg:hover{
     border: 1px solid black;
-    transform: translate(-50%, -7%) scale(1.05);
     transition: all 1s ease-in-out;
 }
 .logoBgHidden{

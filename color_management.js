@@ -7,6 +7,7 @@ if (colortype == null) {
 // Swiss national day
 // Chinese new year
 // halloween
+// saint patricks day
 
 console.log(colortype);
 document.addEventListener("DOMContentLoaded", function () {

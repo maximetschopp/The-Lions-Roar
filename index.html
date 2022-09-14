@@ -6,6 +6,13 @@
     <head>
         <meta charset="utf-8" />
         <title>The Lions Roar</title>
+        <script>
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("backgroundLoaderThing").style.display = "none";
+                document.getElementsByTagName("body")[0].style.overflow="auto";
+            }
+        </script>
         <script src="mobile_detec.js"></script>
         <script>
             if (mobileAndTabletCheck()){
@@ -22,7 +29,7 @@
         <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
         
         </head>
-    <body>
+    <body onload="ready()">
 
         <div id="splash-section">
             <img class = "bgshape_left" src = "resources/Organic Shapes/bgshape_left1.svg" alt="">
@@ -39,6 +46,8 @@
         <div id = "spacer"></div>
 
         <div id = "sidebar"></div>
-
+        
+        <div style="position:absolute; background-color:#ffffff; width: 100vw; height: 100vh; z-index: 10000; top: 0; left: 0;" id="backgroundLoaderThing"></div>
+        <div id="loader" style="z-index: 100000;"></div>
     </body>
 </html>

@@ -249,6 +249,9 @@ function generateSidebar(dates) {
     let lastMonth = null;
     let thisYear = null;
     let thisMonth = null;
+    let topYear = null;
+    let topMonth = null;
+    let topWeek = null;
     yearKeys = Object.keys(dates);
     yearKeys.reverse().forEach(year => {
         monthKeys = Object.keys(dates[year]);
@@ -272,6 +275,11 @@ function generateSidebar(dates) {
                     element.onclick = function(year, month, week){expandSidebarItem(year, month, week);}.bind(this, year, month, week);
                     thisMonth = element;
                 }
+                if (topYear == null) {
+                    topYear = year;
+                    topMonth = month;
+                    topWeek = week;
+                }
                 var element = document.createElement("div");
                 element.classList.add("sidebar-week");
                 element.innerHTML = "Week "+week;
@@ -288,7 +296,7 @@ function generateSidebar(dates) {
             });
         });
     });
-
+    expandSidebarItem(topYear, topMonth, topWeek);
     // the link to the previous website
     var before2022div = document.createElement('div');
     before2022div.innerText = "<2022";
@@ -301,6 +309,7 @@ function generateSidebar(dates) {
 
 
 async function ready() {
+    document.getElementsByTagName("body")[0].style.overflow="hidden";
     /*const response = fetch('./data.json')
     .then((data) => function(){response.json()})
     .then(console.log(data));
@@ -342,9 +351,8 @@ async function ready() {
             console.log(data);
             generateSidebar(sidebarDates);
         });
+    setTimeout(() => {showPage();}, 100);
 }
 
 var data = null;
 var sidebarDates = {};
-
-document.addEventListener("DOMContentLoaded", ready);

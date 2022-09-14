@@ -15,21 +15,50 @@ window.addEventListener("scroll", (e) => {
     updateExpanded();
 });
 
+function lerp(a, b, p) {
+    return a * (1 - p) + b * p;
+}
+
+function scale(min_in, max_in, min_out, max_out, value) {
+    return Math.max(
+        min_out,
+        Math.min(
+            max_out,
+            ((value - min_in) / (max_in - min_in)) * (max_out - min_out) +
+                min_out
+        )
+    );
+}
+
 function updateExpanded() {
     // toggle Logo & bg
-    var minimizePercent = 0.11; // percent to scroll until logo minimizes
 
-    if (expanded + scroll / (window.innerHeight * minimizePercent) < 1) {
-        var logo = document.getElementById("logo");
-        logo.classList.remove("logoMinimized");
-        var logoBg = document.getElementById("logoBg");
-        logoBg.classList.add("logoBgHidden");
-    } else {
-        var logo = document.getElementById("logo");
-        logo.classList.add("logoMinimized");
-        var logoBg = document.getElementById("logoBg");
+    var logo = document.getElementById("logo");
+    var logoBg = document.getElementById("logoBg");
+    logo.style.top =
+        lerp(11, 2, scale(0, window.innerHeight * 0.3, 0, 1, scroll)) + "%";
+    logo.style.width =
+        lerp(80, 30, scale(0, window.innerHeight * 0.3, 0, 1, scroll)) + "vh";
+
+    if (scroll >= window.innerHeight * 0.3) {
         logoBg.classList.remove("logoBgHidden");
+    } else {
+        logoBg.classList.add("logoBgHidden");
     }
+
+    // var minimizePercent = 0.11; // percent to scroll until logo minimizes
+
+    // if (expanded + scroll / (window.innerHeight * minimizePercent) < 1) {
+    //     var logo = document.getElementById("logo");
+    //     logo.classList.remove("logoMinimized");
+    //     var logoBg = document.getElementById("logoBg");
+    //     logoBg.classList.add("logoBgHidden");
+    // } else {
+    //     var logo = document.getElementById("logo");
+    //     logo.classList.add("logoMinimized");
+    //     var logoBg = document.getElementById("logoBg");
+    //     logoBg.classList.remove("logoBgHidden");
+    // }
 }
 
 function toggleExpandArticle(button) {

@@ -40,15 +40,15 @@ h2{
     left: 50%;
     transform: translate(-50%, 0%); 
     z-index: 999;
+    min-width: 0px !important;
     /*
     position: absolute;
     */
-    transition: all 0.15s ease-in-out;
+    /*transition: all 0.15s ease-in-out;*/
 }
 .logoMinimized{
     top: 2% !important;
     width: 30vh !important;
-    min-width: 0px !important;
     transition: all 0.15s ease-in-out;
 }
 #logoBg{

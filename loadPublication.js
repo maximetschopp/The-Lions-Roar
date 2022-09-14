@@ -20,6 +20,14 @@ function addPublication(publication) {
 
     // Create publication container
     var publicationContainer = document.createElement("div");
+    publicationContainer.classList.add(
+        "pub-containter_identifier-" +
+            publication["year"] +
+            "-" +
+            publication["month"] +
+            "-" +
+            publication["week"]
+    );
     publicationContainer.classList.add("publication-container");
     // publication release delay is quite broken, I'll get to it later.
     // if (publication["release_timestamp"] > Date.now()) {
@@ -266,7 +274,6 @@ var months = [
 
 function generateSidebar(dates) {
     var sidebarObj = document.getElementById("sidebar");
-    console.log(dates);
     let lastYear = null;
     let lastMonth = null;
     let thisYear = null;
@@ -286,7 +293,7 @@ function generateSidebar(dates) {
                     sidebarObj.appendChild(element);
                     lastYear = year;
                     element.onclick = function (year, month, week) {
-                        expandSidebarItem(year, month, week);
+                        expandSidebarItem(year, month, week, true);
                     }.bind(this, year, month, week);
                     thisYear = element;
                 }
@@ -297,7 +304,7 @@ function generateSidebar(dates) {
                     sidebarObj.appendChild(element);
                     lastMonth = month;
                     element.onclick = function (year, month, week) {
-                        expandSidebarItem(year, month, week);
+                        expandSidebarItem(year, month, week, true);
                     }.bind(this, year, month, week);
                     thisMonth = element;
                 }
@@ -311,7 +318,7 @@ function generateSidebar(dates) {
                 element.innerHTML = "Week " + week;
                 sidebarObj.appendChild(element);
                 element.onclick = function (year, month, week) {
-                    expandSidebarItem(year, month, week);
+                    expandSidebarItem(year, month, week, true);
                 }.bind(this, year, month, week);
                 thisYear.classList.add(
                     "sidebar-cd-" + year + "_" + month + "_" + week
@@ -330,7 +337,7 @@ function generateSidebar(dates) {
             });
         });
     });
-    expandSidebarItem(topYear, topMonth, topWeek);
+    expandSidebarItem(topYear, topMonth, topWeek, false);
     // the link to the previous website
     var before2022div = document.createElement("div");
     before2022div.innerText = "<2022";
@@ -380,8 +387,6 @@ async function ready() {
                 }
                 sidebarDates[year][month].push(week);
             }
-            console.log("data");
-            console.log(data);
             generateSidebar(sidebarDates);
         });
     setTimeout(() => {

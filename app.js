@@ -1,9 +1,7 @@
 // Made by Maxime Tschopp && Nikita Lurye
 
 document.addEventListener("DOMContentLoaded", ready);
-function ready() {
-    console.log("DOMContentLoaded");
-}
+function ready() {}
 
 var expanded = 0;
 var scroll = 0;
@@ -90,9 +88,6 @@ function updateExpanded() {
 }
 
 function toggleExpandArticle(button) {
-    console.log("expanding article");
-    console.log(button);
-
     // replace button text
     if (button.innerHTML != "Hide Extras") {
         button.innerHTML = "Hide Extras";
@@ -120,7 +115,7 @@ function toggleExpandArticle(button) {
     extraArticlesGrid.classList.toggle("extra-articles-grid-shown");
 }
 
-function expandSidebarItem(year, month, week) {
+function expandSidebarItem(year, month, week, need_scroll) {
     collapseAll();
     var elements = document.getElementsByClassName(
         "sidebar-cd-" + year + "_" + month + "_" + week
@@ -139,6 +134,12 @@ function expandSidebarItem(year, month, week) {
     Array.prototype.slice.call(elements).forEach((element) => {
         element.classList.remove("hidden");
     });
+    if (need_scroll) {
+        var scroll_to = document.getElementsByClassName(
+            "pub-containter_identifier-" + year + "-" + month + "-" + week
+        )[0];
+        scroll_to.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 }
 
 function collapseAll() {

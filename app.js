@@ -139,29 +139,30 @@ function toggleExpandArticle(button) {
 }
 
 function expandSidebarItem(year, month, week, need_scroll) {
-    collapseAll();
-    var elements = document.getElementsByClassName(
-        "sidebar-cd-" + year + "_" + month + "_" + week
-    );
-    Array.prototype.slice.call(elements).forEach((element) => {
-        element.classList.remove("hidden");
-        element.classList.add("sidebar-bold");
-    });
-    var elements = document.getElementsByClassName(
-        "sidebar-cd-" + year + "_" + month
-    );
-    Array.prototype.slice.call(elements).forEach((element) => {
-        element.classList.remove("hidden");
-    });
-    var elements = document.getElementsByClassName("sidebar-cd-" + year);
-    Array.prototype.slice.call(elements).forEach((element) => {
-        element.classList.remove("hidden");
-    });
     if (need_scroll) {
         var scroll_to = document.getElementsByClassName(
             "pub-containter_identifier-" + year + "-" + month + "-" + week
         )[0];
         scroll_to.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+        collapseAll();
+        var elements = document.getElementsByClassName(
+            "sidebar-cd-" + year + "_" + month + "_" + week
+        );
+        Array.prototype.slice.call(elements).forEach((element) => {
+            element.classList.remove("hidden");
+            element.classList.add("sidebar-bold");
+        });
+        var elements = document.getElementsByClassName(
+            "sidebar-cd-" + year + "_" + month
+        );
+        Array.prototype.slice.call(elements).forEach((element) => {
+            element.classList.remove("hidden");
+        });
+        var elements = document.getElementsByClassName("sidebar-cd-" + year);
+        Array.prototype.slice.call(elements).forEach((element) => {
+            element.classList.remove("hidden");
+        });
     }
 }
 

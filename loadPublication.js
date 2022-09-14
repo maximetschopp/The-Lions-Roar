@@ -19,13 +19,14 @@ function addPublication(publication) {
     // Create publication container
     var publicationContainer = document.createElement("div");
     publicationContainer.classList.add("publication-container");
-    if (publication["release_timestamp"] > Date.now()) {
-        publicationContainer.classList.add("hidden");
-        console.log(publication);
-        setTimeout((publicationContainer) => {
-            publicationContainer.classList.remove("hidden");
-        }, publication["release_timestamp"] - Date.now());
-    }
+    // publication release delay is quite broken, I'll get to it later.
+    // if (publication["release_timestamp"] > Date.now()) {
+    //     publicationContainer.classList.add("hidden");
+    //     console.log(publication);
+    //     setTimeout((publicationContainer) => {
+    //         publicationContainer.classList.remove("hidden");
+    //     }, publication["release_timestamp"] - Date.now());
+    // }
 
     // Create PUBLICATION GRID / MAIN ARTICLE
     var publicationGrid = generateMainArticle(

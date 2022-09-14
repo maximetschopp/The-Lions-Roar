@@ -44,10 +44,29 @@ function updateExpanded() {
     var logo = document.getElementById("logo");
     var logoBg = document.getElementById("logoBg");
     logo.style.top =
-        lerp(11, 2, scale(0, window.innerHeight * 0.3, 0, 1, useScroll)) + "%";
+        lerp(
+            11,
+            2,
+            scale(
+                window.innerHeight * 0.1,
+                window.innerHeight * 0.3,
+                0,
+                1,
+                useScroll
+            )
+        ) + "%";
     logo.style.width =
-        lerp(80, 30, scale(0, window.innerHeight * 0.3, 0, 1, useScroll)) +
-        "vh";
+        lerp(
+            80,
+            30,
+            scale(
+                window.innerHeight * 0.1,
+                window.innerHeight * 0.3,
+                0,
+                1,
+                useScroll
+            )
+        ) + "vh";
 
     if (useScroll >= window.innerHeight * 0.3) {
         logoBg.classList.remove("logoBgHidden");

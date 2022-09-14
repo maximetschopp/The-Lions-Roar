@@ -1,0 +1,60 @@
+body{
+    background-color: white;
+    margin: 0;
+    top: 0;
+
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(1.425vh + 12px - 6px);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+* {
+    user-select: none;
+}
+
+h1{
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: calc(3.2vh + 37px - 25.65px);
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+    text-align: center;
+}
+h2{
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: calc(1.9vh + 16px - 9px);
+
+}
+#topSpacer{
+    width: 100%;
+    height: 5vh;
+}
+#selectPublication{
+    display: block;
+    position: relative;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: calc(3.2vh + 37px - 25.65px);
+    margin: auto auto auto auto;
+    text-align: center;
+    border: none;
+}
+#Spacer2{
+    width: 100%;
+    height: 2vh;
+}
+
+#mainArticleContainer{
+    width: 85%;
+    aspect-ratio: 16/9;
+    margin: auto auto auto auto;
+    max-height: 40vh;
+}

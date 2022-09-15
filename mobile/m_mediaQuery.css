@@ -30,5 +30,6 @@
         grid-template-columns: auto minmax(100px, 40%);
         width: 94%;
         margin: 0 auto 0 auto;
+        gap: 2vw;
     }
   }

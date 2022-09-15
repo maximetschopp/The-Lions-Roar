@@ -2,19 +2,34 @@
 /* at >1 : 1 tablet "youtube view" */
 
 @media (max-aspect-ratio: 1/1) {
+    *{
+        --border-radius: 5vw !important;
+    }
     body {
-      background: #9af !important; /* blue */
+      /*background: #9af !important; /* blue */
     }
     #layoutGrid{
         grid-template-rows: auto auto;
     }
+    #mainArticleContainer{
+        max-width: 85%;
+    }
+    #extraArticlesContainer{
+        max-width: 85%;
+    }
   }
 
 @media (min-aspect-ratio: 1/1) {
+    *{
+        --border-radius: 2vw !important;
+    }
     body {
-      background: #f05 !important; /* blue */
+      /*background: #f05 !important; /* blue */
     }
     #layoutGrid{
-        grid-template-columns: auto auto;
+        grid-template-columns: auto minmax(100px, 40%);
+        width: 94%;
+        margin: 0 auto 0 auto;
+        gap: 2vw;
     }
   }

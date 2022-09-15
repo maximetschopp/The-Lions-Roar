@@ -1,3 +1,15 @@
+* {
+    --position: relative;
+    --background-color: #262626;
+    --border-radius: 1vw; /*20 px orignally*/
+    --background-position: left;
+    --background-repeat: no-repeat;
+    --width: 100%;
+    --aspect-ratio: 16/9;
+    --margin: auto;
+    --overflow: hidden;
+}
+
 h3{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
@@ -14,7 +26,8 @@ h4{
     font-size: calc(1.1vh + 15px - 9px);
     margin: 0;
     text-align: left;
-}h5{
+}
+h5{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -46,16 +59,16 @@ h4{
     transform: translate(-50%, -50%);
 }
 .video-icon-container{
-    position: relative;
-    background: #262626;
-    background-position: left;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    width: 100%;
+    position: var(--position);
+    background: var(--background-color);
+    background-position: var(--background-position);
+    background-repeat: var(--background-repeat);
+    border-radius: var(--border-radius);
+    width: var(--width);
     /*height: 100%;*/
-    aspect-ratio: 16/9;
-    margin: auto;
-    overflow: hidden;
+    aspect-ratio: var(--aspect-ratio);
+    margin: var(--margin);
+    overflow: var(--overflow);
 }
 .video-icon-container:hover{
     box-sizing: border-box;
@@ -67,16 +80,16 @@ h4{
     transition: all 0.075s ease-in;
 }
 .image-icon-container{
-    position: relative;
-    background: #262626;
-    background-position: left;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    width: 100%;
+    position: var(--position);
+    background: var(--background-color);
+    background-position: var(--background-position);
+    background-repeat: var(--background-repeat);
+    border-radius: var(--border-radius);
+    width: var(--width);
     /*height: 100%;*/
-    aspect-ratio: 16/9;
-    margin: auto;
-    overflow: hidden;
+    aspect-ratio: var(--aspect-ratio);
+    margin: var(--margin);
+    overflow: var(--overflow);
 }
 .image-icon-container:hover{
     box-sizing: border-box;
@@ -88,16 +101,16 @@ h4{
     transition: all 0.075s ease-in;
 }
 .audio-icon-container{
-    position: relative;
-    background: #262626;
-    background-position: left;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    width: 100%;
+    position: var(--position);
+    background: var(--background-color);
+    background-position: var(--background-position);
+    background-repeat: var(--background-repeat);
+    border-radius: var(--border-radius);
+    width: var(--width);
     /*height: 100%;*/
-    aspect-ratio: 16/9;
-    margin: auto;
-    overflow: hidden;
+    aspect-ratio: var(--aspect-ratio);
+    margin: var(--margin);
+    overflow: var(--overflow);
 }
 .audio-icon-container:hover{
     box-sizing: border-box;
@@ -110,16 +123,16 @@ h4{
 }
 
 .text-icon-container{
-    position: relative;
-    background: #262626;
-    background-position: left;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    width: 100%;
+    position: var(--position);
+    background: var(--background-color);
+    background-position: var(--background-position);
+    background-repeat: var(--background-repeat);
+    border-radius: var(--border-radius);
+    width: var(--width);
     /*height: 100%;*/
-    aspect-ratio: 16/9;
-    margin: auto;
-    overflow: hidden;
+    aspect-ratio: var(--aspect-ratio);
+    margin: var(--margin);
+    overflow: var(--overflow);
 }
 .text-icon-container:hover{
     box-sizing: border-box;
@@ -131,16 +144,16 @@ h4{
     transition: all 0.075s ease-in;
 }
 .link-icon-container{
-    position: relative;
-    background: #262626;
-    background-position: left;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    width: 100%;
+    position: var(--position);
+    background: var(--background-color);
+    background-position: var(--background-position);
+    background-repeat: var(--background-repeat);
+    border-radius: var(--border-radius);
+    width: var(--width);
     /*height: 100%;*/
-    aspect-ratio: 16/9;
-    margin: auto;
-    overflow: hidden;
+    aspect-ratio: var(--aspect-ratio);
+    margin: var(--margin);
+    overflow: var(--overflow);
 }
 .link-icon-container:hover{
     box-sizing: border-box;

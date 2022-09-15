@@ -57,14 +57,14 @@ h2{
 }
 
 #mainArticleContainer{
-    width: 85%;
+    width: 100%;
     aspect-ratio: 16/9;
     margin: auto auto auto auto;
     max-height: 40vh;
 }
 #extraArticlesContainer{
     /*background-color: wheat;*/
-    width: 85%;
+    width: 100%;
     margin: auto;
 }
 .extra-article{

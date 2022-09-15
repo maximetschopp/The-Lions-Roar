@@ -8,6 +8,12 @@
     #layoutGrid{
         grid-template-rows: auto auto;
     }
+    #mainArticleContainer{
+        max-width: 85%;
+    }
+    #extraArticlesContainer{
+        max-width: 85%;
+    }
   }
 
 @media (min-aspect-ratio: 1/1) {
@@ -15,6 +21,8 @@
       /*background: #f05 !important; /* blue */
     }
     #layoutGrid{
-        grid-template-columns: auto auto;
+        grid-template-columns: auto minmax(100px, 40%);
+        width: 94%;
+        margin: 0 auto 0 auto;
     }
   }

@@ -1,3 +1,7 @@
+* {
+    --border-radius: 1vw; /*20 px default*/
+}
+
 h3{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
@@ -50,7 +54,7 @@ h4{
     background: #262626;
     background-position: left;
     background-repeat: no-repeat;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     width: 100%;
     /*height: 100%;*/
     aspect-ratio: 16/9;
@@ -71,7 +75,7 @@ h4{
     background: #262626;
     background-position: left;
     background-repeat: no-repeat;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     width: 100%;
     /*height: 100%;*/
     aspect-ratio: 16/9;
@@ -92,7 +96,7 @@ h4{
     background: #262626;
     background-position: left;
     background-repeat: no-repeat;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     width: 100%;
     /*height: 100%;*/
     aspect-ratio: 16/9;
@@ -114,7 +118,7 @@ h4{
     background: #262626;
     background-position: left;
     background-repeat: no-repeat;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     width: 100%;
     /*height: 100%;*/
     aspect-ratio: 16/9;
@@ -135,7 +139,7 @@ h4{
     background: #262626;
     background-position: left;
     background-repeat: no-repeat;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
     width: 100%;
     /*height: 100%;*/
     aspect-ratio: 16/9;

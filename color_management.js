@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sheet.innerHTML = "";
         sheet.innerHTML += "* {--main-bg-color: #65da91;}\n";
         sheet.innerHTML += "* {--main-text-color: #ffffff;}\n";
+        sheet.innerHTML += "#logo {filter: brightness(100000%)}\n";
         document.body.appendChild(sheet);
         //document.body.style.backgroundColor = "#65da91";
     }

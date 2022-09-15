@@ -2,6 +2,9 @@
 /* at >1 : 1 tablet "youtube view" */
 
 @media (max-aspect-ratio: 1/1) {
+    *{
+        --border-radius: 5vw !important;
+    }
     body {
       /*background: #9af !important; /* blue */
     }
@@ -17,6 +20,9 @@
   }
 
 @media (min-aspect-ratio: 1/1) {
+    *{
+        --border-radius: 2vw !important;
+    }
     body {
       /*background: #f05 !important; /* blue */
     }

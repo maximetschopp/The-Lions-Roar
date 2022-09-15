@@ -25,7 +25,6 @@ function ready() {
 }
 
 function loadPublication(publication) {
-
     console.log("hello");
 
     loadMainArticle();
@@ -53,7 +52,6 @@ function loadPublication(publication) {
         );
     }
 }
-
 
 function loadMainArticle(year, month, week) {
     var mainArticleContainer = document.getElementById("mainArticleContainer");

@@ -13,6 +13,8 @@
 @media (min-aspect-ratio: 1/1) {
     body {
       background: #f05 !important; /* blue */
-      grid-template-columns: auto auto;
+    }
+    #layoutGrid{
+        grid-template-columns: auto auto;
     }
   }

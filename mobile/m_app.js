@@ -1,8 +1,59 @@
 document.addEventListener("DOMContentLoaded", ready);
 function ready() {
     console.log("DOMContentLoaded");
-    loadMainArticle();
+
+    fetch(
+        "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json" +
+            "?id=" +
+            new Date().getTime()
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            //sort data by date
+            data.sort(function (a, b) {
+                return (
+                    b["year"] * 12 * 6 +
+                    b["month"] * 6 +
+                    b["week"] -
+                    a["year"] * 12 * 6 -
+                    a["month"] * 6 -
+                    a["week"]
+                );
+            });
+            loadPublication(data[0]);
+        });
 }
+
+function loadPublication(publication) {
+
+    console.log("hello");
+
+    loadMainArticle();
+
+    var extraArticlesGrid = document.getElementById("extraArticlesContainer");
+
+    for (
+        let numArticles = 0;
+        numArticles < publication["articles"].length;
+        numArticles++
+    ) {
+        /// GET THE NUMBER OF EXTRA ARTICLES
+        //title, author, date, url, type, thumbnail, tags
+        article = publication["articles"][numArticles];
+        extraArticlesGrid.appendChild(
+            generateArticle(
+                article["title"],
+                article["author"],
+                article["date"],
+                article["url"],
+                article["type"],
+                article["thumbnail"],
+                article["tags"]
+            )
+        );
+    }
+}
+
 
 function loadMainArticle(year, month, week) {
     var mainArticleContainer = document.getElementById("mainArticleContainer");
@@ -105,4 +156,40 @@ function generateArticleIcon(type, url, thumbnail) {
         return linkIcon;
     }
     console.warn(type + " article type is not supported");
+}
+
+function generateArticle(title, author, date, url, type, thumbnail, tags) {
+    var article = document.createElement("div");
+    article.classList.add("extra-article");
+    var articleGrid = document.createElement("div");
+    articleGrid.classList.add("extra-article-grid");
+    if (url != null) {
+        article.addEventListener(
+            "click",
+            function (url) {
+                window.open(url);
+            }.bind(this, url)
+        );
+    }
+    var icon = generateArticleIcon(type, url, thumbnail);
+    articleGrid.appendChild(icon);
+
+    //desc
+    var articleTitle = document.createElement("h3");
+    articleTitle.innerHTML = title;
+    var articleAuthor = document.createElement("h4");
+    articleAuthor.innerHTML = author;
+    var articleDate = document.createElement("h5");
+    articleDate.innerHTML = date;
+
+    var descriptionContainer = document.createElement("div");
+    descriptionContainer.appendChild(articleTitle);
+    descriptionContainer.appendChild(articleAuthor);
+    descriptionContainer.appendChild(articleDate);
+
+    articleGrid.appendChild(descriptionContainer);
+
+    article.appendChild(articleGrid);
+
+    return article;
 }

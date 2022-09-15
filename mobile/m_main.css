@@ -26,9 +26,11 @@ h1{
 }
 h2{
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-style: normal;
     font-size: calc(1.9vh + 16px - 9px);
+    margin-top: 4vh;
+    margin-bottom: 0;
 
 }
 #topSpacer{
@@ -60,8 +62,16 @@ h2{
     margin: auto auto auto auto;
     max-height: 40vh;
 }
-#extraArticleContainer{
-    width: 100px;
-    height: 100px;
-    background-color: wheat;
+#extraArticlesContainer{
+    /*background-color: wheat;*/
+    width: 85%;
+    margin: auto;
+}
+.extra-article{
+    margin: 10px;
+}
+.extra-article-grid{
+    display: grid;
+    gap: 2vh;
+    grid-template-columns: 42% auto;
 }

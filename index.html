@@ -18,7 +18,7 @@
             let queryString = window.location.search;
             let urlParams = new URLSearchParams(queryString);
             if (urlParams.get('force') != 'true'){
-                if (mobileAndTabletCheck()){
+                if (mobileCheck()){
                     window.location.href = "m";
                 } else {
                     if (IsSafari()){

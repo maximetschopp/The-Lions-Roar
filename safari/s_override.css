@@ -1,0 +1,16 @@
+#logoBg{
+    position: fixed;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -7%); 
+    z-index: 998;
+    width: 35vh;
+    aspect-ratio: 28/4.5;
+    border-radius: calc((35vh/40)*4);
+    background-color: var(--main-bg-color);
+    filter: drop-shadow(0 0 5px var(--main-bg-color));
+}
+
+h1{
+    font-size: calc(2.8vw + 30px - 25.65px);
+}

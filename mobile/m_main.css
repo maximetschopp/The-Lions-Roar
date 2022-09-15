@@ -41,7 +41,7 @@ h2{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: calc(3.2vh + 37px - 25.65px);
+    font-size: calc(3.2vw + 20px);
     margin: auto auto auto auto;
     text-align: center;
     border: none;
@@ -59,4 +59,9 @@ h2{
     aspect-ratio: 16/9;
     margin: auto auto auto auto;
     max-height: 40vh;
+}
+#extraArticleContainer{
+    width: 100px;
+    height: 100px;
+    background-color: wheat;
 }

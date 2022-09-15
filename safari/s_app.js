@@ -1,7 +1,17 @@
 // Made by Maxime Tschopp && Nikita Lurye
 
 document.addEventListener("DOMContentLoaded", ready);
-function ready() {}
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+function ready() {
+    document
+        .getElementById("logo")
+        .setAttribute(
+            "src",
+            "resources/TLR_Logo_svg_safari_" + (getRandomInt(2) + 1) + ".svg"
+        );
+}
 
 var expanded = 0;
 var scroll = 0;

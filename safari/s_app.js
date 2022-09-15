@@ -129,12 +129,7 @@ function toggleExpandArticle(button) {
         button.innerHTML = "Extras";
         expanded--;
     }
-    updateExpanded();
-    if (expanded > 0) {
-        document.getElementById("spacer").classList.add("spacerMinimized");
-    } else {
-        document.getElementById("spacer").classList.remove("spacerMinimized");
-    }
+    // updateExpanded();
     // toggle the grids
     var splashContainer = button.closest(".publication-container");
     splashContainer.classList.toggle("publication-container-expanded");

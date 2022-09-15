@@ -1,0 +1,18 @@
+/* at 1:1 mobile vertical stack */
+/* at >1 : 1 tablet "youtube view" */
+
+@media (max-aspect-ratio: 1/1) {
+    body {
+      background: #9af !important; /* blue */
+    }
+    #layoutGrid{
+        grid-template-columns: auto auto;
+    }
+  }
+
+@media (min-aspect-ratio: 1/1) {
+    body {
+      background: #f05 !important; /* blue */
+      grid-template-rows: auto auto;
+    }
+  }

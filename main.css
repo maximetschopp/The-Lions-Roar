@@ -273,7 +273,7 @@ h2{
 .sidebar-bold{
     font-weight: 600 !important;
     color: var(--main-text-color);
-    /*font-style: italic;*/
+    font-style: italic;
 }
 
 a{

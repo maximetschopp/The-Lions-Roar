@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
         <script src="mobile_detec.js"></script>
         <script>
             const queryString = window.location.search;
@@ -20,12 +21,9 @@
         <link rel="stylesheet" href="mobile/m_mediaQuery.css">
         <script src="mobile/m_app.js"></script>
     </head>
-    <body>
+    <body onload="ready()">
         <div id="topSpacer"></div>
-        <select id="selectPublication">
-            <option value="2022 9 2">2 September</option>
-            <option value="2022 9 9">9 September</option>
-            <option value="2022 9 16">16 September</option>
+        <select id="selectPublication" onchange="updatePublication()">
         </select>
         <div id="Spacer2"></div>
         <div id = "layoutGrid">

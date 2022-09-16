@@ -1,4 +1,18 @@
-document.addEventListener("DOMContentLoaded", ready);
+var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
+var publications = null;
 function ready() {
     console.log("DOMContentLoaded");
 
@@ -20,15 +34,35 @@ function ready() {
                     a["week"]
                 );
             });
-            loadPublication(data[0]);
+            for (let i = 0; i < data.length; i++) {
+                let option = document.createElement("option");
+                let pub = data[i];
+                option.innerText =
+                    pub["day"] +
+                    " " +
+                    months[pub["month"] - 1] +
+                    " " +
+                    pub["year"];
+                document
+                    .getElementById("selectPublication")
+                    .appendChild(option);
+            }
+            publications = data;
+            loadPublication(data[data.length - 1]);
+            document.getElementById("selectPublication").onchange = function (
+                e
+            ) {
+                unloadPublications();
+                var selectedOption = this[this.selectedIndex];
+                loadPublication(publications[selectedOption.index]);
+            };
         });
 }
 
 function loadPublication(publication) {
-
     console.log("hello");
 
-    loadMainArticle();
+    loadMainArticle(publication);
 
     var extraArticlesGrid = document.getElementById("extraArticlesContainer");
 
@@ -54,14 +88,10 @@ function loadPublication(publication) {
     }
 }
 
-
-function loadMainArticle(year, month, week) {
+function loadMainArticle(publication) {
     var mainArticleContainer = document.getElementById("mainArticleContainer");
     mainArticleContainer.appendChild(
-        generateArticleIcon(
-            "video",
-            "https://www.youtube.com/watch?v=b-_yIBuFXyM"
-        )
+        generateArticleIcon("video", publication["main_article_url"], null)
     );
 }
 
@@ -192,4 +222,15 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     article.appendChild(articleGrid);
 
     return article;
+}
+
+function unloadPublications() {
+    var extraArticlesGrid = document.getElementById("extraArticlesContainer");
+    while (extraArticlesGrid.firstChild) {
+        extraArticlesGrid.removeChild(extraArticlesGrid.firstChild);
+    }
+    var mainArticleContainer = document.getElementById("mainArticleContainer");
+    while (mainArticleContainer.firstChild) {
+        mainArticleContainer.removeChild(mainArticleContainer.firstChild);
+    }
 }

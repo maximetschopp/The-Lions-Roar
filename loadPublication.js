@@ -44,7 +44,7 @@ function addPublication(publication) {
     // Create PUBLICATION GRID / MAIN ARTICLE
     var publicationGrid = generateMainArticle(
         publication["main_article_title"],
-        publication["main_article_date"],
+        months[publication["month"] - 1] + " " + publication["day"],
         publication["main_article_url"],
         publication["main_article_type"],
         publication["main_article_thumbnail"],

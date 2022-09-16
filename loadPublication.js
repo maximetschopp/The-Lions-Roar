@@ -275,6 +275,10 @@ var months = [
     "December",
 ];
 
+var short_months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
 function generateSidebar(dates) {
     var sidebarObj = document.getElementById("sidebar_text_container");
     let lastYear = null;

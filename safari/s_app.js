@@ -5,12 +5,20 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 function ready() {
-    document
-        .getElementById("logo")
-        .setAttribute(
-            "src",
-            "resources/TLR_Logo_svg_safari_" + (getRandomInt(2) + 1) + ".svg"
-        );
+    if (Math.random() < 0.01) {
+        document
+            .getElementById("logo")
+            .setAttribute("src", "resources/TLR_Logo_svg_safari_3.svg");
+    } else {
+        document
+            .getElementById("logo")
+            .setAttribute(
+                "src",
+                "resources/TLR_Logo_svg_safari_" +
+                    (getRandomInt(2) + 1) +
+                    ".svg"
+            );
+    }
 }
 
 var expanded = 0;

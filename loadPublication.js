@@ -351,6 +351,12 @@ function generateSidebar(dates) {
     sidebarObj.appendChild(before2022div);
 }
 
+function generatePageBottom(){
+    var bottomDiv = document.createElement("div");
+    bottomDiv.classList.add("bottom-div");
+    document.body.appendChild(bottomDiv);
+}
+
 async function ready() {
     document.getElementsByTagName("body")[0].style.overflow = "hidden";
     /*const response = fetch('./data.json')
@@ -390,6 +396,7 @@ async function ready() {
                 }
                 sidebarDates[year][month].push(week);
             }
+            generatePageBottom();
             generateSidebar(sidebarDates);
         });
     setTimeout(() => {

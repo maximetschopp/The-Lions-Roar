@@ -1,7 +1,13 @@
 // Made by Maxime Tschopp && Nikita Lurye
 
 document.addEventListener("DOMContentLoaded", ready);
-function ready() {}
+function ready() {
+    if (Math.random() < 0.001) {
+        document
+            .getElementById("logo")
+            .setAttribute("src", "resources/TLR_Logo_svg_rawr.svg");
+    }
+}
 
 var expanded = 0;
 var scroll = 0;

@@ -25,6 +25,7 @@
     }
     body {
       /*background: #f05 !important; /* blue */
+      overflow-y: hidden !important;
     }
     #layoutGrid{
         grid-template-columns: auto minmax(100px, 40%);

@@ -32,4 +32,10 @@
         margin: 0 auto 0 auto;
         gap: 2vw;
     }
+    #topSpacer{
+      display: none;
+    }
+    #Spacer2{
+    }
+      
   }

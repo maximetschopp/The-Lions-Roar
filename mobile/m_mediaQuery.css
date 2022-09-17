@@ -29,7 +29,6 @@
     }
     body {
       /*background: #f05 !important; /* blue */
-      overflow-y: hidden;
     }
     #layoutGrid{
         grid-template-columns: auto minmax(100px, 40%);
@@ -55,12 +54,10 @@
     #extraArticlesContainer{
       margin-top: 0%;
       overflow-y: scroll !important;
+      height: 100%;
     }
     #extrasTxt{
       display: none;
-    }
-    body{
-      overflow-y: hidden;
     }
     #selectPublication{
         font-size: calc(1.6vw + 10px);

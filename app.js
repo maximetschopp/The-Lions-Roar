@@ -5,7 +5,7 @@ function ready() {
     if (Math.random() < 0.001) {
         document
             .getElementById("logo")
-            .setAttribute("src", "resources/TLR_Logo_svg_rawr.svg");
+            .setAttribute("src", "resources/Logos/TLR_Logo_svg_rawr.svg");
     }
 }
 
@@ -181,4 +181,10 @@ function collapseAll() {
         }
         elements[i].classList.add("hidden");
     }
+}
+
+function logoClicked(){
+    console.log("logoClicked");
+    //window.scrollTo(0,0);
+    window.scrollTo({top: 0, behavior: "smooth"});
 }

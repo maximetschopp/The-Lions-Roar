@@ -276,7 +276,18 @@ var months = [
 ];
 
 var short_months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
 ];
 
 function generateSidebar(dates) {
@@ -355,7 +366,7 @@ function generateSidebar(dates) {
     sidebarObj.appendChild(before2022div);
 }
 
-function generatePageBottom(){
+function generatePageBottom() {
     var bottomDiv = document.createElement("div");
     bottomDiv.classList.add("bottom-div");
     document.body.appendChild(bottomDiv);

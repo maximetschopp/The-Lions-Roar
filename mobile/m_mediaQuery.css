@@ -8,15 +8,19 @@
     body {
       /*background: #9af !important; /* blue */
     }
-    #layoutGrid{
-        grid-template-rows: auto auto;
+    #layoutGrid{  
+      grid-template-rows: auto auto;
     }
     #mainArticleContainer{
-        max-width: 85%;
+      max-width: 85%;
     }
     #extraArticlesContainer{
-        max-width: 85%;
+      max-width: 85%;
     }
+    #selectPublication{
+      max-width: 85%;
+      font-size: calc(3.2vw + 20px);
+  }
   }
 
 @media (min-aspect-ratio: 1/1) {
@@ -25,7 +29,7 @@
     }
     body {
       /*background: #f05 !important; /* blue */
-      overflow-y: hidden !important;
+      overflow-y: hidden;
     }
     #layoutGrid{
         grid-template-columns: auto minmax(100px, 40%);
@@ -50,6 +54,7 @@
     }
     #extraArticlesContainer{
       margin-top: 0%;
+      overflow-y: scroll !important;
     }
     #extrasTxt{
       display: none;

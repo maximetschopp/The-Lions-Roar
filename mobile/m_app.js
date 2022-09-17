@@ -226,8 +226,9 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
 
 function unloadPublications() {
     var extraArticlesGrid = document.getElementById("extraArticlesContainer");
-    while (extraArticlesGrid.firstChild) {
-        extraArticlesGrid.removeChild(extraArticlesGrid.firstChild);
+    // to prevent removing the extra text
+    while (extraArticlesGrid.children.length > 1) {
+        extraArticlesGrid.removeChild(extraArticlesGrid.children[1]);
     }
     var mainArticleContainer = document.getElementById("mainArticleContainer");
     while (mainArticleContainer.firstChild) {

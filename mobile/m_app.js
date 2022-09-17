@@ -28,15 +28,30 @@ function ready() {
                 return (
                     b["year"] * 12 * 6 +
                     b["month"] * 6 +
-                    b["week"] -
+                    b["day"] -
                     a["year"] * 12 * 6 -
                     a["month"] * 6 -
-                    a["week"]
+                    a["day"]
                 );
             });
             for (let i = 0; i < data.length; i++) {
-                let option = document.createElement("option");
                 let pub = data[i];
+                var dateObj = new Date();
+                var month = dateObj.getUTCMonth() + 1; //months from 1-12
+                var day = dateObj.getUTCDate();
+                var year = dateObj.getUTCFullYear();
+                if (
+                    !(
+                        pub["year"] < year ||
+                        (pub["year"] == year && pub["month"] < month) ||
+                        (pub["year"] == year &&
+                            pub["month"] == month &&
+                            pub["day"] <= day)
+                    )
+                ) {
+                    continue;
+                }
+                let option = document.createElement("option");
                 option.innerText =
                     pub["day"] +
                     " " +

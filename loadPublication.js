@@ -311,9 +311,6 @@ function generateSidebar(dates) {
     let lastMonth = null;
     let thisYear = null;
     let thisMonth = null;
-    let topYear = null;
-    let topMonth = null;
-    let topDay = null;
     yearKeys = Object.keys(dates);
     yearKeys.reverse().forEach((year) => {
         monthKeys = Object.keys(dates[year]);

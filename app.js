@@ -146,10 +146,14 @@ function toggleExpandArticle(button) {
 
 function expandSidebarItem(year, month, day, need_scroll) {
     if (need_scroll) {
-        var scroll_to = document.getElementsByClassName(
-            "pub-containter_identifier-" + year + "-" + month + "-" + day
-        )[0];
-        scroll_to.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (year == topYear && month == topMonth && day == topDay) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            var scroll_to = document.getElementsByClassName(
+                "pub-containter_identifier-" + year + "-" + month + "-" + day
+            )[0];
+            scroll_to.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
     } else {
         collapseAll();
         var elements = document.getElementsByClassName(
@@ -183,8 +187,8 @@ function collapseAll() {
     }
 }
 
-function logoClicked(){
+function logoClicked() {
     console.log("logoClicked");
     //window.scrollTo(0,0);
-    window.scrollTo({top: 0, behavior: "smooth"});
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }

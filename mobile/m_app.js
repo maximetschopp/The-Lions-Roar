@@ -13,6 +13,7 @@ var months = [
     "December",
 ];
 var publications = null;
+var using_pubs = [];
 function ready() {
     console.log("DOMContentLoaded");
 
@@ -54,6 +55,7 @@ function ready() {
                 ) {
                     continue;
                 }
+                using_pubs.push(pub);
                 let option = document.createElement("option");
                 option.innerText =
                     pub["day"] +
@@ -66,13 +68,13 @@ function ready() {
                     .appendChild(option);
             }
             publications = data;
-            loadPublication(data[data.length - 1]);
+            loadPublication(using_pubs[0]);
             document.getElementById("selectPublication").onchange = function (
                 e
             ) {
                 unloadPublications();
                 var selectedOption = this[this.selectedIndex];
-                loadPublication(publications[selectedOption.index]);
+                loadPublication(using_pubs[selectedOption.index]);
             };
         });
 }

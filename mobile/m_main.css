@@ -55,8 +55,8 @@ h2{
     height: 2vh;
 }
 #layoutGrid{
-    display: grid;  
-    height: 100%;
+    display: grid;
+    height: auto;
 }
 
 #mainArticleContainer{

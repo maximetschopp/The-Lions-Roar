@@ -36,6 +36,21 @@
       display: none;
     }
     #Spacer2{
+      display: none;
     }
-      
+    #tabletViewGrid{
+      display: grid;
+      grid-template-rows: auto auto;
+      height: 100%;
+      width: 100%;
+    }
+    #mainArticleContainer{
+      margin-top: 0%;
+    }
+    #extraArticlesContainer{
+      margin-top: 0%;
+    }
+    #extrasTxt{
+      display: none;
+    }
   }

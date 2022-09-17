@@ -260,7 +260,7 @@ h2{
     user-select: none;
     cursor: pointer;
 }
-.sidebar-week{
+.sidebar-day{
     position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;

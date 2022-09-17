@@ -35,8 +35,8 @@ window.addEventListener("scroll", (e) => {
     if (closest != null) {
         let year = closest.getAttribute("year");
         let month = closest.getAttribute("month");
-        let week = closest.getAttribute("week");
-        expandSidebarItem(year, month, week, false);
+        let day = closest.getAttribute("day");
+        expandSidebarItem(year, month, day, false);
     }
 });
 
@@ -144,16 +144,16 @@ function toggleExpandArticle(button) {
     extraArticlesGrid.classList.toggle("extra-articles-grid-shown");
 }
 
-function expandSidebarItem(year, month, week, need_scroll) {
+function expandSidebarItem(year, month, day, need_scroll) {
     if (need_scroll) {
         var scroll_to = document.getElementsByClassName(
-            "pub-containter_identifier-" + year + "-" + month + "-" + week
+            "pub-containter_identifier-" + year + "-" + month + "-" + day
         )[0];
         scroll_to.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
         collapseAll();
         var elements = document.getElementsByClassName(
-            "sidebar-cd-" + year + "_" + month + "_" + week
+            "sidebar-cd-" + year + "_" + month + "_" + day
         );
         Array.prototype.slice.call(elements).forEach((element) => {
             element.classList.remove("hidden");

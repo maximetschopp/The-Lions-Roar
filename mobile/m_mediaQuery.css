@@ -53,4 +53,10 @@
     #extrasTxt{
       display: none;
     }
+    body{
+      overflow-y: hidden;
+    }
+    #selectPublication{
+        font-size: calc(1.6vw + 10px);
+    }
   }

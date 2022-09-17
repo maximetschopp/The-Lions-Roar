@@ -36,6 +36,9 @@ function ready() {
             });
             for (let i = 0; i < data.length; i++) {
                 let pub = data[i];
+                if (!pub["enabled"]) {
+                    continue;
+                }
                 var dateObj = new Date();
                 var month = dateObj.getUTCMonth() + 1; //months from 1-12
                 var day = dateObj.getUTCDate();

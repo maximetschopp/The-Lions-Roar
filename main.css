@@ -130,11 +130,7 @@ h2{
     position: relative;
     height: 36vh;
     width: 76%;
-    /* margin: calc(50vh - (36vh /2)) auto auto auto; */
     margin: 5vh auto auto auto; 
-    /*padding-top: 50vh;
-    transform: translate(0, -20%);*/
-
     transition: all 0.15s ease-in-out;
 }
 .publication-container-expanded{

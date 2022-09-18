@@ -152,6 +152,11 @@ function generateArticleIcon(type, url, thumbnail) {
     } else if (type == "audio") {
         var audioIcon = document.createElement("div");
         audioIcon.classList.add("audio-icon-container");
+        var thumbnailImage = document.createElement("img");
+        thumbnailImage.classList.add("thumbnail");
+        thumbnailImage.src = thumbnail;
+
+        audioIcon.appendChild(thumbnailImage);
 
         var centeredIcon = document.createElement("img");
         centeredIcon.classList.add("centered-icon");
@@ -181,6 +186,11 @@ function generateArticleIcon(type, url, thumbnail) {
     else if (type == "link" || type == null) {
         var linkIcon = document.createElement("div");
         linkIcon.classList.add("link-icon-container");
+        var thumbnailImage = document.createElement("img");
+        thumbnailImage.classList.add("thumbnail");
+        thumbnailImage.src = thumbnail;
+
+        linkIcon.appendChild(thumbnailImage);
 
         var centeredIcon = document.createElement("img");
         centeredIcon.classList.add("centered-icon");

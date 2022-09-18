@@ -24,6 +24,7 @@ function addPublication(publication) {
     var day = dateObj.getUTCDate();
     var year = dateObj.getUTCFullYear();
     if (
+        !urlParams.get("seeall") &&
         !(
             publication["year"] < year ||
             (publication["year"] == year && publication["month"] < month) ||
@@ -331,6 +332,7 @@ function generateSidebar(dates) {
                 var c_day = dateObj.getUTCDate();
                 var c_year = dateObj.getUTCFullYear();
                 if (
+                    urlParams.get("seeall") ||
                     year < c_year ||
                     (year == c_year && month < c_month) ||
                     (year == c_year && month == c_month && day <= c_day)

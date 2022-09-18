@@ -59,7 +59,8 @@ h2{
 }
 
 #mainArticleContainer{
-    aspect-ratio: 16/9;
+    overflow: hidden;
+    aspect-ratio: auto 16/9;
     margin: auto auto auto auto;
 }
 #extraArticlesContainer{

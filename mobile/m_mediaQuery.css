@@ -12,7 +12,6 @@
       grid-template-rows: auto auto;
     }
     #mainArticleContainer{
-      max-height: 40vh;
       width: 100%;
       max-width: 85%;
     }

@@ -53,15 +53,14 @@ h2{
     height: 2vh;
 }
 #layoutGrid{
+    position: relative;
     display: grid;
     height: auto;
 }
 
 #mainArticleContainer{
-    width: 100%;
     aspect-ratio: 16/9;
     margin: auto auto auto auto;
-    max-height: 40vh;
 }
 #extraArticlesContainer{
     /*background-color: wheat;*/

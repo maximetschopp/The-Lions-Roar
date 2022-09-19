@@ -11,12 +11,12 @@
     }
 }
 
-@media only screen and (max-width: 960px){
+@media only screen and (max-width: 959px){
     .publication-container{
         min-width: 400px;
         min-height: 250px;
         width: calc(92% - 80px)!important;
-        margin: 5vh auto auto auto; 
+        margin: 5vh 0 auto auto; 
         padding-left: 80px !important;
         transition: all 0.15s ease-in-out;
     }

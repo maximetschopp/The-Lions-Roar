@@ -7,6 +7,11 @@
         <meta charset="utf-8" />
         <title>The Lions Roar</title>
         <script>
+            var topYear = null;
+            var topMonth = null;
+            var topDay = null;
+        </script>
+        <script>
             function showPage() {
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("backgroundLoaderThing").style.display = "none";
@@ -19,7 +24,7 @@
             let urlParams = new URLSearchParams(queryString);
             if (urlParams.get('force') != 'true'){
                 if (mobileCheck()){
-                    window.location.href = "./m";
+                    //window.location.href = "./m";
                 } else {
                     if (!IsSafari()){ 
                         window.location.href = "./";
@@ -47,7 +52,7 @@
             <img id="organic_shape_r3" class = "bgshape_right" src = "resources/Organic Shapes/bgshape_right3.svg" alt="">
         </div>
 
-        <img id = "logo" src = "resources/TLR_Logo_svg.svg" class="logoMinimized">
+        <img id = "logo" src = "resources/Logos/TLR_Logo_svg.svg" class="logoMinimized">
         <div id = "logoBg" class=""></div>
 
         <div id = "spacer" class="spacerMinimized"></div>

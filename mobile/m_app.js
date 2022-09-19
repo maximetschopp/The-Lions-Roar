@@ -13,6 +13,7 @@ var months = [
     "December",
 ];
 var publications = null;
+var using_pubs = [];
 function ready() {
     console.log("DOMContentLoaded");
 
@@ -28,15 +29,34 @@ function ready() {
                 return (
                     b["year"] * 12 * 6 +
                     b["month"] * 6 +
-                    b["week"] -
+                    b["day"] -
                     a["year"] * 12 * 6 -
                     a["month"] * 6 -
-                    a["week"]
+                    a["day"]
                 );
             });
             for (let i = 0; i < data.length; i++) {
-                let option = document.createElement("option");
                 let pub = data[i];
+                if (!pub["enabled"]) {
+                    continue;
+                }
+                var dateObj = new Date();
+                var month = dateObj.getUTCMonth() + 1; //months from 1-12
+                var day = dateObj.getUTCDate();
+                var year = dateObj.getUTCFullYear();
+                if (
+                    !(
+                        pub["year"] < year ||
+                        (pub["year"] == year && pub["month"] < month) ||
+                        (pub["year"] == year &&
+                            pub["month"] == month &&
+                            pub["day"] <= day)
+                    )
+                ) {
+                    continue;
+                }
+                using_pubs.push(pub);
+                let option = document.createElement("option");
                 option.innerText =
                     pub["day"] +
                     " " +
@@ -48,13 +68,13 @@ function ready() {
                     .appendChild(option);
             }
             publications = data;
-            loadPublication(data[data.length - 1]);
+            loadPublication(using_pubs[0]);
             document.getElementById("selectPublication").onchange = function (
                 e
             ) {
                 unloadPublications();
                 var selectedOption = this[this.selectedIndex];
-                loadPublication(publications[selectedOption.index]);
+                loadPublication(using_pubs[selectedOption.index]);
             };
         });
 }
@@ -226,8 +246,9 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
 
 function unloadPublications() {
     var extraArticlesGrid = document.getElementById("extraArticlesContainer");
-    while (extraArticlesGrid.firstChild) {
-        extraArticlesGrid.removeChild(extraArticlesGrid.firstChild);
+    // to prevent removing the extra text
+    while (extraArticlesGrid.children.length > 1) {
+        extraArticlesGrid.removeChild(extraArticlesGrid.children[1]);
     }
     var mainArticleContainer = document.getElementById("mainArticleContainer");
     while (mainArticleContainer.firstChild) {

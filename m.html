@@ -16,20 +16,22 @@
             }
         </script>
         <link rel="stylesheet" href="mobile/m_main.css" />
-        <link rel="stylesheet" href="article-icons.css" />
+        <link rel="stylesheet" href="mobile/m_article-icons.css" />
         <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css" />
         <link rel="stylesheet" href="mobile/m_mediaQuery.css">
         <script src="mobile/m_app.js"></script>
     </head>
     <body onload="ready()">
-        <div id="topSpacer"></div>
-        <select id="selectPublication" onchange="updatePublication()">
-        </select>
-        <div id="Spacer2"></div>
-        <div id = "layoutGrid">
-            <div id="mainArticleContainer"></div>
-            <div id="extraArticlesContainer">
-                <h2>Extras</h2>
+        <div id="tabletViewGrid">
+            <div id="topSpacer"></div>
+            <select id="selectPublication" onchange="updatePublication()">
+            </select>
+            <div id="Spacer2"></div>
+            <div id = "layoutGrid">
+                <div id="mainArticleContainer"></div>
+                <div id="extraArticlesContainer">
+                    <h2 id="extrasTxt">Extras</h2>
+                </div>
             </div>
         </div>
     </body>

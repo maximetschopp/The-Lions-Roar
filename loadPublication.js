@@ -19,6 +19,22 @@ function addPublication(publication) {
     //----------------------------------------------------------------
 
     // Create publication container
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+    if (
+        !urlParams.get("seeall") &&
+        !(
+            publication["year"] < year ||
+            (publication["year"] == year && publication["month"] < month) ||
+            (publication["year"] == year &&
+                publication["month"] == month &&
+                publication["day"] <= day)
+        )
+    ) {
+        return;
+    }
     var publicationContainer = document.createElement("div");
     publicationContainer.classList.add(
         "pub-containter_identifier-" +
@@ -26,11 +42,11 @@ function addPublication(publication) {
             "-" +
             publication["month"] +
             "-" +
-            publication["week"]
+            publication["day"]
     );
     publicationContainer.setAttribute("year", publication["year"]);
     publicationContainer.setAttribute("month", publication["month"]);
-    publicationContainer.setAttribute("week", publication["week"]);
+    publicationContainer.setAttribute("day", publication["day"]);
     publicationContainer.classList.add("publication-container");
     // publication release delay is quite broken, I'll get to it later.
     // if (publication["release_timestamp"] > Date.now()) {
@@ -137,6 +153,11 @@ function generateArticleIcon(type, url, thumbnail) {
     } else if (type == "audio") {
         var audioIcon = document.createElement("div");
         audioIcon.classList.add("audio-icon-container");
+        var thumbnailImage = document.createElement("img");
+        thumbnailImage.classList.add("thumbnail");
+        thumbnailImage.src = thumbnail;
+
+        audioIcon.appendChild(thumbnailImage);
 
         var centeredIcon = document.createElement("img");
         centeredIcon.classList.add("centered-icon");
@@ -166,6 +187,11 @@ function generateArticleIcon(type, url, thumbnail) {
     else if (type == "link" || type == null) {
         var linkIcon = document.createElement("div");
         linkIcon.classList.add("link-icon-container");
+        var thumbnailImage = document.createElement("img");
+        thumbnailImage.classList.add("thumbnail");
+        thumbnailImage.src = thumbnail;
+
+        linkIcon.appendChild(thumbnailImage);
 
         var centeredIcon = document.createElement("img");
         centeredIcon.classList.add("centered-icon");
@@ -276,7 +302,18 @@ var months = [
 ];
 
 var short_months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
 ];
 
 function generateSidebar(dates) {
@@ -285,66 +322,74 @@ function generateSidebar(dates) {
     let lastMonth = null;
     let thisYear = null;
     let thisMonth = null;
-    let topYear = null;
-    let topMonth = null;
-    let topWeek = null;
     yearKeys = Object.keys(dates);
     yearKeys.reverse().forEach((year) => {
         monthKeys = Object.keys(dates[year]);
         monthKeys.reverse().forEach((month) => {
-            dates[year][month].forEach((week) => {
-                if (year != lastYear) {
+            dates[year][month].forEach((day) => {
+                var dateObj = new Date();
+                var c_month = dateObj.getUTCMonth() + 1; //months from 1-12
+                var c_day = dateObj.getUTCDate();
+                var c_year = dateObj.getUTCFullYear();
+                if (
+                    urlParams.get("seeall") ||
+                    year < c_year ||
+                    (year == c_year && month < c_month) ||
+                    (year == c_year && month == c_month && day <= c_day)
+                ) {
+                    if (year != lastYear) {
+                        var element = document.createElement("div");
+                        element.classList.add("sidebar-year");
+                        element.innerHTML = year;
+                        sidebarObj.appendChild(element);
+                        lastYear = year;
+                        element.onclick = function (year, month, day) {
+                            expandSidebarItem(year, month, day, true);
+                        }.bind(this, year, month, day);
+                        thisYear = element;
+                    }
+                    if (month != lastMonth) {
+                        var element = document.createElement("div");
+                        element.classList.add("sidebar-month");
+                        element.innerHTML = months[month - 1];
+                        sidebarObj.appendChild(element);
+                        lastMonth = month;
+                        element.onclick = function (year, month, day) {
+                            expandSidebarItem(year, month, day, true);
+                        }.bind(this, year, month, day);
+                        thisMonth = element;
+                    }
+                    if (topYear == null) {
+                        topYear = year;
+                        topMonth = month;
+                        topDay = day;
+                    }
                     var element = document.createElement("div");
-                    element.classList.add("sidebar-year");
-                    element.innerHTML = year;
+                    element.classList.add("sidebar-day");
+                    element.innerHTML = short_months[month - 1] + " " + day;
                     sidebarObj.appendChild(element);
-                    lastYear = year;
-                    element.onclick = function (year, month, week) {
-                        expandSidebarItem(year, month, week, true);
-                    }.bind(this, year, month, week);
-                    thisYear = element;
+                    element.onclick = function (year, month, day) {
+                        expandSidebarItem(year, month, day, true);
+                    }.bind(this, year, month, day);
+                    thisYear.classList.add(
+                        "sidebar-cd-" + year + "_" + month + "_" + day
+                    );
+                    thisMonth.classList.add(
+                        "sidebar-cd-" + year + "_" + month + "_" + day
+                    );
+                    element.classList.add(
+                        "sidebar-cd-" + year + "_" + month + "_" + day
+                    );
+                    thisYear.classList.add("sidebar-cd-" + year + "_" + month);
+                    thisMonth.classList.add("sidebar-cd-" + year + "_" + month);
+                    element.classList.add("sidebar-cd-" + year + "_" + month);
+                    thisYear.classList.add("sidebar-cd-" + year);
+                    thisMonth.classList.add("sidebar-cd-" + year);
                 }
-                if (month != lastMonth) {
-                    var element = document.createElement("div");
-                    element.classList.add("sidebar-month");
-                    element.innerHTML = months[month - 1];
-                    sidebarObj.appendChild(element);
-                    lastMonth = month;
-                    element.onclick = function (year, month, week) {
-                        expandSidebarItem(year, month, week, true);
-                    }.bind(this, year, month, week);
-                    thisMonth = element;
-                }
-                if (topYear == null) {
-                    topYear = year;
-                    topMonth = month;
-                    topWeek = week;
-                }
-                var element = document.createElement("div");
-                element.classList.add("sidebar-week");
-                element.innerHTML = "Week " + week;
-                sidebarObj.appendChild(element);
-                element.onclick = function (year, month, week) {
-                    expandSidebarItem(year, month, week, true);
-                }.bind(this, year, month, week);
-                thisYear.classList.add(
-                    "sidebar-cd-" + year + "_" + month + "_" + week
-                );
-                thisMonth.classList.add(
-                    "sidebar-cd-" + year + "_" + month + "_" + week
-                );
-                element.classList.add(
-                    "sidebar-cd-" + year + "_" + month + "_" + week
-                );
-                thisYear.classList.add("sidebar-cd-" + year + "_" + month);
-                thisMonth.classList.add("sidebar-cd-" + year + "_" + month);
-                element.classList.add("sidebar-cd-" + year + "_" + month);
-                thisYear.classList.add("sidebar-cd-" + year);
-                thisMonth.classList.add("sidebar-cd-" + year);
             });
         });
     });
-    expandSidebarItem(topYear, topMonth, topWeek, false);
+    expandSidebarItem(topYear, topMonth, topDay, false);
     // the link to the previous website
     var before2022div = document.createElement("div");
     before2022div.innerText = "<2022";
@@ -353,6 +398,12 @@ function generateSidebar(dates) {
         window.open("https://lionsjournal.ch/", "_blank").focus();
     });
     sidebarObj.appendChild(before2022div);
+}
+
+function generatePageBottom() {
+    var bottomDiv = document.createElement("div");
+    bottomDiv.classList.add("bottom-div");
+    document.body.appendChild(bottomDiv);
 }
 
 async function ready() {
@@ -373,27 +424,31 @@ async function ready() {
                 return (
                     b["year"] * 12 * 6 +
                     b["month"] * 6 +
-                    b["week"] -
+                    b["day"] -
                     a["year"] * 12 * 6 -
                     a["month"] * 6 -
-                    a["week"]
+                    a["day"]
                 );
             });
             for (let i = 0; i < data.length; i++) {
+                if (!data[i]["enabled"]) {
+                    continue;
+                }
                 addPublication(data[i]);
 
                 // check for new date for the sidebarDates
                 year = data[i]["year"];
                 month = data[i]["month"];
-                week = data[i]["week"];
+                day = data[i]["day"];
                 if (!(year in sidebarDates)) {
                     sidebarDates[year] = {};
                 }
                 if (!(month in sidebarDates[year])) {
                     sidebarDates[year][month] = [];
                 }
-                sidebarDates[year][month].push(week);
+                sidebarDates[year][month].push(day);
             }
+            generatePageBottom();
             generateSidebar(sidebarDates);
         });
     

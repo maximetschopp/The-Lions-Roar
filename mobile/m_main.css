@@ -9,7 +9,6 @@ body{
     width: 100%;
     height: 100%;
     position: relative;
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
@@ -45,7 +44,6 @@ h2{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: calc(3.2vw + 20px);
     margin: auto auto auto auto;
     text-align: center;
     border: none;
@@ -55,20 +53,21 @@ h2{
     height: 2vh;
 }
 #layoutGrid{
-    display: grid;  
+    position: relative;
+    display: grid;
     height: auto;
 }
 
 #mainArticleContainer{
-    width: 100%;
-    aspect-ratio: 16/9;
+    overflow: hidden;
+    aspect-ratio: auto 16/9;
     margin: auto auto auto auto;
-    max-height: 40vh;
 }
 #extraArticlesContainer{
     /*background-color: wheat;*/
     width: 100%;
     margin: auto;
+    overflow-y: scroll !important;
 }
 .extra-article{
     margin: 10px;

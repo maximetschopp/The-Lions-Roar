@@ -130,11 +130,7 @@ h2{
     position: relative;
     height: 36vh;
     width: 76%;
-    /* margin: calc(50vh - (36vh /2)) auto auto auto; */
     margin: 5vh auto auto auto; 
-    /*padding-top: 50vh;
-    transform: translate(0, -20%);*/
-
     transition: all 0.15s ease-in-out;
 }
 .publication-container-expanded{
@@ -260,7 +256,7 @@ h2{
     user-select: none;
     cursor: pointer;
 }
-.sidebar-week{
+.sidebar-day{
     position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;
@@ -335,4 +331,10 @@ a{
   #myDiv {
     display: none;
     text-align: center;
+  }
+  .bottom-div{
+    display: block;
+    width: 100%;
+    height: 30vh;
+    margin: auto auto auto auto;
   }

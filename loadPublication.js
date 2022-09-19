@@ -396,9 +396,10 @@ async function ready() {
             }
             generateSidebar(sidebarDates);
         });
+    
     setTimeout(() => {
         showPage();
-    }, 100);
+    }, Math.random()*250+125);
 }
 
 var data = null;

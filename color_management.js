@@ -4,7 +4,6 @@ if (colortype == null) {
 }
 
 // Christmas
-// Swiss national day
 // Chinese new year
 // halloween
 // saint patricks day

@@ -1,0 +1,32 @@
+/*wider*/
+@media only screen and (min-width: 960px){
+    .publication-container{
+        min-width: 780px;
+        min-height: 250px;
+        max-width: 100vh;
+        transition: all 0.15s ease-in-out;
+    }
+    #logo{
+        min-width: 500px;
+    }
+}
+/*taller*/
+@media only screen and (max-width: 959px){
+    .publication-container{
+        min-width: 400px;
+        min-height: 250px;
+        width: calc(92% - 80px)!important;
+        margin: 5vh 0 auto auto; 
+        padding-left: 80px !important;
+        transition: all 0.15s ease-in-out;
+    }
+    #logo{
+        min-width: 500px;
+    }
+    h1{
+        font-size: calc(3.2vh + 37px - 25.65px) !important;
+    }
+    h2{
+        font-size: calc(2.35vw + 4px) !important;
+    }
+}

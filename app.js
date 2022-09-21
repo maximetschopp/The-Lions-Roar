@@ -5,7 +5,7 @@ function ready() {
     if (Math.random() < 0.001) {
         document
             .getElementById("logo")
-            .setAttribute("src", "resources/Logos/TLR_Logo_svg_rawr.svg");
+            .setAttribute("src", "resources/Logos/TLR_Logo_rawr.svg");
     }
 }
 

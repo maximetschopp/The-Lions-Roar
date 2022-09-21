@@ -3,10 +3,13 @@ if (colortype == null) {
     colortype = 0;
 }
 
-// Christmas
-// Chinese new year
-// halloween
-// saint patricks day
+
+// JAN - Chinese new year
+// FEB - Chinese new year
+// 17 MAR - st Patricks day
+// JUN - Pride Month
+// 31 OCT - Halloween (probably do the WHOLE month)
+// DEC - Christmas
 
 console.log(colortype);
 document.addEventListener("DOMContentLoaded", function () {

@@ -8,13 +8,13 @@ function ready() {
     if (Math.random() < 0.01) {
         document
             .getElementById("logo")
-            .setAttribute("src", "resources/Logos/TLR_Logo_svg_safari_3.svg");
+            .setAttribute("src", "resources/Logos/TLR_Logo_safari_3.svg");
     } else {
         document
             .getElementById("logo")
             .setAttribute(
                 "src",
-                "resources/Logos/TLR_Logo_svg_safari_" +
+                "resources/Logos/TLR_Logo_safari_" +
                     (getRandomInt(2) + 1) +
                     ".svg"
             );

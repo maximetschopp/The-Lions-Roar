@@ -71,6 +71,7 @@ function addPublication(publication) {
     // EXTRA ARTICLES contains a list of extra articles
     var extraArticlesGrid = document.createElement("div");
     extraArticlesGrid.className = "extra-articles-grid";
+    extraArticlesGrid.style.setProperty("grid-template-rows", "repeat(1fr, " + publication["articles"].length +")");
     for (
         let numArticles = 0;
         numArticles < publication["articles"].length;

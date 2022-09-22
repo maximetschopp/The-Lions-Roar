@@ -188,7 +188,6 @@ h2{
 
 .extra-articles-grid{
     display: none;
-    grid-template-rows: 1fr 1fr 1fr;
     gap: calc(0.5vh + 10px);
     width: 80%;
     height: auto;

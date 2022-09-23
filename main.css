@@ -51,7 +51,7 @@ h2{
     left: 50%;
     transform: translate(-50%, 0%); 
     z-index: 999;
-    width: min(80vh, 80vw);
+    /*width: min(80vh, 80vw);*/
     /*
     position: absolute;
     */

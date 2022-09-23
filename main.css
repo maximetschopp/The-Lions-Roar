@@ -34,6 +34,7 @@ h1{
     font-size: calc(3vh + 5.35px) !important;
     margin-top: 4vh;
     margin-bottom: 1vh;
+    white-space: nowrap;
 }
 h2{
     font-family: neue-haas-grotesk-display, sans-serif;

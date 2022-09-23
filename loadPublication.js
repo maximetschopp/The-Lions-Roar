@@ -172,8 +172,8 @@ function generateArticleIcon(type, url, thumbnail) {
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
         if (thumbnail == null) {
-            thumbnailImage.src =
-                "resources/default_thumbnails/text_thumbnail.png";
+            /*thumbnailImage.src =
+                "resources/default_thumbnails/text_thumbnail.png";*/
         } else {
             thumbnailImage.src = thumbnail;
         }

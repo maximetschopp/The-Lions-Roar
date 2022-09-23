@@ -31,7 +31,7 @@ h1{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: calc(3.2vh + 37px - 25.65px);
+    font-size: calc(3vh + 5.35px) !important;
     margin-top: 4vh;
     margin-bottom: 1vh;
 }
@@ -39,13 +39,13 @@ h2{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: calc(1.9vh + 16px - 9px);
-
+    font-size: calc(1.9vh + 7px);
 }
 
 
 #logo{
     width: 80vh;
+    min-width: 500px;
     height: auto;
     position: fixed;
     top: 11%;
@@ -128,7 +128,7 @@ h2{
 .publication-container{
     display: block;
     position: relative;
-    height: 36vh;
+    /*height: 36vh;*/
     width: 76%;
     margin: 5vh auto auto auto; 
     transition: all 0.15s ease-in-out;

@@ -1,8 +1,26 @@
 
 @media (max-aspect-ratio: 1/1) {
-    
+    h1{
+        font-size: max(16px, 3.5vw) !important;
+    }
+    h2{
+        font-size: max(10px, 1.8vw) !important;
+    }
+    .publication-container{
+        height: 20vh !important;
+        max-width: 100vh;
+    }
 }
 
 @media (min-aspect-ratio: 1/1) {
-    
+    h1{
+        font-size: max(27px, 2.3vw) !important;
+    }
+    h2{
+        font-size: max(16px, 1.4vw) !important;
+    }
+    .publication-container{
+        height: 36vh !important;
+        min-width: 780px;
+    }
 }

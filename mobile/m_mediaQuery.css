@@ -28,9 +28,6 @@
     *{
         --border-radius: 2vw !important;
     }
-    body {
-      /*background: #f05 !important; /* blue */
-    }
     #layoutGrid{
         position: relative;
         grid-template-columns: auto minmax(100px, 40%);

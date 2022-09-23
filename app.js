@@ -152,7 +152,15 @@ function expandSidebarItem(year, month, day, need_scroll) {
             var scroll_to = document.getElementsByClassName(
                 "pub-containter_identifier-" + year + "-" + month + "-" + day
             )[0];
-            scroll_to.scrollIntoView({ behavior: "smooth", block: "start" });
+            var box = scroll_to.getBoundingClientRect();
+            var body = document.body;
+            var docEl = document.documentElement;
+            var scrollTop =
+                window.pageYOffset || docEl.scrollTop || body.scrollTop;
+            var clientTop = docEl.clientTop || body.clientTop || 0;
+            var top = box.top + scrollTop - clientTop;
+            window.scrollTo({ top: top - 150, behavior: "smooth" });
+            // scroll_to.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     } else {
         collapseAll();

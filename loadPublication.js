@@ -71,7 +71,10 @@ function addPublication(publication) {
     // EXTRA ARTICLES contains a list of extra articles
     var extraArticlesGrid = document.createElement("div");
     extraArticlesGrid.className = "extra-articles-grid";
-    extraArticlesGrid.style.setProperty("grid-template-rows", "repeat(1fr, " + publication["articles"].length +")");
+    extraArticlesGrid.style.setProperty(
+        "grid-template-rows",
+        "repeat(1fr, " + publication["articles"].length + ")"
+    );
     for (
         let numArticles = 0;
         numArticles < publication["articles"].length;
@@ -120,9 +123,10 @@ function generateArticleIcon(type, url, thumbnail) {
         // checks if there is an alternative thumbnail available
         // if not, then gets the thumbnail from the video url (youtube servers)
         if (thumbnail == null) {
-            var youtube_video_id = url
-                .match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/)
-                .pop();
+            var youtube_video_id = url.match(
+                /youtube\.com.*(\?v=|\/embed\/)(.{11})/
+            );
+            youtube_video_id = youtube_video_id ? youtube_video_id.pop() : null;
             thumbnailImage.src =
                 "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
         } else {
@@ -452,10 +456,10 @@ async function ready() {
             generatePageBottom();
             generateSidebar(sidebarDates);
         });
-    
+
     setTimeout(() => {
         showPage();
-    }, Math.random()*250+125);
+    }, Math.random() * 250 + 125);
 }
 
 var data = null;

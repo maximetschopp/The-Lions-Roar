@@ -14,6 +14,18 @@
                     }
                 }
             }
+            let virtual_date = urlParams.get('vd');
+            if (virtual_date != null){
+                let date = virtual_date.split("-");
+                var dueYear = date[0];
+                var dueMonth = date[1];
+                var dueDay = date[2];
+            } else {
+                let date = new Date();
+                var dueYear = date.getFullYear();
+                var dueMonth = date.getMonth() + 1;
+                var dueDay = date.getDate();
+            }
         </script>
         <link rel="stylesheet" href="mobile/m_main.css" />
         <link rel="stylesheet" href="mobile/m_article-icons.css" />

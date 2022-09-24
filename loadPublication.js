@@ -19,10 +19,9 @@ function addPublication(publication) {
     //----------------------------------------------------------------
 
     // Create publication container
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    var day = dateObj.getUTCDate();
-    var year = dateObj.getUTCFullYear();
+    var month = dueMonth;
+    var day = dueDay;
+    var year = dueYear;
     if (
         !urlParams.get("seeall") &&
         !(
@@ -358,10 +357,9 @@ function generateSidebar(dates) {
         monthKeys = Object.keys(dates[year]);
         monthKeys.reverse().forEach((month) => {
             dates[year][month].forEach((day) => {
-                var dateObj = new Date();
-                var c_month = dateObj.getUTCMonth() + 1; //months from 1-12
-                var c_day = dateObj.getUTCDate();
-                var c_year = dateObj.getUTCFullYear();
+                var c_month = dueMonth;
+                var c_day = dueDay;
+                var c_year = dueYear;
                 if (
                     urlParams.get("seeall") ||
                     year < c_year ||

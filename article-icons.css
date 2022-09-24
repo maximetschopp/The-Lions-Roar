@@ -47,12 +47,16 @@ h6{
     text-align: center;
 }
 .tagContainer{
+    display: flex;
+    position: relative;
     width: 80%;
     height: auto;
     overflow-y: hidden;
     overflow-x: scroll;
     white-space: nowrap;
     margin: max(1px, 0.2vw) 0 max(1px, 0.2vw) 0;
+
+    -webkit-mask-image: -webkit-linear-gradient(0deg, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 98%);
 }
 .tagContainer::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */

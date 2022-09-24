@@ -2,6 +2,14 @@ var colortype = urlParams.get("colortype");
 if (colortype == null) {
     if (dueDay == 17 && dueMonth == 3) {
         colortype = 1; // St. Patrick's Day
+    } else if (dueMonth == 1 || dueMonth == 2) {
+        colortype = 2; // Chinese New Year
+    } else if (dueMonth == 6) {
+        colortype = 3; // Pride Month
+    } else if (dueDay > 28 && dueMonth == 10) {
+        colortype = 4; // Halloween
+    } else if (dueMonth == 12) {
+        colortype = 5; // Christmas
     } else {
         colortype = 0; // Default
     }
@@ -31,18 +39,18 @@ function stPatricksTheme() {
 
     var sheet = document.createElement("style");
     document.getElementById("organic_shape_l3").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_l2").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_l1").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_r3").style.filter =
         "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_r2").style.filter =
         "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_r1").style.filter =
         "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
-    
+
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #ffffff;}\n";
     sheet.innerHTML += "* {--logo-bg-color: #ffffff;}\n";

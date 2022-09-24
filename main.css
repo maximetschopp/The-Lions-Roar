@@ -41,6 +41,12 @@ h2{
     font-weight: 500;
     font-style: normal;
     font-size: calc(1.9vh + 7px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
 }
 
 

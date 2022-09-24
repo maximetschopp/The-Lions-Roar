@@ -1,8 +1,11 @@
 var colortype = urlParams.get("colortype");
 if (colortype == null) {
-    colortype = 0;
+    if (dueDay == 17 && dueMonth == 3) {
+        colortype = 1; // St. Patrick's Day
+    } else {
+        colortype = 0; // Default
+    }
 }
-
 
 // JAN - Chinese new year
 // FEB - Chinese new year
@@ -21,11 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-function clearThemes() {
+function clearThemes() {}
 
-}
-
-function stPatricksTheme(){
+function stPatricksTheme() {
     console.log("St. Patrick's Day");
     var sheet = document.createElement("style");
     document.getElementById("organic_shape_l3").style.filter =

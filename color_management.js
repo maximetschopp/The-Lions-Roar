@@ -25,11 +25,9 @@ if (colortype == null) {
 document.addEventListener("DOMContentLoaded", function () {
     if (colortype == 1) {
         stPatricksTheme();
-    }
-    else if (colortype == 2){
+    } else if (colortype == 2) {
         chineseNewYearTheme();
-    }
-    else if (colortype == 4){
+    } else if (colortype == 4) {
         halloweenTheme();
     }
 });
@@ -64,7 +62,7 @@ function stPatricksTheme() {
     document.body.appendChild(sheet);
 }
 
-function halloweenTheme(){
+function halloweenTheme() {
     console.log("Trick or Treat!");
 
     document.getElementById("logo").src = "resources/Logos/TLR_halloween.svg";
@@ -94,15 +92,16 @@ function halloweenTheme(){
     document.body.appendChild(sheet);
 }
 
-function chineseNewYearTheme(){
+function chineseNewYearTheme() {
     console.log("恭喜发财!");
     console.log("Happy Chinese New Year!");
 
-    document.getElementById("logo").src = "resources/Logos/TLR_st_patricks.svg";
+    document.getElementById("logo").src =
+        "resources/Logos/TLR_chinese_new_year.svg";
 
     var sheet = document.createElement("style");
     document.getElementById("organic_shape_l3").style.filter =
-        "brightness(100%) sepia(1) hue-rotate(-80deg) brightness(80%) saturate(100%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) saturate(10000%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_l2").style.filter =
         "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_l1").style.filter =

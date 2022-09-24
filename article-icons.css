@@ -49,10 +49,27 @@ h6{
 .tagContainer{
     width: 80%;
     height: auto;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin: max(1px, 0.2vw) 0 max(1px, 0.2vw) 0;
 }
+.tagContainer::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
 .tag{
-    border: 1px solid rgb(0, 0, 0);
+    display: inline-block;
+    font-size: max(9px, 0.8vw);
+    padding: max(2px, 0.2vw);
+    color: #949494;
+    border: 1px solid #949494;
     border-radius: 20px;
+    margin-right: max(1px, 0.2vw);
+}
+.description-container{
+    height: auto;
+    width: 100%;
+    margin-top: 0.5vw;
 }
 .thumbnail{
     position: absolute;

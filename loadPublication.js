@@ -268,24 +268,49 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     var icon = generateArticleIcon(type, url, thumbnail);
     articleGrid.appendChild(icon);
 
-    //desc
+    var descriptionContainer = document.createElement("div");
+    descriptionContainer.classList.add("description-container");
+
+    //title
     var articleTitle = document.createElement("h3");
     articleTitle.innerHTML = title;
+    descriptionContainer.appendChild(articleTitle);
+
+    //tags
+    if (tags != null) {
+        var tagContainer = generateTags(tags);
+        descriptionContainer.appendChild(tagContainer);
+    }
+
+    //author
     var articleAuthor = document.createElement("h4");
     articleAuthor.innerHTML = author;
+    descriptionContainer.appendChild(articleAuthor);
+
+    //date
     var articleDate = document.createElement("h5");
     articleDate.innerHTML = date;
-
-    var descriptionContainer = document.createElement("div");
-    descriptionContainer.appendChild(articleTitle);
-    descriptionContainer.appendChild(articleAuthor);
     descriptionContainer.appendChild(articleDate);
+
 
     articleGrid.appendChild(descriptionContainer);
 
     article.appendChild(articleGrid);
 
     return article;
+}
+
+function generateTags(tags){
+    var tagsContainer = document.createElement("div");
+    tagsContainer.classList.add("tagContainer");
+    for(let i = 0; i < tags.length; i++) {
+        var tag = document.createElement("div");
+        tag.classList.add("tag");
+        tag.innerHTML = tags[i];
+        tagsContainer.appendChild(tag);
+    }
+
+    return tagsContainer;
 }
 
 var yearKeys = null;
@@ -320,6 +345,7 @@ var short_months = [
     "Nov",
     "Dec",
 ];
+
 
 function generateSidebar(dates) {
     var sidebarObj = document.getElementById("sidebar_text_container");

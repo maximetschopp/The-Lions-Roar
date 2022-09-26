@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", ready);
 function ready() {
-    if (Math.random() < 0.001) {
+    if ((dueDay == 1 && dueMonth == 4) || Math.random() < 0.001) {
         document
             .getElementById("logo")
             .setAttribute("src", "resources/Logos/TLR_Logo_rawr.svg");

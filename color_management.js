@@ -8,7 +8,7 @@ if (colortype == null) {
         colortype = 3; // Pride Month
     } else if (dueDay > 10 && dueMonth == 10) {
         colortype = 4; // Halloween
-    } else if (dueMonth == 12) {
+    } else if (dueMonth == 12 && dueDay <= 25) {
         colortype = 5; // Christmas
     } else {
         colortype = 0; // Default

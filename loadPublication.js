@@ -362,7 +362,7 @@ function generateSidebar(dates) {
                 var c_year = dueYear;
                 if (
                     urlParams.get("seeall") ||
-                    year < c_year ||
+                    year <= c_year ||
                     (year == c_year && month < c_month) ||
                     (year == c_year && month == c_month && day <= c_day)
                 ) {

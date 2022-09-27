@@ -47,11 +47,11 @@ function stPatricksTheme() {
     document.getElementById("organic_shape_l1").style.filter =
         "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
     document.getElementById("organic_shape_r3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(rgba(0, 191, 105, 1) 0px 0px 50px)";
+    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(rgba(0, 191, 105, 1) 0px 0px 50px)";
     document.getElementById("organic_shape_r2").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
+    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
     document.getElementById("organic_shape_r1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
+    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
 
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #ffffff;}\n";
@@ -71,17 +71,17 @@ function halloweenTheme() {
 
     var sheet = document.createElement("style");
     document.getElementById("organic_shape_l3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(70%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(70%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
     document.getElementById("organic_shape_l2").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(90%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(90%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
     document.getElementById("organic_shape_l1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
     document.getElementById("organic_shape_r3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(70%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(70%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
     document.getElementById("organic_shape_r2").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(90%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(90%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
     document.getElementById("organic_shape_r1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
 
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #ffffff;}\n";
@@ -103,17 +103,17 @@ function chineseNewYearTheme() {
 
     var sheet = document.createElement("style");
     document.getElementById("organic_shape_l3").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(230, 230, 100, 1))";
     document.getElementById("organic_shape_l2").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(230, 230, 100, 0.79))";
     document.getElementById("organic_shape_l1").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) saturate(40%) brightness(150%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) saturate(50%) brightness(130%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
     document.getElementById("organic_shape_r3").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(230, 230, 100, 1))";
     document.getElementById("organic_shape_r2").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(230, 230, 100, 0.79))";
     document.getElementById("organic_shape_r1").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) saturate(40%) brightness(150%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) saturate(50%) brightness(130%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
 
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #fff;}\n";

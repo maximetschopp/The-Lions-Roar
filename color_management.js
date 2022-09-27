@@ -8,7 +8,7 @@ if (colortype == null) {
         colortype = 3; // Pride Month
     } else if (dueDay > 10 && dueMonth == 10) {
         colortype = 4; // Halloween
-    } else if (dueMonth == 12 && dueDay <= 25) {
+    } else if (dueMonth == 12 && dueDay <= 1) {
         colortype = 5; // Christmas
     } else {
         colortype = 0; // Default
@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
         chineseNewYearTheme();
     } else if (colortype == 4) {
         halloweenTheme();
+    } else if (colortype == 5) {
+        christmasTheme();
     }
 });
 
@@ -98,6 +100,37 @@ function chineseNewYearTheme() {
 
     document.getElementById("logo").src =
         "resources/Logos/TLR_chinese_new_year.svg";
+
+    var sheet = document.createElement("style");
+    document.getElementById("organic_shape_l3").style.filter =
+    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    document.getElementById("organic_shape_l2").style.filter =
+    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    document.getElementById("organic_shape_l1").style.filter =
+    "brightness(50%) sepia(1) saturate(10000%) brightness(90%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    document.getElementById("organic_shape_r3").style.filter =
+    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    document.getElementById("organic_shape_r2").style.filter =
+    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    document.getElementById("organic_shape_r1").style.filter =
+    "brightness(50%) sepia(1) saturate(10000%) brightness(90%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+
+    sheet.innerHTML = "";
+    sheet.innerHTML += "* {--main-bg-color: ##870000;}\n";
+    sheet.innerHTML += "* {--logo-bg-color: #ffffff;}\n";
+    sheet.innerHTML += "* {--drop-shadow-color: #f9ed78;}\n";
+    sheet.innerHTML += "* {--main-text-color: #000000;}\n";
+    sheet.innerHTML += "* {--secondary-text-color: #999999;}\n";
+    sheet.innerHTML += "* {--sidebar-text-color-highlighted: #ffffff;}\n";
+    sheet.innerHTML += "* {--sidebar-text-color: #e0e0e0;}\n";
+    document.body.appendChild(sheet);
+}
+
+function christmasTheme(){
+    console.log("Merry Christmas!");
+
+    document.getElementById("logo").src =
+        "resources/Logos/TLR_christmas.svg";
 
     var sheet = document.createElement("style");
     document.getElementById("organic_shape_l3").style.filter =

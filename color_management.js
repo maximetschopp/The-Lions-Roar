@@ -134,15 +134,15 @@ function christmasTheme(){
 
     var sheet = document.createElement("style");
     document.getElementById("organic_shape_l3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(255, 180, 180, 0.89))";
     document.getElementById("organic_shape_l2").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) saturate(32%) brightness(170%) drop-shadow(0 0 50px rgba(180, 255, 180, 0.29))";
     document.getElementById("organic_shape_l1").style.filter =
         "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
     document.getElementById("organic_shape_r3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(255, 180, 180, 0.89))";
     document.getElementById("organic_shape_r2").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
+    "brightness(50%) sepia(1) saturate(10000%) saturate(32%) brightness(170%) drop-shadow(0 0 50px rgba(180, 255, 180, 0.29))";
     document.getElementById("organic_shape_r1").style.filter =
         "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
 

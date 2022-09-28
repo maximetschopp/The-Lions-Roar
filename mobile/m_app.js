@@ -80,11 +80,13 @@ function ready() {
 }
 
 function loadPublication(publication) {
-    console.log("hello");
 
     loadMainArticle(publication);
 
     var extraArticlesGrid = document.getElementById("extraArticlesContainer");
+
+    var extrasTxt = document.getElementById("extrasTxt");
+    extrasTxt.style = "display: none !important";
 
     for (
         let numArticles = 0;
@@ -93,6 +95,7 @@ function loadPublication(publication) {
     ) {
         /// GET THE NUMBER OF EXTRA ARTICLES
         //title, author, date, url, type, thumbnail, tags
+        extrasTxt.style.display = "";
         article = publication["articles"][numArticles];
         extraArticlesGrid.appendChild(
             generateArticle(
@@ -134,9 +137,10 @@ function generateArticleIcon(type, url, thumbnail) {
         // checks if there is an alternative thumbnail available
         // if not, then gets the thumbnail from the video url (youtube servers)
         if (thumbnail == null) {
-            var youtube_video_id = url
-                .match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/)
-                .pop();
+            var youtube_video_id = url.match(
+                /youtube\.com.*(\?v=|\/embed\/)(.{11})/
+            );
+            youtube_video_id = youtube_video_id ? youtube_video_id.pop() : null;
             thumbnailImage.src =
                 "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
         } else {

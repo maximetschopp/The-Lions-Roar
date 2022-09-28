@@ -113,7 +113,7 @@ h2{
     left: 0;
     height: 100vh;
     width: auto;
-    filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.19));
+    filter: drop-shadow(0 0 50px var(--drop-shadow-color));
 }
 .bgshape_right {
     position: absolute;

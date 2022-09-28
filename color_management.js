@@ -39,19 +39,26 @@ function stPatricksTheme() {
 
     document.getElementById("logo").src = "resources/Logos/TLR_st_patricks.svg";
 
+    var lFill1 = "#09DC8A";  // Left Shape 1 Fill Color
+    var lDS1 = "#00e07b";    // Left Shape 1 Drop Shadow Color
+    var rFill1 = "#09DC8A";  // Right Shape 1 Fill Color
+    var rDS1 = "#00e07b";    // Right Shape 1 Drop Shadow Color
+
+    var lFill2 = "#11B772";  // Left Shape 2 Fill Color
+    var lDS2 = "#00ff8c";    // Left Shape 2 Drop Shadow Color
+    var rFill2 = "#11B772";  // Right Shape 2 Fill Color
+    var rDS2 = "#00ff8c";    // Right Shape 2 Drop Shadow Color
+
+    var lFill3 = "#27905F";  // Left Shape 3 Fill Color
+    var lDS3 = "#00e07b";    //     Left Shape 3 Drop Shadow Color
+    var rFill3 = "#27905F";  // Right Shape 3 Fill Color
+    var rDS3 = "#00e07b";    // Right Shape 3 Drop Shadow Color
+
+
+    setColors(lFill1, lDS1, lFill2, lDS2, lFill3, lDS3, rFill1, rDS1, rFill2, rDS2, rFill3, rDS3);
+
+
     var sheet = document.createElement("style");
-    document.getElementById("organic_shape_l3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(rgba(0, 191, 105, 1) 0px 0px 50px)";
-    document.getElementById("organic_shape_l2").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
-    document.getElementById("organic_shape_l1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
-    document.getElementById("organic_shape_r3").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(rgba(0, 191, 105, 1) 0px 0px 50px)";
-    document.getElementById("organic_shape_r2").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(100%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
-    document.getElementById("organic_shape_r1").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(rgba(0, 255, 140, 1) 0px 0px 50px)";
 
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #ffffff;}\n";
@@ -67,21 +74,28 @@ function stPatricksTheme() {
 function halloweenTheme() {
     console.log("Trick or Treat!");
 
+    // Change Logo
     document.getElementById("logo").src = "resources/Logos/TLR_halloween.svg";
 
+    var lFill1 = "#bdbdbd";  // Left Shape 1 Fill Color
+    var lDS1 = "#fff";    // Left Shape 1 Drop Shadow Color
+    var rFill1 = "#bdbdbd";  // Right Shape 1 Fill Color
+    var rDS1 = "#fff";    // Right Shape 1 Drop Shadow Color
+
+    var lFill2 = "#8f8f8f";  // Left Shape 2 Fill Color
+    var lDS2 = "#fff";    // Left Shape 2 Drop Shadow Color
+    var rFill2 = "#8f8f8f";  // Right Shape 2 Fill Color
+    var rDS2 = "#fff";    // Right Shape 2 Drop Shadow Color
+
+    var lFill3 = "#6c6c6c";  // Left Shape 3 Fill Color
+    var lDS3 = "#fff";    //     Left Shape 3 Drop Shadow Color
+    var rFill3 = "#6c6c6c";  // Right Shape 3 Fill Color
+    var rDS3 = "#fff";    // Right Shape 3 Drop Shadow Color
+
+
+    setColors(lFill1, lDS1, lFill2, lDS2, lFill3, lDS3, rFill1, rDS1, rFill2, rDS2, rFill3, rDS3);
+
     var sheet = document.createElement("style");
-    document.getElementById("organic_shape_l3").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(70%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
-    document.getElementById("organic_shape_l2").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(90%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
-    document.getElementById("organic_shape_l1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
-    document.getElementById("organic_shape_r3").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(70%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
-    document.getElementById("organic_shape_r2").style.filter =
-    "brightness(50%) sepia(1) hue-rotate(90deg) brightness(90%) saturate(0%) drop-shadow(0 0 50px rgba(255, 255, 255, 0.29))";
-    document.getElementById("organic_shape_r1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(0%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
 
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #ffffff;}\n";
@@ -98,22 +112,29 @@ function chineseNewYearTheme() {
     console.log("恭喜发财!");
     console.log("Happy Chinese New Year!");
 
-    document.getElementById("logo").src =
-        "resources/Logos/TLR_chinese_new_year.svg";
+    // Change Logo
+    document.getElementById("logo").src = "resources/Logos/TLR_chinese_new_year.svg";
+
+    var lFill1 = "#c92524";  // Left Shape 1 Fill Color
+    var lDS1 = "#ffdd00";    // Left Shape 1 Drop Shadow Color
+    var rFill1 = "#c92524";  // Right Shape 1 Fill Color
+    var rDS1 = "#ffdd00";    // Right Shape 1 Drop Shadow Color
+
+    var lFill2 = "#b40201";  // Left Shape 2 Fill Color
+    var lDS2 = "#ffdd00";    // Left Shape 2 Drop Shadow Color
+    var rFill2 = "#b40201";  // Right Shape 2 Fill Color
+    var rDS2 = "#ffdd00";    // Right Shape 2 Drop Shadow Color
+
+    var lFill3 = "#ca2724";  // Left Shape 3 Fill Color
+    var lDS3 = "#ffdd00";    // Left Shape 3 Drop Shadow Color
+    var rFill3 = "#ca2724";  // Right Shape 3 Fill Color
+    var rDS3 = "#ffdd00";    // Right Shape 3 Drop Shadow Color
+
+
+    setColors(lFill1, lDS1, lFill2, lDS2, lFill3, lDS3, rFill1, rDS1, rFill2, rDS2, rFill3, rDS3);
+
 
     var sheet = document.createElement("style");
-    document.getElementById("organic_shape_l3").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(230, 230, 100, 1))";
-    document.getElementById("organic_shape_l2").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(230, 230, 100, 0.79))";
-    document.getElementById("organic_shape_l1").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) saturate(50%) brightness(130%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
-    document.getElementById("organic_shape_r3").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(60%) drop-shadow(0 0 50px rgba(230, 230, 100, 1))";
-    document.getElementById("organic_shape_r2").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) brightness(70%)  drop-shadow(0 0 50px rgba(230, 230, 100, 0.79))";
-    document.getElementById("organic_shape_r1").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) saturate(50%) brightness(130%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.29))";
 
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #fff;}\n";
@@ -129,22 +150,29 @@ function chineseNewYearTheme() {
 function christmasTheme(){
     console.log("Merry Christmas!");
 
+    // Change Logo
     document.getElementById("logo").src =
         "resources/Logos/TLR_christmas.svg";
 
+        var lFill1 = "#00e88f";  // Left Shape 1 Fill Color
+        var lDS1 = "#fff";    // Left Shape 1 Drop Shadow Color
+        var rFill1 = "#00e88f";  // Right Shape 1 Fill Color
+        var rDS1 = "#fff";    // Right Shape 1 Drop Shadow Color
+    
+        var lFill2 = "#DC263D";  // Left Shape 2 Fill Color
+        var lDS2 = "#fff";    // Left Shape 2 Drop Shadow Color
+        var rFill2 = "#DC263D";  // Right Shape 2 Fill Color
+        var rDS2 = "#fff";    // Right Shape 2 Drop Shadow Color
+    
+        var lFill3 = "#00B46F";  // Left Shape 3 Fill Color
+        var lDS3 = "#fff";    // Left Shape 3 Drop Shadow Color
+        var rFill3 = "#00B46F";  // Right Shape 3 Fill Color
+        var rDS3 = "#fff";    // Right Shape 3 Drop Shadow Color
+    
+    
+        setColors(lFill1, lDS1, lFill2, lDS2, lFill3, lDS3, rFill1, rDS1, rFill2, rDS2, rFill3, rDS3);
+
     var sheet = document.createElement("style");
-    document.getElementById("organic_shape_l3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(255, 180, 180, 0.89))";
-    document.getElementById("organic_shape_l2").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) saturate(32%) brightness(170%) drop-shadow(0 0 50px rgba(180, 255, 180, 0.29))";
-    document.getElementById("organic_shape_l1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
-    document.getElementById("organic_shape_r3").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(80%) saturate(180%) drop-shadow(0 0 50px rgba(255, 180, 180, 0.89))";
-    document.getElementById("organic_shape_r2").style.filter =
-    "brightness(50%) sepia(1) saturate(10000%) saturate(32%) brightness(170%) drop-shadow(0 0 50px rgba(180, 255, 180, 0.29))";
-    document.getElementById("organic_shape_r1").style.filter =
-        "brightness(50%) sepia(1) hue-rotate(90deg) brightness(120%) saturate(200%) drop-shadow(0 0 50px rgba(0, 0, 0, 0.19))";
 
     sheet.innerHTML = "";
     sheet.innerHTML += "* {--main-bg-color: #fff;}\n";
@@ -155,4 +183,46 @@ function christmasTheme(){
     sheet.innerHTML += "* {--sidebar-text-color-highlighted: #ffffff;}\n";
     sheet.innerHTML += "* {--sidebar-text-color: #e0e0e0;}\n";
     document.body.appendChild(sheet);
+}
+
+function setColors(lFill1, lDS1, lFill2, lDS2, lFill3, lDS3, rFill1, rDS1, rFill2, rDS2, rFill3, rDS3){
+    // Left Side
+    
+    var l1 = document.getElementById("organic_shape_l1");
+    l1.style.setProperty("filter","drop-shadow(0px 0px 50px " + lDS1 + ")");
+    l1.addEventListener("load",function(){
+        l1.contentDocument.getElementsByClassName("cls-1")[0].style = "fill: " + lFill1 + " !important";
+    }, false);
+
+    var l2 = document.getElementById("organic_shape_l2");
+    l2.style.setProperty("filter","drop-shadow(0px 0px 50px " + lDS2 + ")");
+    l2.addEventListener("load",function(){
+        l2.contentDocument.getElementsByClassName("cls-1")[0].style = "fill: " + lFill2 + " !important";
+    }, false);
+
+    var l3 = document.getElementById("organic_shape_l3");
+    l3.style.setProperty("filter","drop-shadow(0px 0px 50px " + lDS3 + ")");
+    l3.addEventListener("load",function(){
+        l3.contentDocument.getElementsByClassName("cls-1")[0].style = "fill: " + lFill3 + " !important";
+    }, false);
+
+    // Right Side
+
+    var r1 = document.getElementById("organic_shape_r1");
+    r1.style.setProperty("filter","drop-shadow(0px 0px 50px " + rDS1 + ")");
+    r1.addEventListener("load",function(){
+        r1.contentDocument.getElementsByClassName("cls-1")[0].style = "fill: " + rFill1 + " !important";
+    }, false);
+
+    var r2 = document.getElementById("organic_shape_r2");
+    r2.style.setProperty("filter","drop-shadow(0px 0px 50px " + rDS2 + ")");
+    r2.addEventListener("load",function(){
+        r2.contentDocument.getElementsByClassName("cls-1")[0].style = "fill: " + rFill2 + " !important";
+    }, false);
+
+    var r3 = document.getElementById("organic_shape_r3");
+    r3.style.setProperty("filter","drop-shadow(0px 0px 50px " + rDS3 + ")");
+    r3.addEventListener("load",function(){
+        r3.contentDocument.getElementsByClassName("cls-1")[0].style = "fill: " + rFill3 + " !important";
+    }, false);
 }

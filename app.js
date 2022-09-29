@@ -50,7 +50,6 @@ window.addEventListener("scroll", (e) => {
     }
 });
 
-
 function lerp(a, b, p) {
     return a * (1 - p) + b * p;
 }
@@ -72,30 +71,30 @@ function updateExpanded() {
     let useScroll = scroll + addedScroll;
     logo.style.top =
         lerp(
-            11,
+            6,
             2,
             scale(
-                window.innerHeight * 0.1,
-                window.innerHeight * 0.3,
+                window.innerWidth * 0,
+                window.innerWidth * 0.2,
                 0,
                 1,
                 useScroll
             )
-        ) + "%";
+        ) + "vw";
     logo.style.width =
         lerp(
             80,
             16,
             scale(
-                window.innerHeight * 0.1,
-                window.innerHeight * 0.3,
+                window.innerWidth * 0,
+                window.innerWidth * 0.2,
                 0,
                 1,
                 useScroll
             )
         ) + "vw";
 
-    if (useScroll >= window.innerHeight * 0.3) {
+    if (useScroll >= window.innerWidth * 0.17) {
         logoBg.classList.remove("logoBgHidden");
     } else {
         logoBg.classList.add("logoBgHidden");

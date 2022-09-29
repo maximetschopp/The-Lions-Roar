@@ -14,6 +14,14 @@
         opacity: 0;
         transition: all 1s ease-in-out;
     }
+    #sidebar_text_container {
+        color: #999999 !important;
+        transition: color 1s ease-in-out;
+    }
+    .sidebar-bold{
+        color: #000 !important;
+        transition: color 1s ease-in-out;
+    }
 }
 /* wider */
 @media (min-aspect-ratio: 1/1) {

@@ -154,20 +154,21 @@ function christmasTheme(){
     document.getElementById("logo").src =
         "resources/Logos/TLR_christmas.svg";
 
-        var lFill1 = "#fff";  // Left Shape 1 Fill Color
-        var lDS1 = "#f00";    // Left Shape 1 Drop Shadow Color
-        var rFill1 = "#fff";  // Right Shape 1 Fill Color
-        var rDS1 = "#f00";    // Right Shape 1 Drop Shadow Color
-    
-        var lFill2 = "#fff";  // Left Shape 2 Fill Color
-        var lDS2 = "#0f0";    // Left Shape 2 Drop Shadow Color
-        var rFill2 = "#fff";  // Right Shape 2 Fill Color
-        var rDS2 = "#0f0";    // Right Shape 2 Drop Shadow Color
-    
-        var lFill3 = "#fff";  // Left Shape 3 Fill Color
-        var lDS3 = "#f00";    // Left Shape 3 Drop Shadow Color
-        var rFill3 = "#fff";  // Right Shape 3 Fill Color
-        var rDS3 = "#f00";    // Right Shape 3 Drop Shadow Color
+        var lFill1 = "#09DC8A";  // Left Shape 1 Fill Color
+        var lDS1 = "#00e07b";    // Left Shape 1 Drop Shadow Color
+        var rFill1 = "#09DC8A";  // Right Shape 1 Fill Color
+        var rDS1 = "#00e07b";    // Right Shape 1 Drop Shadow Color
+        
+        var lFill2 = "#11B772";  // Left Shape 2 Fill Color
+        var lDS2 = "#00ff8c";    // Left Shape 2 Drop Shadow Color
+        var rFill2 = "#11B772";  // Right Shape 2 Fill Color
+        var rDS2 = "#00ff8c";    // Right Shape 2 Drop Shadow Color
+        
+        var lFill3 = "#27905F";  // Left Shape 3 Fill Color
+        var lDS3 = "#00e07b";    //     Left Shape 3 Drop Shadow Color
+        var rFill3 = "#27905F";  // Right Shape 3 Fill Color
+        var rDS3 = "#00e07b";    // Right Shape 3 Drop Shadow Color
+        
     
     
         setColors(lFill1, lDS1, lFill2, lDS2, lFill3, lDS3, rFill1, rDS1, rFill2, rDS2, rFill3, rDS3);

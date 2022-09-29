@@ -131,6 +131,7 @@ function generateArticleIcon(type, url, thumbnail) {
         } else {
             thumbnailImage.src = thumbnail;
         }
+        thumbnailImage.setAttribute("onerror", "this.style.display = 'none'");
         vidIcon.appendChild(thumbnailImage);
 
         var centeredIcon = document.createElement("img");
@@ -145,6 +146,7 @@ function generateArticleIcon(type, url, thumbnail) {
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
         thumbnailImage.src = thumbnail;
+        thumbnailImage.setAttribute("onerror", "this.style.display = 'none'");
 
         imageIcon.appendChild(thumbnailImage);
 
@@ -160,6 +162,7 @@ function generateArticleIcon(type, url, thumbnail) {
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
         thumbnailImage.src = thumbnail;
+        thumbnailImage.setAttribute("onerror", "this.style.display = 'none'");
 
         audioIcon.appendChild(thumbnailImage);
 
@@ -174,12 +177,13 @@ function generateArticleIcon(type, url, thumbnail) {
         textIcon.classList.add("text-icon-container");
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
-        if (thumbnail == null) {
-            /*thumbnailImage.src =
-                "resources/default_thumbnails/text_thumbnail.png";*/
-        } else {
-            thumbnailImage.src = thumbnail;
-        }
+        // if (thumbnail == null) {
+        //     /*thumbnailImage.src =
+        //         "resources/default_thumbnails/text_thumbnail.png";*/
+        // } else {
+        thumbnailImage.src = thumbnail;
+        // }
+        thumbnailImage.setAttribute("onerror", "this.style.display = 'none'");
         textIcon.appendChild(thumbnailImage);
         var centeredIcon = document.createElement("img");
         centeredIcon.classList.add("centered-icon");
@@ -193,7 +197,8 @@ function generateArticleIcon(type, url, thumbnail) {
         linkIcon.classList.add("link-icon-container");
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
-        thumbnailImage.src = thumbnail;
+        thumbnailImage.src = thumbnail; 
+        thumbnailImage.setAttribute("onerror", "this.style.display = 'none'");
 
         linkIcon.appendChild(thumbnailImage);
 

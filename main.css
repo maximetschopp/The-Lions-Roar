@@ -11,6 +11,7 @@
 
 html {
     height: 100%;
+    background-color: white;
 }
 
 body{
@@ -238,6 +239,13 @@ h2{
 #sidebar_text_container {
     z-index: 10;
     color: var(--sidebar-text-color);
+    transition: color 1s ease-in-out;
+}
+.sidebar-bold{
+    font-weight: 600 !important;
+    color: var(--sidebar-text-color-highlighted);
+    font-style: italic;
+    transition: color 1s ease-in-out;
 }
 .sidebar-year{
     position: relative;
@@ -279,11 +287,6 @@ h2{
     z-index: 999;
     user-select: none;
     cursor: pointer;
-}
-.sidebar-bold{
-    font-weight: 600 !important;
-    color: var(--sidebar-text-color-highlighted);
-    font-style: italic;
 }
 
 a{

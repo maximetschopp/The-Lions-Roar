@@ -13,7 +13,6 @@ h3{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: max(12px, 3vw);
     margin: 0;
     text-align: left;
     margin-top: 0.5vh;
@@ -28,7 +27,6 @@ h4{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: max(9px, 2.6vw);
     margin: 0;
     text-align: left;
     margin-top: 0.5vh;
@@ -43,7 +41,6 @@ h5{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: max(8px, 2.4vw);
     margin: 0;
     text-align: left;
     overflow: hidden;

@@ -1,5 +1,4 @@
 /* at 1:1 mobile vertical stack */
-/* at >1 : 1 tablet "youtube view" */
 
 @media (max-aspect-ratio: 1/1) {
     *{
@@ -21,9 +20,19 @@
     #selectPublication{
       max-width: 85%;
       font-size: calc(3.2vw + 20px);
-  }
+    }
+    h3{
+      font-size: max(12px, 3vw);
+    }
+    h4{
+      font-size: max(9px, 2.6vw);
+    }
+    h5{
+      font-size: max(8px, 2.4vw);
+    }
   }
 
+/* at >1 : 1 tablet "youtube view" */
 @media (min-aspect-ratio: 1/1) {
     *{
         --border-radius: 2vw !important;
@@ -67,5 +76,14 @@
     }
     #selectPublication{
         font-size: calc(1.6vw + 10px);
+    }
+    h3{
+      font-size: max(11px, 1.4vw);
+    }
+    h4{
+      font-size: max(9px, 1.0vw);
+    }
+    h5{
+      font-size: max(8px, 0.9vw);
     }
   }

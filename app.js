@@ -71,11 +71,11 @@ function updateExpanded() {
     let useScroll = scroll + addedScroll;
     logo.style.top =
         lerp(
-            6,
-            2,
+            5,
+            1,
             scale(
                 window.innerWidth * 0,
-                window.innerWidth * 0.2,
+                window.innerWidth * 0.15,
                 0,
                 1,
                 useScroll
@@ -83,36 +83,23 @@ function updateExpanded() {
         ) + "vw";
     logo.style.width =
         lerp(
-            80,
-            17.5,
+            40,
+            15.5,
             scale(
                 window.innerWidth * 0,
-                window.innerWidth * 0.2,
+                window.innerWidth * 0.15,
                 0,
                 1,
                 useScroll
             )
         ) + "vw";
 
-    if (useScroll >= window.innerWidth * 0.17) {
+    if (useScroll >= window.innerWidth * 0.15) {
         logoBg.classList.remove("logoBgHidden");
     } else {
         logoBg.classList.add("logoBgHidden");
     }
 
-    // var minimizePercent = 0.11; // percent to scroll until logo minimizes
-
-    // if (expanded + scroll / (window.innerHeight * minimizePercent) < 1) {
-    //     var logo = document.getElementById("logo");
-    //     logo.classList.remove("logoMinimized");
-    //     var logoBg = document.getElementById("logoBg");
-    //     logoBg.classList.add("logoBgHidden");
-    // } else {
-    //     var logo = document.getElementById("logo");
-    //     logo.classList.add("logoMinimized");
-    //     var logoBg = document.getElementById("logoBg");
-    //     logoBg.classList.remove("logoBgHidden");
-    // }
 }
 
 function toggleExpandArticle(button) {

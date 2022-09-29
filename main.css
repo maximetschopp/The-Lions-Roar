@@ -80,7 +80,7 @@ h2{
     left: 50%;
     transform: translate(-50%, -7%); 
     z-index: 998;
-    width: 35vh;
+    width: 20vw;
     aspect-ratio: 28/4;
     border-radius: calc((35vh/40)*4);
     background-color: var(--logo-bg-color);

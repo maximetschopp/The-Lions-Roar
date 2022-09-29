@@ -2,11 +2,21 @@
 
 document.addEventListener("DOMContentLoaded", ready);
 function ready() {
+    var logo = document.getElementById("logo");
+    var logoBg = document.getElementById("logoBg");
     if ((dueDay == 1 && dueMonth == 4) || Math.random() < 0.001) {
         document
             .getElementById("logo")
             .setAttribute("src", "resources/Logos/TLR_Logo_rawr.svg");
     }
+    setInterval(() => {
+        addedScroll = lerp(
+            addedScroll,
+            Math.min(1, expanded) * window.innerHeight * 0.4,
+            0.05
+        );
+        updateExpanded();
+    }, 1);
 }
 
 var expanded = 0;
@@ -40,14 +50,6 @@ window.addEventListener("scroll", (e) => {
     }
 });
 
-setInterval(() => {
-    addedScroll = lerp(
-        addedScroll,
-        Math.min(1, expanded) * window.innerHeight * 0.4,
-        0.05
-    );
-    updateExpanded();
-}, 1);
 
 function lerp(a, b, p) {
     return a * (1 - p) + b * p;
@@ -68,8 +70,6 @@ function updateExpanded() {
     // toggle Logo & bg
     scroll = this.scrollY;
     let useScroll = scroll + addedScroll;
-    var logo = document.getElementById("logo");
-    var logoBg = document.getElementById("logoBg");
     logo.style.top =
         lerp(
             11,
@@ -85,7 +85,7 @@ function updateExpanded() {
     logo.style.width =
         lerp(
             80,
-            30,
+            16,
             scale(
                 window.innerHeight * 0.1,
                 window.innerHeight * 0.3,
@@ -93,7 +93,7 @@ function updateExpanded() {
                 1,
                 useScroll
             )
-        ) + "vh";
+        ) + "vw";
 
     if (useScroll >= window.innerHeight * 0.3) {
         logoBg.classList.remove("logoBgHidden");

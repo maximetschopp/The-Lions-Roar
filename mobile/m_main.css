@@ -20,7 +20,7 @@ h1{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: calc(3.2vh + 37px - 25.65px);
+    font-size: calc(3.2vh + 11.35px);
     margin-top: 4vh;
     margin-bottom: 1vh;
     text-align: center;
@@ -29,7 +29,7 @@ h2{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: calc(1.9vh + 16px - 9px);
+    font-size: calc(1.9vh + 7px);
     margin-top: 4vh;
     margin-bottom: 0;
 

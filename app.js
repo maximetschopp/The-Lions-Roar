@@ -84,7 +84,7 @@ function updateExpanded() {
     logo.style.width =
         lerp(
             80,
-            16,
+            17.5,
             scale(
                 window.innerWidth * 0,
                 window.innerWidth * 0.2,

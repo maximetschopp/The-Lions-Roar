@@ -127,7 +127,7 @@ function generateArticleIcon(type, url, thumbnail) {
             );
             youtube_video_id = youtube_video_id ? youtube_video_id.pop() : null;
             thumbnailImage.src =
-                "https://img.youtube.com/vi/" + youtube_video_id + "/0.jpg";
+                "https://img.youtube.com/vi/" + youtube_video_id + "/maxresdefault.jpg";
         } else {
             thumbnailImage.src = thumbnail;
         }

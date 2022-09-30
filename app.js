@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", ready);
 function ready() {
+    // scroll to top
     var logo = document.getElementById("logo");
     var logoBg = document.getElementById("logoBg");
     if ((dueDay == 1 && dueMonth == 4) || Math.random() < 0.001) {

@@ -381,6 +381,7 @@ function generateSidebar(dates) {
                             expandSidebarItem(year, month, day, true);
                         }.bind(this, year, month, day);
                         thisYear = element;
+                        lastMonth = null;
                     }
                     if (month != lastMonth) {
                         var element = document.createElement("div");

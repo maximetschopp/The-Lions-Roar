@@ -127,7 +127,9 @@ function generateArticleIcon(type, url, thumbnail) {
             );
             youtube_video_id = youtube_video_id ? youtube_video_id.pop() : null;
             thumbnailImage.src =
-                "https://img.youtube.com/vi/" + youtube_video_id + "/maxresdefault.jpg";
+                "https://img.youtube.com/vi/" +
+                youtube_video_id +
+                "/maxresdefault.jpg";
         } else {
             thumbnailImage.src = thumbnail;
         }
@@ -197,7 +199,7 @@ function generateArticleIcon(type, url, thumbnail) {
         linkIcon.classList.add("link-icon-container");
         var thumbnailImage = document.createElement("img");
         thumbnailImage.classList.add("thumbnail");
-        thumbnailImage.src = thumbnail; 
+        thumbnailImage.src = thumbnail;
         thumbnailImage.setAttribute("onerror", "this.style.display = 'none'");
 
         linkIcon.appendChild(thumbnailImage);
@@ -296,7 +298,6 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     articleDate.innerHTML = date;
     descriptionContainer.appendChild(articleDate);
 
-
     articleGrid.appendChild(descriptionContainer);
 
     article.appendChild(articleGrid);
@@ -304,10 +305,10 @@ function generateArticle(title, author, date, url, type, thumbnail, tags) {
     return article;
 }
 
-function generateTags(tags){
+function generateTags(tags) {
     var tagsContainer = document.createElement("div");
     tagsContainer.classList.add("tagContainer");
-    for(let i = 0; i < tags.length; i++) {
+    for (let i = 0; i < tags.length; i++) {
         var tag = document.createElement("div");
         tag.classList.add("tag");
         tag.innerHTML = tags[i];
@@ -349,7 +350,6 @@ var short_months = [
     "Nov",
     "Dec",
 ];
-
 
 function generateSidebar(dates) {
     var sidebarObj = document.getElementById("sidebar_text_container");
@@ -457,11 +457,11 @@ async function ready() {
             //sort data by date
             data.sort(function (a, b) {
                 return (
-                    b["year"] * 12 * 6 +
-                    b["month"] * 6 +
+                    b["year"] * 12 * 30 +
+                    b["month"] * 30 +
                     b["day"] -
-                    a["year"] * 12 * 6 -
-                    a["month"] * 6 -
+                    a["year"] * 12 * 30 -
+                    a["month"] * 30 -
                     a["day"]
                 );
             });

@@ -27,11 +27,11 @@ function ready() {
             //sort data by date
             data.sort(function (a, b) {
                 return (
-                    b["year"] * 12 * 6 +
-                    b["month"] * 6 +
+                    b["year"] * 12 * 30 +
+                    b["month"] * 30 +
                     b["day"] -
-                    a["year"] * 12 * 6 -
-                    a["month"] * 6 -
+                    a["year"] * 12 * 30 -
+                    a["month"] * 30 -
                     a["day"]
                 );
             });
@@ -80,7 +80,6 @@ function ready() {
 }
 
 function loadPublication(publication) {
-
     loadMainArticle(publication);
 
     var extraArticlesGrid = document.getElementById("extraArticlesContainer");

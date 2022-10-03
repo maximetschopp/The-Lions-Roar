@@ -113,7 +113,7 @@ function loadPublication(publication) {
 function loadMainArticle(publication) {
     var mainArticleContainer = document.getElementById("mainArticleContainer");
     mainArticleContainer.appendChild(
-        generateArticleIcon("video", publication["main_article_url"], null)
+        generateArticleIcon("video", publication["main_article_url"], publication["main_article_thumbnail"])
     );
 }
 
@@ -145,6 +145,7 @@ function generateArticleIcon(type, url, thumbnail) {
         } else {
             thumbnailImage.src = thumbnail;
         }
+        console.log(thumbnailImage);
         vidIcon.appendChild(thumbnailImage);
 
         var centeredIcon = document.createElement("img");

@@ -370,9 +370,9 @@ function generateSidebar(dates) {
                 var c_month = dueMonth;
                 var c_day = dueDay;
                 var c_year = dueYear;
-                if (year < c_year ||
-                    (year == c_year && month < c_month) ||
-                    (year == c_year && month == c_month && day <= c_day)
+                if (Number(year) < c_year ||
+                    (Number(year) == c_year && Number(month) < c_month) ||
+                    (Number(year) == c_year && Number(month) == c_month && Number(day) <= c_day)
                 ) {
                     if (year != lastYear) {
                         var element = document.createElement("div");

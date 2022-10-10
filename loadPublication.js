@@ -122,10 +122,15 @@ function generateArticleIcon(type, url, thumbnail) {
         // checks if there is an alternative thumbnail available
         // if not, then gets the thumbnail from the video url (youtube servers)
         if (thumbnail == null) {
+            if (url.slice(0, 17) == 'https://youtu.be/') {
+                youtube_video_id = url.slice(17);
+            }
+            else {
             var youtube_video_id = url.match(
                 /youtube\.com.*(\?v=|\/embed\/)(.{11})/
             );
             youtube_video_id = youtube_video_id ? youtube_video_id.pop() : null;
+        }
             thumbnailImage.src =
                 "https://img.youtube.com/vi/" +
                 youtube_video_id +

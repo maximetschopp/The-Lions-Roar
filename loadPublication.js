@@ -365,12 +365,12 @@ function generateSidebar(dates) {
                 var c_month = dueMonth;
                 var c_day = dueDay;
                 var c_year = dueYear;
-                if (
-                    urlParams.get("seeall") ||
-                    year <= c_year ||
+                if (year < c_year ||
                     (year == c_year && month < c_month) ||
                     (year == c_year && month == c_month && day <= c_day)
                 ) {
+                    console.log("year: " + year + " month: " + month + " day: " + day);
+                    console.log("c_year: " + c_year + " c_month: " + c_month + " c_day: " + c_day);
                     if (year != lastYear) {
                         var element = document.createElement("div");
                         element.classList.add("sidebar-year");

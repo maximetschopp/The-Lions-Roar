@@ -1,5 +1,5 @@
 *{
-    --border-radius: 4vw;
+    --border-radius: min(4vw,4vw);
     --dropShadow: drop-shadow(0px 38px 30px rgba(0, 0, 0, 0.613));
     --bgColor: rgb(230, 230, 230);
     --boxShadow:

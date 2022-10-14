@@ -45,7 +45,7 @@ h2{
     font-weight: 300;
     font-style: normal;
     /*font-size: calc(1.2vh + 7px);*/
-    font-size: max(12px, 1.3vw);
+    font-size: calc(1.75vh + 5.35px) !important;
     margin: 0;
     text-align: left;
     white-space: pre-wrap;
@@ -66,18 +66,24 @@ h2{
     height: 90vh;
     max-height: 90vh;
     aspect-ratio: 16/9; 
-    grid-template-columns: 66% 30%;
+    grid-template-columns: 67% auto;
     gap: 4vh;   
 }
 #main-container-wrapper{
     position: relative;
     height: 100%;
+    width: 100%;
+    margin: auto;
+    vertical-align: middle;
 }
 #main-container{
     position: relative;
-    margin: auto;
-    aspect-ratio: 4/3;
+    /*aspect-ratio: 4/3.5;*/
+    height: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
     background-color: var(--bgColor);
     border-radius: var(--border-radius);
     box-shadow: var(--boxShadow);
@@ -90,11 +96,14 @@ h2{
     background-color: black;
     border-radius: var(--border-radius);
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 #desc-grid{
     width: 90%;
     height: auto;
-    margin: 2% auto 2% auto;
+    margin: 0% auto 4% auto;
     display: grid;
     grid-template-columns: 78% 18%;
     grid-gap: 4%;

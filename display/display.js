@@ -303,5 +303,12 @@ var short_months = [
 ];
 var queue = [];
 var data = null;
-var isTesting = true;
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var isTesting = urlParams.get('test');
+if(isTesting == null){
+    isTesting = false;
+}
+
 document.addEventListener("DOMContentLoaded", ready);

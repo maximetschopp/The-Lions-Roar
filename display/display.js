@@ -29,7 +29,7 @@ async function ready() {
 
     //if true that means its in testing mode, and gets the most 'future publication' 
     //which is our test publication
-            generateQueue(getMostCurrentPublicaiton(data, true));
+            generateQueue(getMostCurrentPublicaiton(data, isTesting));
             updateMainArticle(true);
         });
 }
@@ -62,16 +62,17 @@ function getMostCurrentPublicaiton(data, isTesting){
             continue;
         }
         // if not then it must be the most current, enabled publication
-        console.log(publication)
+        // console.log(publication)
         return publication;
     }
 }
 function generateQueue(publication){
 
-    console.log("publication data: ");
-    console.log(publication);
-    console.log("amount of extra articles: " + publication["articles"].length);
-    console.log('extra articles:' );
+    // console.log("publication data: ");
+    // console.log(publication);
+     console.log(queue);
+    // console.log("amount of extra articles: " + publication["articles"].length);
+    // console.log('extra articles:' );
 
     // // first queue item is going to be the main publication
     let mainArticle = {};
@@ -81,7 +82,9 @@ function generateQueue(publication){
         mainArticle['url'] = publication["main_article_url"];
         mainArticle['type'] = publication["main_article_type"];
         mainArticle['tags'] = publication["main_article_tags"];
-        if (publication['main_article_thumbnail'] == null) {
+        //set thumbnail
+        mainArticle['thumbnail'] = publication["main_article_thumbnail"];
+        if (mainArticle["thumbnail"] == null) {
             if (publication["main_article_url"].slice(0, 17) == 'https://youtu.be/') {
                 youtube_video_id = publication["main_article_url"].slice(17);
             }
@@ -96,9 +99,10 @@ function generateQueue(publication){
                 youtube_video_id +
                 "/maxresdefault.jpg";
         } else {
-           mainArticle["thumbnail"] = publication['main_article_url'];
+            mainArticle["thumbnail"] = publication['main_article_url'];
         }
         queue.push(mainArticle);
+        console.log(queue);
 
     // for all of the extra articles
 
@@ -137,16 +141,17 @@ function generateQueue(publication){
         queue.push(queueItem);
     }
 
-    console.log(queue);
 }
 function updateMainArticle(firstTime){
-    console.log("queue length: " + queue.length);  
+    // console.log("queue length: " + queue.length);  
     if (queue.length == 0 && !firstTime) {
         location.reload();
         return false;
     }
+
+    //change thumbnail
+    console.log(queue[0]["thumbnail"]);
     document.getElementById("main-thumbnail").style.setProperty("background-image", "url(" + queue[0]["thumbnail"] + ")");
-    
     //change title
     textChangeAnim(document.getElementById("main-title"), queue[0]["title"]);
     //change desc
@@ -161,7 +166,7 @@ function updateMainArticle(firstTime){
         colorDark : "#000000",
         colorLight : "rgb(230, 230, 230)"
     });
-    console.log(QR);
+    // console.log(QR);
 
     queue.splice(0, 1);
 
@@ -184,9 +189,9 @@ function textChangeAnim(element, text){
     let time = animationTime / 2;
     let timeBetweenAttempts = time/numAttempts; //amount of time for character try
 
-    console.log("time between attempts: " + timeBetweenAttempts);
-    console.log("numAttempts: " + numAttempts);
-    console.log("text: " + text);
+    // console.log("time between attempts: " + timeBetweenAttempts);
+    // console.log("numAttempts: " + numAttempts);
+    // console.log("text: " + text);
     typewrite(element, text, numAttempts, timeBetweenAttempts, 0, 0, 0);
 
 }
@@ -213,7 +218,6 @@ function typewrite(element, text, numAttempts, timeBetweenAttempts, i, k, r){
     // if the last character guess was correct or its the first iteration
     else if(k == 1 || (element.innerHTML.charAt(i) === text.charAt(i))){ 
         r = Math.floor(Math.random() * 8 + 1); // reset the random index (1-8)
-        console.log(r);
     }
     
     // if there are still attempts to guess 
@@ -254,4 +258,5 @@ var short_months = [
 ];
 var queue = [];
 var data = null;
+var isTesting = true;
 document.addEventListener("DOMContentLoaded", ready);

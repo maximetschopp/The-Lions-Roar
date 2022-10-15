@@ -71,8 +71,7 @@ function getMostCurrentPublicaiton(data, isTesting){
 function generateQueue(publication){
 
     // console.log("publication data: ");
-    // console.log(publication);
-     console.log(queue);
+     console.log(publication);
     // console.log("amount of extra articles: " + publication["articles"].length);
     // console.log('extra articles:' );
 
@@ -80,14 +79,13 @@ function generateQueue(publication){
     let mainArticle = {};
         mainArticle['title'] = publication["main_article_title"];
         mainArticle['author'] = "Various Authors";
-        mainArticle['date'] = publication["day"] + " " + short_months[publication["month"]];
+        mainArticle['date'] = publication["day"] + " " + short_months[publication["month"]-1];
         mainArticle['url'] = publication["main_article_url"];
         mainArticle['type'] = publication["main_article_type"];
         mainArticle['tags'] = publication["main_article_tags"];
         //set thumbnail
-        mainArticle['thumbnail'] = publication["main_article_thumbnail"];
-        if (mainArticle["thumbnail"] == null) {
-            if (publication["main_article_url"].slice(0, 17) == 'https://youtu.be/') {
+        if (publication["main_article_thumbnail"] == null) {
+            if (publication["main_article_url"].slice(0, 17) === 'https://youtu.be/') {
                 youtube_video_id = publication["main_article_url"].slice(17);
             }
             else {
@@ -101,13 +99,13 @@ function generateQueue(publication){
                 youtube_video_id +
                 "/maxresdefault.jpg";
         } else {
-            mainArticle["thumbnail"] = publication['main_article_url'];
+            mainArticle["thumbnail"] = publication['main_article_thumbnail'];
         }
+
         queue.push(mainArticle);
         console.log(queue);
 
     // for all of the extra articles
-
     for (let i = 0; i < publication["articles"].length; i++){
         let queueItem = {};
         let article = publication["articles"][i];
@@ -118,12 +116,8 @@ function generateQueue(publication){
         queueItem['date'] = article["date"];
         queueItem['url'] = article["url"];
         queueItem['type'] = article["type"];
-        if(article["tags"] != null){
-            queueItem['tags'] = article["tags"];
-        }
-        queueItem['thumbnail'] = article["thumbnail"];
         if (article['thumbnail'] == null) {
-            if (article["url"].slice(0, 17) == 'https://youtu.be/') {
+            if (article["url"].slice(0, 17) === 'https://youtu.be/') {
                 youtube_video_id = article["url"].slice(17);
             }
             else {
@@ -137,12 +131,19 @@ function generateQueue(publication){
                 youtube_video_id +
                 "/maxresdefault.jpg";
         } else {
-           queueItem["thumbnail"] = article;
+           queueItem["thumbnail"] = article["thumbnail"];
         }
-
         queue.push(queueItem);
     }
 
+    // generate TLR
+    let tlrItem = {}; 
+    tlrItem["title"] = "thelionsroar.ch";
+    tlrItem["thumbnail"] = "resources/Logo.png";
+    tlrItem["author"] = "The cast of the Lions Roar";
+    tlrItem["date"] = "since 17 August 2022"
+    tlrItem["url"] = "thelionsroar.ch";
+    queue.push(tlrItem);
 }
 function generateQueueArticles(){
     let queueGrid = document.getElementById('queue-grid');
@@ -223,7 +224,7 @@ function typewrite(element, text, numAttempts, timeBetweenAttempts, i, k, r){
 }
 function updateMainArticle(){
     //change thumbnail
-    console.log(queue[0]["thumbnail"]);
+    //console.log(queue[0]["thumbnail"]);
     document.getElementById("main-thumbnail").style.setProperty("background-image", "url(" + queue[0]["thumbnail"] + ")");
     //change title
     textChangeAnim(document.getElementById("main-title"), queue[0]["title"]);
@@ -244,14 +245,18 @@ function updateQueue(){
     let antiFlickerDeletionPreDelay = 5;
 
     let queueGrid = document.getElementById('queue-grid');
-    queueGrid.children[0].classList.add("queueAnimateOut");
-    queueGrid.children[0].children[0].classList.add("queueThumbnailAnimateOut");
+    if(queueGrid.childElementCount > 0){
+        queueGrid.children[0].classList.add("queueAnimateOut");
+        queueGrid.children[0].children[0].classList.add("queueThumbnailAnimateOut");
+    }
 
     // after animation
     setTimeout(function(){
 
         // delete the article that just transitioned
-        queueGrid.removeChild(queueGrid.children[0]);
+        if(queueGrid.childElementCount > 0){
+            queueGrid.removeChild(queueGrid.children[0]);
+        }
 
         if(queueGrid.childElementCount > 2){
             queueGrid.children[2].style.setProperty("display", "block");
@@ -260,7 +265,7 @@ function updateQueue(){
     }, animationTime - antiFlickerDeletionPreDelay);
 }
 function nextArticle(firstTime){
-    // console.log("queue length: " + queue.length);  
+    // nothing left in queue
     if (queue.length == 0 && !firstTime) {
         location.reload();
         return false;
@@ -279,8 +284,8 @@ function nextArticle(firstTime){
         }
     }
 }
-var mainArticlePause = 6000; // time in milliseconds until the next item in the queue is shown
-var pause = 6000; // time in milliseconds until the next item in the queue is shown
+var mainArticlePause = 7000; // time in milliseconds until the next item in the queue is shown
+var pause = 5000; // time in milliseconds until the next item in the queue is shown
 var animationTime = 1000;
 var short_months = [
     "Jan",

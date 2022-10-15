@@ -207,17 +207,16 @@ h2{
         z-index: 999;
         transform: none;
         box-shadow: none;
+        rotate: 0deg;
     }
-    40%{
-        transform: rotate(-4deg) translate(calc(-170%*0.05), calc(60%*0.05)) scale(calc(1 + 1.2*0.05));
-    }
-    90%{
-        transform: rotate(1deg) translate(calc(-170%*0.9), calc(60%*0.9)) scale(calc(1 + 1.2*0.9));
+    60%{
+        rotate: -6deg;
     }
     100% {
         z-index: 999;
         transform: translate(-170%, 60%) scale(2.2);
         box-shadow: none;
+        rotate: 0deg;   
     }
 }
 @keyframes queueThumbnailAnimateOut {

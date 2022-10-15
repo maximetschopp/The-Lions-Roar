@@ -2,6 +2,8 @@
     --border-radius: min(4vw,4vw);
     --dropShadow: drop-shadow(0px 38px 30px rgba(0, 0, 0, 0.613));
     --bgColor: rgb(230, 230, 230);
+    --animationInterpolation: cubic-bezier(0.94, 0, 0.81, 0.92);
+    --antimationDuration: 1s;
     --boxShadow:
         0px -2.6px 4.7px rgba(255, 255, 255, 0.037),
         0px -7.6px 9.5px rgba(255, 255, 255, 0.044),
@@ -16,8 +18,21 @@
         0px 30.5px 22.4px rgba(0, 0, 0, 0.048),
         0px 56px 35.8px rgba(0, 0, 0, 0.054),
         0px 100px 80px rgba(0, 0, 0, 0.07);
-    --animationInterpolation: cubic-bezier(0.94, 0, 0.81, 0.92);
-    --antimationDuration: 1s;
+    --bsmd: 3;
+    --boxShadowMini:
+        0px calc(-2.6px/var(--bsmd)) calc(4.7px/var(--bsmd)) rgba(255, 255, 255, 0.037),
+        0px calc(-7.6px/var(--bsmd)) calc(9.5px/var(--bsmd)) rgba(255, 255, 255, 0.044),
+        0px calc(-16.1px/var(--bsmd)) calc(15px/var(--bsmd)) rgba(255, 255, 255, 0.046),
+        0px calc(-30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(255, 255, 255, 0.048),
+        0px calc(-56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(255, 255, 255, 0.054),
+        0px calc(-100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(255, 255, 255, 0.07),
+        
+        0px calc(2.6px/var(--bsmd)) calc(4.7px/var(--bsmd)) rgba(0, 0, 0, 0.037),
+        0px calc(7.6px/var(--bsmd)) calc(9.5px/var(--bsmd)) rgba(0, 0, 0, 0.044),
+        0px calc(16.1px/var(--bsmd)) calc(15px/var(--bsmd)) rgba(0, 0, 0, 0.046),
+        0px calc(30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(0, 0, 0, 0.048),
+        0px calc(56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(0, 0, 0, 0.054),
+        0px calc(100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(0, 0, 0, 0.07);
   
 }
 body{
@@ -120,14 +135,33 @@ h2{
     border-radius: 15px;
     animation: var(--antimationDuration) var(--animationInterpolation) 2 alternate 0.6s textChange;
 }
-
 #qr-container{
     aspect-ratio: 1/1;
-    border: 1px black solid;
+    /*border: 0.3px rgb(0, 0, 0) solid;*/
     width: 90%;
     margin: auto;
     border-radius: 15%;
+    position: relative;
+
+    box-shadow: var(--boxShadowMini);
 }
+#qrcode{
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    top: 7.5%;
+    left: 7.5%;
+
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Universal support since 2021   */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
+}
+
 #queue-grid{
     position: relative;
     display: grid;

@@ -147,14 +147,22 @@ function updateMainArticle(firstTime){
     }
     document.getElementById("main-thumbnail").style.setProperty("background-image", "url(" + queue[0]["thumbnail"] + ")");
     
-    //document.getElementById("main-title").innerHTML = queue[0]["title"];
-    // console.log(queue[0]["title"]);
+    //change title
     textChangeAnim(document.getElementById("main-title"), queue[0]["title"]);
-
-    //document.getElementById("main-desc").innerHTML = queue[0]["author"] + "   •   " + queue[0]["date"];
-
+    //change desc
     textChangeAnim(document.getElementById("main-desc"),  queue[0]["author"] + "   •   " + queue[0]["date"]);
-    
+    // //change QR code
+    //delete old QR code
+    document.getElementById("qrcode").innerHTML = "";
+    var QR = new QRCode(document.getElementById("qrcode"), {
+        text: queue[0]["url"],
+        width: document.getElementById("qrcode").getBoundingClientRect().width,
+        height: document.getElementById("qrcode").getBoundingClientRect().width,
+        colorDark : "#000000",
+        colorLight : "rgb(230, 230, 230)"
+    });
+    console.log(QR);
+
     queue.splice(0, 1);
 
     if(queue.length >= 0){
@@ -187,8 +195,7 @@ function typewrite(element, text, numAttempts, timeBetweenAttempts, i, k, r){
     k++; // k is the attempt it is on
     r--; // when r = 0  the correct character is inserted
 
-    console.log("k: " + k + "      r: " + r + "      i:" + i);
-    console.log("correct inner: " + element.innerHTML);
+    
 
     //if fully guessed 
     if(i >= text.length){
@@ -196,18 +203,15 @@ function typewrite(element, text, numAttempts, timeBetweenAttempts, i, k, r){
     }
     // if on last attempt / recursion
     if(k >= numAttempts){ 
-        console.log("on the last attempt");
         element.innerHTML = text;  // set title to the text
         return;
     }
     //if there are only enough attempts left for each character
     if(text.length - i >= numAttempts - k){ 
-        console.log("there are only enough attempts left for each character");
         r = 0; // dont do randomness
     }
     // if the last character guess was correct or its the first iteration
     else if(k == 1 || (element.innerHTML.charAt(i) === text.charAt(i))){ 
-        console.log("on the first iteration");
         r = Math.floor(Math.random() * 8 + 1); // reset the random index (1-8)
         console.log(r);
     }
@@ -223,9 +227,7 @@ function typewrite(element, text, numAttempts, timeBetweenAttempts, i, k, r){
     }
     // if there are no attempts left to guess
     else if (r == 0){
-        console.log("ran out of attempts");
         // add the correct character to the end of the title
-        console.log("correct character: " + text.charAt(i));
         element.innerHTML = element.innerHTML.slice(0, i) + text.charAt(i);
         i++;
         r = Math.floor(Math.random() * 8 + 1); // reset the random index

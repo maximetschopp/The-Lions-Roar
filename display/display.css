@@ -157,6 +157,7 @@ h2{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 3vh;
+    height: 100%;
 }
 .queue-container{
     width: 100%;

@@ -1,4 +1,4 @@
-*{
+:root{
     --border-radius: min(4vw,4vw);
     --dropShadow: drop-shadow(0px 38px 30px rgba(0, 0, 0, 0.613));
     --bgColor: rgb(230, 230, 230);
@@ -33,7 +33,6 @@
         0px calc(30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(0, 0, 0, 0.048),
         0px calc(56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(0, 0, 0, 0.054),
         0px calc(100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(0, 0, 0, 0.07);
-  
 }
 body{
     background-color: var(--bgColor);
@@ -127,14 +126,6 @@ h2{
     grid-gap: 4%;
     position: relative;
 }
-.desc-blockout{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    border-radius: 15px;
-    animation: var(--antimationDuration) var(--animationInterpolation) 2 alternate 0.6s textChange;
-}
 #qr-container{
     aspect-ratio: 1/1;
     /*border: 0.3px rgb(0, 0, 0) solid;*/
@@ -142,7 +133,6 @@ h2{
     margin: auto;
     border-radius: 15%;
     position: relative;
-
     box-shadow: var(--boxShadowMini);
 }
 #qrcode{
@@ -172,6 +162,7 @@ h2{
     width: 100%;
     aspect-ratio: 16/9;
     position: relative;
+    overflow: visible;
 }
 .queue-thumbnail{
     width: 100%;
@@ -179,9 +170,15 @@ h2{
     background-color: var(--bgColor);
     box-shadow: var(--boxShadow);
     border-radius: var(--border-radius);
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .queueAnimateOut{
     animation: var(--antimationDuration) var(--animationInterpolation) 1 0s queueAnimateOut;
+}
+.queueThumbnailAnimateOut{
+    animation: var(--antimationDuration) var(--animationInterpolation) 1 0s queueThumbnailAnimateOut;
 }
 
 #srry{
@@ -205,33 +202,33 @@ h2{
     align-items: center;
 }
 
-
 @keyframes queueAnimateOut {
-    from {
-        display: block;
-        background-color: var(--bgColor);
-        width: 100%;
-    }
-    to {
-        background-color: black;
-        width: 0%;
-        display: none;
-    }
-}
-@keyframes textChange {
     0% {
-        background-color: black;
-        width: 0%;
+        z-index: 999;
+        transform: none;
+        box-shadow: none;
     }
-    70% {
-        background-color: black;
-        width: 100%;
+    40%{
+        transform: rotate(-4deg) translate(calc(-170%*0.05), calc(60%*0.05)) scale(calc(1 + 1.2*0.05));
     }
-    100%{
-        background-color: black;
-        width: 100%;
+    90%{
+        transform: rotate(1deg) translate(calc(-170%*0.9), calc(60%*0.9)) scale(calc(1 + 1.2*0.9));
+    }
+    100% {
+        z-index: 999;
+        transform: translate(-170%, 60%) scale(2.2);
+        box-shadow: none;
     }
 }
+@keyframes queueThumbnailAnimateOut {
+    0% {
+        border-radius: var(--border-radius);
+    }
+    100% {
+        border-radius: calc(var(--border-radius)/2.2);
+    }
+}
+
 
 @media (max-aspect-ratio: 15/9){
     #srry{

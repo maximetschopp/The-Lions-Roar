@@ -1,4 +1,6 @@
 async function ready() {
+    document.documentElement.style.setProperty('--antimationDuration', animationTime/1000 + 's');
+
     //load JSON
     fetch(
         "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json" +
@@ -30,10 +32,10 @@ async function ready() {
     //if true that means its in testing mode, and gets the most 'future publication' 
     //which is our test publication
             generateQueue(getMostCurrentPublicaiton(data, isTesting));
-            updateMainArticle(true);
+            generateQueueArticles();
+            nextArticle(true);
         });
 }
-
 function getMostCurrentPublicaiton(data, isTesting){
     let date = new Date();
     var dueYear = Number(date.getFullYear());
@@ -142,41 +144,22 @@ function generateQueue(publication){
     }
 
 }
-function updateMainArticle(firstTime){
-    // console.log("queue length: " + queue.length);  
-    if (queue.length == 0 && !firstTime) {
-        location.reload();
-        return false;
-    }
+function generateQueueArticles(){
+    let queueGrid = document.getElementById('queue-grid');
+    for(let i = 1; i < queue.length; i++){
+        let queueItem = document.createElement("div");
+        queueItem.classList.add('queue-container');
+        let queueThumbnail = document.createElement("div");
+        queueThumbnail.classList.add('queue-thumbnail');
+        queueThumbnail.style.setProperty("background-image", "url(" + queue[i]["thumbnail"] + ")");
 
-    //change thumbnail
-    console.log(queue[0]["thumbnail"]);
-    document.getElementById("main-thumbnail").style.setProperty("background-image", "url(" + queue[0]["thumbnail"] + ")");
-    //change title
-    textChangeAnim(document.getElementById("main-title"), queue[0]["title"]);
-    //change desc
-    textChangeAnim(document.getElementById("main-desc"),  queue[0]["author"] + "   •   " + queue[0]["date"]);
-    // //change QR code
-    //delete old QR code
-    document.getElementById("qrcode").innerHTML = "";
-    var QR = new QRCode(document.getElementById("qrcode"), {
-        text: queue[0]["url"],
-        width: document.getElementById("qrcode").getBoundingClientRect().width,
-        height: document.getElementById("qrcode").getBoundingClientRect().width,
-        colorDark : "#000000",
-        colorLight : "rgb(230, 230, 230)"
-    });
-    // console.log(QR);
-
-    queue.splice(0, 1);
-
-    if(queue.length >= 0){
-        if(firstTime){
-            setTimeout(updateMainArticle, mainArticlePause);
-        } else{
-            setTimeout(updateMainArticle, pause);
+        if(i > 3){
+            queueItem.style.setProperty("display", "none");
         }
+        queueItem.appendChild(queueThumbnail);
+        queueGrid.appendChild(queueItem);
     }
+    return 0;
 }
 function textChangeAnim(element, text){
 
@@ -186,7 +169,7 @@ function textChangeAnim(element, text){
 
     // Typewrite animation
     let numAttempts = text.length * Math.floor(Math.random() * 3 + 5);
-    let time = animationTime / 2;
+    let time = animationTime;
     let timeBetweenAttempts = time/numAttempts; //amount of time for character try
 
     // console.log("time between attempts: " + timeBetweenAttempts);
@@ -238,10 +221,67 @@ function typewrite(element, text, numAttempts, timeBetweenAttempts, i, k, r){
         setTimeout(typewrite, timeBetweenAttempts, element, text, numAttempts, timeBetweenAttempts, i, k, r);
     }
 }
+function updateMainArticle(){
+    //change thumbnail
+    console.log(queue[0]["thumbnail"]);
+    document.getElementById("main-thumbnail").style.setProperty("background-image", "url(" + queue[0]["thumbnail"] + ")");
+    //change title
+    textChangeAnim(document.getElementById("main-title"), queue[0]["title"]);
+    //change desc
+    textChangeAnim(document.getElementById("main-desc"),  queue[0]["author"] + "   •   " + queue[0]["date"]);
+    // //change QR code
+    //delete old QR code
+    document.getElementById("qrcode").innerHTML = "";
+    var QR = new QRCode(document.getElementById("qrcode"), {
+        text: queue[0]["url"],
+        width: document.getElementById("qrcode").getBoundingClientRect().width,
+        height: document.getElementById("qrcode").getBoundingClientRect().width,
+        colorDark : "#000000",
+        colorLight : "rgb(230, 230, 230)"
+    });
+}
+function updateQueue(){
+    let antiFlickerDeletionPreDelay = 5;
 
-var mainArticlePause = 7000; // time in milliseconds until the next item in the queue is shown
-var pause = 5000; // time in milliseconds until the next item in the queue is shown
-var animationTime = 2000;
+    let queueGrid = document.getElementById('queue-grid');
+    queueGrid.children[0].classList.add("queueAnimateOut");
+    queueGrid.children[0].children[0].classList.add("queueThumbnailAnimateOut");
+
+    // after animation
+    setTimeout(function(){
+
+        // delete the article that just transitioned
+        queueGrid.removeChild(queueGrid.children[0]);
+
+        if(queueGrid.childElementCount > 2){
+            queueGrid.children[2].style.setProperty("display", "block");
+        }
+
+    }, animationTime - antiFlickerDeletionPreDelay);
+}
+function nextArticle(firstTime){
+    // console.log("queue length: " + queue.length);  
+    if (queue.length == 0 && !firstTime) {
+        location.reload();
+        return false;
+    }
+    updateMainArticle();
+
+    queue.splice(0, 1);
+
+    if(queue.length >= 0){
+        if(firstTime){
+            setTimeout(updateQueue, mainArticlePause - animationTime)
+            setTimeout(nextArticle, mainArticlePause);
+        } else{
+            setTimeout(updateQueue, pause - animationTime);
+            setTimeout(nextArticle, pause);
+        }
+    }
+}
+var mainArticlePause = 6000; // time in milliseconds until the next item in the queue is shown
+var pause = 6000; // time in milliseconds until the next item in the queue is shown
+var animationTime = 1000;
 var short_months = [
     "Jan",
     "Feb",

@@ -139,7 +139,7 @@ function generateQueue(publication){
     // generate TLR
     let tlrItem = {}; 
     tlrItem["title"] = "thelionsroar.ch";
-    tlrItem["thumbnail"] = "resources/Logo.png";
+    tlrItem["thumbnail"] = "display/resources/Logo.png";
     tlrItem["author"] = "The cast of the Lions Roar";
     tlrItem["date"] = "since 17 August 2022"
     tlrItem["url"] = "thelionsroar.ch";

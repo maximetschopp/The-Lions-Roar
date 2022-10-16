@@ -277,10 +277,10 @@ function nextArticle(firstTime){
     if(queue.length >= 0){
         if(firstTime){
             setTimeout(updateQueue, mainArticlePause - animationTime)
-            setTimeout(nextArticle, mainArticlePause);
+            setTimeout(nextArticle, mainArticlePause - antiFlickerDeletionPreDelay);
         } else{
             setTimeout(updateQueue, pause - animationTime);
-            setTimeout(nextArticle, pause);
+            setTimeout(nextArticle, pause - antiFlickerDeletionPreDelay);
         }
     }
 }

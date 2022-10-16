@@ -266,7 +266,7 @@ function updateQueue(){
 }
 function nextArticle(firstTime){
     // nothing left in queue
-    if (queue.length == 0 && !firstTime) {
+    if (queue.length == 0 && !firstTime && autoRefresh) {
         location.reload();
         return false;
     }
@@ -284,8 +284,8 @@ function nextArticle(firstTime){
         }
     }
 }
-var mainArticlePause = 7000; // time in milliseconds until the next item in the queue is shown
-var pause = 5000; // time in milliseconds until the next item in the queue is shown
+var mainArticlePause = 70000; // time in milliseconds until the next item in the queue is shown
+var pause = 100000; // time in milliseconds until the next item in the queue is shown
 var animationTime = 1000;
 var short_months = [
     "Jan",
@@ -303,7 +303,7 @@ var short_months = [
 ];
 var queue = [];
 var data = null;
-
+var autoRefresh = false;
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 var isTesting = urlParams.get('test');

@@ -259,7 +259,7 @@ function updateQueue(){
         }
 
         if(queueGrid.childElementCount > 2){
-            queueGrid.children[2].style.setProperty("display", "block");
+            queueGrid.children[2].style.setProperty("display", "flex");
         }
 
     }, animationTime - antiFlickerDeletionPreDelay);

@@ -32,6 +32,7 @@ async function ready() {
     //if true that means its in testing mode, and gets the most 'future publication' 
     //which is our test publication
             generateQueue(getMostCurrentPublicaiton(data, isTesting));
+            preload();
             generateQueueArticles();
             nextArticle(true);
         });
@@ -242,7 +243,6 @@ function updateMainArticle(){
     });
 }
 function updateQueue(){
-    let antiFlickerDeletionPreDelay = 5;
 
     let queueGrid = document.getElementById('queue-grid');
     if(queueGrid.childElementCount > 0){
@@ -284,6 +284,17 @@ function nextArticle(firstTime){
         }
     }
 }
+function preload(){
+    for(let i = 0; i < queue.length; i++){
+        thumbnailSrc = queue[i]["thumbnail"];
+        let linkElement = document.createElement("link");
+        linkElement.setAttribute("rel", "preload");
+        linkElement.setAttribute("as", "image");
+        linkElement.setAttribute("href", thumbnailSrc);
+        document.head.appendChild(linkElement);
+    }
+}
+
 var mainArticlePause = 7000; // time in milliseconds until the next item in the queue is shown
 var pause = 5000; // time in milliseconds until the next item in the queue is shown
 var animationTime = 1000;
@@ -303,6 +314,7 @@ var short_months = [
 ];
 var queue = [];
 var data = null;
+var antiFlickerDeletionPreDelay = 3;
 var autoRefresh = true;
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);

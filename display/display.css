@@ -234,5 +234,6 @@ h2{
 @media (max-aspect-ratio: 15/9){
     #srry{
         display: flex;
+        z-index: 1000;
     }
 }

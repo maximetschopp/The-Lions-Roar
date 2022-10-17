@@ -65,7 +65,6 @@ function getMostCurrentPublicaiton(data, isTesting){
             continue;
         }
         // if not then it must be the most current, enabled publication
-        // console.log(publication)
         return publication;
     }
 }

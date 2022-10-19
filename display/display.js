@@ -66,7 +66,7 @@ function getMostCurrentPublicaiton(data, isTesting){
         }
 
         // for testing
-        // publication = data[1];
+        //publication = data[1];
 
         // if not then it must be the most current, enabled publication
         return publication;

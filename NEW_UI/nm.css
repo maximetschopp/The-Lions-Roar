@@ -19,7 +19,7 @@
         0px calc(30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(0, 0, 0, 0.048),
         0px calc(56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(0, 0, 0, 0.054),
         0px calc(100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(0, 0, 0, 0.07);
-    --tab-bar-height: 9vh;
+    --tab-bar-height: 7vh;
 }
 h2{
     width: 100%;

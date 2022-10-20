@@ -78,13 +78,13 @@ h3{
     position: absolute;
     left: 50%;
     height: calc(var(--tab-bar-height) * 0.65);
-    margin-top: calc(var(--tab-bar-height) * 0.04);
+    margin-top: calc(var(--tab-bar-height) * 0.02);
     transform: translate(-50%, 0%);
     margin-inline: auto;
 }
 .wide-icon{
-    margin-top: calc(var(--tab-bar-height) * 0.02);
     height: calc(var(--tab-bar-height) * 0.7) !important;
+    margin-top: calc(var(--tab-bar-height) * 0.01);
 }
 .tab-bar-text{
     font-family: neue-haas-grotesk-display, sans-serif;

@@ -1,5 +1,5 @@
 :root{
-    --border-radius: min(4vw,4vw);
+    --border-radius: min(8vw,8vw);
     --dropShadow: drop-shadow(0px 38px 30px rgba(0, 0, 0, 0.613));
     --bgColor: rgb(230, 230, 230);
     --animationInterpolation: cubic-bezier(0.94, 0, 0.81, 0.92);
@@ -23,7 +23,7 @@
 h2{
     width: 100%;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: 16px;
+    font-size: max(3.6vw, 15px);
     font-weight: 600;
     font-style: normal;
     margin-bottom: 0px;
@@ -39,7 +39,7 @@ h2{
 }   
 h3{
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: 13px;
+    font-size: max(3vw, 13px);
     font-weight: 300;
     font-style: normal;
     /*font-size: calc(1.2vh + 7px);*/
@@ -50,15 +50,15 @@ h3{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
-    line-clamp: 2; 
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1; 
     -webkit-box-orient: vertical;
 }
 #tab-bar{
     position: fixed;
     bottom: 0%;
     left: 0%;
-    height: 75px;
+    height: 9vh;
     width: 100%;
     background: linear-gradient();
     /*border-top: 1px solid black;*/
@@ -75,20 +75,23 @@ h3{
 }
 .tab-bar-icon{
     margin-inline: auto;
-    margin-top: 5px;
-    width: 50px;
-    height: 50px;
-    background-color: black;
+    margin-top: 2%;
+    height: 65%;
+    width: auto;
+    background-color: white;
     border-radius: 100%;
 }
 .tab-bar-text{
-    margin-inline: auto;
-    text-align: center;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
+    font-size: max(10px, 2vh);
     font-style: normal;
-    color: black;
-    font-size: 12px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 4%;
+    transform: translate(-50%,0);
+    text-align: center;
 }
 .article{
     position: relative;
@@ -107,15 +110,15 @@ h3{
 }
 .description{
     position: relative;
-    width: 90%;
-    margin-inline: auto;
+    width: auto;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-inline: var(--border-radius);
+    margin-bottom: calc( var(--border-radius) / 3);
 }
 .share-button{
-    width: 25px;
-    height: 25px;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
-    right: 5%;
-    bottom: 15px;
+    right: var(--border-radius);
+    bottom: calc( var(--border-radius) / 3);
 }

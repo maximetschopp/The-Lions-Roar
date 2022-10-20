@@ -92,7 +92,7 @@ h3{
 .tab-bar-text{
     font-family: SF-Compact-Rounded-Regular, urbane-rounded, sans-serif;
     font-weight: 500;
-    font-size: max(10px, 0.8vh);    
+    font-size: max(10px, 1.2vh);    
     font-style: normal;
     letter-spacing: .06rem;
     color: white;

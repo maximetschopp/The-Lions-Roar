@@ -19,6 +19,7 @@
         0px calc(30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(0, 0, 0, 0.048),
         0px calc(56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(0, 0, 0, 0.054),
         0px calc(100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(0, 0, 0, 0.07);
+    --tab-bar-height: 9vh;
 }
 h2{
     width: 100%;
@@ -58,7 +59,7 @@ h3{
     position: fixed;
     bottom: 0%;
     left: 0%;
-    height: 9vh;
+    height: var(--tab-bar-height);
     width: 100%;
     background: linear-gradient();
     /*border-top: 1px solid black;*/
@@ -74,17 +75,21 @@ h3{
     width: 100%;
 }
 .tab-bar-icon{
+    position: absolute;
+    left: 50%;
+    height: calc(var(--tab-bar-height) * 0.6);
+    transform: translate(-50%, 0%);
     margin-inline: auto;
-    margin-top: 2%;
-    height: 65%;
-    width: auto;
-    background-color: white;
-    border-radius: 100%;
+    margin-top: calc(var(--tab-bar-height) * 0.1);
+}
+.wide-icon{
+    margin-top: calc(var(--tab-bar-height) * 0.08);
+    height: calc(var(--tab-bar-height) * 0.65) !important;
 }
 .tab-bar-text{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
-    font-size: max(10px, 2vh);
+    font-size: max(10px, 1.6vh);
     font-style: normal;
     color: white;
     position: absolute;

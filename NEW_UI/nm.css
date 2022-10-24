@@ -67,7 +67,7 @@ h3{
     grid-template-columns: repeat(5, 1fr);
     z-index: 1000;
     background: rgba(34, 34, 34, 0.785);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(8px);   
 }
 .tab-bar-icon-container{

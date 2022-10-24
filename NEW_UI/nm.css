@@ -25,7 +25,7 @@ body{
 h2{
     width: 100%;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(3.6vw, 15px);
+    font-size: max(4vw, 15px);
     font-weight: 600;
     font-style: normal;
     margin-bottom: 0px;
@@ -41,7 +41,7 @@ h2{
 }   
 h3{
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(3vw, 13px);
+    font-size: max(3.5vw, 13px);
     font-weight: 300;
     font-style: normal;
     /*font-size: calc(1.2vh + 7px);*/
@@ -107,6 +107,7 @@ h3{
     width: 100%;
     aspect-ratio: 16/9;
     background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
+    border-radius: 0;
     border-radius: 0 0 10vw 10vw;
     background-repeat: no-repeat;
     background-size: cover;
@@ -124,7 +125,7 @@ h3{
     left: 50%;
     top: calc(100vw * (9/16));
     transform: translate(-50%, -50%);
-    box-shadow: var(--boxShadowMini);
+    /*box-shadow: var(--boxShadowMini);*/
 }
 .WB-button-play-icon{
     display: inline;

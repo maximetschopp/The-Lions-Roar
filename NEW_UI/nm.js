@@ -1,7 +1,7 @@
 function share(Title, Url){
 
     console.log("clicked");
-    
+
     if(Title = null){
         Title = "Rick Roll";
     }
@@ -17,6 +17,7 @@ function share(Title, Url){
           })
       } else {
         // Fallback
+        document.body.style.backgroundColor = "red";
         console.error("navigator.share is not supported");
       }
 }

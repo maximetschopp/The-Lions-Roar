@@ -17,7 +17,6 @@ function share(Title, Url){
           })
       } else {
         // Fallback
-        document.body.style.backgroundColor = "red";
         console.error("navigator.share is not supported");
       }
 }

@@ -1,11 +1,12 @@
-function share(Title, Url){
+function share(Title, Url, button){
 
-    console.log("clicked");
+    console.log(button);
+    button.classList.toggle('share-button-pressed');
 
-    if(Title = null){
+    if(Title == null){
         Title = "Rick Roll";
     }
-    if(Url = null){
+    if(Url == null){
         Url = "https://youtu.be/dQw4w9WgXcQ";
     }
 

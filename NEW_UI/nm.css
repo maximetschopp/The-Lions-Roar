@@ -128,4 +128,10 @@ h3{
     position: absolute;
     right: var(--border-radius);
     bottom: calc( var(--border-radius) / 3);
+    scale: 1;
+    transition: scale 0.05s;
+}
+.share-button-pressed{
+    scale: 0.7;
+    transition: scale 0.25s;
 }

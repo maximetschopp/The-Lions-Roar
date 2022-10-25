@@ -137,10 +137,10 @@ h3{
     display: inline;
     color: white;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(5.5vw, 15px);
-    font-weight: 600;
-    margin-inline: 2vw;
-    letter-spacing: 0.2vw;
+    font-size: max(4.5vw, 15px);
+    font-weight: 500;
+    margin-inline: 4vw;
+    letter-spacing: 0.15vw;
     margin-top: auto;
     margin-bottom: auto;
     font-style: normal;
@@ -192,11 +192,20 @@ h3{
     right: 3vw;
     bottom: 3vw;
     scale: 1;
-    transition: scale 0.05s;
 }
 .share-button-pressed{
-    scale: 0.7;
-    transition: scale 0.25s;
+    animation: 0.25s ease-in-out 0s buttonPress;
+}
+@keyframes buttonPress{
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 0.7;
+    }
+    100%{
+        scale: 1;
+    }
 }
 #spacer{
     width: 100%;

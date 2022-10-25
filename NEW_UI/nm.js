@@ -1,7 +1,8 @@
 function share(Title, Url, button){
 
     console.log(button);
-    button.classList.toggle('share-button-pressed');
+    button.classList.add('share-button-pressed');
+    setTimeout(function(){button.classList.remove('share-button-pressed');}, 250);
 
     if(Title == null){
         Title = "Rick Roll";

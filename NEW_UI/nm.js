@@ -1,3 +1,5 @@
+screen.orientation.lock('vertical');
+
 function share(Title, Url, button){
 
     console.log(button);

@@ -150,6 +150,7 @@ h3{
     position: relative;
     margin: auto;
     margin-top: 10vw;
+    margin-bottom: 10vw;
     width: 90%;
     display: grid;
     grid-template-columns: 85% 15%;

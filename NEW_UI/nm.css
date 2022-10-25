@@ -1,6 +1,6 @@
 :root{
     --border-radius: min(8vw,8vw);
-    --bgColor: rgb(255, 255, 255);
+    --bgColor: rgb(244, 244, 244);
     --bsmd: 3;
     --boxShadowMini:
         0px calc(-2.6px/var(--bsmd)) calc(4.7px/var(--bsmd)) rgba(255, 255, 255, 0.037),
@@ -113,7 +113,7 @@ h3{
     background-size: cover;
     /*box-shadow: var(--boxShadowMini);*/
 }
-.WB-button{
+.WV-button{
     display: flex;
     width: fit-content;
     margin-inline: auto;
@@ -127,13 +127,13 @@ h3{
     transform: translate(-50%, -50%);
     /*box-shadow: var(--boxShadowMini);*/
 }
-.WB-button-play-icon{
+.WV-button-play-icon{
     display: inline;
     width: 9vw;
     margin: auto;
     padding-inline: 0.5vw;
 }
-.WB-button-text{
+.WV-button-text{
     display: inline;
     color: white;
     font-family: neue-haas-grotesk-display, sans-serif;
@@ -194,14 +194,14 @@ h3{
     scale: 1;
 }
 .share-button-pressed{
-    animation: 0.25s ease-in-out 0s buttonPress;
+    animation: 0.2s ease-in-out 0s buttonPress;
 }
 @keyframes buttonPress{
     0%{
         scale: 1;
     }
     50%{
-        scale: 0.7;
+        scale: 0.5;
     }
     100%{
         scale: 1;

@@ -137,10 +137,10 @@ h3{
     display: inline;
     color: white;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(5vw, 15px);
+    font-size: max(5.5vw, 15px);
     font-weight: 600;
-    margin-inline: 3vw;
-    letter-spacing: 0.1vw;
+    margin-inline: 2vw;
+    letter-spacing: 0.2vw;
     margin-top: auto;
     margin-bottom: auto;
     font-style: normal;

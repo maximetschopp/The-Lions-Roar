@@ -118,7 +118,7 @@ h3{
     width: fit-content;
     margin-inline: auto;
     background-color: black;
-    padding: 2.5vw;
+    padding: 2vw;
     border-radius: 10vw;
     /*transform: translate(0, -50%);*/
     position: absolute;
@@ -129,16 +129,17 @@ h3{
 }
 .WB-button-play-icon{
     display: inline;
-    width: 8.5vw;
+    width: 9vw;
     margin: auto;
+    padding-inline: 0.5vw;
 }
 .WB-button-text{
     display: inline;
     color: white;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-size: max(5vw, 15px);
-    font-weight: 500;
-    margin-inline: 2.5vw;
+    font-weight: 600;
+    margin-inline: 3vw;
     letter-spacing: 0.1vw;
     margin-top: auto;
     margin-bottom: auto;

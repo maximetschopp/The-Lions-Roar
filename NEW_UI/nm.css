@@ -1,6 +1,6 @@
 :root{
     --border-radius: min(8vw,8vw);
-    --bgColor: rgb(230, 230, 230);
+    --bgColor: rgb(255, 255, 255);
     --bsmd: 3;
     --boxShadowMini:
         0px calc(-2.6px/var(--bsmd)) calc(4.7px/var(--bsmd)) rgba(255, 255, 255, 0.037),
@@ -31,7 +31,6 @@ h2{
     margin-bottom: 0px;
     text-align: left;
     white-space: pre-wrap;
-    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -46,6 +45,7 @@ h3{
     font-style: normal;
     /*font-size: calc(1.2vh + 7px);*/
     margin-top: 5px;
+    margin-bottom: 3px;
     text-align: left;
     white-space: pre-wrap;
     width: 100%;
@@ -163,36 +163,40 @@ h3{
 }
 .article{
     position: relative;
-    width: 90%;
+    width: 93%;
     margin-inline: auto;
     margin-top: 5%;
     background-color: white;
     box-shadow: var(--boxShadowMini);
     border-radius: var(--border-radius);
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 60% 40%;
 }
 .thumbnail{
     width: 100%;
-    aspect-ratio: 16/9;
+    border-radius: var(--border-radius);
+    aspect-ratio: 4/3.5;
     background-color: black;
 }
 .description{
     position: relative;
     width: auto;
-    margin-top: 5px;
-    margin-inline: var(--border-radius);
-    margin-bottom: calc( var(--border-radius) / 3);
+    margin: 0 3vw 0 3vw;
 }
 .share-button{
-    width: 5vw;
-    height: 5vw;
+    width: 8vw;
     position: absolute;
-    right: var(--border-radius);
-    bottom: calc( var(--border-radius) / 3);
+    right: 3vw;
+    bottom: 3vw;
     scale: 1;
     transition: scale 0.05s;
 }
 .share-button-pressed{
     scale: 0.7;
     transition: scale 0.25s;
+}
+#spacer{
+    width: 100%;
+    height: 15vh;
 }

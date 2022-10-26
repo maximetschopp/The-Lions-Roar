@@ -55,8 +55,13 @@
 
 /* at >1 : 1 desktop view */
 @media (min-aspect-ratio: 1/1) {
+    #pageContent{
+        width: calc(100vw - var(--tab-bar-vertical-width));
+        margin: auto;
+        margin-right: 0;
+    }
     #tab-bar{
-        position: relative;
+        position: fixed;
         top: 0%;
         left: 0%;
         margin-left: 0%;
@@ -98,9 +103,5 @@
     }
     a{
         text-decoration: none;
-    }
-    body{
-        display: grid;
-        grid-template-columns: var(--tab-bar-vertical-width) auto;
     }
 }

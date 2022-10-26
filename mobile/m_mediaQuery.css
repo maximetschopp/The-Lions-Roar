@@ -1,5 +1,4 @@
 /* at 1:1 mobile vertical stack */
-
 @media (max-aspect-ratio: 1/1) {
     *{
         --border-radius: 5vw !important;

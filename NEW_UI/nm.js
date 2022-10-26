@@ -1,24 +1,32 @@
-function share(Title, Url, button){
+screen.orientation.lock("portrait");
 
-    console.log(button);
+function share(title, url, button){
+
+    // trigger button animation
     button.classList.add('share-button-pressed');
     setTimeout(function(){button.classList.remove('share-button-pressed');}, 250);
 
-    if(Title == null){
-        Title = "Rick Roll";
+    // try to use Native OS share API if available
+    if(title == null){
+        title = "Rick Roll";
     }
-    if(Url == null){
-        Url = "https://youtu.be/dQw4w9WgXcQ";
+    if(url == null){
+        url = "https://youtu.be/dQw4w9WgXcQ";
     }
 
     if (navigator.share) {
         // Web Share API is supported
         navigator.share({
-            title: Title,
-            url: Url
+            title: title,
+            url: url
           })
       } else {
         // Fallback
-        console.error("navigator.share is not supported");
-      }
+        // // copy to clipboard
+        // navigator.clipboard.writeText(url);
+      
+        // // Alert the copied text
+        // alert("Copied the text: " + url);
+    }
+
 }

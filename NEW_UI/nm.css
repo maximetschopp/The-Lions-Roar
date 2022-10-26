@@ -20,6 +20,7 @@
 body{
     margin: 0;
     background-color: var(--bgColor);
+    position: relative;
 }
 h2{
     width: 100%;

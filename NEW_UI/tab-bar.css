@@ -56,8 +56,10 @@
 /* at >1 : 1 desktop view */
 @media (min-aspect-ratio: 1/1) {
     #pageContent{
-        width: calc(100vw - var(--tab-bar-vertical-width));
+        /*width: calc(100vw - var(--tab-bar-vertical-width));*/
+        width: auto;
         margin: auto;
+        margin-left: var(--tab-bar-vertical-width);
         margin-right: 0;
     }
     #tab-bar{

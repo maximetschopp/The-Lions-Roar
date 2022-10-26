@@ -59,6 +59,7 @@ h3{
     width: 100%;
 }
 .main-thumbnail{
+    position: relative;
     width: 100%;
     aspect-ratio: 16/9;
     background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
@@ -78,8 +79,9 @@ h3{
     /*transform: translate(0, -50%);*/
     position: absolute;
     left: 50%;
-    top: calc(100vw * (9/16));
-    transform: translate(-50%, -50%);
+    /*top: calc(100vw * (9/16));*/
+    bottom: 0;
+    transform: translate(-50%, 50%);
     /*box-shadow: var(--boxShadowMini);*/
 }
 .WV-button-play-icon{
@@ -165,4 +167,7 @@ h3{
 #spacer{
     width: 100%;
     height: 15vh;
+}
+#pageContent{
+    position: relative;
 }

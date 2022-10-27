@@ -1,5 +1,6 @@
 :root{
     --border-radius: min(8vw,8vw);
+    --border-radius-desktop: min(3vw,3vw);
     --bgColor: rgb(244, 244, 244);
     --bsmd: 3;
     --boxShadowMini:
@@ -16,6 +17,7 @@
         0px calc(30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(0, 0, 0, 0.048),
         0px calc(56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(0, 0, 0, 0.054),
         0px calc(100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(0, 0, 0, 0.07);
+    --main-article-height-dekstop: 50vh;
 }
 body{
     margin: 0;
@@ -57,6 +59,7 @@ h3{
     -webkit-box-orient: vertical;
 }
 .main-article{
+    position: relative;
     width: 100%;
 }
 .main-thumbnail{
@@ -70,7 +73,7 @@ h3{
     background-size: cover;
     /*box-shadow: var(--boxShadowMini);*/
 }
-.WV-button{
+.WV-button-mobile{
     display: flex;
     width: fit-content;
     margin-inline: auto;
@@ -85,13 +88,13 @@ h3{
     transform: translate(-50%, 50%);
     /*box-shadow: var(--boxShadowMini);*/
 }
-.WV-button-play-icon{
+.WV-button-mobile-play-icon{
     display: inline;
     width: 9vw;
     margin: auto;
     padding-inline: 0.5vw;
 }
-.WV-button-text{
+.WV-button-mobile-text{
     display: inline;
     color: white;
     font-family: neue-haas-grotesk-display, sans-serif;
@@ -171,4 +174,135 @@ h3{
 }
 #pageContent{
     position: relative;
+}
+
+/* at 1:1 mobile vertical stack */
+@media (max-aspect-ratio: 1/1) {
+    #blurred-bg{
+        display: none;
+    }
+    .main-article-desktop-button-container{
+        display: none;
+    }
+    .WV-button-desktop{
+        display: none;
+    }
+    .share-button-desktop-container{
+        display: none;
+    }
+}
+
+/* at >1 : 1 desktop view */
+@media (min-aspect-ratio: 1/1) {
+    body{
+        background-color: #0f0f0f;
+    }
+    .main-article{
+        height: var(--main-article-height-dekstop);
+        overflow: hidden;
+        border-radius: 0 0 var(--border-radius-desktop) var(--border-radius-desktop);
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .main-thumbnail{
+        margin-top: calc(0.07 * var(--main-article-height-dekstop));
+        margin-left: 2vw;
+        height: calc(0.86 * var(--main-article-height-dekstop));
+        width: calc((0.86 * var(--main-article-height-dekstop) * 16)/9);
+        border-radius: var(--border-radius-desktop);
+    }
+    .WV-button-mobile{
+        display: none;
+    }
+    #blurred-bg-overlay{
+        width: 100%;
+        height: 100%;
+        background-color: #0f0f0f76;
+    }
+    #blurred-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(1pt);
+        background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
+        background-color: #0f0f0f;
+        background-blend-mode: add;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .main-article-desc{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: calc( 0.25 * var(--main-article-height-dekstop));
+        margin-left: 2vw;
+    }
+    h2{
+        font-size: max(1.7vw, 15px);
+        color: white;
+        align-items: flex-start;
+    }
+    h3{
+        margin-top: 2vh;
+        font-size: max(1.2vw, 13px);
+        color: white;
+    }
+    .main-article-share-button{
+        display: none;
+    }
+    .main-article-desktop-button-container{
+        width: auto;
+        margin: auto;
+        margin-left: 0;
+        display: flex;
+        flex-direction: row;
+        margin-top: calc( 0.22 * var(--main-article-height-dekstop));
+        height: calc( 0.15 * var(--main-article-height-dekstop));
+
+    }
+    .WV-button-desktop{
+        display: flex;
+        width: fit-content;
+        margin-inline: auto;
+        background-color: white;
+        padding: 1vh;
+        border-radius: 10vh;
+    }
+    .WV-button-desktop-play-icon{
+        display: inline;
+        height: 5vh;
+        margin: auto;
+    }
+    .WV-button-desktop-text{
+        display: inline;
+        color: black;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(3vh, 15px);
+        font-weight: 600;
+        margin-inline: 2vh;
+        letter-spacing: 0.05vh;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-style: normal;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .share-button-desktop-container{
+        position: relative;
+        width: 7.5vh;
+        height: 7.5vh;
+        border-radius: 100%;
+        background-color: white;
+        margin-left: 0.75vw;
+    }
+    .main-article-share-button-desktop{
+        position: relative;
+        width: 80%;
+        height: 80%;
+        margin: auto;
+    }
 }

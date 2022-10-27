@@ -37,10 +37,13 @@
         </div>
         <section id = "pageContent">
             <article class = "main-article">
+                <div id = "blurred-bg"> 
+                    <div id="blurred-bg-overlay"></div>
+                </div>
                 <div class = "main-thumbnail">
-                    <div class = "WV-button">
-                        <img class = "WV-button-play-icon" src="resources/Icons/video_icon_fill.svg">
-                        <p class = "WV-button-text">Weekly Video</p>
+                    <div class = "WV-button-mobile">
+                        <img class = "WV-button-mobile-play-icon" src="resources/Icons/video_icon_fill.svg">
+                        <p class = "WV-button-mobile-text">Weekly Video</p>
                     </div>
                 </div>
                 <div class = "main-article-desc">
@@ -48,10 +51,20 @@
                         <h2 class="article-title main-article-title">Title of the Main Publication will go here, sometimes it is so long that it can even span 2 line </h2>
                         <h3 class="article-author">Names of the Authors   •   19 October</h3>
                     </div>
+                    <div class = "main-article-desktop-button-container">
+                        <div class = "WV-button-desktop">
+                            <img class = "WV-button-desktop-play-icon" src="resources/Icons/video_icon_fill_black.svg">
+                            <p class = "WV-button-desktop-text">Weekly Video</p>
+                        </div>
+                        <div class = "share-button-desktop-container" onclick = "share(null, null, this)">
+                            <img class = "main-article-share-button-desktop" src="resources/Icons/share_icon_outline_black.svg">
+                        </div>
+                    </div>
                     <img class = "main-article-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_outline_black.svg">
                 </div>
-                
             </article>
+
+
             <article class = "article">
                 <div class = "thumbnail"></div>
                 <section class="description">

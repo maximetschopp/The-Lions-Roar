@@ -239,6 +239,7 @@ h3{
         flex-direction: column;
         align-items: flex-start;
         margin-top: calc( 0.25 * var(--main-article-height-dekstop));
+        height: calc( 0.6 * var(--main-article-height-dekstop));
         margin-left: 2vw;
     }
     h2{
@@ -255,6 +256,8 @@ h3{
         display: none;
     }
     .main-article-desktop-button-container{
+        position: absolute;
+        bottom: 0;
         width: auto;
         margin: auto;
         margin-left: 0;
@@ -303,6 +306,6 @@ h3{
         position: relative;
         width: 80%;
         height: 80%;
-        margin: auto;
+        margin: 10%;
     }
 }

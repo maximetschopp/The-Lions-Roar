@@ -226,7 +226,7 @@ h3{
         left: 0;
         width: 100%;
         height: 100%;
-        filter: blur(1pt);
+        filter: blur(15pt);
         background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-color: #0f0f0f;
         background-blend-mode: add;
@@ -284,7 +284,7 @@ h3{
         display: inline;
         color: black;
         font-family: neue-haas-grotesk-display, sans-serif;
-        font-size: max(3vh, 15px);
+        font-size: max(3vh, 8px);
         font-weight: 600;
         margin-inline: 2vh;
         letter-spacing: 0.05vh;

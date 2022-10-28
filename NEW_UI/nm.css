@@ -124,39 +124,6 @@ h3{
 .main-article-title{
     margin-top: 0;
 }
-.article{
-    position: relative;
-    width: 93%;
-    margin-inline: auto;
-    margin-top: 5%;
-    background-color: white;
-    box-shadow: var(--boxShadowMini);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 60% 40%;
-}
-.thumbnail{
-    width: 100%;
-    border-radius: var(--border-radius);
-    aspect-ratio: 4/3.5;
-    background-color: black;
-}
-.description{
-    position: relative;
-    width: auto;
-    margin: 0 3vw 0 3vw;
-}
-.share-button{
-    width: 8vw;
-    position: absolute;
-    right: 3vw;
-    bottom: 3vw;
-    scale: 1;
-}
-.share-button-pressed{
-    animation: 0.2s ease-in-out 0s buttonPress;
-}
 @keyframes buttonPress{
     0%{
         scale: 1;
@@ -307,5 +274,30 @@ h3{
         width: 80%;
         height: 80%;
         margin: 10%;
+    }
+    .articles-container{
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-aspect-ratio: 3/2) {
+    .articles-container{
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-aspect-ratio: 5/2) {
+    .articles-container{
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }

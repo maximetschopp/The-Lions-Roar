@@ -1,0 +1,162 @@
+.article-title{
+}
+.article-author{
+
+}
+.article-date{
+
+}
+
+/* at 1:1 mobile vertical stack */
+@media (max-aspect-ratio: 1/1) {
+    h2{
+        width: 100%;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(4vw, 15px);
+        font-weight: 600;
+        font-style: normal;
+        margin-bottom: 0px;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
+    }   
+    h3{
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(3.5vw, 13px);
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 5px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+    }
+    .article1{
+        position: relative;
+        width: 93%;
+        margin-inline: auto;
+        margin-top: 5%;
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
+    .article1-thumbnail{
+        width: 100%;
+        border-radius: var(--border-radius);
+        aspect-ratio: 4/3.5;
+        background-color: black;
+    }
+    .article1-description-mobile{
+        position: relative;
+        width: auto;
+        margin: 0 3vw 0 3vw;
+    }
+    .article1-description-desktop{
+        display: none;
+    }
+    .article1-share-button{
+        width: 8vw;
+        position: absolute;
+        right: 3vw;
+        bottom: 3vw;
+        scale: 1;
+    }
+    .share-button-pressed{
+        animation: 0.2s ease-in-out 0s buttonPress;
+    }
+    .article1-share-button-desktop{
+        display: none;
+    }
+}
+
+/* at >1 : 1 desktop view */
+@media (min-aspect-ratio: 1/1) {
+    h2{
+        width: 100%;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(2.2vh, 8px);
+        font-weight: 600;
+        font-style: normal;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
+    }   
+    h3{
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(1.8vh, 6px);
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 3px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+    }
+    .article1{
+        position: relative;
+        width: 93%;
+        aspect-ratio: 12/10;
+        margin-inline: auto;
+        border-radius: var(--border-radius-desktop);
+        display: grid;
+        grid-template-rows: auto auto;
+        overflow: hidden;
+        margin-top: 5vh;
+    }
+    .article1-thumbnail{
+        border-radius: var(--border-radius-desktop);
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: white;
+        z-index: 99;
+    }
+    .article1-description-desktop{
+        position: relative;
+        width: calc(100% - 9vw);
+        margin: auto;
+        margin-bottom: 3vh;
+        margin-right: 7vw;
+        margin-left: 2vw;
+    }
+    .article1-description-mobile{
+        display: none;
+    }
+    .article1-share-button-desktop{
+        width: 3vw;
+        position: absolute;
+        right: 2vw;
+        bottom: 1.5vw;
+        scale: 1;
+    }
+    .article1-share-button{
+        display: none;
+    }
+}

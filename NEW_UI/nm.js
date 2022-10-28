@@ -1,5 +1,3 @@
-screen.orientation.lock("portrait");
-
 function share(title, url, button){
 
     // trigger button animation

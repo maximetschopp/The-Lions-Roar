@@ -43,7 +43,7 @@
 }
 .article3-author{
     position: relative;
-    font-size: max(2vh, 4px);
+    font-size: max(1.8vh, 4px);
 }
 .article3-share-button{
     position: absolute;

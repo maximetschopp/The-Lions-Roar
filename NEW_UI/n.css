@@ -209,7 +209,8 @@ h3{
         align-items: flex-start;
         margin-top: calc( 0.25 * var(--main-article-height-dekstop));
         height: calc( 0.6 * var(--main-article-height-dekstop));
-        margin-left: 2vw;
+        width: fit-content;
+        margin-inline: 2vw;
     }
     h2{
         font-size: max(1.7vw, 15px);

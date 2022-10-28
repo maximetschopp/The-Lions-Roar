@@ -9,6 +9,47 @@
     font-size: max(2.8vh, 8px);
     filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 1));
 }
+.article3{
+    position: relative;
+    width: 93%;
+    aspect-ratio: 12/10;
+    margin-inline: auto;
+    border-radius: var(--border-radius-desktop);
+    display: grid;
+    grid-template-rows: 32% 32% 32%;
+    gap: 2%;
+    overflow: hidden;
+    margin-top: 5vh;
+}
+.article3-article{
+    position: relative;
+    width: 100%;
+    border-radius: 10vh;
+    background-color: #1f1f1f;
+    display: block;
+    grid-template-rows: auto auto;
+}
+.article3-desc{
+    position: absolute;
+    width: 70%;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.article3-title{
+    position: relative;
+    font-size: max(2.2vh, 6px);
+}
+.article3-author{
+    position: relative;
+    font-size: max(2vh, 4px);
+}
+.article3-share-button{
+    position: absolute;
+    top: 25%;
+    height: 50%;
+    right: 5%;
+}
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
@@ -51,7 +92,7 @@
         width: 93%;
         margin-inline: auto;
         margin-top: 5%;
-        background-color: rgb(43, 43, 43);
+        background-color: #1f1f1f;
         border-radius: var(--border-radius);
         overflow: hidden;
         display: grid;
@@ -94,8 +135,6 @@
         background-color: white;
         border-radius: var(--border-radius);
         overflow: hidden;
-        display: grid;
-        grid-template-columns: 60% 40%;
     }
     .article2-thumbnail{
         width: 100%;
@@ -128,6 +167,12 @@
 
 /* at >1 : 1 desktop view */
 @media (min-aspect-ratio: 1/1) {
+    .main-article-title{
+        font-size: max(1.6vw, 8px);
+    }
+    .main-article-author{
+        font-size: max(1vw, 8px);
+    }
     h2{
         width: 100%;
         font-family: neue-haas-grotesk-display, sans-serif;
@@ -245,4 +290,7 @@
     .article2-share-button{
         display: none;
     }
+
+
+    
 }

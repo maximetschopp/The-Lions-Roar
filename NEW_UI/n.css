@@ -283,6 +283,7 @@ h3{
         height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        margin-inline: auto;
     }
 }
 @media (min-aspect-ratio: 3/2) {
@@ -292,6 +293,7 @@ h3{
         height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        margin-inline: auto;
     }
 }
 @media (min-aspect-ratio: 5/2) {
@@ -301,5 +303,6 @@ h3{
         height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-inline: auto;
     }
 }

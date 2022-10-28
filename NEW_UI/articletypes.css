@@ -39,6 +39,7 @@
 .article3-title{
     position: relative;
     font-size: max(2.2vh, 6px);
+    margin-top: 0;
 }
 .article3-author{
     position: relative;

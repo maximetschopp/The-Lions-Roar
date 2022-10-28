@@ -1,10 +1,5 @@
-.article-title{
-}
-.article-author{
-
-}
-.article-date{
-
+.share-button-pressed{
+    animation: 0.2s ease-in-out 0s buttonPress;
 }
 
 /* at 1:1 mobile vertical stack */
@@ -59,6 +54,9 @@
         border-radius: var(--border-radius);
         aspect-ratio: 4/3.5;
         background-color: black;
+        background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     .article1-description-mobile{
         position: relative;
@@ -74,9 +72,6 @@
         right: 3vw;
         bottom: 3vw;
         scale: 1;
-    }
-    .share-button-pressed{
-        animation: 0.2s ease-in-out 0s buttonPress;
     }
     .article1-share-button-desktop{
         display: none;
@@ -135,7 +130,9 @@
         border-radius: var(--border-radius-desktop);
         width: 100%;
         aspect-ratio: 16/9;
-        background-color: white;
+        background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
         z-index: 99;
     }
     .article1-description-desktop{

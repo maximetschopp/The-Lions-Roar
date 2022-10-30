@@ -101,6 +101,7 @@
         background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
     }
     .article1-description-mobile{
         position: relative;
@@ -140,6 +141,7 @@
         background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
     }
     .article2-description-mobile{
         position: relative;
@@ -231,6 +233,7 @@
         background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         z-index: 99;
     }
     .article1-description-desktop{
@@ -273,6 +276,7 @@
         background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         z-index: 99;
     }
     .article2-description-desktop{

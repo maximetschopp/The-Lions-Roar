@@ -197,7 +197,7 @@ h3{
         left: 0;
         width: 100%;
         height: 100%;
-        filter: blur(15pt);
+        filter: blur(15px);
         background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-color: #0f0f0f;
         background-blend-mode: add;

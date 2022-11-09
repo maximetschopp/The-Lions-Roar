@@ -74,7 +74,7 @@ def generateMainArticle(data):
     return mainArticle
 
 def generateArticles(articles):
-    articles = ""
+    output = ""
     for art in articles:
         articleTitle = art['title']
         articleAuthor = art['author']
@@ -109,7 +109,7 @@ def generateArticles(articles):
                     <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
                 </article>
                 """
-            articles += article1
+            output += article1
         elif (articleType == "2"): # Splash image with short title
             article2 = """
                 <article class = "article2">
@@ -121,7 +121,7 @@ def generateArticles(articles):
                     <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
                 </article>
             """
-            articles += article2
+            output += article2
         elif (articleType == "3"):
             a3Counter += 1; #increment
             temp = """
@@ -140,11 +140,13 @@ def generateArticles(articles):
                 article3 = """<article class = "article3">"""
                 article3 += a3InnerHTML
                 article3 += "</article>"
+                output += article3
     if a3Counter != 0:
         article3 = """<article class = "article3">"""
         article3 += a3InnerHTML
         article3 += "</article>"
-    return articles
+        output += article3
+    return output
 
 def generatePublicationPageContent(data):
     pageContent = """

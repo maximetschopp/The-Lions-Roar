@@ -1,4 +1,4 @@
-def generateTabBar():
+def generateTabBar(selectedTab):
     tabBar = """
             <div id = 'tab-bar'>
             <div class = 'tab-bar-icon-container'>
@@ -31,11 +31,11 @@ def generateTabBar():
 
 def generateMainArticle(data):
 
-    title = "title"
-    author = "Maxime Tschopp"
-    date = "19 October"
-    thumbnail = ""
-    url = ""
+    title = data['title']
+    author = data['author'] if 'author' in data else "The Lion's Roar"
+    date = data['date']
+    thumbnail = data['thumbnail']
+    url = data['url']
 
     mainArticle = """ 
             <article class = "main-article">
@@ -75,13 +75,13 @@ def generateMainArticle(data):
 
 def generateArticles(articles):
     articles = ""
-    for i in range(len(articles)):
-        articleTitle = ""
-        articleAuthor = ""
-        articleDate = ""
-        articleThumbnail = ""
-        articleURL = ""
-        articleType = ""
+    for art in articles:
+        articleTitle = art['title']
+        articleAuthor = art['author']
+        articleDate = art['date']
+        articleThumbnail = art['thumbnail']
+        articleURL = art['url']
+        articleType = art['type']
 
         a3Counter = 0
         a3InnerHTML = ""
@@ -136,10 +136,14 @@ def generateArticles(articles):
                 </article>
             """
             a3InnerHTML += temp
-            if(a3Counter >= 3 or i == len(articles)-1):
+            if a3Counter >= 3:
                 article3 = """<article class = "article3">"""
                 article3 += a3InnerHTML
                 article3 += "</article>"
+    if a3Counter != 0:
+        article3 = """<article class = "article3">"""
+        article3 += a3InnerHTML
+        article3 += "</article>"
     return articles
 
 def generatePublicationPageContent(data):
@@ -161,4 +165,5 @@ def generatePublicationPageContent(data):
     return pageContent
     
 
-print(generatePublicationPageContent(""))
+with open('output.html', 'w') as f:
+    f.write(generatePublicationPageContent(""))

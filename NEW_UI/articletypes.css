@@ -98,7 +98,6 @@
         border-radius: var(--border-radius);
         aspect-ratio: 4/3.5;
         background-color: black;
-        background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -138,7 +137,6 @@
         border-radius: var(--border-radius);
         aspect-ratio: 4/3.5;
         background-color: black;
-        background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -230,7 +228,6 @@
         border-radius: var(--border-radius-desktop);
         width: 100%;
         aspect-ratio: 16/9;
-        background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -273,7 +270,6 @@
         border-radius: var(--border-radius-desktop);
         width: 100%;
         height: 100%;
-        background-image: url("https://img.youtube.com/vi/e-CEd6xrRQc/maxresdefault.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

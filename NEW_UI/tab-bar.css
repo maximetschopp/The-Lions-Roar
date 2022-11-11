@@ -4,6 +4,14 @@
     --tab-bar-desktop-item-height: max(6vh, 30px);
 }
 
+.tab-bar-invis{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
     #tab-bar{

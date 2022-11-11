@@ -1,8 +1,10 @@
-#search-bar{
-    width: 90%;
+#search-bar-container{
     height: 3rem;
-    margin-left: 5%;
+    margin-inline: 5%;
     margin-top: 1em;
+    display: flex;
+    position: relative;
+    gap: 12px;
 }
 input{
     border: 1px #5e5e5e solid;
@@ -13,14 +15,34 @@ input{
     font-size: 1.5rem;
     font-weight: 100;
     color: white;
+    width: 100%;
+    height: 100%;
 }
 input:focus{
     border: 1px #b6b6b6 solid;
     outline: none;
 }
-body{
-    /*background-color: rgb(28, 28, 28);*/
-}
 #tab-bar{
     border-right: 1px solid #5e5e5e;
+}
+#date-btn{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    border: 1px #5e5e5e solid;
+    width: 6rem;
+}
+#calender-icon{
+    margin-inline: auto;
+    display: block;
+    height: 2rem;
+    margin-top: 0.5rem;
+}
+
+/* at >1 : 1 Desktop view */
+@media (min-aspect-ratio: 3/2) {
+    #date-btn{
+        display: none;
+    }
 }

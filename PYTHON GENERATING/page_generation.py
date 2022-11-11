@@ -2,7 +2,7 @@ def generateTabBar(selectedTab):
     tabBar = """
             <div id = 'tab-bar'>
             <div class = 'tab-bar-icon-container'>
-                <object data='resources/Icons/doc_icon_fill.svg' type='image/svg+xml'
+                <object data='resources/Icons/doc_icon_outline.svg' type='image/svg+xml'
                 id='today-icon' class = 'tab-bar-icon'></object>
                 <div class = 'tab-bar-text'>Today</div>
             </div>
@@ -30,6 +30,14 @@ def generateTabBar(selectedTab):
                 <div class = 'tab-bar-text'>Search</div>
             </div>
         </div>"""
+        
+    if(selectedTab == "today"):
+        tabBar.replace("doc_icon_outline.svg", "doc_icon_fill.svg")
+    elif(selectedTab == "archive"):
+        tabBar.replace("clock_icon_outline.svg", "clock_icon_fill.svg")
+    elif(selectedTab == "about"):
+        tabBar.replace("question_mark_icon_outline.svg.svg", "question_mark_icon_fill.svg.svg")
+
     return tabBar
 
 def generateMainArticle(data):

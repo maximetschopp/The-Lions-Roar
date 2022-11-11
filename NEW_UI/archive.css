@@ -1,0 +1,26 @@
+#search-bar{
+    width: 90%;
+    height: 3rem;
+    margin-left: 5%;
+    margin-top: 1em;
+}
+input{
+    border: 1px #5e5e5e solid;
+    background-color: #323232;
+    border-radius: 1rem;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    text-indent: 1rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: white;
+}
+input:focus{
+    border: 1px #b6b6b6 solid;
+    outline: none;
+}
+body{
+    /*background-color: rgb(28, 28, 28);*/
+}
+#tab-bar{
+    border-right: 1px solid #5e5e5e;
+}

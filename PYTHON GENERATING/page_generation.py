@@ -180,5 +180,6 @@ def generatePublicationPageContent(data):
 def generateArchivePageContent(data):
     stuff = "stuff"
 
-with open('output.html', 'w') as f:
-    f.write(generatePublicationPageContent(""))
+if __name__ == "__main__":
+    with open('output.html', 'w') as f:
+        f.write(generatePublicationPageContent(""))

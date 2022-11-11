@@ -43,6 +43,6 @@ input:focus{
 /* at >1 : 1 Desktop view */
 @media (min-aspect-ratio: 3/2) {
     #date-btn{
-        display: none;
+        display: none !important;
     }
 }

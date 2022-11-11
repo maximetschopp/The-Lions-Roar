@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-width: 2.5px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="12.73" y="17.43" width="35" height="25" rx="2.64" ry="2.64"/>
+  <polygon class="cls-2" points="45.94 40.36 38.68 33.04 29.26 40.36 21.61 34.69 15.2 40.64 45.94 40.36"/>
+  <circle cx="25.72" cy="26.79" r="3"/>
+  <g id="Ellipse_1" data-name="Ellipse 1">
+    <path d="M30,3.4c14.67,0,26.6,11.93,26.6,26.6s-11.93,26.6-26.6,26.6S3.4,44.67,3.4,30,15.33,3.4,30,3.4M30,0C13.43,0,0,13.43,0,30s13.43,30,30,30,30-13.43,30-30S46.57,0,30,0h0Z"/>
+  </g>
+</svg>

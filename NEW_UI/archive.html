@@ -10,12 +10,12 @@
     <body>
         <div id = "tab-bar">
             <div class = "tab-bar-icon-container">
-                <object data="../resources/Icons/doc_icon_fill.svg" type="image/svg+xml"
+                <object data="../resources/Icons/doc_icon_outline.svg" type="image/svg+xml"
                 id="today-icon" class = "tab-bar-icon"></object>
                 <div class = "tab-bar-text">Today</div>
             </div>
             <div class = "tab-bar-icon-container">
-                <object data="../resources/Icons/clock_icon_outline.svg" type="image/svg+xml"
+                <object data="../resources/Icons/clock_icon_fill.svg" type="image/svg+xml"
                 id="archive-icon" class = "tab-bar-icon"></object>
                 <div class = "tab-bar-text">Archive</div>
             </div>
@@ -37,9 +37,18 @@
                 id="search-icon" class = "tab-bar-icon"></object>
                 <div class = "tab-bar-text">Search</div>
             </div>
-        </div>
+        </div>  
         <section id = "pageContent">
-            <input id = "search-bar">
+            <div id = "search-bar-container">
+                <input id = "search-bar">
+                <div id = "date-btn">
+                    <object id ="calender-icon" data="../resources/Icons/calendar_icon_outline_gray.svg" type="image/svg+xml">
+                    </object>
+                </div>
+            </div>
+
+
+
         </section>
         
     </body>

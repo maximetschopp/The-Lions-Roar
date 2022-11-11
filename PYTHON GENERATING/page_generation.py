@@ -177,6 +177,8 @@ def generatePublicationPageContent(data):
     """
     return pageContent
     
+def generateArchivePageContent(data):
+    stuff = "stuff"
 
 with open('output.html', 'w') as f:
     f.write(generatePublicationPageContent(""))

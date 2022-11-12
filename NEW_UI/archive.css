@@ -1,3 +1,8 @@
+*{
+    --color1: #b9b9b9;
+    --color2: #707070;
+}
+
 #search-bar-container{
     height: 3rem;
     margin-inline: 5%;
@@ -7,8 +12,8 @@
     gap: 12px;
 }
 input{
-    border: 1px #5e5e5e solid;
-    background-color: #323232;
+    border: 1px var(--color1) solid;
+    background-color: var(--color2);
     border-radius: 1rem;
     font-family: neue-haas-grotesk-display, sans-serif;
     text-indent: 1rem;
@@ -19,18 +24,18 @@ input{
     height: 100%;
 }
 input:focus{
-    border: 1px #b6b6b6 solid;
+    border: 1px #ffffff solid;
     outline: none;
 }
 #tab-bar{
-    border-right: 1px solid #5e5e5e;
+    border-right: 1px solid var(--color2);
 }
 #date-btn{
     position: relative;
     width: 100%;
     height: 100%;
     border-radius: 1rem;
-    border: 1px #5e5e5e solid;
+    border: 1px var(--color1) solid;
     width: 6rem;
 }
 #calender-icon{
@@ -44,5 +49,14 @@ input:focus{
 @media (min-aspect-ratio: 3/2) {
     #date-btn{
         display: none !important;
+    }
+    #date-bar{
+        border-radius: 0 1rem 1rem 0;
+        position: fixed;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 100px;
+        height: 200px;
+        background-color: var(--color2);
     }
 }

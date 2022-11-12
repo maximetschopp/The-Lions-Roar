@@ -5,16 +5,19 @@
     --search-bar-height: max(0.5cm, 2rem);
 }
 
+#pageContent {
+}
 #search-bar-container{
     height: var(--search-bar-height);
-    margin-inline: 5%;
     margin-top: 1em;
     display: flex;
     position: relative;
     gap: 12px;
     width: 90%;
+    margin-inline: 5%;
 }
 input{
+    position: inherit;
     border: 1px var(--color1) solid;
     background-color: var(--color2);
     border-radius: 1rem;
@@ -24,7 +27,6 @@ input{
     font-weight: 100;
     color: white;
     width: 100%;
-    height: 100%;
 }
 input:focus{
     border: 1px #ffffff solid;
@@ -49,6 +51,118 @@ input:focus{
     margin: auto;
 }
 
+.archive-desc{
+    margin-left: 1vw;
+}
+.archive-publication{
+    position: relative;
+    /*height: 36vh;*/
+    height: auto;
+    display: grid;
+    border-bottom: 1px solid#898989;
+}
+.archive-thumbnail{
+    aspect-ratio: 16/9;
+    background-color: wheat;
+    border-radius: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+/* at 1:1 mobile vertical stack */
+@media (max-aspect-ratio: 1/1) {
+    .archive-publication{
+        grid-template-columns: max(100px, 40%) auto 6vh;
+        width: 95%;
+        margin: auto;
+    }
+    h2{
+        width: 100%;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(4vw, 15px);
+        font-weight: 600;
+        font-style: normal;
+        margin-bottom: 0px;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+    }   
+    h3{
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(2vw, 8px);
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 5px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+        line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+}
+
+/* at >1 : 1 Ipad view */
+@media (min-aspect-ratio: 1/1) {
+    .archive-publication{
+        width: 90%;
+        margin: auto;
+        margin-right: 5%;
+        margin-top: 6vh;
+        grid-template-columns: max(100px, 40%) auto 8vh;
+    }
+    h2{
+        width: 100%;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(2.5vw, 20px);
+        font-weight: 600;
+        font-style: normal;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+    }      
+    h3{
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(1vw, 10px);
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 3px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+        line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+}
+
+.arrow-icon{
+    margin: auto;
+    height: 5vh;
+}   
+
 /* at >1 : 1 Desktop view */
 @media (min-aspect-ratio: 3/2) {
     #date-btn{
@@ -63,14 +177,10 @@ input:focus{
         height: 200px;
         background-color: var(--color2);
     }
-}
-
-.archive-publication{
-    display: block;
-    position: relative;
-    /*height: 36vh;*/
-    width: 76%;
-    margin: 5vh auto auto auto; 
-    height: auto;
-    transition: all 0.15s ease-in-out;
+    .archive-publication{
+        width: calc(80% - var(--timeline-width));
+        margin: auto;
+        margin-right: 10%;
+        margin-top: 6vh;
+    }
 }

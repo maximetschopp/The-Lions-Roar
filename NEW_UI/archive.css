@@ -40,7 +40,7 @@ input:focus{
     width: 100%;
     height: 100%;
     border-radius: 1rem;
-    border: 1px var(--color1) solid;
+    outline: 1px var(--color1) solid;
     width: 6rem;
 }
 #calender-icon{
@@ -56,7 +56,7 @@ input:focus{
     /*height: 36vh;*/
     height: auto;
     display: grid;
-    border-bottom: 1px solid#898989;
+    /*border-bottom: 1px solid #898989;*/
 }
 .archive-thumbnail{
     aspect-ratio: 16/9;
@@ -72,8 +72,8 @@ input:focus{
         grid-template-columns: max(100px, 45%) auto 4vh;
         width: 95%;
         margin: auto;
-        padding-top: 5vw;
-        padding-bottom: 5vw;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
     }
     .archive-desc{
         margin-left: 3vw;
@@ -123,9 +123,9 @@ input:focus{
         width: 90%;
         margin: auto;
         margin-right: 5%;
-        grid-template-columns: max(100px, 45%) auto 8vh;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
+        grid-template-columns: max(100px, 50%) auto 8vh;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
     }
     .arrow-icon{
         margin: auto;
@@ -139,7 +139,7 @@ input:focus{
     h2{
         width: 100%;
         font-family: neue-haas-grotesk-display, sans-serif;
-        font-size: max(2.5vw, 20px);
+        font-size: max(2.2vw, 20px);
         font-weight: 600;
         font-style: normal;
         margin-top: 2px;
@@ -152,10 +152,10 @@ input:focus{
         -webkit-line-clamp: 1; /* number of lines to show */
         line-clamp: 1; 
         -webkit-box-orient: vertical;
-    }      
+    }
     h3{
         font-family: neue-haas-grotesk-display, sans-serif;
-        font-size: max(1vw, 10px);
+        font-size: max(1.25vw, 10px);
         font-weight: 300;
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/
@@ -194,5 +194,8 @@ input:focus{
         width: calc(80% - var(--timeline-width));
         margin: auto;
         margin-right: 10%;
+    }
+    h3{
+        font-size: max(1vw, 10px);
     }
 }

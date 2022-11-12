@@ -1,15 +1,18 @@
 *{
-    --color1: #b9b9b9;
-    --color2: #707070;
+    --color1: #898989;
+    --color2: #474747;
+    --timeline-width: 12%;
+    --search-bar-height: max(0.5cm, 2rem);
 }
 
 #search-bar-container{
-    height: 3rem;
+    height: var(--search-bar-height);
     margin-inline: 5%;
     margin-top: 1em;
     display: flex;
     position: relative;
     gap: 12px;
+    width: 90%;
 }
 input{
     border: 1px var(--color1) solid;
@@ -17,7 +20,7 @@ input{
     border-radius: 1rem;
     font-family: neue-haas-grotesk-display, sans-serif;
     text-indent: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 100;
     color: white;
     width: 100%;
@@ -32,6 +35,7 @@ input:focus{
 }
 #date-btn{
     position: relative;
+    display: flex;
     width: 100%;
     height: 100%;
     border-radius: 1rem;
@@ -41,8 +45,8 @@ input:focus{
 #calender-icon{
     margin-inline: auto;
     display: block;
-    height: 2rem;
-    margin-top: 0.5rem;
+    height: 66%;
+    margin: auto;
 }
 
 /* at >1 : 1 Desktop view */
@@ -50,13 +54,23 @@ input:focus{
     #date-btn{
         display: none !important;
     }
-    #date-bar{
+    #timeline{
         border-radius: 0 1rem 1rem 0;
         position: fixed;
         top: 50%;
         transform: translate(0, -50%);
-        width: 100px;
+        width: var(--timeline-width);
         height: 200px;
         background-color: var(--color2);
     }
+}
+
+.archive-publication{
+    display: block;
+    position: relative;
+    /*height: 36vh;*/
+    width: 76%;
+    margin: 5vh auto auto auto; 
+    height: auto;
+    transition: all 0.15s ease-in-out;
 }

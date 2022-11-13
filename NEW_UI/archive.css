@@ -54,8 +54,6 @@ input:focus{
     height: 66%;
     margin: auto;
 }
-
-
 .archive-publication{
     position: relative;
     /*height: 36vh;*/
@@ -82,6 +80,7 @@ input:focus{
     }
     .archive-desc{
         margin-left: 3vw;
+        padding-top: 1vw;
     }
     .arrow-icon{
         margin: auto;
@@ -139,10 +138,18 @@ input:focus{
     }
     .arrow-icon{
         margin: auto;
+        margin-right: 0;
         height: 5vh;
+        transition: transform 0.15s;
+    }
+    .arrow-icon:hover{
+        transform: translate(5px, 0);
+        transition: transform 0.15s;
     }
     .archive-desc{
         margin-left: 3vw;
+        padding-top: 1vw;
+        padding-bottom: auto;
         width: calc( 100% - 3vw);
         height: 100%;
     } 

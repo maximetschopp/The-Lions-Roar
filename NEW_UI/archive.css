@@ -68,6 +68,13 @@ input:focus{
     width: 100%;
     margin: auto;
 }
+.invis{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
@@ -142,7 +149,7 @@ input:focus{
         height: 5vh;
         transition: transform 0.15s;
     }
-    .arrow-icon:hover{
+    .arrow-icon :hover{
         transform: translate(5px, 0);
         transition: transform 0.15s;
     }

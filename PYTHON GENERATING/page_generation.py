@@ -177,8 +177,35 @@ def generatePublicationPageContent(data):
     """
     return pageContent
     
-def generateArchivePageContent(data):
-    stuff = "stuff"
+def generateArchivePageContent(data, query_results):
+    pageContent = ""
+    # default archive page
+
+    if query_results == null: # if no query, if not searching for something
+        for publication in pubs:
+            pub = """
+                <div class = "archive-result">
+                    <div class = "archive-thumbnail" style = "background-image: url(' """ + publication["main_article_thumbnail"] + """')"></div>
+                    <div class = "archive-desc">
+                        <h2 class = "archive-date">"""+ publication["date"] + """</h2>
+                        <h3 class = "archive-title">"""+ publication["main_article_title"] + """</h3>
+                    </div>
+                    <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <a href='""" + publication["main_article_url"] + """'><div class = "invis"></div></a>
+                </div>
+            """;
+            pageContent += pub
+    else:
+        for result in query_results:
+            # add a text element to the timeline with an id attribute that correlates
+            #     with its corresponding article, that way we have an onclick function
+            #     that passes itself as a parameter. The function gets the id, checks the
+            #     html page for a article with that same id, and scrolls to it.
+            pageContent += ""
+
+    return pageContent
+        
+
 
 if __name__ == "__main__":
     with open('output.html', 'w') as f:

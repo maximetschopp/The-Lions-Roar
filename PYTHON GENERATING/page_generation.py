@@ -177,12 +177,12 @@ def generatePublicationPageContent(data):
     """
     return pageContent
     
-def generateArchivePageContent(data, query_results):
+def generateArchivePageContent(data):
     pageContent = ""
+    isSearch = False
     # default archive page
-
-    if query_results == null: # if no query, if not searching for something
-        for publication in pubs:
+    if not isSearch:
+        for publication in data:
             pub = """
                 <div class = "archive-result">
                     <div class = "archive-thumbnail" style = "background-image: url(' """ + publication["main_article_thumbnail"] + """')"></div>
@@ -195,13 +195,23 @@ def generateArchivePageContent(data, query_results):
                 </div>
             """;
             pageContent += pub
-    else:
+    else: # there is a query
         for result in query_results:
             # add a text element to the timeline with an id attribute that correlates
             #     with its corresponding article, that way we have an onclick function
             #     that passes itself as a parameter. The function gets the id, checks the
             #     html page for a article with that same id, and scrolls to it.
-            pageContent += ""
+            pageContent += """
+                div class = "archive-result">
+                   <div class = "archive-thumbnail" style = "background-image: url(' """ + result["main_article_thumbnail"] + """'></div>
+                   <div class = "archive-desc">
+                       <div class = "result-title">""" + result["title"] + """</div>
+                       <div class = "result-desc">"""+ result["date"] +"""  •  """+ result["author"] +"""</div>
+                   </div>
+                   <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                   <a href='"""+ result["url"] +"""'><div class = "invis"></div></a>  
+                /div>
+            """;
 
     return pageContent
         

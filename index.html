@@ -92,7 +92,13 @@
 
         <div id = "sidebar"><div id="sidebar_text_container"></div></div>
         
-        <div style="position:fixed; background-color:#ffffff; width: 100vw; height: 100vh; z-index: 10000; top: 0; left: 0;" id="backgroundLoaderThing"></div>
-        <div id="loader" style="z-index: 100000;"></div>
+        <div style='position:fixed; background: rgb(74,74,74);
+        background: -moz-radial-gradient(circle, rgba(74,74,74,1) 0%, rgba(0,0,0,1) 94%);
+        background: -webkit-radial-gradient(circle, rgba(74,74,74,1) 0%, rgba(0,0,0,1) 94%);
+        background: radial-gradient(circle, rgba(74,74,74,1) 0%, rgba(0,0,0,1) 94%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4a4a4a",endColorstr="#000000",GradientType=1);
+        width: 100vw; height: 100vh; z-index: 10000; top: 0; left: 0;' id="backgroundLoaderThing"></div>
+        <!--<div id="loader" style="z-index: 100000;"></div>-->
+        <img id="loader" style="z-index: 100000;" src="resources/Loading Screens/TLR_Loading_Screen_360.gif" alt="">
     </body>
 </html>

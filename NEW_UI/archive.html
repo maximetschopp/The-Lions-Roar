@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="archive.css">
         <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
         <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src = "archive.js"></script>
     </head>
     <body>
         <div id = "tab-bar">
@@ -50,11 +51,17 @@
             
 
             <div id = "timeline">
-
+                <div class = "timeline-year">2022</div>
+                <div class = "timeline-month">September</div>
+                <div class = "timeline-day thing-1" onclick = "timelineScrollTo(this)">Sep 2</div>
+                <div class = "timeline-day thing-2" onclick = "timelineScrollTo(this)">Sep 9</div>
+                <div class = "timeline-day thing-3" onclick = "timelineScrollTo(this)">Sep 16</div>
+                <div class = "timeline-day thing-4" onclick = "timelineScrollTo(this)">Sep 23</div>
+                <div class = "timeline-day thing-5" onclick = "timelineScrollTo(this)">Sep 30</div>
             </div>
 
             
-            <div class = "archive-publication">
+            <div id = "thing-1" class = "archive-publication">
                 <div class = "archive-thumbnail"></div>
                 <div class = "archive-desc">
                     <h2 class = "archive-date">31 September 2020</h2>
@@ -63,7 +70,7 @@
                 <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
                 <a href=""><div class = "invis"></div></a>  
             </div>
-            <div class = "archive-publication">
+            <div id = "thing-2" class = "archive-publication">
                 <div class = "archive-thumbnail"></div>
                 <div class = "archive-desc">
                     <h2 class = "archive-date">31 September 2020</h2>
@@ -72,7 +79,23 @@
                 <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
                 <a href=""><div class = "invis"></div></a>  
             </div>
-            <div class = "archive-result">
+            <div id = "thing-3" class = "archive-result">
+                <div class = "archive-thumbnail"></div>
+                <div class = "archive-desc">
+                    <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
+                    <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
+                </div>
+                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+            </div>
+            <div id = "thing-4" class = "archive-result">
+                <div class = "archive-thumbnail"></div>
+                <div class = "archive-desc">
+                    <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
+                    <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
+                </div>
+                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+            </div>
+            <div id = "thing-5" class = "archive-result">
                 <div class = "archive-thumbnail"></div>
                 <div class = "archive-desc">
                     <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>

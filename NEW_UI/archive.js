@@ -33,3 +33,39 @@ function timelineScrollTo(timelineDate, offset){
     }
 }
 
+addEventListener('scroll', (event) => {
+    updateHighlightedItem();
+});
+addEventListener("resize", (event) => {
+    updateHighlightedItem();
+});
+
+function updateHighlightedItem () {
+    let pageContent = document.getElementById('pageContent');
+    console.log(pageContent);
+
+    var distanceFromTopToBeSelected = innerHeight/5;
+    console.log(distanceFromTopToBeSelected);
+
+    var itemBeingLookedAt = pageContent.children[1];
+
+    // skip first child bc thats the timeline
+    for(let i = 1; i < pageContent.childElementCount; i++){
+
+        //check if better option in the center
+        if(Math.abs(distanceFromTopToBeSelected - (pageContent.children[i].getBoundingClientRect().top + pageContent.children[i].offsetHeight/2)) 
+        < Math.abs(distanceFromTopToBeSelected - (itemBeingLookedAt.getBoundingClientRect().top + itemBeingLookedAt.offsetHeight/2)))
+        {
+            itemBeingLookedAt = pageContent.children[i];
+        }
+        // remove the 'lookingAt' tag from all the other elements
+        pageContent.children[i].classList.remove('lookingAt');
+        
+    }
+
+    console.log();
+    itemBeingLookedAt.classList.add('lookingAt');
+    document.getElementById('debug-dist-top').style.setProperty('top', distanceFromTopToBeSelected + 'px');
+    document.getElementById('debug-dist-top-closest').style.setProperty('top', itemBeingLookedAt.getBoundingClientRect().top + itemBeingLookedAt.offsetHeight/2 + 'px');
+}
+

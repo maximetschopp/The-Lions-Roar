@@ -60,6 +60,8 @@ input:focus{
     height: auto;
     display: grid;
     /*border-bottom: 1px solid #898989;*/
+    scale: 1;
+    transition: scale 0.1s;
 }
 .archive-result{
     position: relative;
@@ -67,6 +69,8 @@ input:focus{
     height: auto;
     display: grid;
     /*border-bottom: 1px solid #898989;*/
+    scale: 1;
+    transition: scale 0.1s;
 }
 .archive-thumbnail{
     aspect-ratio: 16/9;
@@ -133,7 +137,6 @@ input:focus{
     cursor: pointer;
     color: white;
 }
-
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
@@ -352,9 +355,13 @@ input:focus{
         margin-bottom: 1vw;
         color: white;
     }
+    .lookingAt{
+        scale: 1.075;
+        transition: scale 0.2s;
+    }
 }
 
-/* at >1 : 1 Desktop view */
+/* at >3 : 2 Desktop view */
 @media (min-aspect-ratio: 3/2) {
     #date-btn{
         display: none !important;
@@ -385,6 +392,10 @@ input:focus{
     h3{
         font-size: max(1vw, 10px);
     }
+    .lookingAt{
+        scale: 1.075;
+        transition: scale 0.2s;
+    }
 }
 
 
@@ -397,7 +408,7 @@ input:focus{
         transform: scale(1);
     }
     30%{
-        transform: scale(1.15);
+        transform: scale(1.075);
     }
     100%{
         transform: scale(1);

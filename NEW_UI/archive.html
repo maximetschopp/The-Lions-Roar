@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <script src = "archive.js"></script>
     </head>
-    <body>
+    <body onload = "updateHighlightedItem()">
         <div id = "tab-bar">
             <div class = "tab-bar-icon-container">
                 <object data="../resources/Icons/doc_icon_outline.svg" type="image/svg+xml"
@@ -46,9 +46,11 @@
                 </object>
             </div>
         </div>
-        <section id = "pageContent">
 
-            
+        <div id="debug-dist-top" style="width: 100%; position: fixed; background-color: red; height: 2px; left: 0; z-index: 999;"></div>
+        <div id="debug-dist-top-closest" style="width: 100%; position: fixed; background-color: rgb(0, 217, 255); height: 2px; left: 0; z-index: 999;"></div>
+
+        <section id = "pageContent">
 
             <div id = "timeline">
                 <div class = "timeline-year">2022</div>

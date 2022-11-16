@@ -87,7 +87,7 @@ input:focus{
     top: 0;
 }
 
-.sidebar-bold{
+.timeline-bold{
     font-weight: 600 !important;
     color: var(--sidebar-text-color-highlighted);
     font-style: italic;
@@ -413,4 +413,8 @@ input:focus{
     100%{
         transform: scale(1);
     }
+}
+
+.hidden{
+    display: none;
 }

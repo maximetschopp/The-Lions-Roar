@@ -9,12 +9,12 @@ function timelineScrollTo(timelineDate, offset){
     var j = timelineDate.className.search('thing-'); // index of where the className starts
     var i = j + 6;
     var c = "thing-";
-    while (i < timelineDate.className.length && timelineDate.className.charAt(i+1) != " "){
+    while (i < timelineDate.className.length && timelineDate.className.charAt(i) != " "){
+        console.log(timelineDate.className.charAt(i));
         c += timelineDate.className.charAt(i);
         i++;
     }
-    console.log(c); 
-
+    console.log(c);
     var item = document.getElementById(c);
     var itemY = item.getBoundingClientRect().top + window.scrollY;
 
@@ -25,7 +25,6 @@ function timelineScrollTo(timelineDate, offset){
     });
 
     if(item.classList.contains('popAnim')){
-        console.log('yuh');
         item.classList.remove('popAnim');
         setTimeout( () => {item.classList.add('popAnim')}, 10);
     } else {
@@ -42,10 +41,8 @@ addEventListener("resize", (event) => {
 
 function updateHighlightedItem () {
     let pageContent = document.getElementById('pageContent');
-    console.log(pageContent);
 
-    var distanceFromTopToBeSelected = innerHeight/5;
-    console.log(distanceFromTopToBeSelected);
+    var distanceFromTopToBeSelected = innerHeight/4;
 
     var itemBeingLookedAt = pageContent.children[1];
 
@@ -63,9 +60,21 @@ function updateHighlightedItem () {
         
     }
 
-    console.log();
+    // scales up the thing ur looking at
     itemBeingLookedAt.classList.add('lookingAt');
+
+    // bolding sidebar
+    for(let i = 0; i < document.getElementById('timeline').children.length; i++){
+        document.getElementById('timeline').children[i].classList.remove('timeline-bold');
+    }
+    document.getElementById('timeline').getElementsByClassName(itemBeingLookedAt.id)[0].classList.add('timeline-bold');
+
+
     document.getElementById('debug-dist-top').style.setProperty('top', distanceFromTopToBeSelected + 'px');
     document.getElementById('debug-dist-top-closest').style.setProperty('top', itemBeingLookedAt.getBoundingClientRect().top + itemBeingLookedAt.offsetHeight/2 + 'px');
 }
 
+function toggleDebug() {
+    document.getElementById('debug-dist-top').classList.toggle('hidden');
+    document.getElementById('debug-dist-top-closest').classList.toggle('hidden');
+}

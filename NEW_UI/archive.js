@@ -2,7 +2,7 @@ function timelineScrollTo(timelineDate, offset){
 
     if (typeof offset != 'number'){
         let viewportHeight = window.innerHeight;
-        offset = -(viewportHeight * 0.1); // scroll to 10% above the item
+        offset = -(viewportHeight * 0.2); // scroll to 20% above the item
     }
 
     console.log(timelineDate.className.search('thing-'));
@@ -32,3 +32,4 @@ function timelineScrollTo(timelineDate, offset){
         item.classList.add('popAnim');
     }
 }
+

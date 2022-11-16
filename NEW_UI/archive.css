@@ -101,6 +101,7 @@ input:focus{
     z-index: 999;
     user-select: none;
     cursor: pointer;
+    color: white;
 }
 .timeline-month{
     position: relative;
@@ -115,6 +116,7 @@ input:focus{
     z-index: 999;
     user-select: none;
     cursor: pointer;
+    color: white;
 }
 .timeline-day{
     position: relative;
@@ -129,6 +131,7 @@ input:focus{
     z-index: 999;
     user-select: none;
     cursor: pointer;
+    color: white;
 }
 
 
@@ -361,8 +364,12 @@ input:focus{
         position: fixed;
         top: 50%;
         transform: translate(0, -50%);
-        width: var(--timeline-width);
-        height: 200px;
+        width: fit-content;
+        padding-right: 20px;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: fit-content;
         background-color: var(--color2);
     }
     .archive-publication{

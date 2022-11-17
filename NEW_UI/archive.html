@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <script src = "archive.js"></script>
     </head>
-    <body onload = "updateHighlightedItem()">
+    <body onload = "updateHighlightedItem(); updateTimeline()">
         <div id = "tab-bar">
             <div class = "tab-bar-icon-container">
                 <object data="../resources/Icons/doc_icon_outline.svg" type="image/svg+xml"
@@ -41,18 +41,19 @@
         </div>  
         <div id = "search-bar-container">
             <input id = "search-bar">
-            <div id = "date-btn">
+            <div id = "date-btn" onclick = 'toggleTimeline()'>
                 <object id ="calender-icon" data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
                 </object>
             </div>
         </div>
 
         <div id="debug-dist-top" class = "hidden" style="width: 100%; position: fixed; background-color: red; height: 2px; left: 0; z-index: 999;"></div>
-        <div id="debug-dist-top-closest" class = "hidden" style="width: 100%; position: fixed; background-color: rgb(0, 217, 255); height: 2px; left: 0; z-index: 999;"></div>
+        <div id="debug-dist-top-closest" class = "hidden" style="width: 100%; position: fixed; background-color: rgb(0, 217, 255); height: 2px; left: 0; z-index: 998;"></div>
 
+        
         <section id = "pageContent">
 
-            <div id = "timeline">
+            <div id = "timeline" class="timeline-collapsed" onclick="toggleTimeline()">
                 <div class = "timeline-year">2022</div>
                 <div class = "timeline-month">September</div>
                 <div class = "timeline-day thing-1" onclick = "timelineScrollTo(this)">Sep 2</div>

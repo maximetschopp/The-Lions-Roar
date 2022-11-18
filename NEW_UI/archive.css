@@ -3,6 +3,7 @@
     --color2: #474747;
     --timeline-width: 12%;
     --search-bar-height: max(0.5cm, 2rem);
+    --search-bar-height: max(5.5vh, 40px);
 }
 
 #search-bar-container{
@@ -10,7 +11,7 @@
     margin-top: 1em;
     display: flex;
     position: relative;
-    gap: 12px;
+    gap: 5px;
     width: 95%;
     margin-inline: 2.5%;
     margin-bottom: 6vh;
@@ -19,7 +20,7 @@ input{
     position: inherit;
     border: 1px var(--color1) solid;
     background-color: var(--color2);
-    border-radius: 1rem;
+    border-radius: 20000px;
     font-family: neue-haas-grotesk-display, sans-serif;
     text-indent: 1rem;
     font-size: 1rem;
@@ -40,7 +41,7 @@ input:focus{
     display: flex;
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: 20000px;
     width: 6rem;
     border: 1px var(--color1) solid;
     -webkit-box-sizing:border-box;
@@ -237,17 +238,15 @@ input:focus{
     }
 
     #timeline{
-        position: absolute;
-        /* left: 50%;
-        top: 50%; */
-        /* translate: -50% -50%; */
+        position: fixed;
+        left: 50%;
+        top: calc( var(--search-bar-height) + 2vh + 1em);
+        translate: -50% 0;
         width: fit-content;
         padding: 3rem 4rem 3rem 4rem;
         border-radius: 3rem;
         background-color: var(--color1);
         z-index: 1000;
-        /* transition: opacity 1s; */
-        /* opacity: 1; */
         animation: 0.2s linear 0s toggleTimeline 1;
     }
     .timeline-collapsed{

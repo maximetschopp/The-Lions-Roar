@@ -117,7 +117,7 @@ function updateTimeline() {
     let aspectRatio = calcAspectRatio();
     // console.log(aspectRatio);
     if (aspectRatio == "mobile" || aspectRatio == "tablet") {
-        let x = document
+        /*let x = document
             .getElementById("timeline")
             .getBoundingClientRect().right;
         let y =
@@ -162,7 +162,10 @@ function updateTimeline() {
                     "--date-btn-height",
                     document.getElementById("date-btn").offsetHeight
                 );
-        }
+        }*/
+
+        
+
     } else {
         document
             .getElementById("timeline")

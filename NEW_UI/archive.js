@@ -45,6 +45,7 @@ function timelineScrollTo(timelineDate, offset) {
 
 var prev_look_at = null;
 function updateHighlightedItem() {
+    updateTimeline(); 
     let pageContent = document.getElementById("pageContent");
 
     var distanceFromTopToBeSelected = innerHeight / 4;

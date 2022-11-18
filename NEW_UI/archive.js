@@ -83,6 +83,7 @@ function updateHighlightedItem() {
     //vibrate
     if (prev_look_at != itemBeingLookedAt) {
         window.navigator.vibrate(50);
+        console.log("buzz buzz");
     }
     // bolding timeline
     for (

@@ -83,7 +83,7 @@ function updateHighlightedItem() {
 
     //vibrate
     if (prev_look_at != itemBeingLookedAt) {
-        window.navigator.vibrate(50);
+        window.navigator.vibrate(20);
         console.log("buzz buzz");
     }
     prev_look_at = itemBeingLookedAt;

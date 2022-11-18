@@ -44,6 +44,8 @@ function timelineScrollTo(timelineDate, offset) {
         item.classList.add("popAnim");
     }
 }
+
+var prev_look_at = null;
 function updateHighlightedItem() {
     let pageContent = document.getElementById("pageContent");
 
@@ -51,7 +53,6 @@ function updateHighlightedItem() {
 
     var itemBeingLookedAt = pageContent.children[1];
 
-    let prev_look_at = itemBeingLookedAt;
     // skip first child bc thats the timeline
     for (let i = 0; i < pageContent.childElementCount; i++) {
         if (pageContent.children[i].id == "timeline") {
@@ -85,6 +86,7 @@ function updateHighlightedItem() {
         window.navigator.vibrate(50);
         console.log("buzz buzz");
     }
+    prev_look_at = itemBeingLookedAt;
     // bolding timeline
     for (
         let i = 0;

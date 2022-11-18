@@ -34,12 +34,12 @@ function timelineScrollTo(timelineDate, offset){
         behavior: 'smooth'
     });
 
-    if(item.classList.contains('popAnim')){
-        item.classList.remove('popAnim');
-        setTimeout( () => {item.classList.add('popAnim')}, 10);
-    } else {
-        item.classList.add('popAnim');
-    }
+    // if(item.classList.contains('popAnim')){
+    //     item.classList.remove('popAnim');
+    //     setTimeout( () => {item.classList.add('popAnim')}, 10);
+    // } else {
+    //     item.classList.add('popAnim');
+    // }
 }
 function updateHighlightedItem () {
     let pageContent = document.getElementById('pageContent');

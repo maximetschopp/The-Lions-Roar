@@ -472,7 +472,8 @@ input:focus{
         padding-top: 5px;
         padding-bottom: 5px;
         height: fit-content;
-        background-color: var(--color2);
+        background-color: var(--color1);
+        animation: none;
     }
     .archive-publication{
         width: calc(80% - var(--timeline-width));

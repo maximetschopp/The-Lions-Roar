@@ -45,7 +45,7 @@ function timelineScrollTo(timelineDate, offset) {
 
 var prev_look_at = null;
 function updateHighlightedItem() {
-    updateTimeline(); 
+    updateTimeline();
     let pageContent = document.getElementById("pageContent");
 
     var distanceFromTopToBeSelected = innerHeight / 4;
@@ -163,9 +163,6 @@ function updateTimeline() {
                     document.getElementById("date-btn").offsetHeight
                 );
         }*/
-
-
-
     } else {
         document
             .getElementById("timeline")
@@ -200,17 +197,18 @@ function calcAspectRatio() {
         return "ultrawide";
     }
 }
-function mTimelineToggleYear(elementYear){
-    let mTimeline = document.getElementById('m-timeline');
-    for(let i = 0; i < mTimeline.children.length; i++){
+function mTimelineToggleYear(elementYear) {
+    console.log(elementYear);
+    let mTimeline = document.getElementById("m-timeline");
+    for (let i = 0; i < mTimeline.children.length; i++) {
         let item = mTimeline.children[i];
-        if(item.classList.contains('m-timeline-year-content')){
-            item.style.setProperty('display', 'none');
-            if(item.classList.contains(elementYear)){
-                item.style.setProperty('display', 'auto !important');
-                item.style.setProperty('background-color', 'red');
-                console.log(item.style.backgroundColor);
+        if (item.classList.contains("m-timeline-year-content")) {
+            if (!item.classList.contains(elementYear)) {
+                continue;
             }
+            item.classList.toggle("hidden");
+            console.log(item);
+            console.log(item.style.backgroundColor);
         }
     }
 }

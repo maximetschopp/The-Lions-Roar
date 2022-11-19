@@ -55,7 +55,55 @@
         
         <section id = "pageContent">
 
-            <div id = "timeline" class="timeline-collapsed" onclick="toggleTimeline()">
+            <div id = "m-timeline" class="timeline-collapsed">
+                <div class = "m-timeline-dropdown">
+                    <div class = "m-timeline-year">2022</div>
+                    <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
+                        <div class="invis" ></div>
+                    </object>
+                </div>
+                <div class = "m-timeline-year-content">
+
+                    <div class="m-timeline-selector"></div>
+
+                    <div class="m-timeline-month-container">
+                        <div class = "m-timeline-month">September</div>
+                    </div>
+                    <div class = "m-timeline-days-container">
+                        <div class = "m-timeline-day thing-1" onclick = "timelineScrollTo(this)">2</div>
+                        <div class = "m-timeline-day thing-2" onclick = "timelineScrollTo(this)">9</div>
+                        <div class = "m-timeline-day thing-3" onclick = "timelineScrollTo(this)">16</div>
+                        <div class = "m-timeline-day thing-4" onclick = "timelineScrollTo(this)">23</div>
+                        <div class = "m-timeline-day thing-5" onclick = "timelineScrollTo(this)">30</div>
+                    </div>
+
+                    <div class="m-timeline-month-container">
+                        <div class = "m-timeline-month">October</div>
+                    </div>
+                    <div class = "m-timeline-days-container">
+                        <div class = "m-timeline-day thing-1" onclick = "timelineScrollTo(this)">2</div>
+                        <div class = "m-timeline-day thing-2" onclick = "timelineScrollTo(this)">9</div>
+                        <div class = "m-timeline-day thing-3" onclick = "timelineScrollTo(this)">16</div>
+                        <div class = "m-timeline-day thing-4" onclick = "timelineScrollTo(this)">23</div>
+                        <div class = "m-timeline-day thing-5" onclick = "timelineScrollTo(this)">30</div>
+                    </div>
+
+                    <div class="m-timeline-month-container">
+                        <div class = "m-timeline-month">November</div>
+                    </div>
+                    <div class = "m-timeline-days-container">
+                        <div class = "m-timeline-day thing-1" onclick = "timelineScrollTo(this)">2</div>
+                        <div class = "m-timeline-day thing-2" onclick = "timelineScrollTo(this)">9</div>
+                        <div class = "m-timeline-day thing-3" onclick = "timelineScrollTo(this)">16</div>
+                        <div class = "m-timeline-day thing-4" onclick = "timelineScrollTo(this)">23</div>
+                        <div class = "m-timeline-day thing-5" onclick = "timelineScrollTo(this)">30</div>
+                    </div>
+
+                    <div class = "m-timeline-spacer"></div>
+
+                </div>
+            </div>
+            <!--<div id = "timeline" class="timeline-collapsed" onclick="toggleTimeline()">
                 <div class = "timeline-year">2022</div>
                 <div class = "timeline-month">September</div>
                 <div class = "timeline-day thing-1" onclick = "timelineScrollTo(this)">Sep 2</div>
@@ -63,7 +111,7 @@
                 <div class = "timeline-day thing-3" onclick = "timelineScrollTo(this)">Sep 16</div>
                 <div class = "timeline-day thing-4" onclick = "timelineScrollTo(this)">Sep 23</div>
                 <div class = "timeline-day thing-5" onclick = "timelineScrollTo(this)">Sep 30</div>
-            </div>
+            </div>-->
 
             
             <div id = "thing-1" class = "archive-publication">

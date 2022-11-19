@@ -164,7 +164,7 @@ function updateTimeline() {
                 );
         }*/
 
-        
+
 
     } else {
         document
@@ -177,7 +177,7 @@ function toggleTimeline(override) {
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
         document
-            .getElementById("timeline")
+            .getElementById("m-timeline")
             .classList.toggle("timeline-collapsed");
     }
     console.log("toggled Timeline");

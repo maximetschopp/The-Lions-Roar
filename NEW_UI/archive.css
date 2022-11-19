@@ -314,15 +314,24 @@ input:focus{
     .m-timeline-year-content{
         position: relative;
         column-span: all;
-        margin-top: 2rem;
         width: 60%;
-        display: grid;
-        grid-template-columns: 50% 50%;
         max-height: 30vh;
         overflow: scroll;
         scroll-snap-type: y mandatory;
     }
-    .m-timeline-spacer{
+    .m-timeline-year-grid{
+        position: relative;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 100%;
+    }
+    .m-timeline-top-spacer{
+        width: 100%;
+        height: 10vh;
+        column-span: all;
+        scroll-snap-align: start;
+    }
+    .m-timeline-bottom-spacer{
         width: 100%;
         height: 30vh;
     }
@@ -353,9 +362,9 @@ input:focus{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-weight: 500;
         font-style: none;
-        font-size: calc(var(--search-bar-height) * 0.4);
-        height: calc(var(--search-bar-height) * 0.9);
-        padding-top: calc(var(--search-bar-height) * 0.16);
+        font-size: calc(var(--search-bar-height) * 0.5);
+        height: calc(var(--search-bar-height) * 0.8);
+        padding-top: calc(var(--search-bar-height) * 0.1);
         margin: 0;
         margin-left: 40%;
         text-align: left;

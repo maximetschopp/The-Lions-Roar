@@ -162,7 +162,7 @@ input:focus{
     padding: 0 !important;
     overflow: hidden !important;
     opacity: 0;
-    display: none;
+    display: none !important;
 }
 .m-timeline-dropdown{
     position: relative;

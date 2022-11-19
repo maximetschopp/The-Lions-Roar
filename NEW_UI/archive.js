@@ -20,6 +20,18 @@ addEventListener("resize", (event) => {
     }
 });
 
+function ready(){
+    updateHighlightedItem();
+    updateTimeline(); 
+    document.querySelector('#search-bar').addEventListener("blur", function() {
+        if(document.querySelector('#search-bar').value != ''){
+            updateTopRightButton('cross');
+        } else{
+            updateTopRightButton('calendar');
+        }
+    });
+}
+
 function timelineScrollTo(timelineDate, offset) {
     if (typeof offset != "number") {
         let viewportHeight = window.innerHeight;
@@ -137,7 +149,6 @@ function updateHighlightedItem() {
         );
 }
 function toggleMobileTimeline(override) {
-    console.log(1);
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
         document
@@ -155,10 +166,8 @@ function toggleMobileTimeline(override) {
             updateTopRightButton("checkmark");
         }
     }
-    console.log("toggled Timeline");
 }
 function mTimelineToggleYear(elementYear, element) {
-    console.log(element);
     // m-timeline-dropdown
     // m-timeline-dropdown-arrow
     for (
@@ -226,9 +235,10 @@ function updateTopRightButton(state) {
         document.getElementById("calendar-icon").classList.add("hidden");
         document.getElementById("search-icon2").classList.add("hidden");
         topRightBtnState = "checkmark";
-        document.getElementById("topRightInvis").setAttribute("onclick", "");
+        document.getElementById("topRightInvis").setAttribute("onclick", "document.querySelector('#search-bar').value = ''; updateTopRightButton('calendar')" );
     }
 }
+
 function calcAspectRatio() {
     let ratio = window.innerWidth / window.innerHeight;
     if (ratio <= 1) {

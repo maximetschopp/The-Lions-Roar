@@ -306,6 +306,7 @@ input:focus{
     .m-timeline-dropdown-arrow{
         margin: auto 0 auto 0;
         cursor: pointer;
+        width: 100%;
         transition: rotate 0.3s;
     }
     .rotateDown{

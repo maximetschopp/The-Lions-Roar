@@ -182,7 +182,6 @@ function toggleTimeline(override) {
     }
     console.log("toggled Timeline");
 }
-
 function toggleDebug() {
     document.getElementById("debug-dist-top").classList.toggle("hidden");
     document
@@ -199,5 +198,19 @@ function calcAspectRatio() {
         return "desktop";
     } else {
         return "ultrawide";
+    }
+}
+function mTimelineToggleYear(elementYear){
+    let mTimeline = document.getElementById('m-timeline');
+    for(let i = 0; i < mTimeline.children.length; i++){
+        let item = mTimeline.children[i];
+        if(item.classList.contains('m-timeline-year-content')){
+            item.style.setProperty('display', 'none');
+            if(item.classList.contains(elementYear)){
+                item.style.setProperty('display', 'auto !important');
+                item.style.setProperty('background-color', 'red');
+                console.log(item.style.backgroundColor);
+            }
+        }
     }
 }

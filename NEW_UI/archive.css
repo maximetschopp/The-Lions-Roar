@@ -246,7 +246,7 @@ input:focus{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: top;
+        justify-content: start;
 
         left: 50%;
         top: calc( var(--search-bar-height) + 2vh + 1em);
@@ -318,7 +318,7 @@ input:focus{
     .m-timeline-year-content{
         position: relative;
         column-span: all;
-        width: 60%;
+        width: 100%;
         height: calc(var(--search-bar-height) * 0.9 * 8);
         overflow: scroll;
         scroll-snap-type: y mandatory;
@@ -341,8 +341,9 @@ input:focus{
     }
     .m-timeline-selector{
         position: fixed;
-        margin-inline: auto;
+        margin-inline: 15%;
         width: 60%;
+        padding-inline: 5%;
         height: calc(var(--search-bar-height) * 0.9);
         background-color: #cecece;
         border-radius: 20000px;
@@ -354,7 +355,7 @@ input:focus{
         font-style: italic;
         font-size: calc(var(--search-bar-height) * 0.6);
         margin: 0;
-        margin-left: 10%;
+        margin-left: 42%;
         text-align: left;
         user-select: none;
         cursor: pointer;
@@ -371,6 +372,7 @@ input:focus{
         padding-top: calc(var(--search-bar-height) * 0.1);
         margin: 0;
         margin-left: 40%;
+        margin-right: 20%;
         text-align: left;
         user-select: none;
         cursor: pointer;

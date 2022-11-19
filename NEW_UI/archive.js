@@ -204,11 +204,10 @@ function mTimelineToggleYear(elementYear) {
         let item = mTimeline.children[i];
         if (item.classList.contains("m-timeline-year-content")) {
             if (!item.classList.contains(elementYear)) {
+                item.classList.add("hidden");
                 continue;
             }
             item.classList.toggle("hidden");
-            console.log(item);
-            console.log(item.style.backgroundColor);
         }
     }
 }

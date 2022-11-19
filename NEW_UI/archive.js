@@ -1,4 +1,4 @@
-var topRightBtnState = ''; // calendar, check, search, cross
+var topRightBtnState = ""; // calendar, check, search, cross
 var prev_look_at = null;
 
 addEventListener("scroll", (event) => {
@@ -19,7 +19,6 @@ addEventListener("resize", (event) => {
         updateTimeline();
     }
 });
-
 
 function timelineScrollTo(timelineDate, offset) {
     if (typeof offset != "number") {
@@ -63,7 +62,6 @@ function updateTimeline() {
     if (aspectRatio == "mobile" || aspectRatio == "tablet") {
         document.getElementById("m-timeline").style = "";
         document.getElementById("timeline").style.display = "none";
-        
     } else {
         document.getElementById("timeline").style = "";
         document.getElementById("m-timeline").style.display = "none";
@@ -139,82 +137,96 @@ function updateHighlightedItem() {
         );
 }
 function toggleMobileTimeline(override) {
+    console.log(1);
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
         document
             .getElementById("m-timeline")
             .classList.toggle("m-timeline-collapsed");
 
-        if(document.querySelector('body').style.overflow == "hidden"){
-            document.querySelector('body').style = "";
-            updateTopRightButton('calendar');
-        } else{
-            document.querySelector('body').style = "";
-            document.querySelector('body').style.setProperty('overflow', 'hidden');
-            updateTopRightButton('checkmark');
+        if (document.querySelector("body").style.overflow == "hidden") {
+            document.querySelector("body").style = "";
+            updateTopRightButton("calendar");
+        } else {
+            document.querySelector("body").style = "";
+            document
+                .querySelector("body")
+                .style.setProperty("overflow", "hidden");
+            updateTopRightButton("checkmark");
         }
     }
     console.log("toggled Timeline");
 }
 function mTimelineToggleYear(elementYear, element) {
-
+    console.log(element);
     // m-timeline-dropdown
     // m-timeline-dropdown-arrow
-    for(let i = 0; i < document.getElementsByClassName('m-timeline-dropdown-arrow').length; i++){
-        if(document.getElementsByClassName('m-timeline-dropdown-arrow')[i] == element.querySelector('.m-timeline-dropdown-arrow')){
+    for (
+        let i = 0;
+        i < document.getElementsByClassName("m-timeline-dropdown-arrow").length;
+        i++
+    ) {
+        if (
+            document.getElementsByClassName("m-timeline-dropdown-arrow")[i] ==
+            element.querySelector(".m-timeline-dropdown-arrow")
+        ) {
             continue;
         }
-        document.getElementsByClassName('m-timeline-dropdown-arrow')[i].classList.remove('rotateDown');
+        document
+            .getElementsByClassName("m-timeline-dropdown-arrow")
+            [i].classList.remove("rotateDown");
     }
-    element.querySelector('.m-timeline-dropdown-arrow').classList.toggle('rotateDown');
+    element
+        .querySelector(".m-timeline-dropdown-arrow")
+        .classList.toggle("rotateDown");
 
     let mTimeline = document.getElementById("m-timeline");
     for (let i = 0; i < mTimeline.children.length; i++) {
-
         let item = mTimeline.children[i];
 
         if (item.classList.contains("m-timeline-year-content")) {
-
             if (!item.classList.contains(elementYear)) {
                 item.classList.add("hidden");
                 continue;
             }
             item.classList.toggle("hidden");
-
         }
-
     }
 }
-function updateTopRightButton(state){
+function updateTopRightButton(state) {
     console.log(state);
-    if(state == "calendar"){
-        document.querySelector('#calendar-icon').classList.remove("hidden");
-        document.querySelector('#checkmark-icon').classList.add("hidden");
-        document.querySelector('#cross-icon').classList.add("hidden");
-        document.querySelector('#search-icon').classList.add("hidden");
-        topRightBtnState = 'calendar';
-        document.querySelector('#topRightInvis').setAttribute('onclick', 'toggleMobileTimeline()');
-    } else if (state == 'checkmark') {
-        document.querySelector('#checkmark-icon').classList.remove("hidden");
-        document.querySelector('#calendar-icon').classList.add("hidden");
-        document.querySelector('#cross-icon').classList.add("hidden");
-        document.querySelector('#search-icon').classList.add("hidden");
-        topRightBtnState = 'checkmark';
-        document.querySelector('#topRightInvis').setAttribute('onclick', 'toggleMobileTimeline()');
-    } else if (state == 'search') {
-        document.querySelector('#search-icon').classList.remove("hidden");
-        document.querySelector('#checkmark-icon').classList.add("hidden");
-        document.querySelector('#calendar-icon').classList.add("hidden");
-        document.querySelector('#cross-icon').classList.add("hidden");
-        topRightBtnState = 'checkmark';
-        document.querySelector('#topRightInvis').setAttribute('onclick', '');
-    } else if (state == 'cross') {
-        document.querySelector('#cross-icon').classList.remove("hidden");
-        document.querySelector('#checkmark-icon').classList.add("hidden");
-        document.querySelector('#calendar-icon').classList.add("hidden");
-        document.querySelector('#search-icon').classList.add("hidden");
-        topRightBtnState = 'checkmark';
-        document.querySelector('#topRightInvis').setAttribute('onclick', '');
+    if (state == "calendar") {
+        document.getElementById("calendar-icon").classList.remove("hidden");
+        document.getElementById("checkmark-icon").classList.add("hidden");
+        document.getElementById("cross-icon").classList.add("hidden");
+        document.getElementById("search-icon2").classList.add("hidden");
+        topRightBtnState = "calendar";
+        document
+            .getElementById("topRightInvis")
+            .setAttribute("onclick", "toggleMobileTimeline()");
+    } else if (state == "checkmark") {
+        document.getElementById("checkmark-icon").classList.remove("hidden");
+        document.getElementById("calendar-icon").classList.add("hidden");
+        document.getElementById("cross-icon").classList.add("hidden");
+        document.getElementById("search-icon2").classList.add("hidden");
+        topRightBtnState = "checkmark";
+        document
+            .getElementById("topRightInvis")
+            .setAttribute("onclick", "toggleMobileTimeline()");
+    } else if (state == "search") {
+        document.getElementById("search-icon2").classList.remove("hidden");
+        document.getElementById("checkmark-icon").classList.add("hidden");
+        document.getElementById("calendar-icon").classList.add("hidden");
+        document.getElementById("cross-icon").classList.add("hidden");
+        topRightBtnState = "checkmark";
+        document.getElementById("topRightInvis").setAttribute("onclick", "");
+    } else if (state == "cross") {
+        document.getElementById("cross-icon").classList.remove("hidden");
+        document.getElementById("checkmark-icon").classList.add("hidden");
+        document.getElementById("calendar-icon").classList.add("hidden");
+        document.getElementById("search-icon2").classList.add("hidden");
+        topRightBtnState = "checkmark";
+        document.getElementById("topRightInvis").setAttribute("onclick", "");
     }
 }
 function calcAspectRatio() {

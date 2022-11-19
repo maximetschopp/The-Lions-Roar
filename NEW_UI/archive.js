@@ -1,7 +1,9 @@
+var topRightBtnState = ''; // calendar, check, search, cross
+
 addEventListener("scroll", (event) => {
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
-        updateMobileTimeline();
+        updateTimeline();
     } else {
         updateHighlightedItem();
         updateTimeline();
@@ -10,7 +12,7 @@ addEventListener("scroll", (event) => {
 addEventListener("resize", (event) => {
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
-        updateMobileTimeline();
+        updateTimeline();
     } else {
         updateHighlightedItem();
         updateTimeline();
@@ -128,94 +130,33 @@ function updateTimeline() {
     let aspectRatio = calcAspectRatio();
     // console.log(aspectRatio);
     if (aspectRatio == "mobile" || aspectRatio == "tablet") {
-        /*let x = document
-            .getElementById("timeline")
-            .getBoundingClientRect().right;
-        let y =
-            document.getElementById("timeline").getBoundingClientRect().top -
-            window.scrollY;
-
-        let xDelta =
-            x -
-            document.getElementById("date-btn").getBoundingClientRect().right;
-        let yDelta =
-            y -
-            document.getElementById("date-btn").getBoundingClientRect().top -
-            window.scrollY +
-            (document.getElementById("pageContent").getBoundingClientRect()
-                .top +
-                window.scrollY);
-
-        document
-            .getElementById("timeline")
-            .style.setProperty("right", window.innerWidth - (x - xDelta));
-        document
-            .getElementById("timeline")
-            .style.setProperty("top", y - yDelta);
-
-        // console.log(y + '          ' + (document.getElementById('date-btn').getBoundingClientRect().top - window.scrollY));
-        // console.log(yDelta);
-        console.log(y - yDelta);
-        if (
-            document
-                .getElementById("timeline")
-                .classList.contains("timeline-collapsed")
-        ) {
-            document
-                .getElementById("timeline")
-                .style.setProperty(
-                    "--date-btn-width",
-                    document.getElementById("date-btn").offsetWidth
-                );
-            document
-                .getElementById("timeline")
-                .style.setProperty(
-                    "--date-btn-height",
-                    document.getElementById("date-btn").offsetHeight
-                );
-        }*/
+        document.getElementById("m-timeline").style = "";
+        document.getElementById("timeline").style.display = "none";
+        
     } else {
-        document
-            .getElementById("timeline")
-            .classList.remove("timeline-collapsed");
         document.getElementById("timeline").style = "";
+        document.getElementById("m-timeline").style.display = "none";
     }
 }
-function updateMobileTimeline(){
-
-}
-function toggleTimeline(override) {
+function toggleMobileTimeline(override) {
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
         document
             .getElementById("m-timeline")
             .classList.toggle("m-timeline-collapsed");
+
         if(document.querySelector('body').style.overflow == "hidden"){
             document.querySelector('body').style = "";
+            document.querySelector('#calender-icon').classList.remove("hidden");
+            document.querySelector('#checkmark-icon').classList.add("hidden");
         } else{
             document.querySelector('body').style = "";
             document.querySelector('body').style.setProperty('overflow', 'hidden');
+            document.querySelector('#calender-icon').classList.add("hidden");
+            document.querySelector('#checkmark-icon').classList.remove("hidden");
         }
     }
     console.log("toggled Timeline");
-}
-function toggleDebug() {
-    document.getElementById("debug-dist-top").classList.toggle("hidden");
-    document
-        .getElementById("debug-dist-top-closest")
-        .classList.toggle("hidden");
-}
-function calcAspectRatio() {
-    let ratio = window.innerWidth / window.innerHeight;
-    if (ratio <= 1) {
-        return "mobile";
-    } else if (ratio > 1 && ratio <= 3 / 2) {
-        return "tablet";
-    } else if (ratio > 3 / 2 && ratio <= 5 / 2) {
-        return "desktop";
-    } else {
-        return "ultrawide";
-    }
 }
 function mTimelineToggleYear(elementYear, element) {
 
@@ -245,4 +186,23 @@ function mTimelineToggleYear(elementYear, element) {
         }
 
     }
+}
+
+function calcAspectRatio() {
+    let ratio = window.innerWidth / window.innerHeight;
+    if (ratio <= 1) {
+        return "mobile";
+    } else if (ratio > 1 && ratio <= 3 / 2) {
+        return "tablet";
+    } else if (ratio > 3 / 2 && ratio <= 5 / 2) {
+        return "desktop";
+    } else {
+        return "ultrawide";
+    }
+}
+function toggleDebug() {
+    document.getElementById("debug-dist-top").classList.toggle("hidden");
+    document
+        .getElementById("debug-dist-top-closest")
+        .classList.toggle("hidden");
 }

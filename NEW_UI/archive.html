@@ -42,10 +42,13 @@
         <div id = "search-bar-container">
             <input id = "search-bar">
             <div id = "date-btn">
-                <object id ="calender-icon" data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
-                    <div class="invis" ></div>
+                <object id ="calender-icon" class = 'topRightButton' data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
                 </object>
-                <div class = "tab-bar-invis" onclick="toggleTimeline()"></div>
+                <object id ="checkmark-icon" class = 'topRightButton hidden' data="../resources/Icons/checkmark_icon.svg" type="image/svg+xml">
+                </object>
+                <object id ="search-icon" class = 'topRightButton hidden' data="../resources/Icons/magnifying_glass_icon_outline.svg" type="image/svg+xml">
+                </object>
+                <div class = "tab-bar-invis" onclick="toggleMobileTimeline()"></div>
             </div>
         </div>
 
@@ -157,7 +160,7 @@
                 </div>
 
             </div>
-            <!--<div id = "timeline" class="timeline-collapsed" onclick="toggleTimeline()">
+            <div id = "timeline">
                 <div class = "timeline-year">2022</div>
                 <div class = "timeline-month">September</div>
                 <div class = "timeline-day thing-1" onclick = "timelineScrollTo(this)">Sep 2</div>
@@ -165,7 +168,7 @@
                 <div class = "timeline-day thing-3" onclick = "timelineScrollTo(this)">Sep 16</div>
                 <div class = "timeline-day thing-4" onclick = "timelineScrollTo(this)">Sep 23</div>
                 <div class = "timeline-day thing-5" onclick = "timelineScrollTo(this)">Sep 30</div>
-            </div>-->
+            </div>
 
             
             <div id = "thing-1" class = "archive-publication">

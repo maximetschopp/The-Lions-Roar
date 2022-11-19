@@ -7,6 +7,7 @@ addEventListener("resize", (event) => {
     updateTimeline();
 });
 
+
 function timelineScrollTo(timelineDate, offset) {
     if (typeof offset != "number") {
         let viewportHeight = window.innerHeight;
@@ -198,7 +199,6 @@ function calcAspectRatio() {
     }
 }
 function mTimelineToggleYear(elementYear) {
-    console.log(elementYear);
     let mTimeline = document.getElementById("m-timeline");
     for (let i = 0; i < mTimeline.children.length; i++) {
         let item = mTimeline.children[i];

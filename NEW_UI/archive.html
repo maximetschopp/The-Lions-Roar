@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <script src = "archive.js"></script>
     </head>
-    <body onload = "updateHighlightedItem(); updateTimeline()">
+    <body onload = "updateHighlightedItem(); updateTimeline(); mTimelineToggleYear()">
         <div id = "tab-bar">
             <div class = "tab-bar-icon-container">
                 <object data="../resources/Icons/doc_icon_outline.svg" type="image/svg+xml"
@@ -60,10 +60,10 @@
                 <div class = "m-timeline-dropdown 2022" onclick="mTimelineToggleYear('2022')">
                     <div class = "m-timeline-year">2022</div>
                     <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
-                        <div class="invis" ></div>
+                        <div class="invis" onclick="mTimelineToggleYear('2022')"></div>
                     </object>
                 </div>
-                <div class = "m-timeline-year-content 2022">
+                <div class = "m-timeline-year-content 2022 hidden">
 
                     <div class = "m-timeline-top-spacer"></div>
                     <div class="m-timeline-selector"></div>
@@ -109,10 +109,10 @@
                 <div class = "m-timeline-dropdown 2021" onclick="mTimelineToggleYear('2021')">
                     <div class = "m-timeline-year">2021</div>
                     <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
-                        <div class="invis" ></div>
+                        <div class="invis" onclick="mTimelineToggleYear('2021')"></div>
                     </object>
                 </div>
-                <div class = "m-timeline-year-content 2021">
+                <div class = "m-timeline-year-content 2021 hidden">
 
                     <div class = "m-timeline-top-spacer"></div>
                     <div class="m-timeline-selector"></div>

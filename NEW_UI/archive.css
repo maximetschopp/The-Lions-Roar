@@ -314,6 +314,11 @@ input:focus{
     .m-timeline-dropdown-arrow{
         margin: auto 0 auto 0;
         cursor: pointer;
+        transition: rotate 0.3s;
+    }
+    .rotateDown{
+        rotate: -90deg;
+        transition: rotate 0.3s;
     }
     .m-timeline-year-content{
         position: relative;

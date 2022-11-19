@@ -198,16 +198,32 @@ function calcAspectRatio() {
         return "ultrawide";
     }
 }
-function mTimelineToggleYear(elementYear) {
+function mTimelineToggleYear(elementYear, element) {
+
+    // m-timeline-dropdown
+    // m-timeline-dropdown-arrow
+    for(let i = 0; i < document.getElementsByClassName('m-timeline-dropdown-arrow').length; i++){
+        if(document.getElementsByClassName('m-timeline-dropdown-arrow')[i] == element.querySelector('.m-timeline-dropdown-arrow')){
+            continue;
+        }
+        document.getElementsByClassName('m-timeline-dropdown-arrow')[i].classList.remove('rotateDown');
+    }
+    element.querySelector('.m-timeline-dropdown-arrow').classList.toggle('rotateDown');
+
     let mTimeline = document.getElementById("m-timeline");
     for (let i = 0; i < mTimeline.children.length; i++) {
+
         let item = mTimeline.children[i];
+
         if (item.classList.contains("m-timeline-year-content")) {
+
             if (!item.classList.contains(elementYear)) {
                 item.classList.add("hidden");
                 continue;
             }
             item.classList.toggle("hidden");
+
         }
+
     }
 }

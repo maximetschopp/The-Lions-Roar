@@ -1,10 +1,20 @@
 addEventListener("scroll", (event) => {
-    updateHighlightedItem();
-    updateTimeline();
+    a = calcAspectRatio();
+    if (a == "mobile" || a == "tablet") {
+        updateMobileTimeline();
+    } else {
+        updateHighlightedItem();
+        updateTimeline();
+    }
 });
 addEventListener("resize", (event) => {
-    updateHighlightedItem();
-    updateTimeline();
+    a = calcAspectRatio();
+    if (a == "mobile" || a == "tablet") {
+        updateMobileTimeline();
+    } else {
+        updateHighlightedItem();
+        updateTimeline();
+    }
 });
 
 
@@ -171,12 +181,21 @@ function updateTimeline() {
         document.getElementById("timeline").style = "";
     }
 }
+function updateMobileTimeline(){
+
+}
 function toggleTimeline(override) {
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
         document
             .getElementById("m-timeline")
-            .classList.toggle("timeline-collapsed");
+            .classList.toggle("m-timeline-collapsed");
+        if(document.querySelector('body').style.overflow == "hidden"){
+            document.querySelector('body').style = "";
+        } else{
+            document.querySelector('body').style = "";
+            document.querySelector('body').style.setProperty('overflow', 'hidden');
+        }
     }
     console.log("toggled Timeline");
 }

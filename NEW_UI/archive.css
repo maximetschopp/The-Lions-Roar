@@ -6,10 +6,6 @@
     --search-bar-height: max(5.5vh, 40px);
 }
 
-body{
-    overflow: hidden;
-}
-
 #search-bar-container{
     height: var(--search-bar-height);
     margin-top: 1em;
@@ -259,14 +255,10 @@ input:focus{
         animation: 0.2s linear 0s toggleTimeline 1;
     }
     .m-timeline-collapsed{
-        --date-btn-width: 0px;
-        --date-btn-height: 0px;
-        width: var(--date-btn-width) !important;
-        height: var(--date-btn-height) !important;
+        position: fixed !important;
+        top: 100vh;
         padding: 0 !important;
         overflow: hidden !important;
-        /* transition: opacity 1s; */
-        /* opacity: 0; */
         opacity: 0;
         display: none;
         animation: 0.2s linear 0s toggleTimeline 1 reverse;

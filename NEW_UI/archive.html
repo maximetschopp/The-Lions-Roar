@@ -40,15 +40,17 @@
             </div>
         </div>  
         <div id = "search-bar-container">
-            <input id = "search-bar">
+            <input id = "search-bar" onclick="updateTopRightButton('search')">
             <div id = "date-btn">
-                <object id ="calender-icon" class = 'topRightButton' data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
+                <object id ="calendar-icon" class = 'topRightButton' data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
                 </object>
                 <object id ="checkmark-icon" class = 'topRightButton hidden' data="../resources/Icons/checkmark_icon.svg" type="image/svg+xml">
                 </object>
                 <object id ="search-icon" class = 'topRightButton hidden' data="../resources/Icons/magnifying_glass_icon_outline.svg" type="image/svg+xml">
                 </object>
-                <div class = "tab-bar-invis" onclick="toggleMobileTimeline()"></div>
+                <object id ="cross-icon" class = 'topRightButton hidden' data="../resources/Icons/cross_icon.svg" type="image/svg+xml">
+                </object>
+                <div id = 'topRightInvis' class = "tab-bar-invis" onclick="toggleMobileTimeline()"></div>
             </div>
         </div>
 

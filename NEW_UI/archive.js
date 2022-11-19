@@ -1,4 +1,5 @@
 var topRightBtnState = ''; // calendar, check, search, cross
+var prev_look_at = null;
 
 addEventListener("scroll", (event) => {
     a = calcAspectRatio();
@@ -56,7 +57,18 @@ function timelineScrollTo(timelineDate, offset) {
     // }
 }
 
-var prev_look_at = null;
+function updateTimeline() {
+    let aspectRatio = calcAspectRatio();
+    // console.log(aspectRatio);
+    if (aspectRatio == "mobile" || aspectRatio == "tablet") {
+        document.getElementById("m-timeline").style = "";
+        document.getElementById("timeline").style.display = "none";
+        
+    } else {
+        document.getElementById("timeline").style = "";
+        document.getElementById("m-timeline").style.display = "none";
+    }
+}
 function updateHighlightedItem() {
     updateTimeline();
     let pageContent = document.getElementById("pageContent");
@@ -126,18 +138,6 @@ function updateHighlightedItem() {
                 "px"
         );
 }
-function updateTimeline() {
-    let aspectRatio = calcAspectRatio();
-    // console.log(aspectRatio);
-    if (aspectRatio == "mobile" || aspectRatio == "tablet") {
-        document.getElementById("m-timeline").style = "";
-        document.getElementById("timeline").style.display = "none";
-        
-    } else {
-        document.getElementById("timeline").style = "";
-        document.getElementById("m-timeline").style.display = "none";
-    }
-}
 function toggleMobileTimeline(override) {
     a = calcAspectRatio();
     if (a == "mobile" || a == "tablet") {
@@ -147,13 +147,11 @@ function toggleMobileTimeline(override) {
 
         if(document.querySelector('body').style.overflow == "hidden"){
             document.querySelector('body').style = "";
-            document.querySelector('#calender-icon').classList.remove("hidden");
-            document.querySelector('#checkmark-icon').classList.add("hidden");
+            updateTopRightButton('calendar');
         } else{
             document.querySelector('body').style = "";
             document.querySelector('body').style.setProperty('overflow', 'hidden');
-            document.querySelector('#calender-icon').classList.add("hidden");
-            document.querySelector('#checkmark-icon').classList.remove("hidden");
+            updateTopRightButton('checkmark');
         }
     }
     console.log("toggled Timeline");
@@ -187,7 +185,38 @@ function mTimelineToggleYear(elementYear, element) {
 
     }
 }
-
+function updateTopRightButton(state){
+    console.log(state);
+    if(state == "calendar"){
+        document.querySelector('#calendar-icon').classList.remove("hidden");
+        document.querySelector('#checkmark-icon').classList.add("hidden");
+        document.querySelector('#cross-icon').classList.add("hidden");
+        document.querySelector('#search-icon').classList.add("hidden");
+        topRightBtnState = 'calendar';
+        document.querySelector('#topRightInvis').setAttribute('onclick', 'toggleMobileTimeline()');
+    } else if (state == 'checkmark') {
+        document.querySelector('#checkmark-icon').classList.remove("hidden");
+        document.querySelector('#calendar-icon').classList.add("hidden");
+        document.querySelector('#cross-icon').classList.add("hidden");
+        document.querySelector('#search-icon').classList.add("hidden");
+        topRightBtnState = 'checkmark';
+        document.querySelector('#topRightInvis').setAttribute('onclick', 'toggleMobileTimeline()');
+    } else if (state == 'search') {
+        document.querySelector('#search-icon').classList.remove("hidden");
+        document.querySelector('#checkmark-icon').classList.add("hidden");
+        document.querySelector('#calendar-icon').classList.add("hidden");
+        document.querySelector('#cross-icon').classList.add("hidden");
+        topRightBtnState = 'checkmark';
+        document.querySelector('#topRightInvis').setAttribute('onclick', '');
+    } else if (state == 'cross') {
+        document.querySelector('#cross-icon').classList.remove("hidden");
+        document.querySelector('#checkmark-icon').classList.add("hidden");
+        document.querySelector('#calendar-icon').classList.add("hidden");
+        document.querySelector('#search-icon').classList.add("hidden");
+        topRightBtnState = 'checkmark';
+        document.querySelector('#topRightInvis').setAttribute('onclick', '');
+    }
+}
 function calcAspectRatio() {
     let ratio = window.innerWidth / window.innerHeight;
     if (ratio <= 1) {

@@ -23,7 +23,7 @@ addEventListener("resize", (event) => {
 function ready(){
     updateHighlightedItem();
     updateTimeline(); 
-    input.addEventListener('mouseleave', e => e.target.blur())
+    // document.querySelector('#search-bar').addEventListener('mouseleave', e => e.target.blur());
     document.querySelector('#search-bar').addEventListener("blur", function() {
         if(document.querySelector('#search-bar').value != ''){
             updateTopRightButton('cross');

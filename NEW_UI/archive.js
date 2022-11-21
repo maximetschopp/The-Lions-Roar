@@ -3,7 +3,10 @@ var prev_look_at = null;
 
 addEventListener("scroll", (event) => {
     a = calcAspectRatio();
-    if (a == "mobile" || a == "tablet") {
+    if (a == "mobile") {
+        updateTimeline();
+    } else if (a == "tablet") {
+        updateHighlightedItem();
         updateTimeline();
     } else {
         updateHighlightedItem();
@@ -12,7 +15,10 @@ addEventListener("scroll", (event) => {
 });
 addEventListener("resize", (event) => {
     a = calcAspectRatio();
-    if (a == "mobile" || a == "tablet") {
+    if (a == "mobile") {
+        updateTimeline();
+    } else if (a == "tablet") {
+        updateHighlightedItem();
         updateTimeline();
     } else {
         updateHighlightedItem();

@@ -107,13 +107,13 @@ def generateArticles(articles):
                     </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(""" + articleThumbnail + """)'></div>
                     <section class="article1-description-mobile">
-                        <h2 class="article1-title">"""+ articleTitle +"""</h2>
-                        <h3 class="article1-author">"""+ articleAuthor + """</h3>
-                        <h3 class="article1-date">"""+ articleDate +"""</h3>
+                        <div class="article1-title">"""+ articleTitle +"""</div>
+                        <div class="article1-author">"""+ articleAuthor + """</div>
+                        <div class="article1-date">"""+ articleDate +"""</div>
                     </section>
                     <section class="article1-description-desktop">
-                        <h2 class="article1-title">"""+ articleTitle +"""</h2>
-                        <h3 class="article1-author">"""+ articleAuthor +"""  •  """+ articleDate +"""</h3>
+                        <div class="article1-title">"""+ articleTitle +"""</div>
+                        <div class="article1-author">"""+ articleAuthor +"""  •  """+ articleDate +"""</div>
                     </section>
                     </a>
 

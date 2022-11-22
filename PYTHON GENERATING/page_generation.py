@@ -1,3 +1,4 @@
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 def generateTabBar(selectedTab):
     tabBar = """
             <div id = 'tab-bar'>
@@ -42,11 +43,11 @@ def generateTabBar(selectedTab):
 
 def generateMainArticle(data):
 
-    title = data['title']
-    author = data['author'] if 'author' in data else "The Lion's Roar"
-    date = data['date']
-    thumbnail = data['thumbnail']
-    url = data['url']
+    title = data['main_article_title']
+    author = data['author'] if ('author' in data) else "The Lion's Roar"
+    date = str(data['day'])+' '+months[data['month']-1]+' '+str(data['year'])
+    thumbnail = data['main_article_thumbnail']
+    url = data['main_article_url']
 
     mainArticle = """ 
             <article class = "main-article">
@@ -86,6 +87,8 @@ def generateMainArticle(data):
 
 def generateArticles(articles):
     output = ""
+    a3Counter = 0
+    a3InnerHTML = ""
     for art in articles:
         articleTitle = art['title']
         articleAuthor = art['author']
@@ -93,9 +96,6 @@ def generateArticles(articles):
         articleThumbnail = art['thumbnail']
         articleURL = art['url']
         articleType = art['type']
-
-        a3Counter = 0
-        a3InnerHTML = ""
 
         if(articleType == "1"): # thumbnail with bottom text
             article1 = """
@@ -177,9 +177,8 @@ def generatePublicationPageContent(data):
     """
     return pageContent
     
-def generateArchivePageContent(data):
+def generateArchivePageContent(data, isSearch = False):
     pageContent = ""
-    isSearch = False
     # default archive page
     if not isSearch:
         for publication in data:
@@ -218,5 +217,16 @@ def generateArchivePageContent(data):
 
 
 if __name__ == "__main__":
+    import webbrowser
+    import requests
+    import json
+    import os
+    import time
+    r = requests.get("https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json")
+    data = json.loads(r.text)
     with open('output.html', 'w') as f:
-        f.write(generatePublicationPageContent(""))
+        f.write(generatePublicationPageContent(data[0]))
+    path = os.path.abspath('output.html')
+    print(path)
+    webbrowser.open_new_tab('file://' + path)
+    time.sleep(0.1)

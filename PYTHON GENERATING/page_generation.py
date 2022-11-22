@@ -262,8 +262,8 @@ if __name__ == "__main__":
     r = requests.get("https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json")
     data = json.loads(r.text)
     with open('output.html', 'w') as f:
-        f.write(generatePublicationPageContent(data[6])) #TODO: set this back to data[0]
+        f.write(generatePublicationPageContent(data[0])) #TODO: set this back to data[0]
     path = os.path.abspath('output.html')
     print(path)
-    #webbrowser.open_new_tab('file://' + path)
+    webbrowser.open_new_tab('file://' + path)
     time.sleep(0.1)

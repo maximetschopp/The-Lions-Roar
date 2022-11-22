@@ -552,6 +552,25 @@ h3{
     font-size: max(1.8vh, 4px);
 }
 
+#blurred-bg-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0f76;
+}
+#blurred-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+    background-color: #0f0f0f;
+    background-blend-mode: add;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
     h2{
@@ -913,6 +932,9 @@ h3{
             <div class = "articles-container">
                 <article class = "article1">
                     <a href = " https://youtu.be/B7LEj82XTGM ">
+                    <div id = "blurred-bg" style = 'background-image: url(https://lh3.google.com/u/0/d/1xqG8xF19m_svXO396Xp8ljFN-vkiiPvb=w2940-h1444-iv1)'> 
+                        <div id="blurred-bg-overlay"></div>
+                    </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(https://lh3.google.com/u/0/d/1xqG8xF19m_svXO396Xp8ljFN-vkiiPvb=w2940-h1444-iv1)'></div>
                     <section class="article1-description-mobile">
                         <h2 class="article-title">Turkey Trot</h2>
@@ -927,13 +949,13 @@ h3{
 
                     <img class = "article1-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
                     <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
-                    <div id = "blurred-bg" style = 'background-image: url(https://lh3.google.com/u/0/d/1xqG8xF19m_svXO396Xp8ljFN-vkiiPvb=w2940-h1444-iv1)'> 
-                        <div id="blurred-bg-overlay"></div>
-                    </div>
                 </article>
                 
                 <article class = "article1">
                     <a href = " https://youtu.be/Vdx3xAjeLec ">
+                    <div id = "blurred-bg" style = 'background-image: url(None)'> 
+                        <div id="blurred-bg-overlay"></div>
+                    </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(None)'></div>
                     <section class="article1-description-mobile">
                         <h2 class="article-title">Barefoot Interview</h2>
@@ -948,13 +970,13 @@ h3{
 
                     <img class = "article1-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
                     <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
-                    <div id = "blurred-bg" style = 'background-image: url(None)'> 
-                        <div id="blurred-bg-overlay"></div>
-                    </div>
                 </article>
                 
                 <article class = "article1">
                     <a href = " https://rr3---sn-1gi7znek.c.drive.google.com/videoplayback?expire=1667234117&ei=BcFfY6HcA8u_u7APiOam2AQ&ip=62.2.114.162&cp=QVRLWUNfU1FPSFhPOkFWZTI2TWF0R2VuMUhmTWVZdTJjSVdfV1lLNVBKVUVySEpHWFR5OUJfT24&id=a61a4ffdc05f2cd7&itag=37&source=webdrive&requiressl=yes&mh=eE&mm=32&mn=sn-1gi7znek&ms=su&mv=m&mvi=3&pl=18&sc=yes&ttl=transient&susc=dr&driveid=1A8D902vZ_TbJD5iJLH1zPQdhFsx8G1_B&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=73.793&lmt=1667147380094267&mt=1667219341&subapp=DRIVE_WEB_FILE_VIEWER&txp=0011224&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRAIgO8vooABV45PYpygGUdbWGOHW1BfrylRyHQaF3sBP1ksCIH-6UcVZpLpe34XEeCMQkOnZAWNB2EPrVlAxussD2RYi&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc&lsig=AG3C_xAwRQIhANjJjALLIx6OmQijnoBAYzA6rsKHrFFJqvmV-9JWOYr7AiABVyP0hIOhFbXXNJMeTJI1tAmz47ryKrSudq1GUbmagA==&cpn=jXF1Rplvi21K56LQ&c=WEB_EMBEDDED_PLAYER&cver=1.20221026.01.00 ">
+                    <div id = "blurred-bg" style = 'background-image: url(None)'> 
+                        <div id="blurred-bg-overlay"></div>
+                    </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(None)'></div>
                     <section class="article1-description-mobile">
                         <h2 class="article-title">How to Access Family Conferences</h2>
@@ -969,9 +991,6 @@ h3{
 
                     <img class = "article1-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
                     <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
-                    <div id = "blurred-bg" style = 'background-image: url(None)'> 
-                        <div id="blurred-bg-overlay"></div>
-                    </div>
                 </article>
                 
             </div>

@@ -217,9 +217,41 @@
 @media (min-aspect-ratio: 1/1) {
     .main-article-title{
         font-size: max(1.6vw, 8px);
+        width: 100%;
+        color: white;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
     }
     .main-article-author{
         font-size: max(1vw, 8px);
+        font-family: neue-haas-grotesk-display, sans-serif;
+        color: white;
+        margin-top: 3px !important;
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 3px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
     }
     .article1-title{
         width: 100%;

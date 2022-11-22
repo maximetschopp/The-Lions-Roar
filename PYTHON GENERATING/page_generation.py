@@ -106,6 +106,9 @@ def generateArticles(articles):
                         <div id="blurred-bg-overlay"></div>
                     </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(""" + articleThumbnail + """)'></div>
+                    </a>
+
+                    <a href = " """+ articleURL +""" ">
                     <section class="article1-description-mobile">
                         <div class="article1-title">"""+ articleTitle +"""</div>
                         <div class="article1-author">"""+ articleAuthor + """</div>

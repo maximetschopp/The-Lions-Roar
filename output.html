@@ -571,10 +571,12 @@ h3{
     z-index: -1;
 }
 
+
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
-    h2{
+    .article1-title{
         width: 100%;
+        color: white;
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(4vw, 15px);
         font-weight: 600;
@@ -585,11 +587,32 @@ h3{
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
+        margin-top: 10%;
         -webkit-line-clamp: 2; /* number of lines to show */
         line-clamp: 2; 
         -webkit-box-orient: vertical;
-    }   
-    h3{
+    }
+    .article1-author{
+        color: white;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(3.5vw, 13px);
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 5px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+    }
+    .article1-date{
+        color: white;
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(3.5vw, 13px);
         font-weight: 300;
@@ -703,7 +726,7 @@ h3{
     .main-article-author{
         font-size: max(1vw, 8px);
     }
-    h2{
+    .article1-title{
         width: 100%;
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(2.2vh, 8px);
@@ -720,7 +743,7 @@ h3{
         line-clamp: 2; 
         -webkit-box-orient: vertical;
     }   
-    h3{
+    .article1-author{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(1.8vh, 6px);
         font-weight: 300;
@@ -830,12 +853,26 @@ h3{
         right: 5%;
         transform: translate(0, -50%);
     }
+    .article3-author{
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(1.8vh, 6px);
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 3px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+    }
 }
-
-/* at >1 : 1 Desktop view */
-@media (min-aspect-ratio: 3/2) {
-
-}</style><script>function share(title, url, button){
+</style><script>function share(title, url, button){
 
     // trigger button animation
     button.classList.add('share-button-pressed');
@@ -936,14 +973,17 @@ h3{
                         <div id="blurred-bg-overlay"></div>
                     </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(https://lh3.google.com/u/0/d/1xqG8xF19m_svXO396Xp8ljFN-vkiiPvb=w2940-h1444-iv1)'></div>
+                    </a>
+
+                    <a href = " https://youtu.be/B7LEj82XTGM ">
                     <section class="article1-description-mobile">
-                        <h2 class="article-title">Turkey Trot</h2>
-                        <h3 class="article-author">Brody Fogler, Renata Garibay, Maxime Tschopp</h3>
-                        <h3 class="article-date">26 October</h3>
+                        <div class="article1-title">Turkey Trot</div>
+                        <div class="article1-author">Brody Fogler, Renata Garibay, Maxime Tschopp</div>
+                        <div class="article1-date">26 October</div>
                     </section>
                     <section class="article1-description-desktop">
-                        <h2 class="article-title">Turkey Trot</h2>
-                        <h3 class="article-author">Brody Fogler, Renata Garibay, Maxime Tschopp  •  26 October</h3>
+                        <div class="article1-title">Turkey Trot</div>
+                        <div class="article1-author">Brody Fogler, Renata Garibay, Maxime Tschopp  •  26 October</div>
                     </section>
                     </a>
 
@@ -957,14 +997,17 @@ h3{
                         <div id="blurred-bg-overlay"></div>
                     </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(None)'></div>
+                    </a>
+
+                    <a href = " https://youtu.be/Vdx3xAjeLec ">
                     <section class="article1-description-mobile">
-                        <h2 class="article-title">Barefoot Interview</h2>
-                        <h3 class="article-author">Vadant</h3>
-                        <h3 class="article-date">28 October</h3>
+                        <div class="article1-title">Barefoot Interview</div>
+                        <div class="article1-author">Vadant</div>
+                        <div class="article1-date">28 October</div>
                     </section>
                     <section class="article1-description-desktop">
-                        <h2 class="article-title">Barefoot Interview</h2>
-                        <h3 class="article-author">Vadant  •  28 October</h3>
+                        <div class="article1-title">Barefoot Interview</div>
+                        <div class="article1-author">Vadant  •  28 October</div>
                     </section>
                     </a>
 
@@ -978,14 +1021,17 @@ h3{
                         <div id="blurred-bg-overlay"></div>
                     </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(None)'></div>
+                    </a>
+
+                    <a href = " https://rr3---sn-1gi7znek.c.drive.google.com/videoplayback?expire=1667234117&ei=BcFfY6HcA8u_u7APiOam2AQ&ip=62.2.114.162&cp=QVRLWUNfU1FPSFhPOkFWZTI2TWF0R2VuMUhmTWVZdTJjSVdfV1lLNVBKVUVySEpHWFR5OUJfT24&id=a61a4ffdc05f2cd7&itag=37&source=webdrive&requiressl=yes&mh=eE&mm=32&mn=sn-1gi7znek&ms=su&mv=m&mvi=3&pl=18&sc=yes&ttl=transient&susc=dr&driveid=1A8D902vZ_TbJD5iJLH1zPQdhFsx8G1_B&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=73.793&lmt=1667147380094267&mt=1667219341&subapp=DRIVE_WEB_FILE_VIEWER&txp=0011224&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRAIgO8vooABV45PYpygGUdbWGOHW1BfrylRyHQaF3sBP1ksCIH-6UcVZpLpe34XEeCMQkOnZAWNB2EPrVlAxussD2RYi&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc&lsig=AG3C_xAwRQIhANjJjALLIx6OmQijnoBAYzA6rsKHrFFJqvmV-9JWOYr7AiABVyP0hIOhFbXXNJMeTJI1tAmz47ryKrSudq1GUbmagA==&cpn=jXF1Rplvi21K56LQ&c=WEB_EMBEDDED_PLAYER&cver=1.20221026.01.00 ">
                     <section class="article1-description-mobile">
-                        <h2 class="article-title">How to Access Family Conferences</h2>
-                        <h3 class="article-author">Anka Vonic</h3>
-                        <h3 class="article-date">31 October</h3>
+                        <div class="article1-title">How to Access Family Conferences</div>
+                        <div class="article1-author">Anka Vonic</div>
+                        <div class="article1-date">31 October</div>
                     </section>
                     <section class="article1-description-desktop">
-                        <h2 class="article-title">How to Access Family Conferences</h2>
-                        <h3 class="article-author">Anka Vonic  •  31 October</h3>
+                        <div class="article1-title">How to Access Family Conferences</div>
+                        <div class="article1-author">Anka Vonic  •  31 October</div>
                     </section>
                     </a>
 

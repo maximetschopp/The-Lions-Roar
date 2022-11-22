@@ -162,19 +162,42 @@ def generateArticles(articles):
 
 def generatePublicationPageContent(data):
 
-    htmlPage = """<html> 
-                    <head>
-                        <title>The Lion's Roar</title>
-                        <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css">
-                        <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css">
-                        <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css">
-                        <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
-                        <script src="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js"></script>
-                        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-                    </head>
-                    <body>
-                """
+    # htmlPage = """<html> 
+    #                 <head>
+    #                     <title>The Lion's Roar</title>
+    #                     <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css">
+    #                     <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css">
+    #                     <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css">
+    #                     <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
+    #                     <script src="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js"></script>
+    #                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    #                 </head>
+    #                 <body>
+    #             """
+
+    htmlPage = """
+        <html> 
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                <title>The Lion's Roar</title>
+                <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
+    """
+
+    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css')
+    htmlPage += '<style>'+r.text+'</style>'
+    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css')
+    htmlPage += '<style>'+r.text+'</style>'
+    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css')
+    htmlPage += '<style>'+r.text+'</style>'
+    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js')
+    htmlPage += '<script>'+r.text+'</script>'
+
+
+
+
+
     tabBar = generateTabBar("today");
+    
     htmlPage += tabBar
 
     pageContent = """

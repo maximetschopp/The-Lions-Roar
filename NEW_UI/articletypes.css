@@ -46,6 +46,24 @@
     font-size: max(1.8vh, 4px);
 }
 
+#blurred-bg-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0f76;
+}
+#blurred-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+    background-color: #0f0f0f;
+    background-blend-mode: add;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
     h2{

@@ -90,17 +90,18 @@ def generateArticles(articles):
     a3Counter = 0
     a3InnerHTML = ""
     for art in articles:
-        articleTitle = art['title']
-        articleAuthor = art['author']
-        articleDate = art['date']
-        articleThumbnail = art['thumbnail']
-        articleURL = art['url']
-        articleType = art['type']
+        articleTitle = str(art['title'])
+        articleAuthor = str(art['author'])
+        articleDate = str(art['date'])
+        articleThumbnail = str(art['thumbnail'])
+        articleURL = str(art['url'])
+        articleType = str(art['type'])
+        articleDisplayType = str(art.get('display_type', "1"))
 
-        if(articleType == "1"): # thumbnail with bottom text
+        if(articleDisplayType == "1"): # thumbnail with bottom text
             article1 = """
                 <article class = "article1">
-                    <a href = '"""+ articleURL +"""'>
+                    <a href = " """+ articleURL +""" ">
                     <div id = "blurred-bg" style = 'background-image: url(""" + articleThumbnail + """)'> 
                         <div id="blurred-bg-overlay"></div>
                     </div>
@@ -121,10 +122,10 @@ def generateArticles(articles):
                 </article>
                 """
             output += article1
-        elif (articleType == "2"): # Splash image with short title
+        elif (articleDisplayType == "2"): # Splash image with short title
             article2 = """
                 <article class = "article2">
-                    <a href = '"""+ articleURL +"""'>
+                    <a href = " """+ articleURL +""" ">
                     <div class = "article2-thumbnail" style = 'background-image: url(""" + articleThumbnail + """)'></div>
                     <h2 class="article2-title">""" + articleTitle + """</h2>
                     </a>
@@ -133,11 +134,11 @@ def generateArticles(articles):
                 </article>
             """
             output += article2
-        elif (articleType == "3"):
+        elif (articleDisplayType == "3"):
             a3Counter += 1 #increment
             temp = """
                 <article class = "article3-article">
-                    <a href = '"""+ articleURL +"""'>
+                    <a href = " """+ articleURL +""" ">
                         <div class = "article3-desc">
                             <h2 class="article3-title">""" + articleTitle + """</h2>
                             <h3 class="article3-author">"""+ articleAuthor +"""  •  """+ articleDate +"""</h3>
@@ -160,6 +161,22 @@ def generateArticles(articles):
     return output
 
 def generatePublicationPageContent(data):
+
+    htmlPage = """<html> 
+                    <head>
+                        <title>The Lion's Roar</title>
+                        <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css">
+                        <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css">
+                        <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css">
+                        <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
+                        <script src="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js"></script>
+                        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                    </head>
+                    <body>
+                """
+    tabBar = generateTabBar("today");
+    htmlPage += tabBar
+
     pageContent = """
         <section id = "pageContent">
         """
@@ -175,8 +192,17 @@ def generatePublicationPageContent(data):
             </div>
         </section> 
     """
-    return pageContent
+    htmlPage += pageContent
+
+    htmlPage += """
+                    </body>
+                </html>
+                """
+
+    return htmlPage
     
+
+
 def generateArchivePageContent(data, isSearch = False):
     pageContent = ""
     # default archive page
@@ -225,8 +251,8 @@ if __name__ == "__main__":
     r = requests.get("https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json")
     data = json.loads(r.text)
     with open('output.html', 'w') as f:
-        f.write(generatePublicationPageContent(data[0]))
+        f.write(generatePublicationPageContent(data[6])) #TODO: set this back to data[0]
     path = os.path.abspath('output.html')
     print(path)
-    webbrowser.open_new_tab('file://' + path)
+    #webbrowser.open_new_tab('file://' + path)
     time.sleep(0.1)

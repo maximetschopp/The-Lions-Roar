@@ -96,7 +96,7 @@ def generateArticles(articles):
         articleThumbnail = str(art['thumbnail'])
         articleURL = str(art['url'])
         articleType = str(art['type'])
-        articleDisplayType = str(art.get('display_type', "1"))
+        articleDisplayType = str(art.get('display_type', "3"))
 
         if(articleDisplayType == "1"): # thumbnail with bottom text
             article1 = """

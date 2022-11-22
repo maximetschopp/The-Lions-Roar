@@ -33,11 +33,11 @@ def generateTabBar(selectedTab):
         </div>"""
         
     if(selectedTab == "today"):
-        tabBar.replace("doc_icon_outline.svg", "doc_icon_fill.svg")
+        tabBar = tabBar.replace("doc_icon_outline.svg", "doc_icon_fill.svg")
     elif(selectedTab == "archive"):
-        tabBar.replace("clock_icon_outline.svg", "clock_icon_fill.svg")
+        tabBar = tabBar.replace("clock_icon_outline.svg", "clock_icon_fill.svg")
     elif(selectedTab == "about"):
-        tabBar.replace("question_mark_icon_outline.svg.svg", "question_mark_icon_fill.svg.svg")
+        tabBar = tabBar.replace("question_mark_icon_outline.svg.svg", "question_mark_icon_fill.svg.svg")
 
     return tabBar
 
@@ -166,20 +166,6 @@ def generateArticles(articles):
     return output
 
 def generatePublicationPageContent(data):
-
-    # htmlPage = """<html> 
-    #                 <head>
-    #                     <title>The Lion's Roar</title>
-    #                     <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css">
-    #                     <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css">
-    #                     <link rel="stylesheet" href="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css">
-    #                     <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
-    #                     <script src="https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js"></script>
-    #                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    #                 </head>
-    #                 <body>
-    #             """
-
     htmlPage = """
         <html> 
             <head>
@@ -196,9 +182,6 @@ def generatePublicationPageContent(data):
     htmlPage += '<style>'+r.text+'</style>'
     r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js')
     htmlPage += '<script>'+r.text+'</script>'
-
-
-
 
 
     tabBar = generateTabBar("today");

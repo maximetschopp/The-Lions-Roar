@@ -156,6 +156,8 @@ def generateArticles(articles):
                 article3 += a3InnerHTML
                 article3 += "</article>"
                 output += article3
+                a3Counter = 0
+                a3InnerHTML = ""
     if a3Counter != 0:
         article3 = """<article class = "article3">"""
         article3 += a3InnerHTML

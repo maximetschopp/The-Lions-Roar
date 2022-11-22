@@ -134,7 +134,7 @@ def generateArticles(articles):
             """
             output += article2
         elif (articleType == "3"):
-            a3Counter += 1; #increment
+            a3Counter += 1 #increment
             temp = """
                 <article class = "article3-article">
                     <a href = '"""+ articleURL +"""'>
@@ -192,10 +192,10 @@ def generateArchivePageContent(data, isSearch = False):
                     <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
                 <a href='""" + publication["main_article_url"] + """'><div class = "invis"></div></a>
                 </div>
-            """;
+            """
             pageContent += pub
     else: # there is a query
-        for result in query_results:
+        for result in data:
             # add a text element to the timeline with an id attribute that correlates
             #     with its corresponding article, that way we have an onclick function
             #     that passes itself as a parameter. The function gets the id, checks the
@@ -210,7 +210,7 @@ def generateArchivePageContent(data, isSearch = False):
                    <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
                    <a href='"""+ result["url"] +"""'><div class = "invis"></div></a>  
                 /div>
-            """;
+            """
 
     return pageContent
         

@@ -723,12 +723,45 @@ h3{
 @media (min-aspect-ratio: 1/1) {
     .main-article-title{
         font-size: max(1.6vw, 8px);
+        width: 100%;
+        color: white;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
     }
     .main-article-author{
         font-size: max(1vw, 8px);
+        font-family: neue-haas-grotesk-display, sans-serif;
+        color: white;
+        margin-top: 3px !important;
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 3px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
     }
     .article1-title{
         width: 100%;
+        color: white;
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(2.2vh, 8px);
         font-weight: 600;
@@ -746,6 +779,8 @@ h3{
     }   
     .article1-author{
         font-family: neue-haas-grotesk-display, sans-serif;
+        color: white;
+        margin-top: 5px;
         font-size: max(1.8vh, 6px);
         font-weight: 300;
         font-style: normal;
@@ -915,7 +950,7 @@ h3{
                 <div class = 'tab-bar-text'>Archive</div>
             </div>
             <div class = "tab-bar-icon-container">
-                <object data="../resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
+                <object data="resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
                 id="contact-icon" class = "tab-bar-icon"></object>
                 <div class = "tab-bar-text" >Contact</div>
                 <a href="mailto: lionsroar@zis.ch" style = "width:100%; height: 100%;">
@@ -951,7 +986,7 @@ h3{
                 <div class = "main-article-desc">
                     <div style = "margin-right: 2vw">
                         <h2 class="article-title main-article-title">Sports Awards, Project Green, A Christmas Carol</h2>
-                        <h3 class="article-author main-article-author">The Lion's Roar   â€¢   21 November 2022</h3>
+                        <h3 class="article-author main-article-author">The Lion's Roar   •   21 November 2022</h3>
                     </div>
                     <div class = "main-article-desktop-button-container">
                         <a href = 'https://youtu.be/xRfa5_2ZD-Y'>

@@ -1,3 +1,4 @@
+import requests
 months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 def generateTabBar(selectedTab):
     tabBar = """
@@ -13,7 +14,7 @@ def generateTabBar(selectedTab):
                 <div class = 'tab-bar-text'>Archive</div>
             </div>
             <div class = "tab-bar-icon-container">
-                <object data="../resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
+                <object data="resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
                 id="contact-icon" class = "tab-bar-icon"></object>
                 <div class = "tab-bar-text" >Contact</div>
                 <a href="mailto: lionsroar@zis.ch" style = "width:100%; height: 100%;">
@@ -257,7 +258,6 @@ def generateArchivePageContent(data, isSearch = False):
 
 if __name__ == "__main__":
     import webbrowser
-    import requests
     import json
     import os
     import time

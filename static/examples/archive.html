@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <title>The Lion's Roar</title>
+        <link rel="stylesheet" href="n.css">
+        <link rel="stylesheet" href="tab-bar.css">
+        <link rel="stylesheet" href="archive.css">
+        <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src = "archive.js"></script>
+    </head>
+    <body onload = "ready()">
+        <div id = "tab-bar">
+            <div class = "tab-bar-icon-container">
+                <object data="../resources/Icons/doc_icon_outline.svg" type="image/svg+xml"
+                id="today-icon" class = "tab-bar-icon"></object>
+                <div class = "tab-bar-text">Today</div>
+            </div>
+            <div class = "tab-bar-icon-container">
+                <object data="../resources/Icons/clock_icon_fill.svg" type="image/svg+xml"
+                id="archive-icon" class = "tab-bar-icon"></object>
+                <div class = "tab-bar-text">Archive</div>
+            </div>
+            <div class = "tab-bar-icon-container">
+                <object data="../resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
+                id="contact-icon" class = "tab-bar-icon"></object>
+                <div class = "tab-bar-text" >Contact</div>
+                <a href="mailto: lionsroar@zis.ch" style = "width:100%; height: 100%;">
+                    <div class = "tab-bar-invis"></div>
+                </a>
+            </div>
+            <div class = "tab-bar-icon-container">
+                <object data="../resources/Icons/question_mark_icon_outline.svg" type="image/svg+xml"
+                id="about-icon" class = "tab-bar-icon"></object>
+                <div class = "tab-bar-text">About</div>
+            </div>
+            <div class = "tab-bar-icon-container">
+                <object data="../resources/Icons/magnifying_glass_icon_outline.svg" type="image/svg+xml"
+                id="search-icon" class = "tab-bar-icon"></object>
+                <div class = "tab-bar-text">Search</div>
+            </div>
+        </div>  
+        <div id = "search-bar-container">
+            <input id = "search-bar" onclick="this.focus(); updateTopRightButton('search')">
+            <div id = "date-btn">
+                <object id ="calendar-icon" class = 'topRightButton' data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
+                </object>
+                <object id ="checkmark-icon" class = 'topRightButton hidden' data="../resources/Icons/checkmark_icon.svg" type="image/svg+xml">
+                </object>
+                <object id ="search-icon2" class = 'topRightButton hidden' data="../resources/Icons/magnifying_glass_icon_outline.svg" type="image/svg+xml">
+                </object>
+                <object id ="cross-icon" class = 'topRightButton hidden' data="../resources/Icons/cross_icon.svg" type="image/svg+xml">
+                </object>
+                <div id = 'topRightInvis' class = "tab-bar-invis" onclick="toggleMobileTimeline()"></div>
+            </div>
+        </div>
+
+        <div id="debug-dist-top" class = "hidden" style="width: 100%; position: fixed; background-color: red; height: 2px; left: 0; z-index: 999;"></div>
+        <div id="debug-dist-top-closest" class = "hidden" style="width: 100%; position: fixed; background-color: rgb(0, 217, 255); height: 2px; left: 0; z-index: 998;"></div>
+
+        
+        <section id = "pageContent">
+
+            <div id = "m-timeline" class="m-timeline-collapsed">
+
+                <div class = "m-timeline-dropdown 2022" onclick="mTimelineToggleYear('2022', this)">
+                    <div class = "m-timeline-year">2022</div>
+                    <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
+                        <div class="invis"></div>
+                    </object>
+                    <div class="invis" onclick="mTimelineToggleYear('2022')"></div>
+                </div>
+                <div class = "m-timeline-year-content 2022 hidden">
+
+                    <div class = "m-timeline-top-spacer"></div>
+                    <div class="m-timeline-selector"></div>
+                    <div class = "m-timeline-year-grid">
+
+                        <div class="m-timeline-month-container">
+                            <div class = "m-timeline-month">September</div>
+                        </div>
+                        <div class = "m-timeline-days-container">
+                            <div class = "m-timeline-day thing-1" >2</div>
+                            <div class = "m-timeline-day thing-2" >9</div>
+                            <div class = "m-timeline-day thing-3" >16</div>
+                            <div class = "m-timeline-day thing-4" >23</div>
+                            <div class = "m-timeline-day thing-5" >30</div>
+                        </div>
+
+                        <div class="m-timeline-month-container">
+                            <div class = "m-timeline-month">October</div>
+                        </div>
+                        <div class = "m-timeline-days-container">
+                            <div class = "m-timeline-day thing-1" >2</div>
+                            <div class = "m-timeline-day thing-2" >9</div>
+                            <div class = "m-timeline-day thing-3" >16</div>
+                            <div class = "m-timeline-day thing-4" >23</div>
+                            <div class = "m-timeline-day thing-5" >30</div>
+                        </div>
+
+                        <div class="m-timeline-month-container">
+                            <div class = "m-timeline-month">November</div>
+                        </div>
+                        <div class = "m-timeline-days-container">
+                            <div class = "m-timeline-day thing-1" >2</div>
+                            <div class = "m-timeline-day thing-2" >9</div>
+                            <div class = "m-timeline-day thing-3" >16</div>
+                            <div class = "m-timeline-day thing-4" >23</div>
+                            <div class = "m-timeline-day thing-5" >30</div>
+                        </div>
+                    </div>
+                    <div class = "m-timeline-bottom-spacer"></div>
+
+                </div>
+
+                <div class = "m-timeline-dropdown 2021" onclick="mTimelineToggleYear('2021', this)">
+                    <div class = "m-timeline-year">2021</div>
+                    <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
+                        <div class="invis" onclick="mTimelineToggleYear('2021')"></div>
+                    </object>
+                </div>
+                <div class = "m-timeline-year-content 2021 hidden">
+
+                    <div class = "m-timeline-top-spacer"></div>
+                    <div class="m-timeline-selector"></div>
+                    <div class = "m-timeline-year-grid">
+
+                        <div class="m-timeline-month-container">
+                            <div class = "m-timeline-month">September</div>
+                        </div>
+                        <div class = "m-timeline-days-container">
+                            <div class = "m-timeline-day thing-1" >2</div>
+                            <div class = "m-timeline-day thing-2" >9</div>
+                            <div class = "m-timeline-day thing-3" >16</div>
+                            <div class = "m-timeline-day thing-4" >23</div>
+                            <div class = "m-timeline-day thing-5" >30</div>
+                        </div>
+
+                        <div class="m-timeline-month-container">
+                            <div class = "m-timeline-month">October</div>
+                        </div>
+                        <div class = "m-timeline-days-container">
+                            <div class = "m-timeline-day thing-1" >2</div>
+                            <div class = "m-timeline-day thing-2" >9</div>
+                            <div class = "m-timeline-day thing-3" >16</div>
+                            <div class = "m-timeline-day thing-4" >23</div>
+                            <div class = "m-timeline-day thing-5" >30</div>
+                        </div>
+
+                        <div class="m-timeline-month-container">
+                            <div class = "m-timeline-month">November</div>
+                        </div>
+                        <div class = "m-timeline-days-container">
+                            <div class = "m-timeline-day thing-1" >2</div>
+                            <div class = "m-timeline-day thing-2" >9</div>
+                            <div class = "m-timeline-day thing-3" >16</div>
+                            <div class = "m-timeline-day thing-4" >23</div>
+                            <div class = "m-timeline-day thing-5" >30</div>
+                        </div>
+                    </div>
+                    <div class = "m-timeline-bottom-spacer"></div>
+
+                </div>
+
+            </div>
+            <div id = "timeline">
+                <div class = "timeline-year">2022</div>
+                <div class = "timeline-month">September</div>
+                <div class = "timeline-day thing-1" onclick = "timelineScrollTo(this)">Sep 2</div>
+                <div class = "timeline-day thing-2" onclick = "timelineScrollTo(this)">Sep 9</div>
+                <div class = "timeline-day thing-3" onclick = "timelineScrollTo(this)">Sep 16</div>
+                <div class = "timeline-day thing-4" onclick = "timelineScrollTo(this)">Sep 23</div>
+                <div class = "timeline-day thing-5" onclick = "timelineScrollTo(this)">Sep 30</div>
+            </div>
+
+            
+            <div id = "thing-1" class = "archive-publication">
+                <div class = "archive-thumbnail"></div>
+                <div class = "archive-desc">
+                    <h2 class = "archive-date">31 September 2020</h2>
+                    <h3 class = "archive-title">TITLE OF THE PUBLICATION WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</h3>
+                </div>
+                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <a href=""><div class = "invis"></div></a>  
+            </div>
+            <div id = "thing-2" class = "archive-publication">
+                <div class = "archive-thumbnail"></div>
+                <div class = "archive-desc">
+                    <h2 class = "archive-date">31 September 2020</h2>
+                    <h3 class = "archive-title">TITLE OF THE PUBLICATION WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</h3>
+                </div>
+                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <a href=""><div class = "invis"></div></a>  
+            </div>
+            <div id = "thing-3" class = "archive-result">
+                <div class = "archive-thumbnail"></div>
+                <div class = "archive-desc">
+                    <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
+                    <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
+                </div>
+                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <a href=""><div class = "invis"></div></a>  
+            </div>
+            <div id = "thing-4" class = "archive-result">
+                <div class = "archive-thumbnail"></div>
+                <div class = "archive-desc">
+                    <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
+                    <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
+                </div>
+                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <a href=""><div class = "invis"></div></a>  
+            </div>
+            <div id = "thing-5" class = "archive-result">
+                <div class = "archive-thumbnail"></div>
+                <div class = "archive-desc">
+                    <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
+                    <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
+                </div>
+                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <a href=""><div class = "invis"></div></a>  
+            </div>
+
+            <div style="width: 100%; height: 55vh"></div>
+
+        </section>
+        
+    </body>
+</html>

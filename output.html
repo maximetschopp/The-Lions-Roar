@@ -723,12 +723,45 @@ h3{
 @media (min-aspect-ratio: 1/1) {
     .main-article-title{
         font-size: max(1.6vw, 8px);
+        width: 100%;
+        color: white;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
     }
     .main-article-author{
         font-size: max(1vw, 8px);
+        font-family: neue-haas-grotesk-display, sans-serif;
+        color: white;
+        margin-top: 3px !important;
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 3px;
+        margin-bottom: 3px;
+        text-align: left;
+        white-space: pre-wrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
     }
     .article1-title{
         width: 100%;
+        color: white;
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(2.2vh, 8px);
         font-weight: 600;
@@ -746,6 +779,8 @@ h3{
     }   
     .article1-author{
         font-family: neue-haas-grotesk-display, sans-serif;
+        color: white;
+        margin-top: 5px;
         font-size: max(1.8vh, 6px);
         font-weight: 300;
         font-style: normal;
@@ -936,12 +971,12 @@ h3{
         <section id = "pageContent">
          
             <article class = "main-article">
-                <div id = "blurred-bg" style = 'background-image: url(https://lh3.google.com/u/0/d/1LMHLmxmuStjcLCpE_GL2ZNwL6nsQRPs9=w2560-h1288-iv1)'> 
+                <div id = "blurred-bg" style = 'background-image: url(https://lh3.google.com/u/0/d/1KoKWswj0DP2RHI5Vi33l3FGOPQghJGKZ=w2940-h1444-iv1)'> 
                     <div id="blurred-bg-overlay"></div>
                 </div>
 
-                <a href = 'https://youtu.be/xRfa5_2ZD-Y'>
-                    <div class = "main-thumbnail" style = 'background-image: url(https://lh3.google.com/u/0/d/1LMHLmxmuStjcLCpE_GL2ZNwL6nsQRPs9=w2560-h1288-iv1)'>
+                <a href = 'https://youtu.be/lQWy8-a5Vf4'>
+                    <div class = "main-thumbnail" style = 'background-image: url(https://lh3.google.com/u/0/d/1KoKWswj0DP2RHI5Vi33l3FGOPQghJGKZ=w2940-h1444-iv1)'>
                     <div class = "WV-button-mobile">
                             <img class = "WV-button-mobile-play-icon" src="resources/Icons/video_icon_fill_black.svg">
                             <p class = "WV-button-mobile-text">Weekly Video</p>
@@ -950,11 +985,11 @@ h3{
                 </a>
                 <div class = "main-article-desc">
                     <div style = "margin-right: 2vw">
-                        <h2 class="article-title main-article-title">Sports Awards, Project Green, A Christmas Carol</h2>
-                        <h3 class="article-author main-article-author">The Lion's Roar   •   21 November 2022</h3>
+                        <h2 class="article-title main-article-title">Turkey Trot, A Christmas Carol, Barefoot Club</h2>
+                        <h3 class="article-author main-article-author">The Lion's Roar   •   31 October 2022</h3>
                     </div>
                     <div class = "main-article-desktop-button-container">
-                        <a href = 'https://youtu.be/xRfa5_2ZD-Y'>
+                        <a href = 'https://youtu.be/lQWy8-a5Vf4'>
                             <div class = "WV-button-desktop">
                                 <img class = "WV-button-desktop-play-icon" src="resources/Icons/video_icon_fill_black.svg">
                                 <p class = "WV-button-desktop-text">Weekly Video</p>
@@ -968,6 +1003,54 @@ h3{
                 </div>
             </article>
             <div class = "articles-container">
+                <article class = "article1">
+                    <a href = " https://youtu.be/B7LEj82XTGM ">
+                    <div id = "blurred-bg" style = 'background-image: url(https://lh3.google.com/u/0/d/1xqG8xF19m_svXO396Xp8ljFN-vkiiPvb=w2940-h1444-iv1)'> 
+                        <div id="blurred-bg-overlay"></div>
+                    </div>
+                    <div class = "article1-thumbnail" style = 'background-image: url(https://lh3.google.com/u/0/d/1xqG8xF19m_svXO396Xp8ljFN-vkiiPvb=w2940-h1444-iv1)'></div>
+                    </a>
+
+                    <a href = " https://youtu.be/B7LEj82XTGM ">
+                    <section class="article1-description-mobile">
+                        <div class="article1-title">Turkey Trot</div>
+                        <div class="article1-author">Brody Fogler, Renata Garibay, Maxime Tschopp</div>
+                        <div class="article1-date">26 October</div>
+                    </section>
+                    <section class="article1-description-desktop">
+                        <div class="article1-title">Turkey Trot</div>
+                        <div class="article1-author">Brody Fogler, Renata Garibay, Maxime Tschopp  •  26 October</div>
+                    </section>
+                    </a>
+
+                    <img class = "article1-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
+                    <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
+                </article>
+                
+                <article class = "article1">
+                    <a href = " https://youtu.be/Vdx3xAjeLec ">
+                    <div id = "blurred-bg" style = 'background-image: url(None)'> 
+                        <div id="blurred-bg-overlay"></div>
+                    </div>
+                    <div class = "article1-thumbnail" style = 'background-image: url(None)'></div>
+                    </a>
+
+                    <a href = " https://youtu.be/Vdx3xAjeLec ">
+                    <section class="article1-description-mobile">
+                        <div class="article1-title">Barefoot Interview</div>
+                        <div class="article1-author">Vadant</div>
+                        <div class="article1-date">28 October</div>
+                    </section>
+                    <section class="article1-description-desktop">
+                        <div class="article1-title">Barefoot Interview</div>
+                        <div class="article1-author">Vadant  •  28 October</div>
+                    </section>
+                    </a>
+
+                    <img class = "article1-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
+                    <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
+                </article>
+                
             </div>
         </section> 
     

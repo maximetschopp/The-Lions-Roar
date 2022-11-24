@@ -93,10 +93,12 @@ def generateArticles(articles):
         articleTitle = str(art['title'])
         articleAuthor = str(art['author'])
         articleDate = str(art['date'])
-        articleThumbnail = str(art['thumbnail'])
+        articleThumbnail = str(art['thumbnail']) #TODO: automatic youtube thumbnail
         articleURL = str(art['url'])
         articleType = str(art['type'])
-        articleDisplayType = str(art.get('display_type', "3"))
+        articleDisplayType = str(art.get('display_type', "1"))
+
+        
 
         if(articleDisplayType == "1"): # thumbnail with bottom text
             article1 = """

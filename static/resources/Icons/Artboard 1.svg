@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-5, .cls-6, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-5, .cls-7, .cls-2, .cls-3, .cls-4 {
+        stroke: #fff;
+      }
+
+      .cls-5, .cls-7, .cls-4 {
+        stroke-linejoin: round;
+      }
+
+      .cls-5, .cls-2, .cls-4 {
+        stroke-linecap: round;
+      }
+
+      .cls-8 {
+        font-family: NHaasGroteskDSPro-65Md, 'Neue Haas Grotesk Display Pro';
+        font-size: 47px;
+        font-weight: 500;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        stroke-width: 5px;
+      }
+
+      .cls-10 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-width: 3px;
+      }
+
+      .cls-12 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-13 {
+        font-family: NHaasGroteskDSPro-55Rg, 'Neue Haas Grotesk Display Pro';
+        font-size: 31.38px;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.07em;
+      }
+    </style>
+  </defs>
+  <rect x="145.52" y="143" width="291.88" height="164.18" rx="20" ry="20"/>
+  <g>
+    <g id="Ellipse_1" data-name="Ellipse 1">
+      <circle class="cls-1" cx="291.14" cy="226.25" r="29.26"/>
+      <circle class="cls-3" cx="291.14" cy="226.25" r="28.75"/>
+    </g>
+    <path id="Path_41" data-name="Path 41" class="cls-5" d="M282,214.56v23.43l22.94-11.87-22.94-11.56Z"/>
+  </g>
+  <text class="cls-8" transform="translate(229.53 94.36)"><tspan x="0" y="0">A</tspan><tspan class="cls-14" x="30.97" y="0">r</tspan><tspan x="47.7" y="0">ticle </tspan><tspan class="cls-15" x="142.83" y="0">T</tspan><tspan x="168.26" y="0">ypes &amp; Icons</tspan></text>
+  <text class="cls-13" transform="translate(479.23 217)"><tspan x="0" y="0">Videos</tspan></text>
+  <rect x="145.34" y="319.55" width="291.88" height="164.18" rx="20" ry="20"/>
+  <g>
+    <g id="Ellipse_1-2" data-name="Ellipse 1">
+      <circle class="cls-1" cx="290.96" cy="402.81" r="29.26"/>
+      <circle class="cls-3" cx="290.96" cy="402.81" r="28.75"/>
+    </g>
+    <g>
+      <path class="cls-2" d="M280.51,389.9v22.82c0,1.56,1.26,2.82,2.82,2.82h16.25c1.56,0,2.82-1.26,2.82-2.82v-15.49l-9.44-10.14h-9.63c-1.56,0-2.82,1.26-2.82,2.82Z"/>
+      <polyline class="cls-2" points="292.97 387.08 292.97 397.22 302.4 397.22"/>
+    </g>
+  </g>
+  <text class="cls-13" transform="translate(479.05 393.56)"><tspan class="cls-11" x="0" y="0">T</tspan><tspan class="cls-10" x="15.69" y="0">e</tspan><tspan class="cls-9" x="31.63" y="0">x</tspan><tspan x="46.78" y="0">t</tspan></text>
+  <rect x="146.15" y="498.78" width="291.88" height="164.18" rx="20" ry="20"/>
+  <g>
+    <g id="Ellipse_1-3" data-name="Ellipse 1">
+      <circle class="cls-1" cx="291.77" cy="582.03" r="29.26"/>
+      <circle class="cls-3" cx="291.77" cy="582.03" r="28.75"/>
+    </g>
+    <g>
+      <line class="cls-4" x1="305.14" y1="577.15" x2="305.14" y2="586.63"/>
+      <line class="cls-4" x1="294.54" y1="573.97" x2="294.54" y2="589.81"/>
+      <line class="cls-4" x1="299.84" y1="567.61" x2="299.84" y2="596.17"/>
+      <line class="cls-4" x1="283.94" y1="571.85" x2="283.94" y2="591.93"/>
+      <line class="cls-4" x1="289.24" y1="565.49" x2="289.24" y2="598.29"/>
+      <line class="cls-4" x1="278.64" y1="577.15" x2="278.64" y2="586.63"/>
+    </g>
+  </g>
+  <text class="cls-13" transform="translate(479.86 572.78)"><tspan class="cls-12" x="0" y="0">A</tspan><tspan x="19.86" y="0">udio</tspan></text>
+  <rect x="146.15" y="676.82" width="291.88" height="164.18" rx="20" ry="20"/>
+  <g>
+    <g id="Ellipse_1-4" data-name="Ellipse 1">
+      <circle class="cls-1" cx="291.77" cy="760.07" r="29.26"/>
+      <circle class="cls-3" cx="291.77" cy="760.07" r="28.75"/>
+    </g>
+    <rect class="cls-4" x="274.5" y="747.5" width="35" height="25"/>
+    <polygon class="cls-7" points="308.5 771.5 300.5 758.5 290.5 771.5 283.5 763.5 275.5 771.5 308.5 771.5"/>
+    <circle class="cls-6" cx="287" cy="755" r="3"/>
+  </g>
+  <text class="cls-13" transform="translate(479.86 750.82)"><tspan x="0" y="0">Image</tspan></text>
+  <rect x="145.9" y="859.65" width="291.88" height="164.18" rx="20" ry="20"/>
+  <g>
+    <g id="Ellipse_1-5" data-name="Ellipse 1">
+      <circle class="cls-1" cx="291.51" cy="942.9" r="29.26"/>
+      <circle class="cls-3" cx="291.51" cy="942.9" r="28.75"/>
+    </g>
+    <g>
+      <line class="cls-4" x1="280.78" y1="954.5" x2="302.84" y2="932.44"/>
+      <polyline class="cls-4" points="302.84 944.12 302.84 932.44 291.17 932.44"/>
+    </g>
+  </g>
+  <text class="cls-13" transform="translate(479.61 933.65)"><tspan x="0" y="0">Hyperlink / Other</tspan></text>
+</svg>

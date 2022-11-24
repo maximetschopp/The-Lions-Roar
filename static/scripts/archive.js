@@ -210,6 +210,7 @@ function mTimelineToggleYear(elementYear, element) {
     }
 }
 function updateTopRightButton(state) {
+    window.scrollTo(0,0);
     console.log(state);
     if (state == "calendar") {
         document.getElementById("calendar-icon").classList.remove("hidden");

@@ -4,17 +4,17 @@ def generateTabBar(selectedTab):
     tabBar = """
             <div id = 'tab-bar'>
             <div class = 'tab-bar-icon-container'>
-                <object data='resources/Icons/doc_icon_outline.svg' type='image/svg+xml'
+                <object data='static/resources/Icons/doc_icon_outline.svg' type='image/svg+xml'
                 id='today-icon' class = 'tab-bar-icon'></object>
                 <div class = 'tab-bar-text'>Today</div>
             </div>
             <div class = 'tab-bar-icon-container'>
-                <object data='resources/Icons/clock_icon_outline.svg' type='image/svg+xml'
+                <object data='static/resources/Icons/clock_icon_outline.svg' type='image/svg+xml'
                 id='archive-icon' class = 'tab-bar-icon'></object>
                 <div class = 'tab-bar-text'>Archive</div>
             </div>
             <div class = "tab-bar-icon-container">
-                <object data="resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
+                <object data="static/resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
                 id="contact-icon" class = "tab-bar-icon"></object>
                 <div class = "tab-bar-text" >Contact</div>
                 <a href="mailto: lionsroar@zis.ch" style = "width:100%; height: 100%;">
@@ -22,12 +22,12 @@ def generateTabBar(selectedTab):
                 </a>
             </div>
             <div class = 'tab-bar-icon-container'>
-                <object data='resources/Icons/question_mark_icon_outline.svg' type='image/svg+xml'
+                <object data='static/resources/Icons/question_mark_icon_outline.svg' type='image/svg+xml'
                 id='about-icon' class = 'tab-bar-icon'></object>
                 <div class = 'tab-bar-text'>About</div>
             </div>
             <div class = 'tab-bar-icon-container'>
-                <object data='resources/Icons/magnifying_glass_icon_outline.svg' type='image/svg+xml'
+                <object data='static/resources/Icons/magnifying_glass_icon_outline.svg' type='image/svg+xml'
                 id='search-icon' class = 'tab-bar-icon'></object>
                 <div class = 'tab-bar-text'>Search</div>
             </div>
@@ -59,7 +59,7 @@ def generateMainArticle(data):
                 <a href = '""" + url + """'>
                     <div class = "main-thumbnail" style = 'background-image: url(""" + thumbnail + """)'>
                     <div class = "WV-button-mobile">
-                            <img class = "WV-button-mobile-play-icon" src="resources/Icons/video_icon_fill_black.svg">
+                            <img class = "WV-button-mobile-play-icon" src="static/resources/Icons/video_icon_fill_black.svg">
                             <p class = "WV-button-mobile-text">Weekly Video</p>
                         </div>
                     </div>
@@ -72,15 +72,15 @@ def generateMainArticle(data):
                     <div class = "main-article-desktop-button-container">
                         <a href = '""" + url + """'>
                             <div class = "WV-button-desktop">
-                                <img class = "WV-button-desktop-play-icon" src="resources/Icons/video_icon_fill_black.svg">
+                                <img class = "WV-button-desktop-play-icon" src="static/resources/Icons/video_icon_fill_black.svg">
                                 <p class = "WV-button-desktop-text">Weekly Video</p>
                             </div>
                         </a>
                         <div class = "share-button-desktop-container" onclick = "share(null, null, this)">
-                            <img class = "main-article-share-button-desktop" src="resources/Icons/share_icon_outline_black_no_circle.svg">
+                            <img class = "main-article-share-button-desktop" src="static/resources/Icons/share_icon_outline_black_no_circle.svg">
                         </div>
                     </div>
-                    <img class = "main-article-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_outline.svg">
+                    <img class = "main-article-share-button" onclick = "share(null, null, this)" src="static/resources/Icons/share_icon_outline.svg">
                 </div>
             </article>
             """
@@ -123,8 +123,8 @@ def generateArticles(articles):
                     </section>
                     </a>
 
-                    <img class = "article1-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
-                    <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
+                    <img class = "article1-share-button" onclick = "share(null, null, this)" src="static/resources/Icons/share_icon_fill.svg">
+                    <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="static/resources/Icons/share_icon_fill.svg">
                 </article>
                 """
             output += article1
@@ -135,8 +135,8 @@ def generateArticles(articles):
                     <div class = "article2-thumbnail" style = 'background-image: url(""" + articleThumbnail + """)'></div>
                     <h2 class="article2-title">""" + articleTitle + """</h2>
                     </a>
-                    <img class = "article1-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
-                    <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
+                    <img class = "article1-share-button" onclick = "share(null, null, this)" src="static/resources/Icons/share_icon_fill.svg">
+                    <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="static/resources/Icons/share_icon_fill.svg">
                 </article>
             """
             output += article2
@@ -150,7 +150,7 @@ def generateArticles(articles):
                             <h3 class="article3-author">"""+ articleAuthor +"""  •  """+ articleDate +"""</h3>
                         </div>
                     </a>
-                    <img class = "article3-share-button" onclick = "share(null, null, this)" src="resources/Icons/share_icon_fill.svg">
+                    <img class = "article3-share-button" onclick = "share(null, null, this)" src="static/resources/Icons/share_icon_fill.svg">
                 </article>
             """
             a3InnerHTML += temp
@@ -229,7 +229,7 @@ def generateArchivePageContent(data, isSearch = False):
                         <h2 class = "archive-date">"""+ publication["date"] + """</h2>
                         <h3 class = "archive-title">"""+ publication["main_article_title"] + """</h3>
                     </div>
-                    <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                    <object class = "arrow-icon" data="static/resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
                 <a href='""" + publication["main_article_url"] + """'><div class = "invis"></div></a>
                 </div>
             """
@@ -247,7 +247,7 @@ def generateArchivePageContent(data, isSearch = False):
                        <div class = "result-title">""" + result["title"] + """</div>
                        <div class = "result-desc">"""+ result["date"] +"""  •  """+ result["author"] +"""</div>
                    </div>
-                   <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                   <object class = "arrow-icon" data="static/resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
                    <a href='"""+ result["url"] +"""'><div class = "invis"></div></a>  
                 /div>
             """

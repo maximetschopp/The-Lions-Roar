@@ -1,5 +1,6 @@
-var topRightBtnState = ""; // calendar, check, search, cross
+var topRightBtnState = "calendar"; // calendar, check, search, cross
 var prev_look_at = null;
+var expandedYear = null;
 
 addEventListener("scroll", (event) => {
     a = calcAspectRatio();
@@ -23,18 +24,30 @@ addEventListener("resize", (event) => {
     } else {
         updateHighlightedItem();
         updateTimeline();
+        toggleMobileTimeline(false);
     }
 });
 
 function ready(){
     updateHighlightedItem();
     updateTimeline(); 
+
     // document.querySelector('#search-bar').addEventListener('mouseleave', e => e.target.blur());
     document.querySelector('#search-bar').addEventListener("blur", function() {
         if(document.querySelector('#search-bar').value != ''){
-            updateTopRightButton('cross');
+            document.getElementById('cross-btn').classList.remove('hidden');
+            document.getElementById('cross-btn-invis').classList.remove('hidden');
+            toggleMobileTimeline(false);
         } else{
             updateTopRightButton('calendar');
+            toggleMobileTimeline(false);
+        }
+    });
+    document.querySelector('#search-bar').addEventListener('change', function() {
+        console.log(document.querySelector('#search-bar').value);
+        if(document.querySelector('#search-bar').value != ''){
+            document.getElementById('cross-btn').classList.remove('hidden');
+            document.getElementById('cross-btn-invis').classList.remove('hidden');
         }
     });
 }
@@ -157,7 +170,17 @@ function updateHighlightedItem() {
 }
 function toggleMobileTimeline(override) {
     a = calcAspectRatio();
-    if (a == "mobile" || a == "tablet") {
+
+    if(override!= undefined){
+        if(!override){
+            document
+                .getElementById("m-timeline")
+                .classList.add("m-timeline-collapsed");
+            document.querySelector("body").style = "";
+            
+        }
+    }
+    else if (a == "mobile" || a == "tablet") {
         document
             .getElementById("m-timeline")
             .classList.toggle("m-timeline-collapsed");
@@ -173,28 +196,50 @@ function toggleMobileTimeline(override) {
             updateTopRightButton("checkmark");
         }
     }
+
+    
+}
+function topRightButtonClicked(){
+    if(topRightBtnState == "calendar" ){
+        toggleMobileTimeline();
+
+    } else if(topRightBtnState == "checkmark" ){
+        let thing = getMTimelineSelected();
+        window.scrollTo(0, thing.getBoundingClientRect().top  + window.scrollY);
+        // TODO: figure out why this isn't scrolling to wher its meant to
+        
+        console.log(thing.getBoundingClientRect().top  + window.scrollY);
+        toggleMobileTimeline();
+    }
+    else if (topRightBtnState == "search"){
+        search();
+    }
 }
 function mTimelineToggleYear(elementYear, element) {
     // m-timeline-dropdown
     // m-timeline-dropdown-arrow
+    expandedYear = elementYear;
+
     for (
         let i = 0;
         i < document.getElementsByClassName("m-timeline-dropdown-arrow").length;
         i++
     ) {
+        console.log(element.querySelector(".m-timeline-dropdown-arrow"));
         if (
-            document.getElementsByClassName("m-timeline-dropdown-arrow")[i] ==
-            element.querySelector(".m-timeline-dropdown-arrow")
+            document.getElementsByClassName("m-timeline-dropdown-arrow")[i].isSameNode(
+            element.querySelector(".m-timeline-dropdown-arrow"))
         ) {
             continue;
         }
-        document
-            .getElementsByClassName("m-timeline-dropdown-arrow")
-            [i].classList.remove("rotateDown");
+        document.getElementsByClassName("m-timeline-dropdown-arrow")[i].classList.remove("rotateDown");
+        document.getElementsByClassName("m-timeline-selector")[i].classList.add("m-selector-hidden");
+        
     }
     element
         .querySelector(".m-timeline-dropdown-arrow")
         .classList.toggle("rotateDown");
+    document.getElementsByClassName(elementYear)[1].querySelector(".m-timeline-selector").classList.toggle("m-selector-hidden");
 
     let mTimeline = document.getElementById("m-timeline");
     for (let i = 0; i < mTimeline.children.length; i++) {
@@ -202,50 +247,78 @@ function mTimelineToggleYear(elementYear, element) {
 
         if (item.classList.contains("m-timeline-year-content")) {
             if (!item.classList.contains(elementYear)) {
-                item.classList.add("hidden");
+                item.classList.add("m-timeline-year-hidden");
                 continue;
             }
-            item.classList.toggle("hidden");
+            item.classList.toggle("m-timeline-year-hidden");
         }
     }
 }
 function updateTopRightButton(state) {
-    window.scrollTo(0,0);
     console.log(state);
     if (state == "calendar") {
         document.getElementById("calendar-icon").classList.remove("hidden");
         document.getElementById("checkmark-icon").classList.add("hidden");
-        document.getElementById("cross-icon").classList.add("hidden");
         document.getElementById("search-icon2").classList.add("hidden");
         topRightBtnState = "calendar";
-        document
-            .getElementById("topRightInvis")
-            .setAttribute("onclick", "toggleMobileTimeline()");
+        window.scrollTo(0,0);
     } else if (state == "checkmark") {
         document.getElementById("checkmark-icon").classList.remove("hidden");
         document.getElementById("calendar-icon").classList.add("hidden");
-        document.getElementById("cross-icon").classList.add("hidden");
         document.getElementById("search-icon2").classList.add("hidden");
         topRightBtnState = "checkmark";
-        document
-            .getElementById("topRightInvis")
-            .setAttribute("onclick", "toggleMobileTimeline()");
     } else if (state == "search") {
         document.getElementById("search-icon2").classList.remove("hidden");
         document.getElementById("checkmark-icon").classList.add("hidden");
         document.getElementById("calendar-icon").classList.add("hidden");
-        document.getElementById("cross-icon").classList.add("hidden");
-        topRightBtnState = "checkmark";
-        document.getElementById("topRightInvis").setAttribute("onclick", "");
-    } else if (state == "cross") {
-        document.getElementById("cross-icon").classList.remove("hidden");
-        document.getElementById("checkmark-icon").classList.add("hidden");
-        document.getElementById("calendar-icon").classList.add("hidden");
-        document.getElementById("search-icon2").classList.add("hidden");
-        topRightBtnState = "checkmark";
-        document.getElementById("topRightInvis").setAttribute("onclick", "document.querySelector('#search-bar').value = ''; updateTopRightButton('calendar')" );
+        topRightBtnState = "search";
+        window.scrollTo(0,0);
+        toggleMobileTimeline(false);
     }
 }
+function search(){
+    // TODO: @NIKITA
+}
+function clearQuery(){
+    document.getElementById("search-bar").value = "";
+    document.getElementById('cross-btn').classList.add('hidden');
+    document.getElementById('cross-btn-invis').classList.add('hidden');
+    updateTopRightButton('calendar');
+}
+function getMTimelineSelected(){
+    if(expandedYear != undefined){
+        console.log(expandedYear);
+        let thingID;
+        let yearDateContainer = document.getElementsByClassName(expandedYear)[1];
+        let selector = yearDateContainer.getElementsByClassName("m-timeline-selector")[0];
+
+        let targety = selector.getBoundingClientRect().top;
+        let closestDay = 0;
+        let closestDayDelta = -1;
+
+        for(let i = 0; i < yearDateContainer.getElementsByClassName("m-timeline-day").length; i++){
+            let y = yearDateContainer.getElementsByClassName("m-timeline-day")[i].getBoundingClientRect().top;
+            console.log(i + "       " + y + "       " + Math.abs(y-targety));
+            if(Math.abs(y-targety) < closestDayDelta || closestDayDelta == -1){
+                closestDayDelta = Math.abs(y-targety);
+                closestDay = i;
+
+            } 
+        }
+        console.log(yearDateContainer.getElementsByClassName("m-timeline-day")[closestDay].classList);
+        let closestDayClasses = yearDateContainer.getElementsByClassName("m-timeline-day")[closestDay].classList;
+
+        for(let i = 0; i < closestDayClasses.length; i++){
+            if(closestDayClasses[i].startsWith('thing-')){
+                thingID = closestDayClasses[i];
+            }
+        }
+        let thing = document.getElementById(thingID);
+        console.log(thing);
+        return thing;
+    }
+}
+
 
 function calcAspectRatio() {
     let ratio = window.innerWidth / window.innerHeight;

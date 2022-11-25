@@ -39,8 +39,13 @@
                 <div class = "tab-bar-text">Search</div>
             </div>
         </div>  
-        <div id = "search-bar-container">
-            <input id = "search-bar" onclick="this.focus(); updateTopRightButton('search')">
+        <div id = "top-bar-container">
+            <div id = "search-bar-container">
+                <input id = "search-bar" onclick="this.focus(); updateTopRightButton('search')">
+                <object id ="cross-btn" class = 'hidden' data="../resources/Icons/cross_icon.svg" type="image/svg+xml">
+                </object>
+                <div id ="cross-btn-invis"onclick = "clearQuery()" class = "hidden"></div>
+            </div>
             <div id = "date-btn">
                 <object id ="calendar-icon" class = 'topRightButton' data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
                 </object>
@@ -48,9 +53,7 @@
                 </object>
                 <object id ="search-icon2" class = 'topRightButton hidden' data="../resources/Icons/magnifying_glass_icon_outline.svg" type="image/svg+xml">
                 </object>
-                <object id ="cross-icon" class = 'topRightButton hidden' data="../resources/Icons/cross_icon.svg" type="image/svg+xml">
-                </object>
-                <div id = 'topRightInvis' class = "tab-bar-invis" onclick="toggleMobileTimeline()"></div>
+                <div id = 'topRightInvis' class = "tab-bar-invis" onclick="topRightButtonClicked()"></div>
             </div>
         </div>
 
@@ -61,18 +64,18 @@
 
             <div id = "m-timeline" class="m-timeline-collapsed">
 
-                <div class = "m-timeline-dropdown 2022" onclick="mTimelineToggleYear('2022', this)">
+                <div class = "m-timeline-dropdown 2022">
                     <div class = "m-timeline-year">2022</div>
                     <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
                         <div class="invis"></div>
                     </object>
-                    <div class="invis" onclick="mTimelineToggleYear('2022')"></div>
+                    <div class="invis" onclick="mTimelineToggleYear('2022', this.parentElement)"></div>
                 </div>
                 
-                <div class = "m-timeline-year-content 2022 hidden">
+                <div class = "m-timeline-year-content 2022 m-timeline-year-hidden">
 
                     <div class = "m-timeline-top-spacer"></div>
-                    <div class="m-timeline-selector"></div>
+                    <div class="m-timeline-selector m-selector-hidden"></div>
                     <div class = "m-timeline-year-grid">
 
                         <div class="m-timeline-month-container">
@@ -112,16 +115,15 @@
 
                 </div>
 
-                <div class = "m-timeline-dropdown 2021" onclick="mTimelineToggleYear('2021', this)">
+                <div class = "m-timeline-dropdown 2021">
                     <div class = "m-timeline-year">2021</div>
-                    <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
-                        <div class="invis" onclick="mTimelineToggleYear('2021')"></div>
-                    </object>
+                    <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml"></object>
+                    <div class="invis" onclick="mTimelineToggleYear('2021', this.parentElement)"></div>
                 </div>
-                <div class = "m-timeline-year-content 2021 hidden">
+                <div class = "m-timeline-year-content 2021 m-timeline-year-hidden">
 
                     <div class = "m-timeline-top-spacer"></div>
-                    <div class="m-timeline-selector"></div>
+                    <div class="m-timeline-selector m-selector-hidden"></div>
                     <div class = "m-timeline-year-grid">
 
                         <div class="m-timeline-month-container">

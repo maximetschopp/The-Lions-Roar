@@ -6,7 +6,7 @@
     --search-bar-height: max(5.5vh, 40px);
 }
 
-#search-bar-container{
+#top-bar-container{
     height: var(--search-bar-height);
     margin-top: 1em;
     display: flex;
@@ -15,6 +15,10 @@
     width: 95%;
     margin-inline: 2.5%;
     margin-bottom: 6vh;
+}
+#search-bar-container{
+    width: 90%;
+    position: relative;
 }
 input{
     position: inherit;
@@ -151,17 +155,21 @@ input:focus{
     top: calc( var(--search-bar-height) + 2vh + 1em);
     translate: -50% 0;
     width: 100%;
-    height: calc(100% - var(--tab-bar-height) - (var(--search-bar-height) + 2vh + 1em));
+    height: calc(100% - var(--tab-bar-height) + 1px - (var(--search-bar-height) + 2vh + 1em));
     border-radius: 3rem 3rem 0 0;
     background-color: var(--color1);
     z-index: 10;
+    transition: top 0.2s;
 }
 .m-timeline-collapsed{
-    position: fixed !important;
-    top: 100vh;
-    padding: 0 !important;
-    overflow: hidden !important;
+    top: calc(100vh + 20px);
     opacity: 0;
+    /* display: none !important; */
+    height: 0px;
+    width: 100%;
+    left: 50%;
+    translate: -50% 0;
+    transition: top 0.2s;
     display: none !important;
 }
 .m-timeline-dropdown{
@@ -205,6 +213,7 @@ input:focus{
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    transition: height 0.5s;
 }
 .mt-timeline-year-content::-webkit-scrollbar {
     display: none;
@@ -233,6 +242,13 @@ input:focus{
     height: calc(var(--search-bar-height) * 0.9);
     background-color: #cecece;
     border-radius: 20000px;
+    opacity: 1;
+    transition: width 0.3s;
+}
+.m-selector-hidden {
+    width: 0% !important;
+    transition: width 0.3s;
+    padding: 0;
 }
 .m-timeline-month{
     position: relative;
@@ -265,6 +281,27 @@ input:focus{
     cursor: pointer;
     color: white;
 }
+#cross-btn{
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    height: 60%;
+    translate: 0 -50%;
+}
+#cross-btn-invis{
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    height: 60%;
+    aspect-ratio: 1/1;
+    translate: 0 -50%;
+}
+
+
+
+
+
+
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
@@ -371,10 +408,15 @@ input:focus{
     #pageContent{
         padding-top: 2vh;
     }
-    #search-bar-container{
-        width: calc((100% - var(--tab-bar-dekstop-width)) * 0.95);
+    #top-bar-container{
+        position: relative;
+        width: calc(95% - var(--tab-bar-dekstop-width));
         margin-left: calc( 2.5% + var(--tab-bar-dekstop-width));
         margin-right: 2.5%;
+    }
+    #search-bar-container{
+        position: relative;
+        width: calc(95%);
     }
     .archive-publication{
         width: 90%;
@@ -556,4 +598,10 @@ input:focus{
 
 .hidden{
     display: none;
+}
+
+.m-timeline-year-hidden{
+    height: 0px;
+    transition: height 0.5s;
+    overflow: hidden;
 }

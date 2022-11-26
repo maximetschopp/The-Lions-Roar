@@ -26,7 +26,7 @@ input{
     background-color: var(--color2);
     border-radius: 20000px;
     font-family: neue-haas-grotesk-display, sans-serif;
-    text-indent: 1rem;
+    text-indent: calc( var(--search-bar-height) / 2);
     font-size: 1rem;
     font-weight: 100;
     color: white;
@@ -284,7 +284,7 @@ input:focus{
 #cross-btn{
     position: absolute;
     top: 50%;
-    right: 2%;
+    right: calc( var(--search-bar-height) / 2);
     height: 55%;
     translate: 0 -50%;
 }

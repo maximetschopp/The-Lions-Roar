@@ -133,6 +133,7 @@ a:-webkit-any-link {
 .main-article-share-button{
     width: 60%;
     margin-inline: auto;
+    margin: auto;
 }
 .main-article-title{
     margin-top: 0;
@@ -321,7 +322,7 @@ a:-webkit-any-link {
         align-items: flex-start;
         margin-top: calc( 0.25 * var(--main-article-height-dekstop));
         height: calc( 0.6 * var(--main-article-height-dekstop));
-        width: fit-content;
+        width: 100%;
         margin-inline: 2vw;
     }
     .main-article-desktop-button-container{

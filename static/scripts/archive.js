@@ -22,9 +22,11 @@ addEventListener("resize", (event) => {
         updateHighlightedItem();
         updateTimeline();
     } else {
+        console.log('desktop');
         updateHighlightedItem();
         updateTimeline();
         toggleMobileTimeline(false);
+        updateTopRightButton('calendar');
     }
 });
 

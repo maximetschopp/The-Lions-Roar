@@ -1,5 +1,8 @@
 import requests
-months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+months = ['January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December']
+
+
 def generateTabBar(selectedTab):
     tabBar = """
             <div id = 'tab-bar'>
@@ -34,15 +37,18 @@ def generateTabBar(selectedTab):
                 id='search-icon' class = 'tab-bar-icon'></object>
                 <div class = 'tab-bar-text'>Search</div>
             </div>
-        </div>"""        
-    if(selectedTab == "today"):
+        </div>"""
+    if (selectedTab == "today"):
         tabBar = tabBar.replace("doc_icon_outline.svg", "doc_icon_fill.svg")
-    elif(selectedTab == "archive"):
-        tabBar = tabBar.replace("clock_icon_outline.svg", "clock_icon_fill.svg")
-    elif(selectedTab == "about"):
-        tabBar = tabBar.replace("question_mark_icon_outline.svg.svg", "question_mark_icon_fill.svg.svg")
+    elif (selectedTab == "archive"):
+        tabBar = tabBar.replace(
+            "clock_icon_outline.svg", "clock_icon_fill.svg")
+    elif (selectedTab == "about"):
+        tabBar = tabBar.replace(
+            "question_mark_icon_outline.svg.svg", "question_mark_icon_fill.svg.svg")
 
     return tabBar
+
 
 def generateMainArticle(data):
 
@@ -50,6 +56,9 @@ def generateMainArticle(data):
     author = data['author'] if ('author' in data) else "The Lion's Roar"
     date = str(data['day'])+' '+months[data['month']-1]+' '+str(data['year'])
     thumbnail = data['main_article_thumbnail']
+    if thumbnail == None:
+        thumbnail = "https://img.youtube.com/vi/{}/maxresdefault.jpg".format(
+            data['main_article_url'].split('/')[-1][8:])
     url = data['main_article_url']
 
     mainArticle = """ 
@@ -88,6 +97,7 @@ def generateMainArticle(data):
             """
     return mainArticle
 
+
 def generateArticles(articles):
     output = ""
     a3Counter = 0
@@ -96,32 +106,31 @@ def generateArticles(articles):
         articleTitle = str(art['title'])
         articleAuthor = str(art['author'])
         articleDate = str(art['date'])
-        articleThumbnail = str(art['thumbnail']) #TODO: automatic youtube thumbnail
+        # TODO: automatic youtube thumbnail
+        articleThumbnail = str(art['thumbnail'])
         articleURL = str(art['url'])
         articleType = str(art['type'])
         articleDisplayType = str(art.get('display_type', "1"))
 
-        
-
-        if(articleDisplayType == "1"): # thumbnail with bottom text
+        if (articleDisplayType == "1"):  # thumbnail with bottom text
             article1 = """
                 <article class = "article1">
-                    <a href = " """+ articleURL +""" ">
+                    <a href = " """ + articleURL + """ ">
                     <div id = "blurred-bg" style = 'background-image: url(""" + articleThumbnail + """)'> 
                         <div id="blurred-bg-overlay"></div>
                     </div>
                     <div class = "article1-thumbnail" style = 'background-image: url(""" + articleThumbnail + """)'></div>
                     </a>
 
-                    <a href = " """+ articleURL +""" ">
+                    <a href = " """ + articleURL + """ ">
                     <section class="article1-description-mobile">
-                        <div class="article1-title">"""+ articleTitle +"""</div>
-                        <div class="article1-author">"""+ articleAuthor + """</div>
-                        <div class="article1-date">"""+ articleDate +"""</div>
+                        <div class="article1-title">""" + articleTitle + """</div>
+                        <div class="article1-author">""" + articleAuthor + """</div>
+                        <div class="article1-date">""" + articleDate + """</div>
                     </section>
                     <section class="article1-description-desktop">
-                        <div class="article1-title">"""+ articleTitle +"""</div>
-                        <div class="article1-author">"""+ articleAuthor +"""  •  """+ articleDate +"""</div>
+                        <div class="article1-title">""" + articleTitle + """</div>
+                        <div class="article1-author">""" + articleAuthor + """  •  """ + articleDate + """</div>
                     </section>
                     </a>
 
@@ -130,10 +139,10 @@ def generateArticles(articles):
                 </article>
                 """
             output += article1
-        elif (articleDisplayType == "2"): # Splash image with short title
+        elif (articleDisplayType == "2"):  # Splash image with short title
             article2 = """
                 <article class = "article2">
-                    <a href = " """+ articleURL +""" ">
+                    <a href = " """ + articleURL + """ ">
                     <div class = "article2-thumbnail" style = 'background-image: url(""" + articleThumbnail + """)'></div>
                     <h2 class="article2-title">""" + articleTitle + """</h2>
                     </a>
@@ -143,13 +152,13 @@ def generateArticles(articles):
             """
             output += article2
         elif (articleDisplayType == "3"):
-            a3Counter += 1 #increment
+            a3Counter += 1  # increment
             temp = """
                 <article class = "article3-article">
-                    <a href = " """+ articleURL +""" ">
+                    <a href = " """ + articleURL + """ ">
                         <div class = "article3-desc">
                             <h2 class="article3-title">""" + articleTitle + """</h2>
-                            <h3 class="article3-author">"""+ articleAuthor +"""  •  """+ articleDate +"""</h3>
+                            <h3 class="article3-author">""" + articleAuthor + """  •  """ + articleDate + """</h3>
                         </div>
                     </a>
                     <img class = "article3-share-button" onclick = "share(null, null, this)" src="static/resources/Icons/share_icon_fill.svg">
@@ -170,6 +179,7 @@ def generateArticles(articles):
         output += article3
     return output
 
+
 def generatePublicationPageContent(data):
     htmlPage = """
         <html> 
@@ -179,18 +189,21 @@ def generatePublicationPageContent(data):
                 <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
     """
 
-    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css')
+    r = requests.get(
+        'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css')
     htmlPage += '<style>'+r.text+'</style>'
-    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css')
+    r = requests.get(
+        'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css')
     htmlPage += '<style>'+r.text+'</style>'
-    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css')
+    r = requests.get(
+        'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css')
     htmlPage += '<style>'+r.text+'</style>'
-    r = requests.get('https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js')
+    r = requests.get(
+        'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/n.js')
     htmlPage += '<script>'+r.text+'</script>'
 
+    tabBar = generateTabBar("today")
 
-    tabBar = generateTabBar("today");
-    
     htmlPage += tabBar
 
     pageContent = """
@@ -201,7 +214,7 @@ def generatePublicationPageContent(data):
 
     pageContent += """<div class = "articles-container">"""
 
-    articles = generateArticles(data['articles']) #get articles from the data
+    articles = generateArticles(data['articles'])  # get articles from the data
     pageContent += articles
 
     pageContent += """
@@ -216,10 +229,9 @@ def generatePublicationPageContent(data):
                 """
 
     return htmlPage
-    
 
 
-def generateArchivePageContent(data, isSearch = False):
+def generateArchivePageContent(data, isSearch=False):
     pageContent = ""
     # default archive page
     if not isSearch:
@@ -228,15 +240,15 @@ def generateArchivePageContent(data, isSearch = False):
                 <div class = "archive-result">
                     <div class = "archive-thumbnail" style = "background-image: url(' """ + publication["main_article_thumbnail"] + """')"></div>
                     <div class = "archive-desc">
-                        <h2 class = "archive-date">"""+ publication["date"] + """</h2>
-                        <h3 class = "archive-title">"""+ publication["main_article_title"] + """</h3>
+                        <h2 class = "archive-date">""" + publication["date"] + """</h2>
+                        <h3 class = "archive-title">""" + publication["main_article_title"] + """</h3>
                     </div>
                     <object class = "arrow-icon" data="static/resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
                 <a href='""" + publication["main_article_url"] + """'><div class = "invis"></div></a>
                 </div>
             """
             pageContent += pub
-    else: # there is a query
+    else:  # there is a query
         for result in data:
             # add a text element to the timeline with an id attribute that correlates
             #     with its corresponding article, that way we have an onclick function
@@ -247,15 +259,14 @@ def generateArchivePageContent(data, isSearch = False):
                    <div class = "archive-thumbnail" style = "background-image: url(' """ + result["main_article_thumbnail"] + """'></div>
                    <div class = "archive-desc">
                        <div class = "result-title">""" + result["title"] + """</div>
-                       <div class = "result-desc">"""+ result["date"] +"""  •  """+ result["author"] +"""</div>
+                       <div class = "result-desc">""" + result["date"] + """  •  """ + result["author"] + """</div>
                    </div>
                    <object class = "arrow-icon" data="static/resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
-                   <a href='"""+ result["url"] +"""'><div class = "invis"></div></a>  
+                   <a href='""" + result["url"] + """'><div class = "invis"></div></a>  
                 /div>
             """
 
     return pageContent
-        
 
 
 if __name__ == "__main__":
@@ -263,10 +274,12 @@ if __name__ == "__main__":
     import json
     import os
     import time
-    r = requests.get("https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json")
+    r = requests.get(
+        "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json")
     data = json.loads(r.text)
     with open('output.html', 'w') as f:
-        f.write(generatePublicationPageContent(data[0])) #TODO: set this back to data[0]
+        # TODO: set this back to data[0]
+        f.write(generatePublicationPageContent(data[2]))
     path = os.path.abspath('output.html')
     print(path)
     webbrowser.open_new_tab('file://' + path)

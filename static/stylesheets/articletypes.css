@@ -69,6 +69,42 @@
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
+    .main-article-title{
+        width: 100%;
+        color: white;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(4vw, 15px);
+        font-weight: 600;
+        font-style: normal;
+        margin-bottom: 0px;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        margin-top: 10%;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        line-clamp: 2; 
+        -webkit-box-orient: vertical;
+    }
+    .main-article-author{
+        color: white;
+        font-family: neue-haas-grotesk-display, sans-serif;
+        font-size: max(3.5vw, 13px);
+        font-weight: 300;
+        font-style: normal;
+        /*font-size: calc(1.2vh + 7px);*/
+        margin-top: 5px;
+        margin-bottom: 3px;
+        text-align: left;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+        -webkit-box-orient: vertical;
+    }
+
     .article1-title{
         width: 100%;
         color: white;
@@ -78,7 +114,6 @@
         font-style: normal;
         margin-bottom: 0px;
         text-align: left;
-         
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -97,7 +132,6 @@
         margin-top: 5px;
         margin-bottom: 3px;
         text-align: left;
-         
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;

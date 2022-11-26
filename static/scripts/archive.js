@@ -34,6 +34,7 @@ function ready(){
 
     // document.querySelector('#search-bar').addEventListener('mouseleave', e => e.target.blur());
     document.querySelector('#search-bar').addEventListener("blur", function() {
+        console.log('blurred');
         if(document.querySelector('#search-bar').value != ''){
             document.getElementById('cross-btn').classList.remove('hidden');
             document.getElementById('cross-btn-invis').classList.remove('hidden');
@@ -41,14 +42,16 @@ function ready(){
         } else{
             updateTopRightButton('calendar');
             toggleMobileTimeline(false);
+            document.getElementById('cross-btn').classList.add('hidden');
+            document.getElementById('cross-btn-invis').classList.add('hidden');
         }
     });
-    document.querySelector('#search-bar').addEventListener('change', function() {
+    document.querySelector('#search-bar').addEventListener('focus', function() {
         console.log(document.querySelector('#search-bar').value);
-        if(document.querySelector('#search-bar').value != ''){
+        // if(document.querySelector('#search-bar').value != ''){
             document.getElementById('cross-btn').classList.remove('hidden');
             document.getElementById('cross-btn-invis').classList.remove('hidden');
-        }
+        // }
     });
 }
 
@@ -205,11 +208,12 @@ function topRightButtonClicked(){
 
     } else if(topRightBtnState == "checkmark" ){
         let thing = getMTimelineSelected();
-        window.scrollTo(0, thing.getBoundingClientRect().top  + window.scrollY);
-        // TODO: figure out why this isn't scrolling to wher its meant to
-        
-        console.log(thing.getBoundingClientRect().top  + window.scrollY);
         toggleMobileTimeline();
+        let offset = window.innerHeight * 0.05;
+        window.scrollTo(0, thing.getBoundingClientRect().top  + window.scrollY - offset);
+
+        console.log(thing.getBoundingClientRect().top  + window.scrollY);
+        document.querySelector('#debug-selected-pub').style.top = thing.getBoundingClientRect().top + window.scrollY;
     }
     else if (topRightBtnState == "search"){
         search();
@@ -257,6 +261,7 @@ function mTimelineToggleYear(elementYear, element) {
 function updateTopRightButton(state) {
     console.log(state);
     if (state == "calendar") {
+        // document.querySelector("#search-bar").focus();
         document.getElementById("calendar-icon").classList.remove("hidden");
         document.getElementById("checkmark-icon").classList.add("hidden");
         document.getElementById("search-icon2").classList.add("hidden");
@@ -274,6 +279,13 @@ function updateTopRightButton(state) {
         topRightBtnState = "search";
         window.scrollTo(0,0);
         toggleMobileTimeline(false);
+        
+        const appleExpression = /Apple/i;
+        const safariExpression = /Safari/i;
+        if(appleExpression.test(navigator.vendor) && safariExpression.test(navigator.userAgent)){
+            document.getElementById('cross-btn').classList.remove('hidden');
+            document.getElementById('cross-btn-invis').classList.remove('hidden');
+        }
     }
 }
 function search(){
@@ -317,6 +329,7 @@ function getMTimelineSelected(){
         console.log(thing);
         return thing;
     }
+    return 0;
 }
 
 
@@ -337,4 +350,5 @@ function toggleDebug() {
     document
         .getElementById("debug-dist-top-closest")
         .classList.toggle("hidden");
+    document.querySelector("#debug-selected-pub").classList.toggle("hidden");
 }

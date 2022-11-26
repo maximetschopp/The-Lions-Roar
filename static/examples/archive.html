@@ -41,7 +41,7 @@
         </div>  
         <div id = "top-bar-container">
             <div id = "search-bar-container">
-                <input id = "search-bar" onclick="this.focus(); updateTopRightButton('search')">
+                <input id = "search-bar" onclick="console.log('clicked'); updateTopRightButton('search')">
                 <object id ="cross-btn" class = 'hidden' data="../resources/Icons/cross_icon.svg" type="image/svg+xml">
                 </object>
                 <div id ="cross-btn-invis"onclick = "clearQuery()" class = "hidden"></div>
@@ -59,6 +59,7 @@
 
         <div id="debug-dist-top" class = "hidden" style="width: 100%; position: fixed; background-color: red; height: 2px; left: 0; z-index: 999;"></div>
         <div id="debug-dist-top-closest" class = "hidden" style="width: 100%; position: fixed; background-color: rgb(0, 217, 255); height: 2px; left: 0; z-index: 998;"></div>
+        <div id="debug-selected-pub" class = "hidden" style="width: 100%; position: absolute; background-color: rgb(81, 255, 0); height: 2px; left: 0; z-index: 998;"></div>
 
         <section id = "pageContent">
 

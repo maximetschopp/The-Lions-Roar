@@ -285,7 +285,7 @@ input:focus{
     position: absolute;
     top: 50%;
     right: 2%;
-    height: 60%;
+    height: 55%;
     translate: 0 -50%;
 }
 #cross-btn-invis{

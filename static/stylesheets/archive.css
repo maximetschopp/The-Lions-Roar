@@ -349,7 +349,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin-bottom: 0px;
         margin-top: 1px;
         text-align: left;
-        white-space: pre-wrap;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -364,7 +363,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/
         text-align: left;
-        white-space: pre-wrap;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -382,7 +380,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/
         text-align: left;
-        white-space: pre-wrap;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -400,7 +397,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin-top: 2px;
         margin-bottom: 1px;
         text-align: left;
-        white-space: pre-wrap;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -473,7 +469,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin-top: 2px;
         margin-bottom: 0px;
         text-align: left;
-        white-space: pre-wrap;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -490,7 +485,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin-top: 2px;
         margin-bottom: 1px;
         text-align: left;
-        white-space: pre-wrap;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -511,7 +505,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/
         text-align: left;
-        white-space: pre-wrap;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -529,7 +522,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin-top: 2px;
         margin-bottom: 1px;
         text-align: left;
-        white-space: pre-wrap;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;

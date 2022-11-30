@@ -565,6 +565,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         background-color: var(--color1);
         animation: none;
     }
+    #search-bar-container{
+        position: relative;
+        width: 100%;
+    }
     .archive-publication{
         width: calc(80% - var(--timeline-width));
         margin: auto;

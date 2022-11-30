@@ -102,6 +102,7 @@ def generateArticles(articles):
     output = ""
     a3Counter = 0
     a3InnerHTML = ""
+    sdljkfhlkasdjghf = 3
     for art in articles:
         articleTitle = str(art['title'])
         articleAuthor = str(art['author'])
@@ -111,6 +112,9 @@ def generateArticles(articles):
         articleURL = str(art['url'])
         articleType = str(art['type'])
         articleDisplayType = str(art.get('display_type', "1"))
+        if sdljkfhlkasdjghf > 0:
+            articleDisplayType = "3"
+            sdljkfhlkasdjghf -= 1
 
         if (articleDisplayType == "1"):  # thumbnail with bottom text
             article1 = """
@@ -277,6 +281,8 @@ if __name__ == "__main__":
     r = requests.get(
         "https://raw.githubusercontent.com/2canupea/Lions-Roar-Site-Data/main/data.json")
     data = json.loads(r.text)
+    data[2]["articles"][0]["article_display_type"] = "2"
+    print(data[2]["articles"][0])
     with open('output.html', 'w') as f:
         # TODO: set this back to data[0]
         f.write(generatePublicationPageContent(data[2]))

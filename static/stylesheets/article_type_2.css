@@ -1,0 +1,86 @@
+:root{
+    --a2-border-radius: min(8vw,8vw);
+    --a2-border-radius-desktop: min(3vw,3vw);
+    --a2-height-dekstop: 50vh;
+    --a2-width-ipad: 95%;
+    --a2-bg-color: #1f1f1f;
+    --a2-thumbnail-bg-color: #444444;
+    --a2-text-color: white;
+    --a2-text-shadow: rgb(0, 0, 0);
+    --a2-boxShadowMini: none;
+}
+.lightmode{
+    --a2-bg-color: rgb(243, 243, 243);
+    --a2-thumbnail-bg-color: #ffffff;
+    --a2-text-color: rgb(0, 0, 0);
+    --a2-text-shadow: rgba(255, 255, 255, 1);
+    --a2-bsmd: 3;
+    --a2-boxShadowMini:
+        0px calc(-2.6px/var(--a2-bsmd)) calc(4.7px/var(--a2-bsmd)) rgba(255, 255, 255, 0.037),
+        0px calc(-7.6px/var(--a2-bsmd)) calc(9.5px/var(--a2-bsmd)) rgba(255, 255, 255, 0.044),
+        0px calc(-16.1px/var(--a2-bsmd)) calc(15px/var(--a2-bsmd)) rgba(255, 255, 255, 0.046),
+        0px calc(-30.5px/var(--a2-bsmd)) calc(22.4px/var(--a2-bsmd)) rgba(255, 255, 255, 0.048),
+        0px calc(-56px/var(--a2-bsmd)) calc(35.8px/var(--a2-bsmd)) rgba(255, 255, 255, 0.054),
+        0px calc(-100px/var(--a2-bsmd)) calc(80px/var(--a2-bsmd)) rgba(255, 255, 255, 0.07),
+        
+        0px calc(2.6px/var(--a2-bsmd)) calc(4.7px/var(--a2-bsmd)) rgba(0, 0, 0, 0.037),
+        0px calc(7.6px/var(--a2-bsmd)) calc(9.5px/var(--a2-bsmd)) rgba(0, 0, 0, 0.044),
+        0px calc(16.1px/var(--a2-bsmd)) calc(15px/var(--a2-bsmd)) rgba(0, 0, 0, 0.046),
+        0px calc(30.5px/var(--a2-bsmd)) calc(22.4px/var(--a2-bsmd)) rgba(0, 0, 0, 0.048),
+        0px calc(56px/var(--a2-bsmd)) calc(35.8px/var(--a2-bsmd)) rgba(0, 0, 0, 0.054),
+        0px calc(100px/var(--a2-bsmd)) calc(80px/var(--a2-bsmd)) rgba(0, 0, 0, 0.07);
+}
+
+.article2 {
+    box-shadow: var(--a2-boxShadowMini);
+    background-color: var(--a2-bg-color);
+}
+.article2-title{
+    position: absolute;
+    top: 2vh;
+    left: 3vh;
+    width: 55%;
+    font-size: max(2.8vh, 8px);
+    filter: drop-shadow(2px 2px 7px var(--a2-text-shadow));
+    color: var(--a2-text-color);
+}
+
+
+/* at 1:1 mobile vertical stack */
+@media (max-aspect-ratio: 1/1) {
+
+    .article2{
+        position: relative;
+        width: 93%;
+        margin-inline: auto;
+        margin-top: 5%;
+        border-radius: var(--a2-border-radius);
+        overflow: hidden;
+    }
+    .article2-thumbnail{
+        width: 100%;
+        border-radius: var(--a2-border-radius);
+        aspect-ratio: 4/3.5;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .article2-description-mobile{
+        position: relative;
+        width: auto;
+        margin: 0 3vw 0 3vw;
+    }
+    .article2-description-desktop{
+        display: none;
+    }
+    .article2-share-button{
+        width: 8vw;
+        position: absolute;
+        right: 3vw;
+        bottom: 3vw;
+        scale: 1;
+    }
+    .article2-share-button-desktop{
+        display: none;
+    }
+}

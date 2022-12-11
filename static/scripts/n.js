@@ -28,3 +28,7 @@ function share(title, url, button){
     }
 
 }
+
+function toggleLightmode() {
+    document.body.classList.toggle("lightmode");
+}

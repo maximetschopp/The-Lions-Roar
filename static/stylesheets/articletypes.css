@@ -1,6 +1,6 @@
-.share-button-pressed{
+/* .share-button-pressed{
     animation: 0.2s ease-in-out 0s buttonPress;
-}
+} */
 /* .article2-title{
     position: absolute;
     top: 2vh;
@@ -9,7 +9,7 @@
     font-size: max(2.8vh, 8px);
     filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 1));
 } */
-.article3{
+/* .article3{
     position: relative;
     width: 93%;
     aspect-ratio: 12/10;
@@ -44,8 +44,8 @@
 .article3-author{
     position: relative;
     font-size: max(1.8vh, 4px);
-}
-
+} */
+/* 
 #blurred-bg-overlay{
     width: 100%;
     height: 100%;
@@ -63,7 +63,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
-}
+} */
 
 
 
@@ -235,14 +235,14 @@
         display: none;
     } */
 
-
+/* 
     .article3-share-button{
         position: absolute;
         top: 50%;
         width: 8vw;
         right: 5%;
         transform: translate(0, -50%);
-    }
+    } */
 }
 
 /* at >1 : 1 Ipad view */
@@ -285,7 +285,7 @@
         line-clamp: 1; 
         -webkit-box-orient: vertical;
     } */
-    .article1-title{
+    /* .article1-title{
         width: 100%;
         color: white;
         font-family: neue-haas-grotesk-display, sans-serif;
@@ -299,7 +299,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* number of lines to show */
+        -webkit-line-clamp: 2; /* number of lines to show 
         line-clamp: 2; 
         -webkit-box-orient: vertical;
     }   
@@ -310,7 +310,7 @@
         font-size: max(1.8vh, 6px);
         font-weight: 300;
         font-style: normal;
-        /*font-size: calc(1.2vh + 7px);*/
+        /*font-size: calc(1.2vh + 7px);
         margin-top: 3px;
         margin-bottom: 3px;
         text-align: left;
@@ -319,7 +319,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 1; /* number of lines to show */
+        -webkit-line-clamp: 1; /* number of lines to show 
         line-clamp: 1; 
         -webkit-box-orient: vertical;
     }
@@ -405,10 +405,10 @@
     }
     .article2-share-button{
         display: none;
-    }
+    } */
 
 
-    .article3-share-button{
+    /* .article3-share-button{
         position: absolute;
         top: 50%;
         height: 3vw;
@@ -420,7 +420,7 @@
         font-size: max(1.8vh, 6px);
         font-weight: 300;
         font-style: normal;
-        /*font-size: calc(1.2vh + 7px);*/
+        /*font-size: calc(1.2vh + 7px);
         margin-top: 3px;
         margin-bottom: 3px;
         text-align: left;
@@ -429,8 +429,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 1; /* number of lines to show */
+        -webkit-line-clamp: 1; /* number of lines to show 
         line-clamp: 1; 
         -webkit-box-orient: vertical;
-    }
+    } */
 }

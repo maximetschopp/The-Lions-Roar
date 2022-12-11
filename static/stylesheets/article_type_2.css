@@ -84,3 +84,46 @@
         display: none;
     }
 }
+
+/* at >1 : 1 Ipad view */
+@media (min-aspect-ratio: 1/1) {
+    .article2{
+        position: relative;
+        width: 93%;
+        aspect-ratio: 12/10;
+        margin-inline: auto;
+        border-radius: var(--border-radius-desktop);
+        overflow: hidden;
+        margin-top: 5vh;
+    }
+    .article2-thumbnail{
+        border-radius: var(--border-radius-desktop);
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: 99;
+    }
+    .article2-description-desktop{
+        position: relative;
+        width: calc(100% - 9vw);
+        margin: auto;
+        margin-bottom: 3vh;
+        margin-right: 7vw;
+        margin-left: 2vw;
+    }
+    .article2-description-mobile{
+        display: none;
+    }
+    .article2-share-button-desktop{
+        width: 3vw;
+        position: absolute;
+        right: 2vw;
+        bottom: 1.5vw;
+        scale: 1;
+    }
+    .article2-share-button{
+        display: none;
+    }
+}

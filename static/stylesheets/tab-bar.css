@@ -2,6 +2,12 @@
     --tab-bar-height: max(6.5vh, 40px);
     --tab-bar-dekstop-width: max(26vh, 100px);
     --tab-bar-desktop-item-height: max(6vh, 30px);
+    --tab-bar-desktop-bg: #0f0f0f;
+    --tab-bar-desktop-text-color: white;
+}
+.lightmode{
+    --tab-bar-desktop-bg: rgb(230, 230, 230);
+    --tab-bar-desktop-text-color: black;
 }
 
 .tab-bar-invis{
@@ -60,6 +66,9 @@
         transform: translate(-50%,0);
         text-align: center;
     }
+    #tab-bar-bottom{
+        display: none !important;
+    }
 }
 
 
@@ -73,22 +82,24 @@
         margin-right: 0;
     }
     #tab-bar{
+        display: flex;
+        flex-direction: column;
         position: fixed;
         top: 0%;
         left: 0%;
         margin-left: 0%;
         width: var(--tab-bar-dekstop-width);
-        height: 100%;
-        display: grid;
+        height: calc(100% - 8vh);
         padding-top: 4vh;
-        grid-template-rows: repeat(5, var(--tab-bar-desktop-item-height));
+        padding-bottom: 4vh;
+        grid-template-rows: repeat(6, var(--tab-bar-desktop-item-height));
         z-index: 1000;
-        background-color: #0f0f0f;
+        background-color: var(--tab-bar-desktop-bg);
     }
     .tab-bar-icon-container{
         position: relative;
         display: flex;
-        height: 100%;
+        height: var(--tab-bar-desktop-item-height);
         width: 100%;
     }
     .tab-bar-icon{
@@ -106,7 +117,7 @@
         font-size: max(10px, 2vh);
         font-style: normal;
         letter-spacing: .06rem;
-        color: white;
+        color: var(--tab-bar-desktop-text-color);
         position: relative;
         margin: auto;
         margin-left: 0vh;
@@ -114,4 +125,9 @@
     a{
         text-decoration: none;
     }
+    #tab-bar-bottom{
+        margin-top: auto;
+        height: calc(var(--tab-bar-desktop-item-height)*2);
+    }
+    
 }

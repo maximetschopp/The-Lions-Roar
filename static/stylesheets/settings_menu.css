@@ -4,20 +4,27 @@
 
     --sm-height: 55vh;
     --sm-min-height: 250px;
-    --sm-footer-height: max(4rem, 7.5vh);
+    --sm-footer-height: max(4rem, 10.5vh);
     
     --sm-border-radius: min(3vw,3vw) min(3vw,3vw) min(3vw,3vw) 0;
     --sm-border-radius: min(3vw,3vw);
     --sm-zindex: 1000;
-    --sm-bg-color: #1b1b1b;
-    --sm-menu-item-BGcolor: #444444;
     --sm-shadow: 0 0 50px black;
     --sm-anim-speed: 0.3s;
     --sm-inner-anim-speed: 0.2s;
+
+
+    --sm-bg-gradient: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(45,45,45,0.7) 100%);
+    --sm-menu-footer-BGcolor: #1b1b1b;
+    --sm-menu-item-BGcolor: rgba(68, 68, 68, 0.6);
+    --sm-border-color: #555555;
 }
 .lightmode{
-    --sm-bg-color: rgb(243, 243, 243);
-    --sm-menu-item-BGcolor: #fff;
+    --sm-bg-gradient: linear-gradient(0deg, rgba(230, 230, 230,0.75) 0%, rgba(248, 248, 248, 0.7) 100%);
+    --sm-menu-footer-BGcolor: #f0f0f0;
+    --sm-menu-item-BGcolor: rgba(255, 255, 255, 0.6);
+    --sm-border-color: #cfcfcf;
+
     --sm-bmsd: 2;
     --sm-shadow:
         0px calc(-2.6px/var(--sm-bmsd)) calc(4.7px/var(--sm-bmsd)) rgba(255, 255, 255, 0.037),
@@ -47,23 +54,31 @@
     min-width: var(--sm-min-width);
     height: var(--sm-height);
     min-height: var(--sm-min-height);
+
     position: fixed;
     display: grid;
     grid-template-rows: calc(1.8rem + var(--sm-width) * 0.1) auto var(--sm-footer-height);
     bottom: 4.1vh;
     left: var(--tab-bar-dekstop-width);
     height: 70vh;
-    background-color: var(--sm-bg-color);
+
+    background: rgb(0,0,0);
+    background: var(--sm-bg-gradient);
+
     z-index: var(--sm-zindex);
     border-radius: var(--sm-border-radius);
     box-shadow: var(--sm-shadow);
     overflow: hidden;
     transition: min-width var(--sm-anim-speed) ease-out, width var(--sm-anim-speed) ease-out;
+
+    border: var(--sm-border-color) 1px solid;
+    backdrop-filter: blur(25px);
 }
 .sm-hidden{
     width: 0px !important;
     min-width: 0px !important;
     min-height: 0px !important;
+    border: none !important;
     transition: min-width var(--sm-anim-speed) ease-in, width var(--sm-anim-speed) ease-in;
 }
 
@@ -86,11 +101,11 @@
 }
 .sm-cross-icon-container{
     position: relative;
-    width: 10%;
+    width: 8%;
     height: fit-content;
     margin: auto;
     margin-top: 1rem;
-    margin-left: 82%;
+    margin-left: 85%;
 }
 #sm-footer{
     position: relative;
@@ -104,7 +119,8 @@
     height: 100%;
     opacity: 1;
     overflow: hidden;
-    background-color: var(--sm-menu-item-BGcolor);
+    background-color: var(--sm-menu-footer-BGcolor);
+    border-top: var(--sm-border-color) 1px solid;
     transition: height var(--sm-anim-speed) ease-in, opacity var(--sm-anim-speed) ease-in;
 }
 .sm-footer-hidden{
@@ -137,10 +153,11 @@
 }
 .menu-item{
     position: relative;
+    display: flex;
     width: 90%;
     height: fit-content;
+    max-height: 8%;
     background-color: var(--sm-menu-item-BGcolor);
-    display: flex;
     border-radius: 1rem;
     padding-inline: 2.5%;
     margin-inline: 2.5%;
@@ -149,10 +166,11 @@
     margin-top: 0.5rem;
     vertical-align: center;
     opacity: 1;
+    border: var(--sm-border-color) 1px solid;
     transition: width var(--sm-inner-anim-speed) ease-in, opacity calc(var(--sm-inner-anim-speed)/1.2) ease-in;
 }
 .menu-item-hidden{
-    position: relative; 
+    position: relative;
     width: 0%;
     font-size: 0px !important;
     opacity: 0;
@@ -165,19 +183,23 @@
     aspect-ratio: 1/1;
 }
 .sm-text{
-    position: relative;
+    position: absolute;
+    width: calc(80% - 1rem);
+    height: 65%;
+    display: inline-block;
     margin: auto;
-    margin-left: 1rem;
+    margin-left: calc(1rem + 8%);
+    margin-right: 0;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
     font-size: calc(0.06 * var(--sm-width));
     font-style: normal;
     color: var(--tab-bar-desktop-text-color);
-    overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
+    word-wrap: break-word;
     -webkit-line-clamp: 1; /* number of lines to show */
     line-clamp: 1; 
+    overflow: hidden;
 }
 
 

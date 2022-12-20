@@ -8,12 +8,14 @@
     --ma-blurred-overlay-color: #0f0f0f76;
     --ma-text-color: white;
     --ma-boxShadowMini: none;
+    --ma-border: #555555 1px solid;
 }
 .lightmode{
     --ma-bg-color: rgb(243, 243, 243);
     --ma-thumbnail-bg-color: #ffffff;
     --ma-blurred-overlay-color: #ffffffb7;
     --ma-text-color: black;
+    --ma-border: #cfcfcf 1px solid;
     --ma-bsmd: 5;
     --ma-boxShadowMini:
         0px calc(-2.6px/var(--ma-bsmd)) calc(4.7px/var(--ma-bsmd)) rgba(255, 255, 255, 0.037),
@@ -54,6 +56,8 @@
 .main-article{
     position: relative;
     width: 100%;
+    border: var(--ma-border);
+    border-top: none !important;
 }
 .main-thumbnail{
     position: relative;

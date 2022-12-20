@@ -8,8 +8,12 @@
     --a1-blurred-overlay-color: #0f0f0f76;
     --a1-text-color: white;
     --a1-boxShadowMini: none;
+    --a1-border: #555555 1px solid;
+    --a1-bg-gradient: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(45,45,45,0.7) 50%);
 }
 .lightmode{
+    --a1-border: #cfcfcf 1px solid;
+    --a1-bg-gradient: linear-gradient(0deg, rgba(230, 230, 230,0.75) 0%, rgba(248, 248, 248, 0.7) 50%);
     --a1-bg-color: rgb(243, 243, 243);
     --a1-thumbnail-bg-color: #ffffff;
     --a1-blurred-overlay-color: #ffffffb7;
@@ -44,13 +48,15 @@
     width: 100%;
     height: 100%;
     filter: blur(15px);
-    background-color: var(--ma-bg-color);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
+    background: var(--ma-bg-color);
+    background: var(--a1-bg-gradient);
 }
 .article1 {
     box-shadow: var(--a1-boxShadowMini);
+    border: var(--a1-border);
 }
 
 /* at 1:1 mobile vertical stack */

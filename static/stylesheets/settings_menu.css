@@ -7,6 +7,7 @@
     --sm-menu-item-BGcolor: #444444;
     --sm-shadow: 0 0 50px black;
     --sm-footer-height: calc(8% + 3vh);
+    --sm-anim-speed: 0.2s;
 }
 .lightmode{
     --sm-bg-color: rgb(243, 243, 243);
@@ -28,6 +29,13 @@
         0px calc(100px/var(--sm-bmsd)) calc(80px/var(--sm-bmsd)) rgba(0, 0, 0, 0.07);
 }
 
+.sm-fill{
+    fill: white;
+}
+.lightmode .sm-fill{
+    fill: black;
+}
+
 #settings-container{
     width: var(--sm-width);
     position: fixed;
@@ -41,6 +49,11 @@
     border-radius: var(--sm-border-radius);
     box-shadow: var(--sm-shadow);
     overflow: hidden;
+    transition: all var(--sm-anim-speed) ease-out;
+}
+.sm-hidden{
+    width: 0px !important;
+    transition: all var(--sm-anim-speed) ease-in;
 }
 .sm-invis{
     position: relative;

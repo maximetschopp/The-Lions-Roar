@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../stylesheets/settings_menu.css">
         <link rel="stylesheet" href="https://use.typekit.net/dpx3mbp.css">
         <script src="../scripts/n.js"></script>
+        <script src="../scripts/tab-bar.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     </head>
     <body>
@@ -49,7 +50,7 @@
                     id="admin-icon" class = "tab-bar-icon"></object>
                     <div class = "tab-bar-text">Admin</div>
                 </div>
-                <div class = "tab-bar-icon-container" onclick="toggleLightmode()">
+                <div class = "tab-bar-icon-container" onclick="toggleSettingsMenu()">
                     <object data="../resources/Icons/gear_icon_outline.svg" type="image/svg+xml"
                     id="admin-icon" class = "tab-bar-icon"></object>
                     <div class = "tab-bar-text">Settings</div>
@@ -67,17 +68,26 @@
             <section class="sm-menu-container">
 
                 <div class = "menu-item">
-                    <object class = "menu-item-icon" data="../resources/Icons/moon_icon.svg"></object>
+                    <!--<object class = "menu-item-icon" data="../resources/Icons/moon_icon.svg"></object>-->
+                    <svg class = "menu-item-icon" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                        <path class="sm-fill" d="m50.25,42.15c-4.29,5.94-11.27,9.81-19.16,9.81-13.04,0-23.62-10.58-23.62-23.62,0-10.62,7.01-19.61,16.66-22.58-2.81,3.88-4.47,8.65-4.47,13.81,0,13.05,10.58,23.62,23.62,23.62,2.43,0,4.77-.36,6.97-1.04Z"/>
+                      </svg>
 
                     <div class="sm-text">Dark Theme</div>
 
-                    <label class="switch">
-                        <input type="checkbox" checked>
+                    <label class="switch" onclick="toggleLightmode()">
+                        <input id = 'dm-switch' type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>
                 </div>
                 <div class = "menu-item">
-                    <object class = "menu-item-icon" data="../resources/Icons/anim_icon.svg"></object>
+                    <!--<object class = "menu-item-icon" data="../resources/Icons/anim_icon.svg"></object>-->
+                    <svg class = "menu-item-icon" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                      <path class="sm-fill" d="m25.34,28.87c0,3.38-2.75,6.14-6.14,6.14s-6.14-2.76-6.14-6.14,2.75-6.15,6.14-6.15,6.14,2.76,6.14,6.15Z"/>
+                      <path class="sm-fill" d="m53.31,28.87c0,7.49-6.1,13.59-13.59,13.59s-13.6-6.1-13.6-13.59,6.1-13.6,13.6-13.6,13.59,6.1,13.59,13.6Z"/>
+                      <path class="sm-fill" d="m10.17,28.87c0,1.7-1.39,3.09-3.09,3.09s-3.09-1.39-3.09-3.09,1.38-3.09,3.09-3.09,3.09,1.39,3.09,3.09Z"/>
+                    </svg>
+                    
 
                     <div class="sm-text">Smoother Animations</div>
 

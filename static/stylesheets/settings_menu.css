@@ -4,6 +4,7 @@
 
     --sm-height: 55vh;
     --sm-min-height: 250px;
+    --sm-footer-height: calc(4rem);
     
     --sm-border-radius: min(3vw,3vw) min(3vw,3vw) min(3vw,3vw) 0;
     --sm-border-radius: min(3vw,3vw);
@@ -11,9 +12,8 @@
     --sm-bg-color: #1b1b1b;
     --sm-menu-item-BGcolor: #444444;
     --sm-shadow: 0 0 50px black;
-    --sm-footer-height: calc(8% + 3vh);
     --sm-anim-speed: 0.3s;
-    --sm-inner-anim-speed: 0.3s;
+    --sm-inner-anim-speed: 0.2s;
 }
 .lightmode{
     --sm-bg-color: rgb(243, 243, 243);
@@ -106,11 +106,11 @@
     width: fit-content;
     margin-inline: auto;
     background-color: white;
-    padding: 1vh 15% 1vh 15%;
+    padding: 0.5rem 15% 0.5rem 15%;
     border-radius: 10vh;
     color: black;
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(3vh, 8px);
+    font-size: max(1.25rem, 8px);
     font-weight: 600;
     letter-spacing: 0.05vh;
     font-style: normal;

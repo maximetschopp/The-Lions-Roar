@@ -18,3 +18,14 @@ function toggleSettingsMenu(){
     }
     document.getElementById('sm-footer').classList.toggle("sm-footer-hidden");
 }
+
+function toggleTransitions(){
+    if(document.getElementById("transition-switch").checked){
+        document.body.classList.remove("notransition");
+        console.log("Transitions On");
+        return 0;
+    }
+    document.body.classList.add("notransition");
+    console.log("Transitions Off");
+    return 0;
+}

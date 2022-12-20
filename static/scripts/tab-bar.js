@@ -10,4 +10,10 @@ function toggleLightmode() {
 
 function toggleSettingsMenu(){
     document.getElementById('settings-container').classList.toggle("sm-hidden");
+    for(let i = 0; i < document.getElementsByClassName('menu-item').length; i++){
+        document.getElementsByClassName('menu-item')[i].classList.toggle("menu-item-hidden");
+    }
+    for(let i = 0; i < document.getElementsByClassName('switch').length; i++){
+        document.getElementsByClassName('switch')[i].classList.toggle("switch-hidden");
+    }
 }

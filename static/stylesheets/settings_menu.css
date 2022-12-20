@@ -1,5 +1,10 @@
 :root{
     --sm-width: calc(var(--tab-bar-dekstop-width)*2);
+    --sm-min-width: 360px;
+
+    --sm-height: 55vh;
+    --sm-min-height: 250px;
+    
     --sm-border-radius: min(3vw,3vw) min(3vw,3vw) min(3vw,3vw) 0;
     --sm-border-radius: min(3vw,3vw);
     --sm-zindex: 1000;
@@ -7,7 +12,8 @@
     --sm-menu-item-BGcolor: #444444;
     --sm-shadow: 0 0 50px black;
     --sm-footer-height: calc(8% + 3vh);
-    --sm-anim-speed: 0.2s;
+    --sm-anim-speed: 0.3s;
+    --sm-inner-anim-speed: 0.3s;
 }
 .lightmode{
     --sm-bg-color: rgb(243, 243, 243);
@@ -38,6 +44,9 @@
 
 #settings-container{
     width: var(--sm-width);
+    min-width: var(--sm-min-width);
+    height: var(--sm-height);
+    min-height: var(--sm-min-height);
     position: fixed;
     display: grid;
     grid-template-rows: calc(1.8rem + var(--sm-width) * 0.1) auto var(--sm-footer-height);
@@ -49,12 +58,17 @@
     border-radius: var(--sm-border-radius);
     box-shadow: var(--sm-shadow);
     overflow: hidden;
-    transition: all var(--sm-anim-speed) ease-out;
+    transition: min-width var(--sm-anim-speed) ease-out, width var(--sm-anim-speed) ease-out;
 }
 .sm-hidden{
     width: 0px !important;
-    transition: all var(--sm-anim-speed) ease-in;
+    min-width: 0px !important;
+    min-height: 0px !important;
+    transition: min-width var(--sm-anim-speed) ease-in, width var(--sm-anim-speed) ease-in;
 }
+
+
+
 .sm-invis{
     position: relative;
     width: 100%;
@@ -68,6 +82,7 @@
 #sm-cross-icon{
     position: relative;
     width: 100%;
+    height: 100%;
 }
 .sm-cross-icon-container{
     position: relative;
@@ -110,6 +125,7 @@
 .sm-menu-container{
     position: relative;
     width: 100%;
+    overflow: scroll;
 }
 .menu-item{
     position: relative;
@@ -124,7 +140,16 @@
     padding-bottom: 0.7rem;
     margin-top: 0.5rem;
     vertical-align: center;
+    transition: width var(--sm-inner-anim-speed) ease-in;
 }
+.menu-item-hidden{
+    position: relative; 
+    width: 0%;
+    font-size: 0px !important;
+    transition: width var(--sm-inner-anim-speed) ease-in;
+    overflow: hidden !important;
+}
+
 .menu-item-icon{
     width: 10%;
     aspect-ratio: 1/1;
@@ -135,9 +160,17 @@
     margin-left: 1rem;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
-    font-size: max(12px, 2.8vh);
+    font-size: calc(0.06 * var(--sm-width));
+    font-size: 110%;
     font-style: normal;
     color: var(--tab-bar-desktop-text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: break-spaces;
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1; 
 }
 
 
@@ -147,6 +180,9 @@
     display: inline-block;
     width: 60px;
     height: 34px;
+}
+.switch-hidden{
+    width: 0px;
 }
 .switch input { 
     opacity: 0;

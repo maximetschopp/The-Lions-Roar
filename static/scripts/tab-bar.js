@@ -16,4 +16,5 @@ function toggleSettingsMenu(){
     for(let i = 0; i < document.getElementsByClassName('switch').length; i++){
         document.getElementsByClassName('switch')[i].classList.toggle("switch-hidden");
     }
+    document.getElementById('sm-footer').classList.toggle("sm-footer-hidden");
 }

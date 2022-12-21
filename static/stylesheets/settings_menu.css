@@ -14,6 +14,7 @@
     --sm-inner-anim-speed: 0.2s;
 
     --sm-bg: linear-gradient(0deg, rgba(14, 14, 14, 0.84) 0%, rgba(45, 45, 45, 0.802) 100%);
+    --sm-bg: linear-gradient(0deg, rgba(0, 0, 0, 0.875) 0%, rgba(8, 8, 8, 0.751)100%);
     --sm-menu-footer-BGcolor: #1b1b1b;
     --sm-menu-item-BGcolor: rgba(68, 68, 68, 0.6);
     --sm-border-color: #555555;

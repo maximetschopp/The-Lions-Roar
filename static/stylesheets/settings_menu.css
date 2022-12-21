@@ -31,6 +31,8 @@
     --sm-menu-footer-BGcolor: #f0f0f0;
     --sm-menu-item-BGcolor: rgba(255, 255, 255, 0.6);
     --sm-border-color: #cfcfcf;
+    --sm-admin-color: rgb(255, 68, 68);
+    --sm-admin-bgcolor: rgba(226, 165, 165, 0.432);
 
 
     /* for flat shading */
@@ -169,7 +171,8 @@
 .sm-menu-container{
     position: relative;
     width: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .menu-item{
     position: relative;

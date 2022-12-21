@@ -46,9 +46,9 @@
             </div>
             <div id="tab-bar-bottom">
                 <div class = "tab-bar-icon-container">
-                    <object data="../resources/Icons/shield_icon_outline.svg" type="image/svg+xml"
+                    <!--<object data="../resources/Icons/shield_icon_outline.svg" type="image/svg+xml"
                     id="admin-icon" class = "tab-bar-icon"></object>
-                    <div class = "tab-bar-text">Admin</div>
+                    <div class = "tab-bar-text">Admin</div>-->
                 </div>
                 <div class = "tab-bar-icon-container" onclick="toggleSettingsMenu()">
                     <object data="../resources/Icons/gear_icon_outline.svg" type="image/svg+xml"
@@ -106,10 +106,19 @@
 
                     <div class="sm-text">Enable Blur</div>
 
-                    <label class="switch">
-                        <input type="checkbox" checked>
+                    <label class="switch" onclick="toggleFlatShading()">
+                        <input id = 'flat-shading-switch' type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>
+                </div>
+                <div class = "menu-item admin-menu-item">
+                    <!--<object class = "menu-item-icon" data="../resources/Icons/anim_icon.svg"></object>-->
+                    <svg class="menu-item-icon" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                        <path class="sm-fill admin-icon" d="m28.86,8.97l15.71,3.61v17.69c0,11.77-15.71,18.49-15.71,18.49,0,0-15.71-6.73-15.71-18.49V12.58l15.71-3.61m0-4c-.3,0-.6.03-.89.1l-15.71,3.61c-1.82.42-3.11,2.03-3.11,3.9v17.69c0,14.24,17.4,21.85,18.14,22.17.5.22,1.04.32,1.57.32s1.07-.11,1.57-.32c.74-.32,18.14-7.93,18.14-22.17V12.58c0-1.86-1.29-3.48-3.11-3.9l-15.71-3.61c-.29-.07-.59-.1-.89-.1h0Z"/>
+                    </svg>
+                    
+
+                    <div class="sm-text sm-admin-txt" style="position: relative">Enter Admin Backend</div>
                 </div>
 
             </section>

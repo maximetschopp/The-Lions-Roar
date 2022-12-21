@@ -16,6 +16,9 @@ function toggleSettingsMenu(){
     for(let i = 0; i < document.getElementsByClassName('switch').length; i++){
         document.getElementsByClassName('switch')[i].classList.toggle("switch-hidden");
     }
+    for(let i = 0; i < document.getElementsByClassName('sm-text').length; i++){
+        document.getElementsByClassName('sm-text')[i].classList.toggle("sm-text-hidden");
+    }
     document.getElementById('sm-footer').classList.toggle("sm-footer-hidden");
 }
 
@@ -27,5 +30,16 @@ function toggleTransitions(){
     }
     document.body.classList.add("notransition");
     console.log("Transitions Off");
+    return 0;
+}
+
+function toggleFlatShading(){
+    if(document.getElementById("flat-shading-switch").checked){
+        document.body.classList.remove("flat");
+        console.log("Blur Effects On");
+        return 0;
+    }
+    document.body.classList.add("flat");
+    console.log("Blur Effects Off");
     return 0;
 }

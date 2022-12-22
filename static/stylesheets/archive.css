@@ -123,7 +123,7 @@ input:focus{
     z-index: 999;
     user-select: none;
     cursor: pointer;
-    color: white;
+    color: var(--text-color);
 }
 .timeline-month{
     position: relative;
@@ -138,7 +138,7 @@ input:focus{
     z-index: 999;
     user-select: none;
     cursor: pointer;
-    color: white;
+    color: var(--text-color);
 }
 .timeline-day{
     position: relative;
@@ -153,7 +153,7 @@ input:focus{
     z-index: 999;
     user-select: none;
     cursor: pointer;
-    color: white;
+    color: var(--text-color);
 }
 
 
@@ -199,7 +199,7 @@ input:focus{
     grid-template-columns: auto var(--search-bar-height);
     height: var(--search-bar-height);
     padding: 2rem 0 2rem 0;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--text-color);
     cursor: pointer;
 }
 .m-timeline-year{
@@ -377,6 +377,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         -webkit-line-clamp: 1; /* number of lines to show */
         line-clamp: 1; 
         -webkit-box-orient: vertical;
+        color: var(--text-color);
     }   
     h3{
         font-family: neue-haas-grotesk-display, sans-serif;
@@ -392,6 +393,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         -webkit-line-clamp: 3; /* number of lines to show */
         line-clamp: 3; 
         -webkit-box-orient: vertical;
+        color: var(--text-color);
     }
     .result-title{
         color: var(--text-color);
@@ -504,6 +506,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         -webkit-line-clamp: 1; /* number of lines to show */
         line-clamp: 1; 
         -webkit-box-orient: vertical;
+        color: var(--text-color);
     }
     h3{
         font-family: neue-haas-grotesk-display, sans-serif;
@@ -524,6 +527,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin: auto;
         margin-top: 3vh;
         margin-bottom: 1vw;
+        color: var(--text-color);
     }
     .result-title{
         color: var(--text-color);
@@ -585,7 +589,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         padding-top: 5px;
         padding-bottom: 5px;
         height: fit-content;
-        background-color: var(--color1);
+        background: var(--window-BG);
+        border: var(--window-border);
+        box-shadow: var(--box-shadow);
         animation: none;
     }
     #search-bar-container{

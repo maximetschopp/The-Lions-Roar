@@ -3,13 +3,9 @@
   <defs>
     <style>
       .cls-1 {
-        fill: none;
-        stroke: #fff;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 7px;
+        fill: #fff;
       }
     </style>
   </defs>
-  <polyline class="cls-1" points="6.13 28.6 21.46 43.94 51.6 13.79"/>
+  <path class="cls-1" d="m21.46,47.44c-.9,0-1.79-.34-2.47-1.03L3.65,31.08c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l12.86,12.86,27.67-27.67c1.37-1.37,3.58-1.37,4.95,0,1.37,1.37,1.37,3.58,0,4.95l-30.14,30.14c-.68.68-1.58,1.03-2.47,1.03Z"/>
 </svg>

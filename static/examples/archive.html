@@ -47,7 +47,7 @@
             <div class = "tab-bar-icon-container">
                 <svg id="search_icon" class="tab-bar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
                     <path class="icon-fill" d="m51.73,47.42l-10.02-10.02c2.41-3.25,3.85-7.25,3.85-11.6,0-10.79-8.75-19.53-19.53-19.53S6.49,15,6.49,25.79s8.75,19.53,19.53,19.53c4.63,0,8.88-1.62,12.23-4.31l9.94,9.94c.49.49,1.13.73,1.77.73s1.28-.24,1.77-.73c.98-.98.98-2.56,0-3.54Zm-25.71-7.09c-8.01,0-14.53-6.52-14.53-14.53s6.52-14.53,14.53-14.53,14.53,6.52,14.53,14.53-6.52,14.53-14.53,14.53Z"/>
-                  </svg>
+                </svg>
                 <div class = "tab-bar-text">Search</div>
             </div>
             <div id="tab-bar-bottom">
@@ -138,17 +138,78 @@
         <div id = "top-bar-container">
             <div id = "search-bar-container">
                 <input id = "search-bar" onclick="console.log('clicked'); updateTopRightButton('search')" type="search">
-                <object id ="cross-btn" class = 'hidden' data="../resources/Icons/cross_icon.svg" type="image/svg+xml">
+                <!-- <object id ="cross-btn" class = 'hidden' data="../resources/Icons/cross_icon.svg" type="image/svg+xml"> -->
+                <svg id="cross-btn" class = 'hidden' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m47.59,42.64c1.36,1.36,1.36,3.58,0,4.95-.69.68-1.58,1.02-2.48,1.02s-1.79-.34-2.47-1.02l-13.77-13.77-13.78,13.77c-.69.68-1.58,1.02-2.48,1.02s-1.79-.34-2.47-1.02c-1.37-1.37-1.37-3.59,0-4.95l13.78-13.77-13.78-13.78c-1.37-1.37-1.37-3.59,0-4.95,1.36-1.37,3.58-1.37,4.95,0l13.78,13.78,13.77-13.78c1.36-1.37,3.58-1.37,4.95,0,1.36,1.36,1.36,3.58,0,4.95l-13.77,13.78,13.77,13.77Z"/>
+                </svg>
                 </object>
                 <div id ="cross-btn-invis"onclick = "clearQuery()" class = "hidden"></div>
             </div>
             <div id = "date-btn">
-                <object id ="calendar-icon" class = 'topRightButton' data="../resources/Icons/calendar_icon_outline.svg" type="image/svg+xml">
-                </object>
-                <object id ="checkmark-icon" class = 'topRightButton hidden' data="../resources/Icons/checkmark_icon.svg" type="image/svg+xml">
-                </object>
-                <object id ="search-icon2" class = 'topRightButton hidden' data="../resources/Icons/magnifying_glass_icon_outline.svg" type="image/svg+xml">
-                </object>
+                <svg id="calendar-icon" class = 'topRightButton' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m48.68,3.83H9.28C4.56,3.83.73,7.66.73,12.38v32.75c0,4.72,3.83,8.55,8.55,8.55h39.4c4.73,0,8.55-3.83,8.55-8.55V12.38c0-4.72-3.82-8.55-8.55-8.55Zm4.51,39.56c0,3.05-2.48,5.53-5.54,5.53H10.03c-3.05,0-5.53-2.48-5.53-5.53v-23.45c0-3.05,2.48-5.53,5.53-5.53h37.62c3.06,0,5.54,2.48,5.54,5.53v23.45Z"/>
+                    <g>
+                        <path class="icon-fill" d="m16.8,30.75v1.67c0,1-.32,1.28-1.34,1.28h-1.64c-1.03,0-1.34-.28-1.34-1.28v-1.67c0-.98.31-1.27,1.34-1.27h1.64c1.02,0,1.34.28,1.34,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,40.03v1.67c0,1-.32,1.3-1.34,1.3h-1.64c-1.03,0-1.34-.31-1.34-1.3v-1.67c0-1,.31-1.28,1.34-1.28h1.64c1.02,0,1.34.28,1.34,1.28Z"/>
+                        <path class="icon-fill" d="m26.21,21.48v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.3,1.33-1.3h1.67c1,0,1.3.32,1.3,1.3Z"/>
+                        <path class="icon-fill" d="m26.21,30.75v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.27,1.33-1.27h1.67c1,0,1.3.28,1.3,1.27Z"/>
+                        <path class="icon-fill" d="m26.21,40.03v1.67c0,1-.31,1.3-1.3,1.3h-1.67c-.98,0-1.33-.31-1.33-1.3v-1.67c0-1,.34-1.28,1.33-1.28h1.67c1,0,1.3.28,1.3,1.28Z"/>
+                        <path class="icon-fill" d="m35.65,21.48v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.3,1.33-1.3h1.67c1,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m35.65,30.75v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.27,1.33-1.27h1.67c1,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m35.65,40.03v1.67c0,1-.33,1.3-1.33,1.3h-1.67c-1,0-1.33-.31-1.33-1.3v-1.67c0-1,.33-1.28,1.33-1.28h1.67c1,0,1.33.28,1.33,1.28Z"/>
+                        <path class="icon-fill" d="m45.07,21.48v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.3,1.3-1.3h1.67c.98,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m45.07,30.75v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.27,1.3-1.27h1.67c.98,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,30.75v1.67c0,1-.32,1.28-1.34,1.28h-1.64c-1.03,0-1.34-.28-1.34-1.28v-1.67c0-.98.31-1.27,1.34-1.27h1.64c1.02,0,1.34.28,1.34,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,40.03v1.67c0,1-.32,1.3-1.34,1.3h-1.64c-1.03,0-1.34-.31-1.34-1.3v-1.67c0-1,.31-1.28,1.34-1.28h1.64c1.02,0,1.34.28,1.34,1.28Z"/>
+                        <path class="icon-fill" d="m26.21,21.48v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.3,1.33-1.3h1.67c1,0,1.3.32,1.3,1.3Z"/>
+                        <path class="icon-fill" d="m26.21,30.75v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.27,1.33-1.27h1.67c1,0,1.3.28,1.3,1.27Z"/>
+                        <path class="icon-fill" d="m26.21,40.03v1.67c0,1-.31,1.3-1.3,1.3h-1.67c-.98,0-1.33-.31-1.33-1.3v-1.67c0-1,.34-1.28,1.33-1.28h1.67c1,0,1.3.28,1.3,1.28Z"/>
+                        <path class="icon-fill" d="m35.65,21.48v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.3,1.33-1.3h1.67c1,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m35.65,30.75v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.27,1.33-1.27h1.67c1,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m35.65,40.03v1.67c0,1-.33,1.3-1.33,1.3h-1.67c-1,0-1.33-.31-1.33-1.3v-1.67c0-1,.33-1.28,1.33-1.28h1.67c1,0,1.33.28,1.33,1.28Z"/>
+                        <path class="icon-fill" d="m45.07,21.48v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.3,1.3-1.3h1.67c.98,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m45.07,30.75v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.27,1.3-1.27h1.67c.98,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,30.75v1.67c0,1-.32,1.28-1.34,1.28h-1.64c-1.03,0-1.34-.28-1.34-1.28v-1.67c0-.98.31-1.27,1.34-1.27h1.64c1.02,0,1.34.28,1.34,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,40.03v1.67c0,1-.32,1.3-1.34,1.3h-1.64c-1.03,0-1.34-.31-1.34-1.3v-1.67c0-1,.31-1.28,1.34-1.28h1.64c1.02,0,1.34.28,1.34,1.28Z"/>
+                        <path class="icon-fill" d="m26.21,21.48v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.3,1.33-1.3h1.67c1,0,1.3.32,1.3,1.3Z"/>
+                        <path class="icon-fill" d="m26.21,30.75v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.27,1.33-1.27h1.67c1,0,1.3.28,1.3,1.27Z"/>
+                        <path class="icon-fill" d="m26.21,40.03v1.67c0,1-.31,1.3-1.3,1.3h-1.67c-.98,0-1.33-.31-1.33-1.3v-1.67c0-1,.34-1.28,1.33-1.28h1.67c1,0,1.3.28,1.3,1.28Z"/>
+                        <path class="icon-fill" d="m35.65,21.48v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.3,1.33-1.3h1.67c1,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m35.65,30.75v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.27,1.33-1.27h1.67c1,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m35.65,40.03v1.67c0,1-.33,1.3-1.33,1.3h-1.67c-1,0-1.33-.31-1.33-1.3v-1.67c0-1,.33-1.28,1.33-1.28h1.67c1,0,1.33.28,1.33,1.28Z"/>
+                        <path class="icon-fill" d="m45.07,21.48v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.3,1.3-1.3h1.67c.98,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m45.07,30.75v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.27,1.3-1.27h1.67c.98,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,30.75v1.67c0,1-.32,1.28-1.34,1.28h-1.64c-1.03,0-1.34-.28-1.34-1.28v-1.67c0-.98.31-1.27,1.34-1.27h1.64c1.02,0,1.34.28,1.34,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,40.03v1.67c0,1-.32,1.3-1.34,1.3h-1.64c-1.03,0-1.34-.31-1.34-1.3v-1.67c0-1,.31-1.28,1.34-1.28h1.64c1.02,0,1.34.28,1.34,1.28Z"/>
+                        <path class="icon-fill" d="m26.21,21.48v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.3,1.33-1.3h1.67c1,0,1.3.32,1.3,1.3Z"/>
+                        <path class="icon-fill" d="m26.21,30.75v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.27,1.33-1.27h1.67c1,0,1.3.28,1.3,1.27Z"/>
+                        <path class="icon-fill" d="m26.21,40.03v1.67c0,1-.31,1.3-1.3,1.3h-1.67c-.98,0-1.33-.31-1.33-1.3v-1.67c0-1,.34-1.28,1.33-1.28h1.67c1,0,1.3.28,1.3,1.28Z"/>
+                        <path class="icon-fill" d="m35.65,21.48v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.3,1.33-1.3h1.67c1,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m35.65,30.75v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.27,1.33-1.27h1.67c1,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m35.65,40.03v1.67c0,1-.33,1.3-1.33,1.3h-1.67c-1,0-1.33-.31-1.33-1.3v-1.67c0-1,.33-1.28,1.33-1.28h1.67c1,0,1.33.28,1.33,1.28Z"/>
+                        <path class="icon-fill" d="m45.07,21.48v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.3,1.3-1.3h1.67c.98,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m45.07,30.75v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.27,1.3-1.27h1.67c.98,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m26.21,21.48v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.3,1.33-1.3h1.67c1,0,1.3.32,1.3,1.3Z"/>
+                        <path class="icon-fill" d="m35.65,21.48v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.3,1.33-1.3h1.67c1,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m45.07,21.48v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.3,1.3-1.3h1.67c.98,0,1.33.32,1.33,1.3Z"/>
+                        <path class="icon-fill" d="m16.8,30.75v1.67c0,1-.32,1.28-1.34,1.28h-1.64c-1.03,0-1.34-.28-1.34-1.28v-1.67c0-.98.31-1.27,1.34-1.27h1.64c1.02,0,1.34.28,1.34,1.27Z"/>
+                        <path class="icon-fill" d="m26.21,30.75v1.67c0,1-.31,1.28-1.3,1.28h-1.67c-.98,0-1.33-.28-1.33-1.28v-1.67c0-.98.34-1.27,1.33-1.27h1.67c1,0,1.3.28,1.3,1.27Z"/>
+                        <path class="icon-fill" d="m35.65,30.75v1.67c0,1-.33,1.28-1.33,1.28h-1.67c-1,0-1.33-.28-1.33-1.28v-1.67c0-.98.33-1.27,1.33-1.27h1.67c1,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m45.07,30.75v1.67c0,1-.34,1.28-1.33,1.28h-1.67c-1,0-1.3-.28-1.3-1.28v-1.67c0-.98.31-1.27,1.3-1.27h1.67c.98,0,1.33.28,1.33,1.27Z"/>
+                        <path class="icon-fill" d="m16.8,40.03v1.67c0,1-.32,1.3-1.34,1.3h-1.64c-1.03,0-1.34-.31-1.34-1.3v-1.67c0-1,.31-1.28,1.34-1.28h1.64c1.02,0,1.34.28,1.34,1.28Z"/>
+                        <path class="icon-fill" d="m26.21,40.03v1.67c0,1-.31,1.3-1.3,1.3h-1.67c-.98,0-1.33-.31-1.33-1.3v-1.67c0-1,.34-1.28,1.33-1.28h1.67c1,0,1.3.28,1.3,1.28Z"/>
+                        <path class="icon-fill" d="m35.65,40.03v1.67c0,1-.33,1.3-1.33,1.3h-1.67c-1,0-1.33-.31-1.33-1.3v-1.67c0-1,.33-1.28,1.33-1.28h1.67c1,0,1.33.28,1.33,1.28Z"/>
+                    </g>
+                </svg>
+
+                <svg id="checkmark-icon" class="topRightButton hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m21.46,47.44c-.9,0-1.79-.34-2.47-1.03L3.65,31.08c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l12.86,12.86,27.67-27.67c1.37-1.37,3.58-1.37,4.95,0,1.37,1.37,1.37,3.58,0,4.95l-30.14,30.14c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                </svg>
+
+                <svg id="search-icon2" class="topRightButton hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m51.73,47.42l-10.02-10.02c2.41-3.25,3.85-7.25,3.85-11.6,0-10.79-8.75-19.53-19.53-19.53S6.49,15,6.49,25.79s8.75,19.53,19.53,19.53c4.63,0,8.88-1.62,12.23-4.31l9.94,9.94c.49.49,1.13.73,1.77.73s1.28-.24,1.77-.73c.98-.98.98-2.56,0-3.54Zm-25.71-7.09c-8.01,0-14.53-6.52-14.53-14.53s6.52-14.53,14.53-14.53,14.53,6.52,14.53,14.53-6.52,14.53-14.53,14.53Z"/>
+                </svg>
+
                 <div id = 'topRightInvis' class = "tab-bar-invis" onclick="topRightButtonClicked()"></div>
             </div>
         </div>
@@ -164,9 +225,9 @@
 
                 <div class = "m-timeline-dropdown 2022">
                     <div class = "m-timeline-year">2022</div>
-                    <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml">
-                        <div class="invis"></div>
-                    </object>
+                    <svg class = "m-timeline-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                        <path class="icon-fill" d="m17.25,55.69c-.9,0-1.79-.34-2.47-1.03-1.37-1.37-1.37-3.58,0-4.95l20.81-20.81L14.71,8.02c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l23.35,23.35c1.37,1.37,1.37,3.58,0,4.95l-23.29,23.29c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                    </svg>
                     <div class="invis" onclick="mTimelineToggleYear('2022', this.parentElement)"></div>
                 </div>
                 
@@ -215,7 +276,9 @@
 
                 <div class = "m-timeline-dropdown 2021">
                     <div class = "m-timeline-year">2021</div>
-                    <object class = "m-timeline-dropdown-arrow" data="../resources/Icons/dropdown_icon.svg" type="image/svg+xml"></object>
+                    <svg class = "m-timeline-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                        <path class="icon-fill" d="m17.25,55.69c-.9,0-1.79-.34-2.47-1.03-1.37-1.37-1.37-3.58,0-4.95l20.81-20.81L14.71,8.02c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l23.35,23.35c1.37,1.37,1.37,3.58,0,4.95l-23.29,23.29c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                    </svg>
                     <div class="invis" onclick="mTimelineToggleYear('2021', this.parentElement)"></div>
                 </div>
                 <div class = "m-timeline-year-content 2021 m-timeline-year-hidden">
@@ -279,7 +342,9 @@
                     <h2 class = "archive-date">31 September 2020</h2>
                     <h3 class = "archive-title">TITLE OF THE PUBLICATION WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</h3>
                 </div>
-                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <svg class = "arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m17.25,55.69c-.9,0-1.79-.34-2.47-1.03-1.37-1.37-1.37-3.58,0-4.95l20.81-20.81L14.71,8.02c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l23.35,23.35c1.37,1.37,1.37,3.58,0,4.95l-23.29,23.29c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                </svg>
                 <a href=""><div class = "invis"></div></a>  
             </div>
             <div id = "thing-2" class = "archive-publication">
@@ -288,7 +353,9 @@
                     <h2 class = "archive-date">31 September 2020</h2>
                     <h3 class = "archive-title">TITLE OF THE PUBLICATION WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</h3>
                 </div>
-                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <svg class = "arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m17.25,55.69c-.9,0-1.79-.34-2.47-1.03-1.37-1.37-1.37-3.58,0-4.95l20.81-20.81L14.71,8.02c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l23.35,23.35c1.37,1.37,1.37,3.58,0,4.95l-23.29,23.29c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                </svg>
                 <a href=""><div class = "invis"></div></a>  
             </div>
             <div id = "thing-3" class = "archive-result">
@@ -297,7 +364,9 @@
                     <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
                     <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
                 </div>
-                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <svg class = "arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m17.25,55.69c-.9,0-1.79-.34-2.47-1.03-1.37-1.37-1.37-3.58,0-4.95l20.81-20.81L14.71,8.02c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l23.35,23.35c1.37,1.37,1.37,3.58,0,4.95l-23.29,23.29c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                </svg>
                 <a href=""><div class = "invis"></div></a>  
             </div>
             <div id = "thing-4" class = "archive-result">
@@ -306,7 +375,9 @@
                     <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
                     <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
                 </div>
-                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <svg class = "arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m17.25,55.69c-.9,0-1.79-.34-2.47-1.03-1.37-1.37-1.37-3.58,0-4.95l20.81-20.81L14.71,8.02c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l23.35,23.35c1.37,1.37,1.37,3.58,0,4.95l-23.29,23.29c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                </svg>
                 <a href=""><div class = "invis"></div></a>  
             </div>
             <div id = "thing-5" class = "archive-result">
@@ -315,7 +386,9 @@
                     <div class = "result-title">TITLE OF THE SEARCH RESULT WOULD GO HERE. If it becomes really long then it wraps onto the seconds line, but it uses ellipses if the sen...</div>
                     <div class = "result-desc">31 November 2022  •  Name of the Authors</div>
                 </div>
-                <object class = "arrow-icon" data="../resources/Icons/arrow_right_icon.svg" type="image/svg+xml"></object>
+                <svg class = "arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
+                    <path class="icon-fill" d="m17.25,55.69c-.9,0-1.79-.34-2.47-1.03-1.37-1.37-1.37-3.58,0-4.95l20.81-20.81L14.71,8.02c-1.37-1.37-1.37-3.58,0-4.95,1.37-1.37,3.58-1.37,4.95,0l23.35,23.35c1.37,1.37,1.37,3.58,0,4.95l-23.29,23.29c-.68.68-1.58,1.03-2.47,1.03Z"/>
+                </svg>
                 <a href=""><div class = "invis"></div></a>  
             </div>
 

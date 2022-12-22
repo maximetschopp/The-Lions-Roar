@@ -218,10 +218,11 @@ input:focus{
     margin: auto 0 auto 0;
     cursor: pointer;
     width: 100%;
+    rotate: 90deg;
     transition: rotate 0.3s;
 }
 .rotateDown{
-    rotate: -90deg;
+    rotate: 0deg;
     transition: rotate 0.3s;
 }
 .m-timeline-year-content{

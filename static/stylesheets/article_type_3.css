@@ -44,61 +44,58 @@
     margin-top: 5vh;
 }
 .article3-article{
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     width: 100%;
-    border-radius: 10vh;
+    border-radius: 100vh;
     background-color: var(--a3-bg-color);
-    display: block;
-    grid-template-rows: auto auto;
     box-shadow: var(--a3-boxShadowMini);
     border: var(--a3-border);
-}
-.article3-desc{
-    position: absolute;
-    width: 70%;
-    left: 5%;
-    top: 50%;
-    transform: translate(0, -50%);
+    gap: 2vw;
 }
 .article3-title{
+    font-family: neue-haas-grotesk-display, sans-serif;
     position: relative;
     font-size: max(2.0vh, 6px);
-    margin-top: 0;
+    margin: 0;
     color: var(--a3-text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.article3-desc{
+    width: 70%;
 }
 .article3-author{
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 300;
     position: relative;
     font-size: max(1.8vh, 4px);
     color: var(--a3-text-color);
+    margin-top: 3px;
 }
 
+.article3-share-button{
+    height: 3vw;
+    background-color: black;
+    border-radius: 100%;
+    box-shadow: var(--a1-boxShadowMini);
+}
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
     .article3-share-button{
-        position: absolute;
-        top: 50%;
-        width: 8vw;
-        right: 5%;
-        transform: translate(0, -50%);
-        background-color: black;
-        border-radius: 100%;
-        box-shadow: var(--a1-boxShadowMini);
+        height: 8vw;
     }
 }
 
 /* at >1 : 1 Ipad view */
 @media (min-aspect-ratio: 1/1) {
-    .article3-share-button{
-        position: absolute;
-        top: 50%;
-        height: 3vw;
-        right: 5%;
-        transform: translate(0, -50%);
-        background-color: black;
-        border-radius: 100%;
-        box-shadow: var(--a1-boxShadowMini);
-    }
     .article3-author{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(1.8vh, 6px);

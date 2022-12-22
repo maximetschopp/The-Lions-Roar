@@ -2,21 +2,6 @@
     --border-radius: min(8vw,8vw);
     --border-radius-desktop: min(3vw,3vw);
     --bgColor: #0f0f0f;
-    --bsmd: 3;
-    --boxShadowMini:
-        0px calc(-2.6px/var(--bsmd)) calc(4.7px/var(--bsmd)) rgba(255, 255, 255, 0.037),
-        0px calc(-7.6px/var(--bsmd)) calc(9.5px/var(--bsmd)) rgba(255, 255, 255, 0.044),
-        0px calc(-16.1px/var(--bsmd)) calc(15px/var(--bsmd)) rgba(255, 255, 255, 0.046),
-        0px calc(-30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(255, 255, 255, 0.048),
-        0px calc(-56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(255, 255, 255, 0.054),
-        0px calc(-100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(255, 255, 255, 0.07),
-        
-        0px calc(2.6px/var(--bsmd)) calc(4.7px/var(--bsmd)) rgba(0, 0, 0, 0.037),
-        0px calc(7.6px/var(--bsmd)) calc(9.5px/var(--bsmd)) rgba(0, 0, 0, 0.044),
-        0px calc(16.1px/var(--bsmd)) calc(15px/var(--bsmd)) rgba(0, 0, 0, 0.046),
-        0px calc(30.5px/var(--bsmd)) calc(22.4px/var(--bsmd)) rgba(0, 0, 0, 0.048),
-        0px calc(56px/var(--bsmd)) calc(35.8px/var(--bsmd)) rgba(0, 0, 0, 0.054),
-        0px calc(100px/var(--bsmd)) calc(80px/var(--bsmd)) rgba(0, 0, 0, 0.07);
     --main-article-height-dekstop: 50vh;
     --main-article-width-ipad: 95%;
 }
@@ -25,12 +10,12 @@
 }
 body{
     margin: 0;
-    background-color: var(--bgColor);
+    background-color: var(--background-color);
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
 }
-h2{
+/* h2{
     width: 100%;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-size: max(4vw, 15px);
@@ -42,7 +27,7 @@ h2{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-line-clamp: 2;
     line-clamp: 2; 
     -webkit-box-orient: vertical;
     color: white;
@@ -52,7 +37,6 @@ h3{
     font-size: max(3.5vw, 13px);
     font-weight: 300;
     font-style: normal;
-    /*font-size: calc(1.2vh + 7px);*/
     margin-top: 5px;
     margin-bottom: 3px;
     text-align: left;
@@ -61,11 +45,11 @@ h3{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-line-clamp: 1; 
     line-clamp: 1; 
     -webkit-box-orient: vertical;
     color: white;
-}
+} */
 
 a {
     text-decoration: none !important;
@@ -85,61 +69,6 @@ a:active {
 a:-webkit-any-link { 
     text-decoration: none !important;
 }
-
-/* .main-article{
-    position: relative;
-    width: 100%;
-}
-.main-thumbnail{
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 0;
-    border-radius: 0 0 10vw 10vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*box-shadow: var(--boxShadowMini);
-}
-.WV-button-mobile{
-    display: flex;
-    width: fit-content;
-    margin-inline: auto;
-    background-color: white;
-    padding: 2vw;
-    border-radius: 10vw;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, 50%);
-}
-.WV-button-mobile-play-icon{
-    display: inline;
-    width: 9vw;
-    margin: auto;
-    padding-inline: 0.5vw;
-}
-.WV-button-mobile-text{
-    display: inline;
-    color: black;
-    font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(4.5vw, 15px);
-    font-weight: 600;
-    margin-inline: 4vw;
-    letter-spacing: 0.15vw;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-style: normal;
-    text-align: center;
-    white-space: nowrap;
-}
-.main-article-share-button{
-    width: 60%;
-    margin-inline: auto;
-    margin: auto;
-}
-.main-article-title{
-    margin-top: 0;
-} */
 @keyframes buttonPress{
     0%{
         scale: 1;
@@ -164,31 +93,10 @@ a:-webkit-any-link {
     #blurred-bg{
         display: none;
     }
-    /* .main-article-desktop-button-container{
-        display: none;
-    }
-    .WV-button-desktop{
-        display: none;
-    }
-    .share-button-desktop-container{
-        display: none;
-    }
-    .main-article-desc{
-        position: relative;
-        margin: auto;
-        margin-top: 10vw;
-        margin-bottom: 10vw;
-        width: 90%;
-        display: grid;
-        grid-template-columns: 85% 15%;
-    } */
 }
 
 /* at >1 : 1 Ipad view */
 @media (min-aspect-ratio: 1/1) {
-    body{
-        background-color: #0f0f0f;
-    }
     /* .main-article{
         position: relative;
         height: auto;

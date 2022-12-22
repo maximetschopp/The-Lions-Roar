@@ -1,0 +1,78 @@
+:root{
+
+    /* PAGE */
+    --background-color: #0f0f0f;
+    --border-color: #555555;
+    --border: 1px solid var(--border-color);
+    --text-color: rgb(255, 255, 255);
+
+    /* WINDOW SPECIFIC */
+    --window-BG: linear-gradient(0deg, rgba(0, 0, 0, 0.875) 0%, rgba(8, 8, 8, 0.751)100%);
+    --window-footer-BGcolor: #1b1b1b;
+    --window-item-BGcolor: rgba(68, 68, 68, 0.6);
+    --window-border-color: #555555;
+    --window-border: 1px solid var(--window-border-color);
+
+    --window-BGcolor-flat: #1b1b1b;
+    --window-item-BGflat: rgb(68, 68, 68);
+    --window-footer-BGflat: rgb(68, 68, 68);
+
+    /* DROP SHADOWS*/
+    --box-shadow: 0 0 50px black;
+
+    /* OTHER */
+    --blur: 21px;
+
+}
+.lightmode{
+
+    /* PAGE */
+    --background-color: rgb(230, 230, 230);
+    --border-color: #cfcfcf;
+    --border: 1px solid var(--border-color);
+    --text-color: rgb(0, 0, 0);
+
+    /* WINDOW SPECIFIC */
+    --window-BG: linear-gradient(0deg, rgba(230, 230, 230,0.75) 0%, rgba(248, 248, 248, 0.7) 100%);
+    --window-footer-BGcolor: #f0f0f0;
+    --window-item-BGcolor: rgba(255, 255, 255, 0.6);
+    --window-border-color: #cfcfcf;
+    --window-border: 1px solid var(--window-border-color);
+
+    --window-BGcolor-flat: rgb(243, 243, 243);
+    --window-item-BGflat: rgb(255, 255, 255);
+    --window-footer-BGflat: rgb(255, 255, 255);
+
+    /* DROP SHADOWS */
+    --box-shadow-downscale-factor: 2;
+    --box-shadow:
+        0px calc(-2.6px/var(--box-shadow-downscale-factor)) calc(4.7px/var(--box-shadow-downscale-factor)) rgba(255, 255, 255, 0.037),
+        0px calc(-7.6px/var(--box-shadow-downscale-factor)) calc(9.5px/var(--box-shadow-downscale-factor)) rgba(255, 255, 255, 0.044),
+        0px calc(-16.1px/var(--box-shadow-downscale-factor)) calc(15px/var(--box-shadow-downscale-factor)) rgba(255, 255, 255, 0.046),
+        0px calc(-30.5px/var(--box-shadow-downscale-factor)) calc(22.4px/var(--box-shadow-downscale-factor)) rgba(255, 255, 255, 0.048),
+        0px calc(-56px/var(--box-shadow-downscale-factor)) calc(35.8px/var(--box-shadow-downscale-factor)) rgba(255, 255, 255, 0.054),
+        0px calc(-100px/var(--box-shadow-downscale-factor)) calc(80px/var(--box-shadow-downscale-factor)) rgba(255, 255, 255, 0.07),
+        
+        0px calc(2.6px/var(--box-shadow-downscale-factor)) calc(4.7px/var(--box-shadow-downscale-factor)) rgba(0, 0, 0, 0.037),
+        0px calc(7.6px/var(--box-shadow-downscale-factor)) calc(9.5px/var(--box-shadow-downscale-factor)) rgba(0, 0, 0, 0.044),
+        0px calc(16.1px/var(--box-shadow-downscale-factor)) calc(15px/var(--box-shadow-downscale-factor)) rgba(0, 0, 0, 0.046),
+        0px calc(30.5px/var(--box-shadow-downscale-factor)) calc(22.4px/var(--box-shadow-downscale-factor)) rgba(0, 0, 0, 0.048),
+        0px calc(56px/var(--box-shadow-downscale-factor)) calc(35.8px/var(--box-shadow-downscale-factor)) rgba(0, 0, 0, 0.054),
+        0px calc(100px/var(--box-shadow-downscale-factor)) calc(80px/var(--box-shadow-downscale-factor)) rgba(0, 0, 0, 0.07);
+}
+.flat{
+    /* WINDOW SPECIFIC */
+    --window-BG: var(--window-BGcolor-flat) !important;
+    --window-item-BGcolor: var(--window-item-BGflat) !important;
+    --window-footer-BGcolor: var(--window-footer-BGflat) !important;
+    --window-border-color: rgba(255, 255, 255, 0) !important;
+}
+
+
+
+.icon-fill{
+    fill: white;
+}
+.lightmode .icon-fill{
+    fill: black;
+}

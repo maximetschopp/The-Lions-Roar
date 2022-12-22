@@ -9,6 +9,7 @@
     --ma-text-color: white;
     --ma-boxShadowMini: none;
     --ma-border: #555555 1px solid;
+    --ma-border: none;
 }
 .lightmode{
     --ma-bg-color: rgb(243, 243, 243);
@@ -16,6 +17,7 @@
     --ma-blurred-overlay-color: #ffffffb7;
     --ma-text-color: black;
     --ma-border: #cfcfcf 1px solid;
+    --ma-border: none;
     --ma-bsmd: 5;
     --ma-boxShadowMini:
         0px calc(-2.6px/var(--ma-bsmd)) calc(4.7px/var(--ma-bsmd)) rgba(255, 255, 255, 0.037),

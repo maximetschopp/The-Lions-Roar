@@ -8,9 +8,11 @@
     --a3-text-color: white;
     --a3-boxShadowMini: none;
     --a3-border: #555555 1px solid;
+    --a3-border: none;
 }
 .lightmode{
     --a3-border: #cfcfcf 1px solid;
+    --a3-border: none;
     --a3-bg-color: rgb(243, 243, 243);
     --a3-thumbnail-bg-color: #ffffff;
     --a3-text-color: black;

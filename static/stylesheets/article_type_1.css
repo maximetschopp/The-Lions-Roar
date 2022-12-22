@@ -9,10 +9,12 @@
     --a1-text-color: white;
     --a1-boxShadowMini: none;
     --a1-border: #555555 1px solid;
+    --a1-border: none;
     --a1-bg-gradient: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(45,45,45,0.7) 50%);
 }
 .lightmode{
     --a1-border: #cfcfcf 1px solid;
+    --a1-border: none;
     --a1-bg-gradient: linear-gradient(0deg, rgba(230, 230, 230,0.75) 0%, rgba(248, 248, 248, 0.7) 50%);
     --a1-bg-color: rgb(243, 243, 243);
     --a1-thumbnail-bg-color: #ffffff;

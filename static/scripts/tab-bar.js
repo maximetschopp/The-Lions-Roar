@@ -1,3 +1,4 @@
+// settings menu stuff
 
 function toggleLightmode() {
     if(document.getElementById("dm-switch").checked){

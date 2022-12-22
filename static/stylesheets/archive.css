@@ -443,6 +443,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         width: calc(100vh - var(--tab-bar-dekstop-width));
         margin-left: calc(var(--tab-bar-dekstop-width)/2);
         height: calc(100% - (var(--search-bar-height) + 2vh + 1em));
+        border: var(--window-border);
     }
     #top-bar-container{
         position: relative;

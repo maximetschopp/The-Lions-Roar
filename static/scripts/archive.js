@@ -7,11 +7,11 @@ addEventListener("scroll", (event) => {
     if (a == "mobile") {
         updateTimeline();
     } else if (a == "tablet") {
-        updateHighlightedItem();
         updateTimeline();
+        updateHighlightedItem();
     } else {
-        updateHighlightedItem();
         updateTimeline();
+        updateHighlightedItem();
     }
 });
 addEventListener("resize", (event) => {
@@ -19,24 +19,24 @@ addEventListener("resize", (event) => {
     if (a == "mobile") {
         updateTimeline();
     } else if (a == "tablet") {
-        updateHighlightedItem();
         updateTimeline();
+        updateHighlightedItem();
     } else {
-        console.log('desktop');
-        updateHighlightedItem();
+        // console.log('desktop');
         updateTimeline();
+        updateHighlightedItem();
         toggleMobileTimeline(false);
         updateTopRightButton('calendar');
     }
 });
 
 function ready(){
+    updateTimeline();
     updateHighlightedItem();
-    updateTimeline(); 
 
     // document.querySelector('#search-bar').addEventListener('mouseleave', e => e.target.blur());
     document.querySelector('#search-bar').addEventListener("blur", function() {
-        console.log('blurred');
+        // console.log('blurred');
         if(document.querySelector('#search-bar').value != ''){
             document.getElementById('cross-btn').classList.remove('hidden');
             document.getElementById('cross-btn-invis').classList.remove('hidden');
@@ -49,7 +49,7 @@ function ready(){
         }
     });
     document.querySelector('#search-bar').addEventListener('focus', function() {
-        console.log(document.querySelector('#search-bar').value);
+        // console.log(document.querySelector('#search-bar').value);
         // if(document.querySelector('#search-bar').value != ''){
             document.getElementById('cross-btn').classList.remove('hidden');
             document.getElementById('cross-btn-invis').classList.remove('hidden');
@@ -63,7 +63,7 @@ function timelineScrollTo(timelineDate, offset) {
         offset = -(viewportHeight * 0.2); // scroll to 20% above the item
     }
 
-    console.log(timelineDate.className.search("thing-"));
+    // console.log(timelineDate.className.search("thing-"));
     var j = timelineDate.className.search("thing-"); // index of where the className starts
     var i = j + 6;
     var c = "thing-";
@@ -71,11 +71,11 @@ function timelineScrollTo(timelineDate, offset) {
         i < timelineDate.className.length &&
         timelineDate.className.charAt(i) != " "
     ) {
-        console.log(timelineDate.className.charAt(i));
+        // console.log(timelineDate.className.charAt(i));
         c += timelineDate.className.charAt(i);
         i++;
     }
-    console.log(c);
+    // console.log(c);
     var item = document.getElementById(c);
     var itemY = item.getBoundingClientRect().top + window.scrollY;
 
@@ -92,7 +92,6 @@ function timelineScrollTo(timelineDate, offset) {
     //     item.classList.add('popAnim');
     // }
 }
-
 function updateTimeline() {
     let aspectRatio = calcAspectRatio();
     // console.log(aspectRatio);
@@ -105,7 +104,7 @@ function updateTimeline() {
     }
 }
 function updateHighlightedItem() {
-    updateTimeline();
+    // updateTimeline();
     let pageContent = document.getElementById("pageContent");
 
     var distanceFromTopToBeSelected = innerHeight / 4;
@@ -137,16 +136,18 @@ function updateHighlightedItem() {
         pageContent.children[i].classList.remove("lookingAt");
     }
 
-    // scales up the thing ur looking at
-    itemBeingLookedAt.classList.add("lookingAt");
+    // // scales up the thing ur looking at
+    // itemBeingLookedAt.classList.add("lookingAt");
 
     //vibrate
-    if (prev_look_at != itemBeingLookedAt) {
-        window.navigator.vibrate(20);
-        console.log("buzz buzz");
-    }
-    prev_look_at = itemBeingLookedAt;
+    // if (prev_look_at != itemBeingLookedAt) {
+    //     window.navigator.vibrate(20);
+    //     console.log("buzz buzz");
+    // }
     // bolding timeline
+
+    prev_look_at = itemBeingLookedAt;
+
     for (
         let i = 0;
         i < document.getElementById("timeline").children.length;
@@ -172,6 +173,39 @@ function updateHighlightedItem() {
                 itemBeingLookedAt.offsetHeight / 2 +
                 "px"
         );
+}
+function updateMobileMonthTxtPosition(){
+    let expandedYear;
+
+    for(let i = 0; i < document.getElementsByClassName('m-timeline-year-content').length; i++){
+        if(!(document.getElementsByClassName('m-timeline-year-content')[i].classList.contains('m-timeline-year-hidden'))){
+            expandedYear = document.getElementsByClassName('m-timeline-year-content')[i];
+        }
+    }
+
+    // expandedYear.style.background = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+    let selector = expandedYear.getElementsByClassName('m-timeline-selector')[0];
+
+    for(let i = 0; i < expandedYear.getElementsByClassName('m-timeline-month-container').length; i++){
+    // for(let i = 0; i < 1; i++){
+        let monthTxtContainer = expandedYear.getElementsByClassName('m-timeline-month-container')[i];
+        let monthTxt = monthTxtContainer.getElementsByClassName('m-timeline-month')[0];
+
+        let yTop = 0;
+        let yBottom = monthTxtContainer.offsetHeight - document.getElementsByClassName('m-timeline-day')[0].offsetHeight;
+
+        monthTxt.style.transform = 'translate(0px, 0px)';
+        diff = selector.getBoundingClientRect().top - monthTxt.getBoundingClientRect().top;
+
+        console.log(diff);
+        // Math.min(Math.max(num, min), max);
+        diff = Math.min(Math.max(diff, yTop), yBottom);
+
+        console.log(diff);
+
+        monthTxt.style.transform = 'translate(0px, '+ diff +'px)';
+    }
 }
 function toggleMobileTimeline(override) {
     a = calcAspectRatio();
@@ -214,7 +248,7 @@ function topRightButtonClicked(){
         let offset = window.innerHeight * 0.05;
         window.scrollTo(0, thing.getBoundingClientRect().top  + window.scrollY - offset);
 
-        console.log(thing.getBoundingClientRect().top  + window.scrollY);
+        // console.log(thing.getBoundingClientRect().top  + window.scrollY);
         document.querySelector('#debug-selected-pub').style.top = thing.getBoundingClientRect().top + window.scrollY;
     }
     else if (topRightBtnState == "search"){
@@ -226,12 +260,13 @@ function mTimelineToggleYear(elementYear, element) {
     // m-timeline-dropdown-arrow
     expandedYear = elementYear;
 
+    // RESET the direction of each dropdown arrow
     for (
         let i = 0;
         i < document.getElementsByClassName("m-timeline-dropdown-arrow").length;
         i++
     ) {
-        console.log(element.querySelector(".m-timeline-dropdown-arrow"));
+        // console.log(element.querySelector(".m-timeline-dropdown-arrow"));
         if (
             document.getElementsByClassName("m-timeline-dropdown-arrow")[i].isSameNode(
             element.querySelector(".m-timeline-dropdown-arrow"))
@@ -247,6 +282,7 @@ function mTimelineToggleYear(elementYear, element) {
         .classList.toggle("rotateDown");
     document.getElementsByClassName(elementYear)[1].querySelector(".m-timeline-selector").classList.toggle("m-selector-hidden");
 
+    // HIDE all the content elements but the one oyu want
     let mTimeline = document.getElementById("m-timeline");
     for (let i = 0; i < mTimeline.children.length; i++) {
         let item = mTimeline.children[i];
@@ -257,11 +293,19 @@ function mTimelineToggleYear(elementYear, element) {
                 continue;
             }
             item.classList.toggle("m-timeline-year-hidden");
+            // Check for if exanding the element to add updateMobileMonthTxtPosition() function
+            if(!item.classList.contains("m-timeline-year-hidden")){
+                item.setAttribute("onscroll", "updateMobileMonthTxtPosition()");
+                updateMobileMonthTxtPosition();
+            }
         }
     }
+
+    
+
 }
 function updateTopRightButton(state) {
-    console.log(state);
+    // console.log(state);
     if (state == "calendar") {
         // document.querySelector("#search-bar").focus();
         document.getElementById("calendar-icon").classList.remove("hidden");
@@ -301,7 +345,7 @@ function clearQuery(){
 }
 function getMTimelineSelected(){
     if(expandedYear != undefined){
-        console.log(expandedYear);
+        // console.log(expandedYear);
         let thingID;
         let yearDateContainer = document.getElementsByClassName(expandedYear)[1];
         let selector = yearDateContainer.getElementsByClassName("m-timeline-selector")[0];
@@ -312,14 +356,14 @@ function getMTimelineSelected(){
 
         for(let i = 0; i < yearDateContainer.getElementsByClassName("m-timeline-day").length; i++){
             let y = yearDateContainer.getElementsByClassName("m-timeline-day")[i].getBoundingClientRect().top;
-            console.log(i + "       " + y + "       " + Math.abs(y-targety));
+            // console.log(i + "       " + y + "       " + Math.abs(y-targety));
             if(Math.abs(y-targety) < closestDayDelta || closestDayDelta == -1){
                 closestDayDelta = Math.abs(y-targety);
                 closestDay = i;
 
             } 
         }
-        console.log(yearDateContainer.getElementsByClassName("m-timeline-day")[closestDay].classList);
+        // console.log(yearDateContainer.getElementsByClassName("m-timeline-day")[closestDay].classList);
         let closestDayClasses = yearDateContainer.getElementsByClassName("m-timeline-day")[closestDay].classList;
 
         for(let i = 0; i < closestDayClasses.length; i++){
@@ -328,7 +372,7 @@ function getMTimelineSelected(){
             }
         }
         let thing = document.getElementById(thingID);
-        console.log(thing);
+        // console.log(thing);
         return thing;
     }
     return 0;

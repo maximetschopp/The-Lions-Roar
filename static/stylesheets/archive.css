@@ -295,7 +295,7 @@ input:focus{
     font-style: none;
     font-size: calc(var(--search-bar-height) * 0.5);
     height: calc(var(--search-bar-height) * 0.8);
-    padding-top: calc(var(--search-bar-height) * 0.1);
+    padding-top: calc(var(--search-bar-height) * 0.13);
     margin: 0;
     margin-left: 40%;
     margin-right: 20%;

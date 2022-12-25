@@ -642,7 +642,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         width: 100%;
     }
     .archive-publication{
-        max-width: 120vh;
+        max-width: 150vh;
         width: calc(80% - var(--timeline-width));
         margin: auto;
         translate: 10vh 0;

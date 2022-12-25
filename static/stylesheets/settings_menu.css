@@ -269,10 +269,11 @@
     width: 26px;
     width: calc(var(--sm-width) * 0.07);
     height: calc(var(--sm-width) * 0.07);
-    left: 4px;
-    bottom: 4px;
+    /* left: 4px;
+    bottom: 4px; */
     left: calc(var(--sm-width) * 0.011);
-    bottom: calc(var(--sm-width) * 0.011);
+    top: 50%;
+    transform: translateY(-50%);
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -281,6 +282,10 @@ input:checked + .slider {
     background-color: #09bf49;
 }
 input:checked + .slider:before {
+    /* -webkit-transform: translateX( calc( var(--sm-width) * 0.16 - 8.5 *  var(--sm-width) * 0.011));
+    -ms-transform: translateX( calc( var(--sm-width) * 0.16 - 8.5 *  var(--sm-width) * 0.011));
+    transform: translateX( calc( var(--sm-width) * 0.16 - 8.5 *  var(--sm-width) * 0.011)); */
+
     -webkit-transform: translateX( calc( var(--sm-width) * 0.16 - 8.5 *  var(--sm-width) * 0.011)) translateY(-50%);
     -ms-transform: translateX( calc( var(--sm-width) * 0.16 - 8.5 *  var(--sm-width) * 0.011)) translateY(-50%);
     transform: translateX( calc( var(--sm-width) * 0.16 - 8.5 *  var(--sm-width) * 0.011)) translateY(-50%);

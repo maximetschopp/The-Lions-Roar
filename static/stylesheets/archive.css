@@ -122,6 +122,8 @@ input:focus{
     background: var(--window-item-BGcolor);
     border: var(--window-border);
     border-radius: 0 3rem 3rem 0;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
 }
 .timeline-year{
     position: relative;
@@ -136,14 +138,16 @@ input:focus{
     user-select: none;
     cursor: pointer;
     color: var(--text-color);
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
 }
 .timeline-month{
     position: relative;
     width: 3vh;
     height: 0.5vh;
     background: var(--text-color);
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     /* position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;

@@ -398,8 +398,6 @@ function updateDesktopTimeline(){
     // console.log('hi');
     let item = getActiveItem();
 
-    item.style.backgroundColor = 'red';
-
     let thing_id = item.id;
     let itemIndex;
 

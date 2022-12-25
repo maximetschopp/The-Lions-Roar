@@ -1,6 +1,7 @@
 var topRightBtnState = "calendar"; // calendar, check, search, cross
 var prev_look_at = null;
 var expandedYear = null;
+var mTimelinePrevSelected = null;
 
 addEventListener("scroll", (event) => {
     a = calcAspectRatio();
@@ -21,11 +22,9 @@ addEventListener("resize", (event) => {
     } else if (a == "tablet") {
         updateTimeline();
         updateHighlightedItem();
-    } else {
-        // console.log('desktop');
+    } else { //desktop
         updateTimeline();
         updateHighlightedItem();
-        toggleMobileTimeline(false);
         updateTopRightButton('calendar');
     }
 });
@@ -96,11 +95,12 @@ function updateTimeline() {
     let aspectRatio = calcAspectRatio();
     // console.log(aspectRatio);
     if (aspectRatio == "mobile" || aspectRatio == "tablet") {
-        document.getElementById("m-timeline").style = "";
+        document.getElementById("m-timeline").classList.add('m-timeline-collapsed');
         document.getElementById("timeline").style.display = "none";
     } else {
         document.getElementById("timeline").style = "";
-        document.getElementById("m-timeline").style.display = "none";
+        document.getElementById("m-timeline").classList.remove('m-timeline-collapsed');
+        // document.getElementById("m-timeline").style.display = "none";
     }
 }
 function updateHighlightedItem() {
@@ -148,19 +148,19 @@ function updateHighlightedItem() {
 
     prev_look_at = itemBeingLookedAt;
 
-    for (
-        let i = 0;
-        i < document.getElementById("timeline").children.length;
-        i++
-    ) {
-        document
-            .getElementById("timeline")
-            .children[i].classList.remove("timeline-bold");
-    }
-    document
-        .getElementById("timeline")
-        .getElementsByClassName(itemBeingLookedAt.id)[0]
-        .classList.add("timeline-bold");
+    // for (
+    //     let i = 0;
+    //     i < document.getElementById("timeline").children.length;
+    //     i++
+    // ) {
+    //     document
+    //         .getElementById("timeline")
+    //         .children[i].classList.remove("timeline-bold");
+    // }
+    // document
+    //     .getElementById("timeline")
+    //     .getElementsByClassName(itemBeingLookedAt.id)[0]
+    //     .classList.add("timeline-bold");
 
     // document
     //     .getElementById("debug-dist-top")
@@ -198,25 +198,28 @@ function updateMobileMonthTxtPosition(){
         monthTxt.style.transform = 'translate(0px, 0px)';
         diff = selector.getBoundingClientRect().top - monthTxt.getBoundingClientRect().top;
 
-        console.log(diff);
+        // console.log(diff);
         // Math.min(Math.max(num, min), max);
         diff = Math.min(Math.max(diff, yTop), yBottom);
 
-        console.log(diff);
+        // console.log(diff);
 
         monthTxt.style.transform = 'translate(0px, '+ diff +'px)';
     }
 }
 function toggleMobileTimeline(override) {
-    a = calcAspectRatio();
-
+    a = calcAspectRatio();  
+    
     if(override!= undefined){
         if(!override){
             document
                 .getElementById("m-timeline")
                 .classList.add("m-timeline-collapsed");
             document.querySelector("body").style = "";
-            
+        } else {
+            document
+                .getElementById("m-timeline")
+                .classList.remove("m-timeline-collapsed");
         }
     }
     else if (a == "mobile" || a == "tablet") {
@@ -241,7 +244,6 @@ function toggleMobileTimeline(override) {
 function topRightButtonClicked(){
     if(topRightBtnState == "calendar" ){
         toggleMobileTimeline();
-
     } else if(topRightBtnState == "checkmark" ){
         let thing = getMTimelineSelected();
         toggleMobileTimeline();
@@ -255,6 +257,15 @@ function topRightButtonClicked(){
         search();
     }
 }
+function mouseLeaveMTimeline(){
+    // console.log("mouseLeaveMTimeline");
+    let thing = getMTimelineSelected();
+    if(mTimelinePrevSelected == null || thing != mTimelinePrevSelected){
+        let offset = window.innerHeight * 0.12;
+        window.scrollTo({ top: thing.getBoundingClientRect().top  + window.scrollY - offset, behavior: 'smooth' });
+    }
+    mTimelinePrevSelected = thing;
+} 
 function mTimelineToggleYear(elementYear, element) {
     // m-timeline-dropdown
     // m-timeline-dropdown-arrow
@@ -295,7 +306,7 @@ function mTimelineToggleYear(elementYear, element) {
             item.classList.toggle("m-timeline-year-hidden");
             // Check for if exanding the element to add updateMobileMonthTxtPosition() function
             if(!item.classList.contains("m-timeline-year-hidden")){
-                item.setAttribute("onscroll", "updateMobileMonthTxtPosition()");
+                item.setAttribute("onscroll", "updateMobileMonthTxtPosition(); mouseLeaveMTimeline()");
                 updateMobileMonthTxtPosition();
             }
         }
@@ -374,8 +385,11 @@ function getMTimelineSelected(){
         let thing = document.getElementById(thingID);
         // console.log(thing);
         return thing;
+        
+    } else {
+        // the default thing to show if nothing is selected on the timeline
+        return document.getElementById('thing-1');
     }
-    return 0;
 }
 
 

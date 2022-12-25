@@ -2,6 +2,7 @@ var topRightBtnState = "calendar"; // calendar, check, search, cross
 var prev_look_at = null;
 var expandedYear = null;
 var mTimelinePrevSelected = null;
+var pubDates = {};
 
 addEventListener("scroll", (event) => {
     a = calcAspectRatio();
@@ -9,10 +10,8 @@ addEventListener("scroll", (event) => {
         updateTimeline();
     } else if (a == "tablet") {
         updateTimeline();
-        updateHighlightedItem();
     } else {
         updateTimeline();
-        updateHighlightedItem();
     }
 });
 addEventListener("resize", (event) => {
@@ -21,17 +20,14 @@ addEventListener("resize", (event) => {
         updateTimeline();
     } else if (a == "tablet") {
         updateTimeline();
-        updateHighlightedItem();
     } else { //desktop
         updateTimeline();
-        updateHighlightedItem();
         updateTopRightButton('calendar');
     }
 });
 
 function ready(){
     updateTimeline();
-    updateHighlightedItem();
 
     // document.querySelector('#search-bar').addEventListener('mouseleave', e => e.target.blur());
     document.querySelector('#search-bar').addEventListener("blur", function() {
@@ -98,12 +94,13 @@ function updateTimeline() {
         document.getElementById("m-timeline").classList.add('m-timeline-collapsed');
         document.getElementById("timeline").style.display = "none";
     } else {
+        updateDesktopTimeline();
         document.getElementById("timeline").style = "";
         document.getElementById("m-timeline").classList.remove('m-timeline-collapsed');
         // document.getElementById("m-timeline").style.display = "none";
     }
 }
-function updateHighlightedItem() {
+function getActiveItem() {
     // updateTimeline();
     let pageContent = document.getElementById("pageContent");
 
@@ -133,8 +130,10 @@ function updateHighlightedItem() {
             itemBeingLookedAt = pageContent.children[i];
         }
         // remove the 'lookingAt' tag from all the other elements
-        pageContent.children[i].classList.remove("lookingAt");
+        // pageContent.children[i].classList.remove("lookingAt");
     }
+
+    return itemBeingLookedAt;
 
     // // scales up the thing ur looking at
     // itemBeingLookedAt.classList.add("lookingAt");
@@ -146,7 +145,7 @@ function updateHighlightedItem() {
     // }
     // bolding timeline
 
-    prev_look_at = itemBeingLookedAt;
+    // prev_look_at = itemBeingLookedAt;
 
     // for (
     //     let i = 0;
@@ -260,7 +259,6 @@ function topRightButtonClicked(){
 function timelineDesktopLiveSelect(){
     // console.log("timelineDesktopLiveSelect");
     a = calcAspectRatio();
-    console.log('yeah');
     if( a == "desktop"){
         let thing = getMTimelineSelected();
         if( a === "desktop" && (mTimelinePrevSelected == null || thing != mTimelinePrevSelected)){
@@ -396,6 +394,102 @@ function getMTimelineSelected(){
     }
 }
 
+function updateDesktopTimeline(){
+    // console.log('hi');
+    let item = getActiveItem();
+
+    item.style.backgroundColor = 'red';
+
+    let thing_id = item.id;
+    let itemIndex;
+
+    let isInFuture = true;
+    let isInPresent = false;
+
+    let futureYears = [];
+    let futureMonths = [];
+    let currYear = item.attributes.getNamedItem('pubDate').value.split('-')[2];
+    let currMonth = item.attributes.getNamedItem('pubDate').value.split('-')[1];
+    let pastYears = [];
+    let pastMonths = [];
+
+
+    for(let i = 0; i < document.getElementsByClassName('archive-publication').length; i++){
+        let j = document.getElementsByClassName('archive-publication')[i];
+
+        // console.log(j.id + "  " + thing_id + " " + (j.id === thing_id));  
+        if(j.id === thing_id){
+            isInFuture = false;
+            continue;
+        }
+
+        newDate = j.attributes.getNamedItem('pubDate').value.split('-');
+        // console.log(newDate);
+
+        // check if year already exits in future, if not add
+        if(isInFuture && newDate[2] != currYear && !futureYears.includes(newDate[2])){
+            futureYears.push(newDate[2]);
+        }
+        //check if month doesnt exist yet in future, if not add
+        if(isInFuture && newDate[2] === currYear && newDate[1] != currMonth && !futureMonths.includes(newDate[1])){
+            futureMonths.push(newDate[1]);
+        }
+
+        //check if year already exists in past, if not add
+        if(!isInFuture && newDate[2] != currYear && !pastYears.includes(newDate[2])){
+            pastYears.push(newDate[2]);
+        }
+        //check if month doesnt exist yet, if not add
+        if(!isInFuture && newDate[2] === currYear && newDate[1] != currMonth && !pastMonths.includes(newDate[1])){
+            pastMonths.push(newDate[1]);
+        }
+
+    }
+    // console.log('-------')
+    // console.log(futureYears);
+    // console.log(futureMonths);
+    // console.log(pastYears);
+    // console.log(pastMonths);
+
+    let timeline = document.getElementById('timeline');
+    timeline.innerHTML = '';
+
+    //CONSTRUCTING DEKSTOP TIMELINE
+    for(let i = 0; i < futureYears.length; i++){
+        let yearDiv = document.createElement('div');
+        yearDiv.classList.add('timeline-year');
+        yearDiv.innerHTML = futureYears[i];
+        timeline.appendChild(yearDiv);
+    }
+
+    let yearDiv = document.createElement('div');
+    yearDiv.classList.add('timeline-year');
+    yearDiv.innerHTML = currYear;
+    timeline.appendChild(yearDiv);
+
+    for(let i = 0; i < futureMonths.length; i++){
+        let monthDiv = document.createElement('div');
+        monthDiv.classList.add('timeline-month');
+        timeline.appendChild(monthDiv);
+    }
+
+    let indicator = document.createElement('div');
+    indicator.id = 'timeline-indicator';
+    timeline.appendChild(indicator);
+    
+    for(let i = 0; i < pastMonths.length; i++){
+        let monthDiv = document.createElement('div');
+        monthDiv.classList.add('timeline-month');
+        timeline.appendChild(monthDiv);
+    }
+    for(let i = 0; i < pastYears.length; i++){
+        let yearDiv = document.createElement('div');
+        yearDiv.classList.add('timeline-year');
+        yearDiv.innerHTML = pastYears[i];
+        timeline.appendChild(yearDiv);
+    }
+
+}
 
 function calcAspectRatio() {
     let ratio = window.innerWidth / window.innerHeight;

@@ -109,11 +109,19 @@ input:focus{
     top: 0;
 }
 
-.timeline-bold{
+/* .timeline-bold{
     font-weight: 600 !important;
     color: var(--sidebar-text-color-highlighted);
     font-style: italic;
     transition: color 1s ease-in-out;
+} */
+#timeline-indicator{
+    position: relative;
+    width: 8vh;
+    height: 2vh;
+    background: var(--window-item-BGcolor);
+    border: var(--window-border);
+    border-radius: 0 3rem 3rem 0;
 }
 .timeline-year{
     position: relative;
@@ -131,6 +139,12 @@ input:focus{
 }
 .timeline-month{
     position: relative;
+    width: 3vh;
+    height: 0.5vh;
+    background: var(--text-color);
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    /* position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -142,9 +156,9 @@ input:focus{
     z-index: 999;
     user-select: none;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--text-color); */
 }
-.timeline-day{
+/* .timeline-day{
     position: relative;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;
@@ -158,7 +172,7 @@ input:focus{
     user-select: none;
     cursor: pointer;
     color: var(--text-color);
-}
+} */
 
 
 #m-timeline{
@@ -588,7 +602,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         display: none !important;
     }
     #m-timeline{
-        width: 15%;
+        width: 12%;
         left: var(--tab-bar-dekstop-width);
         margin-left: 0px;
         translate: none;
@@ -607,19 +621,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         border: var(--window-border);
     }
     #timeline{
-        border-radius: 0 1rem 1rem 0;
         position: fixed;
+        display: flex;
+        flex-direction: column;
         top: 50%;
         transform: translate(0, -50%);
         width: fit-content;
-        padding-right: 20px;
-        padding-left: 5px;
-        padding-top: 5px;
-        padding-bottom: 5px;
         height: fit-content;
-        background: var(--window-BG);
-        border: var(--window-border);
-        box-shadow: var(--box-shadow);
         animation: none;
     }
     #search-bar-container{
@@ -643,7 +651,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         scale: 1.075;
         transition: scale 0.2s;
     }
-
 }
 
 

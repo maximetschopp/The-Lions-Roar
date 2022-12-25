@@ -131,7 +131,7 @@ input:focus{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: calc(2vh + 5px);
+    font-size: calc(2.5vh + 5px);
     line-height: calc(2.4vh + 13px);
     margin: 0;
     text-align: left;
@@ -188,7 +188,6 @@ input:focus{
     justify-content: start;
 
     overflow-x: hidden;
-    overflow-y: auto;
 
     left: 50%;
     top: calc( var(--search-bar-height) + 2vh + 1em);
@@ -643,6 +642,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         width: 100%;
     }
     .archive-publication{
+        max-width: 120vh;
         width: calc(80% - var(--timeline-width));
         margin: auto;
         translate: 10vh 0;

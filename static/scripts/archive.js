@@ -257,14 +257,18 @@ function topRightButtonClicked(){
         search();
     }
 }
-function mouseLeaveMTimeline(){
-    // console.log("mouseLeaveMTimeline");
-    let thing = getMTimelineSelected();
-    if(mTimelinePrevSelected == null || thing != mTimelinePrevSelected){
-        let offset = window.innerHeight * 0.12;
-        window.scrollTo({ top: thing.getBoundingClientRect().top  + window.scrollY - offset, behavior: 'smooth' });
+function timelineDesktopLiveSelect(){
+    // console.log("timelineDesktopLiveSelect");
+    a = calcAspectRatio();
+    console.log('yeah');
+    if( a == "desktop"){
+        let thing = getMTimelineSelected();
+        if( a === "desktop" && (mTimelinePrevSelected == null || thing != mTimelinePrevSelected)){
+            let offset = window.innerHeight * 0.12;
+            window.scrollTo({ top: thing.getBoundingClientRect().top  + window.scrollY - offset, behavior: 'smooth' });
+        }
+        mTimelinePrevSelected = thing;
     }
-    mTimelinePrevSelected = thing;
 } 
 function mTimelineToggleYear(elementYear, element) {
     // m-timeline-dropdown
@@ -306,7 +310,7 @@ function mTimelineToggleYear(elementYear, element) {
             item.classList.toggle("m-timeline-year-hidden");
             // Check for if exanding the element to add updateMobileMonthTxtPosition() function
             if(!item.classList.contains("m-timeline-year-hidden")){
-                item.setAttribute("onscroll", "updateMobileMonthTxtPosition(); mouseLeaveMTimeline()");
+                item.setAttribute("onscroll", "updateMobileMonthTxtPosition(); timelineDesktopLiveSelect()");
                 updateMobileMonthTxtPosition();
             }
         }

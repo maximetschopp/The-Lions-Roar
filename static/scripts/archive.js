@@ -162,17 +162,17 @@ function updateHighlightedItem() {
         .getElementsByClassName(itemBeingLookedAt.id)[0]
         .classList.add("timeline-bold");
 
-    document
-        .getElementById("debug-dist-top")
-        .style.setProperty("top", distanceFromTopToBeSelected + "px");
-    document
-        .getElementById("debug-dist-top-closest")
-        .style.setProperty(
-            "top",
-            itemBeingLookedAt.getBoundingClientRect().top +
-                itemBeingLookedAt.offsetHeight / 2 +
-                "px"
-        );
+    // document
+    //     .getElementById("debug-dist-top")
+    //     .style.setProperty("top", distanceFromTopToBeSelected + "px");
+    // document
+    //     .getElementById("debug-dist-top-closest")
+    //     .style.setProperty(
+    //         "top",
+    //         itemBeingLookedAt.getBoundingClientRect().top +
+    //             itemBeingLookedAt.offsetHeight / 2 +
+    //             "px"
+    //     );
 }
 function updateMobileMonthTxtPosition(){
     let expandedYear;
@@ -312,7 +312,7 @@ function updateTopRightButton(state) {
         document.getElementById("checkmark-icon").classList.add("hidden");
         document.getElementById("search-icon2").classList.add("hidden");
         topRightBtnState = "calendar";
-        window.scrollTo(0,0);
+        // window.scrollTo(0,0);
     } else if (state == "checkmark") {
         document.getElementById("checkmark-icon").classList.remove("hidden");
         document.getElementById("calendar-icon").classList.add("hidden");
@@ -323,7 +323,7 @@ function updateTopRightButton(state) {
         document.getElementById("checkmark-icon").classList.add("hidden");
         document.getElementById("calendar-icon").classList.add("hidden");
         topRightBtnState = "search";
-        window.scrollTo(0,0);
+        // window.scrollTo(0,0);
         toggleMobileTimeline(false);
         
         const appleExpression = /Apple/i;

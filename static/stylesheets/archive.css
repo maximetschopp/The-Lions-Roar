@@ -2,7 +2,6 @@
     --color1: #898989;
     --color2: #474747;
     --timeline-width: 12%;
-    --search-bar-height: max(0.5cm, 2rem);
     --search-bar-height: max(5.5vh, 40px);
     --archive-BGcolor: #0f0f0f;
 }
@@ -11,7 +10,7 @@
 
 }
 
-body {
+body{
     background: var(--background-color);
     margin: 0;
     top: 0;
@@ -21,11 +20,12 @@ body {
     height: var(--search-bar-height);
     margin-top: 1em;
     display: flex;
-    position: relative;
+    position: fixed;
     gap: 5px;
     width: 95%;
     margin-inline: 2.5%;
     margin-bottom: 6vh;
+    z-index: 200;
 }
 #search-bar-container{
     width: 90%;
@@ -44,6 +44,8 @@ input{
     width: 100%;
     height: 100%;
     box-shadow: var(--box-shadow);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
 }
 input:focus{
     outline: none;
@@ -65,6 +67,8 @@ input:focus{
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     box-sizing:border-box;
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
 }
 .topRightButton{
     margin-inline: auto;
@@ -341,6 +345,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
+    #pageContent{
+        padding-top: calc(var(--search-bar-height) + 5vh);
+    }
     .archive-publication{
         grid-template-columns: max(100px, 45%) auto 4vh;
         width: 95%;
@@ -440,7 +447,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 /* at >1 : 1 Ipad view */
 @media (min-aspect-ratio: 1/1) {
     #pageContent{
-        padding-top: 2vh;
+        padding-top: calc(var(--search-bar-height) + 8vh);
     }
     #m-timeline{
         width: calc(100vh - var(--tab-bar-dekstop-width));
@@ -450,7 +457,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         box-shadow: var(--box-shadow);
     }
     #top-bar-container{
-        position: relative;
         width: calc(95% - var(--tab-bar-dekstop-width));
         margin-left: calc( 2.5% + var(--tab-bar-dekstop-width));
         margin-right: 2.5%;

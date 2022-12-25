@@ -84,6 +84,7 @@ input:focus{
     /*border-bottom: 1px solid #898989;*/
     scale: 1;
     transition: scale 0.1s;
+    /* max-width: 100vh; */
 }
 .archive-result{
     position: relative;
@@ -618,7 +619,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         border-radius: 0 3rem 3rem 0;
         opacity: 0;
         border: none;
-        overflow-y: scroll;
+        overflow-y: auto;
         transition: opacity 0.15s ease-in, width 0.15s ease-in;
     }
     #m-timeline:hover{
@@ -644,7 +645,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     .archive-publication{
         width: calc(80% - var(--timeline-width));
         margin: auto;
-        margin-right: 10%;
+        translate: 10vh 0;
     }
     .archive-result{
         width: calc(80% - var(--timeline-width));

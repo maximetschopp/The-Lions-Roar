@@ -69,9 +69,14 @@
 }
 
 
+
 .icon-fill{
     fill: white;
 }
 .lightmode .icon-fill{
     fill: black;
+}
+
+.hidden{
+    display: none;
 }

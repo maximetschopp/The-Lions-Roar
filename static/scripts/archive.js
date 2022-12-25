@@ -3,6 +3,7 @@ var prev_look_at = null;
 var expandedYear = null;
 var mTimelinePrevSelected = null;
 var pubDates = {};
+const months = ['Janruary', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 addEventListener("scroll", (event) => {
     a = calcAspectRatio();
@@ -91,12 +92,11 @@ function updateTimeline() {
     let aspectRatio = calcAspectRatio();
     // console.log(aspectRatio);
     if (aspectRatio == "mobile" || aspectRatio == "tablet") {
-        document.getElementById("m-timeline").classList.add('m-timeline-collapsed');
+        // document.getElementById("m-timeline").classList.add('m-timeline-collapsed');
         document.getElementById("timeline").style.display = "none";
     } else {
         updateDesktopTimeline();
         document.getElementById("timeline").style = "";
-        document.getElementById("m-timeline").classList.remove('m-timeline-collapsed');
         // document.getElementById("m-timeline").style.display = "none";
     }
 }
@@ -209,48 +209,53 @@ function updateMobileMonthTxtPosition(){
 function toggleMobileTimeline(override) {
     a = calcAspectRatio();  
     
-    if(override!= undefined){
-        if(!override){
-            document
-                .getElementById("m-timeline")
-                .classList.add("m-timeline-collapsed");
-            document.querySelector("body").style = "";
+    if (a == "mobile" || a == "tablet") {
+        if(override!= undefined){
+            if(!override){  // if false || if should hide the m-timeline
+                document
+                    .getElementById("m-timeline")
+                    .classList.add("m-timeline-collapsed");
+                document.querySelector("body").style = "";
+            } else {
+                document
+                    .getElementById("m-timeline")
+                    .classList.remove("m-timeline-collapsed");
+            }
         } else {
             document
                 .getElementById("m-timeline")
-                .classList.remove("m-timeline-collapsed");
-        }
-    }
-    else if (a == "mobile" || a == "tablet") {
-        document
-            .getElementById("m-timeline")
-            .classList.toggle("m-timeline-collapsed");
+                .classList.toggle("m-timeline-collapsed");
 
-        if (document.querySelector("body").style.overflow == "hidden") {
-            document.querySelector("body").style = "";
-            updateTopRightButton("calendar");
+            
+        }
+        if (document.querySelector("#m-timeline").classList.contains("m-timeline-collapsed")) {
+            // document
+            //     .querySelector("body")
+            //     .style.setProperty("overflow", "hidden");
         } else {
-            document.querySelector("body").style = "";
             document
-                .querySelector("body")
-                .style.setProperty("overflow", "hidden");
-            updateTopRightButton("checkmark");
+            .querySelector("body")
+            .style.setProperty("overflow", "auto");
+            updateTopRightButton("calendar");
         }
     }
 
     
 }
 function topRightButtonClicked(){
+    console.log(topRightBtnState);
     if(topRightBtnState == "calendar" ){
-        toggleMobileTimeline();
+        toggleMobileTimeline(true);
+        updateTopRightButton('checkmark');
+        
     } else if(topRightBtnState == "checkmark" ){
+        
         let thing = getMTimelineSelected();
-        toggleMobileTimeline();
+        toggleMobileTimeline(false);
         let offset = window.innerHeight * 0.05;
         window.scrollTo(0, thing.getBoundingClientRect().top  + window.scrollY - offset);
-
-        // console.log(thing.getBoundingClientRect().top  + window.scrollY);
-        document.querySelector('#debug-selected-pub').style.top = thing.getBoundingClientRect().top + window.scrollY;
+        // document.querySelector('#debug-selected-pub').style.top = thing.getBoundingClientRect().top + window.scrollY;
+        updateTopRightButton('calendar');
     }
     else if (topRightBtnState == "search"){
         search();
@@ -336,8 +341,11 @@ function updateTopRightButton(state) {
         document.getElementById("checkmark-icon").classList.add("hidden");
         document.getElementById("calendar-icon").classList.add("hidden");
         topRightBtnState = "search";
-        // window.scrollTo(0,0);
-        toggleMobileTimeline(false);
+        
+        a = calcAspectRatio();
+        if (a != 'desktop'){
+            toggleMobileTimeline(false);
+        }
         
         const appleExpression = /Apple/i;
         const safariExpression = /Safari/i;
@@ -441,13 +449,7 @@ function updateDesktopTimeline(){
         if(!isInFuture && newDate[2] === currYear && newDate[1] != currMonth && !pastMonths.includes(newDate[1])){
             pastMonths.push(newDate[1]);
         }
-
     }
-    // console.log('-------')
-    // console.log(futureYears);
-    // console.log(futureMonths);
-    // console.log(pastYears);
-    // console.log(pastMonths);
 
     let timeline = document.getElementById('timeline');
     timeline.innerHTML = '';
@@ -473,6 +475,7 @@ function updateDesktopTimeline(){
 
     let indicator = document.createElement('div');
     indicator.id = 'timeline-indicator';
+    indicator.innerHTML = months[currMonth];
     timeline.appendChild(indicator);
     
     for(let i = 0; i < pastMonths.length; i++){

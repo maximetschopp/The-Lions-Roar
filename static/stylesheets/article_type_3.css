@@ -61,6 +61,7 @@
     font-family: neue-haas-grotesk-display, sans-serif;
     position: relative;
     font-size: max(2.0vh, 6px);
+    letter-spacing: 0.17vw;
     margin: 0;
     color: var(--a3-text-color);
     overflow: hidden;
@@ -78,6 +79,7 @@
     font-weight: 300;
     position: relative;
     font-size: max(1.8vh, 4px);
+    letter-spacing: 0.17vw;
     color: var(--a3-text-color);
     margin-top: 3px;
 }
@@ -101,6 +103,7 @@
     .article3-author{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(1.8vh, 6px);
+        letter-spacing: 0.07vh;
         font-weight: 300;
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/
@@ -115,5 +118,8 @@
         -webkit-line-clamp: 1; /* number of lines to show */
         line-clamp: 1; 
         -webkit-box-orient: vertical;
+    }
+    .article3-title{
+        letter-spacing: 0.1vh;
     }
 }

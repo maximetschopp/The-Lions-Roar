@@ -41,6 +41,7 @@
     left: 3vh;
     width: 55%;
     font-size: max(2.8vh, 8px);
+    letter-spacing: 0.03vh;
     filter: drop-shadow(2px 2px 7px var(--a2-text-shadow));
     color: var(--a2-text-color);
     overflow: hidden;
@@ -62,6 +63,9 @@
         margin-top: 5%;
         border-radius: var(--a2-border-radius);
         overflow: hidden;
+    }
+    .article2-title{
+        letter-spacing: 0.16vw;
     }
     .article2-thumbnail{
         width: 100%;

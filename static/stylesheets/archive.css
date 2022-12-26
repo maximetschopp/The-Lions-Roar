@@ -38,8 +38,9 @@ input{
     border-radius: 20000px;
     font-family: neue-haas-grotesk-display, sans-serif;
     text-indent: calc( var(--search-bar-height) / 2);
-    font-size: 1rem;
-    font-weight: 100;
+    font-size: max(2vh, 20px);
+    font-weight: 400;
+    letter-spacing: 1px;
     color: var(--text-color);
     width: 100%;
     height: 100%;
@@ -129,6 +130,7 @@ input:focus{
     padding-inline: 2vh;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;
+    font-size: max(2vh, 15px);
     color: var(--text-color);
     text-align: center;
 }

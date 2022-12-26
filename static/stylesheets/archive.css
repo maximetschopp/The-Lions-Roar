@@ -423,6 +423,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     .archive-title{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(2vw, 8px);
+        letter-spacing: 0.13vw;
+        margin-top: 2vw;
         font-weight: 300;
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/
@@ -435,7 +437,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         line-clamp: 3; 
         -webkit-box-orient: vertical;
         color: var(--text-color);
-        letter-spacing: 0.2vh;
     }
     .result-title{
         color: var(--text-color);
@@ -688,9 +689,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin: auto;
         margin-right: 10%;
     }
-    .archive-title{
+    .archive-title{ 
         font-size: max(1vw, 10px);
-        letter-spacing: 0.2vh;
+        letter-spacing: 0.13vh;
     }
     .lookingAt{
         scale: 1.075;

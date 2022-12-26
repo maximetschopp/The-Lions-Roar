@@ -1,0 +1,78 @@
+:root{
+    --modal-BG: rgb(26, 26, 26);
+}
+
+#modal-container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+}
+.modal-container-hidden{
+    display: none;
+}
+#modal-blur{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(var(--blur));
+    background: rgba(0, 0, 0, 0.491);
+}
+#modal{
+    position: relative;
+    top: 0;
+    margin: auto;
+    width: 110vh;
+    height: 100vh;
+    background-color: var(--modal-BG);
+}
+.modal-hidden{
+    display: none;
+}
+#modal-quit-btn{
+    position: absolute;
+    width: 4vh;
+    height: 4vh;
+    top: 2vh;
+    right: 2vh;
+    border-radius: 100%;
+    background: rgb(255, 255, 255);
+}
+#modal-quit-btn-svg{
+    position: relative;
+    margin: 0.5vh;
+    width: 3vh;
+    height: 3vh;
+}
+.modal-fill{
+    fill: black;
+}
+.click-to-exit{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: calc((100vw - 110vh)/2);
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+
+
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: max(2.6vh, 6px);
+    letter-spacing: 0.1vh;
+    color: rgba(255, 255, 255, 0);
+    transition: color 0.2s ease-in-out;
+}
+.click-to-exit:hover{
+    color: white;
+    transition: color 0.2s ease-in-out;
+}
+#right-click-to-exit{
+    left: auto;
+    right: 0;
+}

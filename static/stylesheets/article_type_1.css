@@ -82,6 +82,7 @@
         -webkit-line-clamp: 2; /* number of lines to show */
         line-clamp: 2; 
         -webkit-box-orient: vertical;
+        letter-spacing: 0.2vw;
     }
     .article1-author{
         color: var(--a1-text-color);
@@ -199,6 +200,7 @@
         color: var(--a1-text-color);
         margin-top: 5px;
         font-size: max(1.8vh, 6px);
+        letter-spacing: 0.03vh;
         font-weight: 300;
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/

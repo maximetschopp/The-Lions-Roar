@@ -40,7 +40,7 @@ input{
     text-indent: calc( var(--search-bar-height) / 2);
     font-size: max(2vh, 20px);
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0.2vh;
     color: var(--text-color);
     width: 100%;
     height: 100%;
@@ -131,6 +131,7 @@ input:focus{
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 300;
     font-size: max(2vh, 15px);
+    letter-spacing: 0.2vh;
     color: var(--text-color);
     text-align: center;
 }
@@ -402,7 +403,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin: auto;
         height: 2.5vh;
     }   
-    h2{
+    .archive-date{
         width: 100%;
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(4vw, 15px);
@@ -419,7 +420,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         -webkit-box-orient: vertical;
         color: var(--text-color);
     }   
-    h3{
+    .archive-title{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(2vw, 8px);
         font-weight: 300;
@@ -434,6 +435,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         line-clamp: 3; 
         -webkit-box-orient: vertical;
         color: var(--text-color);
+        letter-spacing: 0.2vh;
     }
     .result-title{
         color: var(--text-color);
@@ -541,7 +543,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         width: calc( 100% - 3vw);
         height: 100%;
     } 
-    h2{
+    .archive-date{
         width: 100%;
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(2.2vw, 20px);
@@ -558,9 +560,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         -webkit-box-orient: vertical;
         color: var(--text-color);
     }
-    h3{
+    .archive-title{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-size: max(1.25vw, 10px);
+        letter-spacing: 0.2vh;
         font-weight: 300;
         font-style: normal;
         /*font-size: calc(1.2vh + 7px);*/
@@ -685,8 +688,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin: auto;
         margin-right: 10%;
     }
-    h3{
+    .archive-title{
         font-size: max(1vw, 10px);
+        letter-spacing: 0.2vh;
     }
     .lookingAt{
         scale: 1.075;

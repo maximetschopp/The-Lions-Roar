@@ -212,6 +212,7 @@
     }
     .main-article-author{
         font-size: max(1vw, 8px);
+        letter-spacing: 0.03vh;
         font-family: neue-haas-grotesk-display, sans-serif;
         color: var(--ma-text-color);
         margin-top: 3px !important;

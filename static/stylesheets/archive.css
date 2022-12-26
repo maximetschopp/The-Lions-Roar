@@ -97,6 +97,8 @@ input:focus{
     transition: scale 0.1s;
 }
 .archive-thumbnail{
+    position: relative;
+    background-size: cover;
     aspect-ratio: 16/9;
     background-color: wheat;
     border-radius: 20px;
@@ -156,7 +158,7 @@ input:focus{
     position: relative;
     width: 3vh;
     height: 0.5vh;
-    background: var(--text-color);
+    background: var(--window-border-color);
     margin-top: 1vh;
     margin-bottom: 1vh;
     /* position: relative;
@@ -670,6 +672,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         width: fit-content;
         height: fit-content;
         animation: none;
+        opacity: 1;
+    }
+    .timeline-hidden{
+        opacity: 0;
     }
     .timeline-hidden{
         opacity: 0;
@@ -689,9 +695,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         margin: auto;
         margin-right: 10%;
     }
-    .archive-title{ 
+    .archive-title{
         font-size: max(1vw, 10px);
-        letter-spacing: 0.13vh;
+        letter-spacing: 0.2vh;
     }
     .lookingAt{
         scale: 1.075;

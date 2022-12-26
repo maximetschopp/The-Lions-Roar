@@ -390,12 +390,12 @@ h3{
         margin-inline: auto;
     }
 }</style><style>:root{
-    --tab-bar-height: max(6.5vh, 40px);
-    --tab-bar-dekstop-width: max(26vh, 100px);
-    --tab-bar-desktop-item-height: max(6vh, 30px);
+    --tab_bar-height: max(6.5vh, 40px);
+    --tab_bar-dekstop-width: max(26vh, 100px);
+    --tab_bar-desktop-item-height: max(6vh, 30px);
 }
 
-.tab-bar-invis{
+.tab_bar-invis{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -405,12 +405,12 @@ h3{
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
-    #tab-bar{
+    #tab_bar{
         position: fixed;
         bottom: 0%;
         left: 0%;
         margin-bottom: 0%;
-        height: var(--tab-bar-height);
+        height: var(--tab_bar-height);
         width: 100%;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -419,25 +419,25 @@ h3{
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);   
     }
-    .tab-bar-icon-container{
+    .tab_bar-icon-container{
         position: relative;
         height: 100%;
         width: 100%;
     }
-    .tab-bar-icon{
+    .tab_bar-icon{
         position: absolute;
         left: 50%;
-        height: calc(var(--tab-bar-height) * 0.65);
-        width: calc(var(--tab-bar-height) * 0.65);
-        margin-top: calc(var(--tab-bar-height) * 0.04);
+        height: calc(var(--tab_bar-height) * 0.65);
+        width: calc(var(--tab_bar-height) * 0.65);
+        margin-top: calc(var(--tab_bar-height) * 0.04);
         transform: translate(-50%, 0%);
         margin-inline: auto;
     }
     .wide-icon{
-        height: calc(var(--tab-bar-height) * 0.7) !important;
-        margin-top: calc(var(--tab-bar-height) * 0.017);
+        height: calc(var(--tab_bar-height) * 0.7) !important;
+        margin-top: calc(var(--tab_bar-height) * 0.017);
     }
-    .tab-bar-text{
+    .tab_bar-text{
         font-family: SF-Compact-Rounded-Regular, urbane-rounded, sans-serif;
         font-weight: 500;
         font-size: max(10px, 1.2vh);
@@ -456,41 +456,41 @@ h3{
 /* at >1 : 1 desktop view */
 @media (min-aspect-ratio: 1/1) {
     #pageContent{
-        /*width: calc(100vw - var(--tab-bar-dekstop-width));*/
+        /*width: calc(100vw - var(--tab_bar-dekstop-width));*/
         width: auto;
         margin: auto;
-        margin-left: var(--tab-bar-dekstop-width);
+        margin-left: var(--tab_bar-dekstop-width);
         margin-right: 0;
     }
-    #tab-bar{
+    #tab_bar{
         position: fixed;
         top: 0%;
         left: 0%;
         margin-left: 0%;
-        width: var(--tab-bar-dekstop-width);
+        width: var(--tab_bar-dekstop-width);
         height: 100%;
         display: grid;
         padding-top: 4vh;
-        grid-template-rows: repeat(5, var(--tab-bar-desktop-item-height));
+        grid-template-rows: repeat(5, var(--tab_bar-desktop-item-height));
         z-index: 1000;
         background-color: #0f0f0f;
     }
-    .tab-bar-icon-container{
+    .tab_bar-icon-container{
         position: relative;
         display: flex;
         height: 100%;
         width: 100%;
     }
-    .tab-bar-icon{
+    .tab_bar-icon{
         position: relative;
         margin: auto;
         margin-inline: 3vh;
-        height: calc(var(--tab-bar-desktop-item-height) * 0.65);
+        height: calc(var(--tab_bar-desktop-item-height) * 0.65);
     }
     .wide-icon{
-        height: calc(var(--tab-bar-desktop-item-height) * 0.7) !important;
+        height: calc(var(--tab_bar-desktop-item-height) * 0.7) !important;
     }
-    .tab-bar-text{
+    .tab_bar-text{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-weight: 500;
         font-size: max(10px, 2vh);
@@ -909,37 +909,37 @@ h3{
     }
 }
 </style><script>404: Not Found</script>
-            <div id = 'tab-bar'>
-            <div class = 'tab-bar-icon-container'>
+            <div id = 'tab_bar'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/doc_icon_fill.svg' type='image/svg+xml'
-                id='today-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>Today</div>
+                id='today-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>Today</div>
                 <a href="./today" style = "width:100%; height: 100%;">
-                    <div class = "tab-bar-invis"></div>
+                    <div class = "tab_bar-invis"></div>
                 </a>
             </div>
-            <div class = 'tab-bar-icon-container'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/clock_icon_outline.svg' type='image/svg+xml'
-                id='archive-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>Archive</div>
+                id='archive-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>Archive</div>
             </div>
-            <div class = "tab-bar-icon-container">
+            <div class = "tab_bar-icon-container">
                 <object data="static/resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
-                id="contact-icon" class = "tab-bar-icon"></object>
-                <div class = "tab-bar-text" >Contact</div>
+                id="contact-icon" class = "tab_bar-icon"></object>
+                <div class = "tab_bar-text" >Contact</div>
                 <a href="mailto: lionsroar@zis.ch" style = "width:100%; height: 100%;">
-                    <div class = "tab-bar-invis"></div>
+                    <div class = "tab_bar-invis"></div>
                 </a>
             </div>
-            <div class = 'tab-bar-icon-container'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/question_mark_icon_outline.svg' type='image/svg+xml'
-                id='about-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>About</div>
+                id='about-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>About</div>
             </div>
-            <div class = 'tab-bar-icon-container'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/magnifying_glass_icon_outline.svg' type='image/svg+xml'
-                id='search-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>Search</div>
+                id='search-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>Search</div>
             </div>
         </div>
         <section id = "pageContent">
@@ -960,7 +960,7 @@ h3{
                 <div class = "main-article-desc">
                     <div style = "margin-right: 2vw">
                         <h2 class="article-title main-article-title">A</h2>
-                        <h3 class="article-author main-article-author">The Lion's Roar   •   16 September 2024</h3>
+                        <h3 class="article-author main-article-author">The Lion's Roar   ï¿½   16 September 2024</h3>
                     </div>
                     <div class = "main-article-desktop-button-container">
                         <a href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'>
@@ -993,7 +993,7 @@ h3{
                     </section>
                     <section class="article1-description-desktop">
                         <div class="article1-title">Pienso en tu Mira</div>
-                        <div class="article1-author">Rosalia  •  2 October</div>
+                        <div class="article1-author">Rosalia  ï¿½  2 October</div>
                     </section>
                     </a>
 
@@ -1017,7 +1017,7 @@ h3{
                     </section>
                     <section class="article1-description-desktop">
                         <div class="article1-title">Malamente</div>
-                        <div class="article1-author">Rosalia  •  2 October</div>
+                        <div class="article1-author">Rosalia  ï¿½  2 October</div>
                     </section>
                     </a>
 
@@ -1041,7 +1041,7 @@ h3{
                     </section>
                     <section class="article1-description-desktop">
                         <div class="article1-title">Rosalia - La Fama (Official Video) ft. The Weeknd</div>
-                        <div class="article1-author">Rosalia, The Weeknd  •  11 November</div>
+                        <div class="article1-author">Rosalia, The Weeknd  ï¿½  11 November</div>
                     </section>
                     </a>
 
@@ -1065,7 +1065,7 @@ h3{
                     </section>
                     <section class="article1-description-desktop">
                         <div class="article1-title">Con Altura</div>
-                        <div class="article1-author">Rosalia  •  4 October</div>
+                        <div class="article1-author">Rosalia  ï¿½  4 October</div>
                     </section>
                     </a>
 

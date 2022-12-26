@@ -1,10 +1,10 @@
 :root{
-    --tab-bar-height: max(6.5vh, 40px);
-    --tab-bar-dekstop-width: max(26vh, 100px);
-    --tab-bar-desktop-item-height: max(6vh, 30px);
-    --tab-bar-desktop-bg: #0f0f0f;
-    --tab-bar-desktop-text-color: white;
-    --tab-bar-footer-background-color: rgba(34, 34, 34, 0.785);
+    --tab_bar-height: max(6.5vh, 40px);
+    --tab_bar-dekstop-width: max(26vh, 100px);
+    --tab_bar-desktop-item-height: max(6vh, 30px);
+    --tab_bar-desktop-bg: #0f0f0f;
+    --tab_bar-desktop-text-color: white;
+    --tab_bar-footer-background-color: rgba(34, 34, 34, 0.785);
 
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -12,9 +12,9 @@
     user-select: none; /* Standard */
 }
 .lightmode{
-    --tab-bar-desktop-bg: rgb(230, 230, 230);
-    --tab-bar-desktop-text-color: black;
-    --tab-bar-footer-background-color: rgba(255, 255, 255, 0.785);
+    --tab_bar-desktop-bg: rgb(230, 230, 230);
+    --tab_bar-desktop-text-color: black;
+    --tab_bar-footer-background-color: rgba(255, 255, 255, 0.785);
 }
 .notransition *{
     -webkit-transition: none !important;
@@ -35,7 +35,7 @@
     animation: none !important;
 }
 
-.tab-bar-invis{
+.tab_bar-invis{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -46,39 +46,39 @@
 
 /* at 1:1 mobile vertical stack */
 @media (max-aspect-ratio: 1/1) {
-    #tab-bar{
+    #tab_bar{
         position: fixed;
         bottom: 0%;
         left: 0%;
         margin-bottom: 0%;
-        height: var(--tab-bar-height);
+        height: var(--tab_bar-height);
         width: 100%;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         z-index: 1000;
-        background: var(--tab-bar-footer-background-color);
+        background: var(--tab_bar-footer-background-color);
         backdrop-filter: blur(var(--blur));
         -webkit-backdrop-filter: blur(var(--blur));
     }
-    .tab-bar-icon-container{
+    .tab_bar-icon-container{
         position: relative;
         height: 100%;
         width: 100%;
     }
-    .tab-bar-icon{
+    .tab_bar-icon{
         position: absolute;
         left: 50%;
-        height: calc(var(--tab-bar-height) * 0.65);
-        width: calc(var(--tab-bar-height) * 0.65);
-        margin-top: calc(var(--tab-bar-height) * 0.04);
+        height: calc(var(--tab_bar-height) * 0.65);
+        width: calc(var(--tab_bar-height) * 0.65);
+        margin-top: calc(var(--tab_bar-height) * 0.04);
         transform: translate(-50%, 0%);
         margin-inline: auto;
     }
     .wide-icon{
-        height: calc(var(--tab-bar-height) * 0.7) !important;
-        margin-top: calc(var(--tab-bar-height) * 0.017);
+        height: calc(var(--tab_bar-height) * 0.7) !important;
+        margin-top: calc(var(--tab_bar-height) * 0.017);
     }
-    .tab-bar-text{
+    .tab_bar-text{
         font-family: SF-Compact-Rounded-Regular, urbane-rounded, sans-serif;
         font-weight: 500;
         font-size: max(10px, 1.2vh);
@@ -91,7 +91,7 @@
         transform: translate(-50%,0);
         text-align: center;
     }
-    #tab-bar-bottom{
+    #tab_bar-bottom{
         display: none !important;
     }
 }
@@ -100,49 +100,49 @@
 /* at >1 : 1 desktop view */
 @media (min-aspect-ratio: 1/1) {
     #pageContent{
-        /*width: calc(100vw - var(--tab-bar-dekstop-width));*/
+        /*width: calc(100vw - var(--tab_bar-dekstop-width));*/
         width: auto;
         margin: auto;
-        margin-left: var(--tab-bar-dekstop-width);
+        margin-left: var(--tab_bar-dekstop-width);
         margin-right: 0;
     }
-    #tab-bar{
+    #tab_bar{
         display: flex;
         flex-direction: column;
         position: fixed;
         top: 0%;
         left: 0%;
         margin-left: 0%;
-        width: var(--tab-bar-dekstop-width);
+        width: var(--tab_bar-dekstop-width);
         height: calc(100% - 8vh);
         padding-top: 4vh;
         padding-bottom: 4vh;
-        grid-template-rows: repeat(6, var(--tab-bar-desktop-item-height));
+        grid-template-rows: repeat(6, var(--tab_bar-desktop-item-height));
         z-index: 1000;
-        background-color: var(--tab-bar-desktop-bg);
+        background-color: var(--tab_bar-desktop-bg);
     }
-    .tab-bar-icon-container{
+    .tab_bar-icon-container{
         position: relative;
         display: flex;
-        height: var(--tab-bar-desktop-item-height);
+        height: var(--tab_bar-desktop-item-height);
         width: 100%;
     }
-    .tab-bar-icon{
+    .tab_bar-icon{
         position: relative;
         margin: auto;
         margin-inline: 3vh;
-        height: calc(var(--tab-bar-desktop-item-height) * 0.65);
+        height: calc(var(--tab_bar-desktop-item-height) * 0.65);
     }
     .wide-icon{
-        height: calc(var(--tab-bar-desktop-item-height) * 0.7) !important;
+        height: calc(var(--tab_bar-desktop-item-height) * 0.7) !important;
     }
-    .tab-bar-text{
+    .tab_bar-text{
         font-family: neue-haas-grotesk-display, sans-serif;
         font-weight: 500;
         font-size: max(10px, 2vh);
         font-style: normal;
         letter-spacing: .06rem;
-        color: var(--tab-bar-desktop-text-color);
+        color: var(--tab_bar-desktop-text-color);
         position: relative;
         margin: auto;
         margin-left: 0vh;
@@ -150,9 +150,9 @@
     a{
         text-decoration: none;
     }
-    #tab-bar-bottom{
+    #tab_bar-bottom{
         margin-top: auto;
-        height: calc(var(--tab-bar-desktop-item-height)*2);
+        height: calc(var(--tab_bar-desktop-item-height)*2);
     }
     
 }

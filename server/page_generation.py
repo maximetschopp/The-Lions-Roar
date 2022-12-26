@@ -5,37 +5,37 @@ months = ['January', 'February', 'March', 'April', 'May', 'June',
 
 def generateTabBar(selectedTab):
     tabBar = """
-            <div id = 'tab-bar'>
-            <div class = 'tab-bar-icon-container'>
+            <div id = 'tab_bar'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/doc_icon_outline.svg' type='image/svg+xml'
-                id='today-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>Today</div>
+                id='today-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>Today</div>
                 <a href="./today" style = "width:100%; height: 100%;">
-                    <div class = "tab-bar-invis"></div>
+                    <div class = "tab_bar-invis"></div>
                 </a>
             </div>
-            <div class = 'tab-bar-icon-container'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/clock_icon_outline.svg' type='image/svg+xml'
-                id='archive-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>Archive</div>
+                id='archive-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>Archive</div>
             </div>
-            <div class = "tab-bar-icon-container">
+            <div class = "tab_bar-icon-container">
                 <object data="static/resources/Icons/mail_icon_outline.svg" type="image/svg+xml"
-                id="contact-icon" class = "tab-bar-icon"></object>
-                <div class = "tab-bar-text" >Contact</div>
+                id="contact-icon" class = "tab_bar-icon"></object>
+                <div class = "tab_bar-text" >Contact</div>
                 <a href="mailto: lionsroar@zis.ch" style = "width:100%; height: 100%;">
-                    <div class = "tab-bar-invis"></div>
+                    <div class = "tab_bar-invis"></div>
                 </a>
             </div>
-            <div class = 'tab-bar-icon-container'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/question_mark_icon_outline.svg' type='image/svg+xml'
-                id='about-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>About</div>
+                id='about-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>About</div>
             </div>
-            <div class = 'tab-bar-icon-container'>
+            <div class = 'tab_bar-icon-container'>
                 <object data='static/resources/Icons/magnifying_glass_icon_outline.svg' type='image/svg+xml'
-                id='search-icon' class = 'tab-bar-icon'></object>
-                <div class = 'tab-bar-text'>Search</div>
+                id='search-icon' class = 'tab_bar-icon'></object>
+                <div class = 'tab_bar-text'>Search</div>
             </div>
         </div>"""
     if (selectedTab == "today"):
@@ -197,7 +197,7 @@ def generatePublicationPageContent(data):
         'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/08a83dc7a1f81cd5567ed6dd75db4a9af77373ef/NEW_UI/n.css')
     htmlPage += '<style>'+r.text+'</style>'
     r = requests.get(
-        'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab-bar.css')
+        'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/tab_bar.css')
     htmlPage += '<style>'+r.text+'</style>'
     r = requests.get(
         'https://raw.githubusercontent.com/maximetschopp/The-Lions-Roar/main/NEW_UI/articletypes.css')

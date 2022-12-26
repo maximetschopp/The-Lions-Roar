@@ -1,5 +1,5 @@
 :root{
-    --sm-width: calc(var(--tab-bar-dekstop-width)*2);
+    --sm-width: calc(var(--tab_bar-dekstop-width)*2);
     --sm-min-width: 360px;
 
     --sm-height: 55vh;
@@ -39,7 +39,7 @@
     display: grid;
     grid-template-rows: calc(1.8rem + var(--sm-width) * 0.1) auto var(--sm-footer-height);
     bottom: 4.1vh;
-    left: var(--tab-bar-dekstop-width);
+    left: var(--tab_bar-dekstop-width);
     height: 70vh;
 
     background: rgb(0, 0, 0);
@@ -176,7 +176,7 @@
     font-weight: 500;
     font-size: calc(0.05 * var(--sm-width));
     font-style: normal;
-    color: var(--tab-bar-desktop-text-color);
+    color: var(--tab_bar-desktop-text-color);
     text-overflow: ellipsis;
     word-wrap: break-word;
     -webkit-line-clamp: 1; /* number of lines to show */

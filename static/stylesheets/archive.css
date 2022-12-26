@@ -51,7 +51,7 @@ input{
 input:focus{
     outline: none;
 }
-#tab-bar{
+#tab_bar{
     border-right: var(--border);
 }
 #date-btn{
@@ -203,7 +203,7 @@ input:focus{
     top: calc( var(--search-bar-height) + 2vh + 1em);
     translate: -50% 0;
     width: 100%;
-    height: calc(100% - var(--tab-bar-height) + 1px - (var(--search-bar-height) + 2vh + 1em));
+    height: calc(100% - var(--tab_bar-height) + 1px - (var(--search-bar-height) + 2vh + 1em));
     border-radius: 3rem 3rem 0 0;
     background: var(--window-BG);
     backdrop-filter: blur(var(--blur));
@@ -211,8 +211,8 @@ input:focus{
     z-index: 10;
     transition: top 0.2s;
 
-    /* width: calc(100vh - var(--tab-bar-dekstop-width)); */
-    /* margin-left: calc(var(--tab-bar-dekstop-width)/2); */
+    /* width: calc(100vh - var(--tab_bar-dekstop-width)); */
+    /* margin-left: calc(var(--tab_bar-dekstop-width)/2); */
     /* height: calc(100% - (var(--search-bar-height) + 2vh + 1em)); */
 }
 .m-timeline-dropdown{
@@ -495,15 +495,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         display: none !important;
     }
     #m-timeline{
-        width: calc(100vh - var(--tab-bar-dekstop-width));
-        margin-left: calc(var(--tab-bar-dekstop-width)/2);
+        width: calc(100vh - var(--tab_bar-dekstop-width));
+        margin-left: calc(var(--tab_bar-dekstop-width)/2);
         height: calc(100% - (var(--search-bar-height) + 2vh + 1em));
         border: var(--window-border);
         box-shadow: var(--box-shadow);
     }
     #top-bar-container{
-        width: calc(95% - var(--tab-bar-dekstop-width));
-        margin-left: calc( 2.5% + var(--tab-bar-dekstop-width));
+        width: calc(95% - var(--tab_bar-dekstop-width));
+        margin-left: calc( 2.5% + var(--tab_bar-dekstop-width));
         margin-right: 2.5%;
     }
     #search-bar-container{
@@ -643,7 +643,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
     #m-timeline{
         width: 12%;
-        left: var(--tab-bar-dekstop-width);
+        left: var(--tab_bar-dekstop-width);
         margin-left: 0px;
         translate: none;
         height: calc(100% - (var(--search-bar-height) + 2vh + 1em));

@@ -267,6 +267,9 @@
     :root {
         --modal-width: 100vw;
     }
+    #modal{
+        padding-bottom: 40vh;
+    }
     #modal-quit-btn{
         right: 2vh;
     }

@@ -12,9 +12,10 @@
 .lightmode{
     --modal-BG: rgb(255, 255, 255);
     --modal-BG2: rgb(229, 229, 229);
-    --placeholder-BG: rgb(167, 167, 167);
+    --placeholder-BG: rgb(199, 199, 199);
     --modal-text-color: rgb(0, 0, 0);
     --modal-text-color2: rgb(66, 66, 66);
+    --modal-text-color-p: rgb(24, 24, 24);
     --modal-btn-BG: rgb(255, 255, 255);
     --button-stroke-color: rgb(0, 0, 0);
 }
@@ -315,7 +316,7 @@
         letter-spacing: 0.2vw;
     }
     .modal-desc-sub{
-        font-size: max(2.4vw, 8px);
+        font-size: max(3.4vw, 8px);
         letter-spacing: 0.3vw;
     }
 }

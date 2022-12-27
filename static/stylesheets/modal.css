@@ -50,6 +50,10 @@
     width: var(--modal-width);
     height: 100vh;
     background-color: var(--modal-BG);
+    -webkit-user-select: text;  /* Chrome all / Safari all */
+    -moz-user-select: text;     /* Firefox all */
+    -ms-user-select: text;      /* IE 10+ */
+    user-select: text;          /* Likely future */      
 }
 .modal-hidden{
     display: none;

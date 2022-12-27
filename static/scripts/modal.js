@@ -27,6 +27,9 @@ function toggleModal(override) {
     }
 }
 function updateVideoPlayerSizes(){
+    let ratio = window.innerWidth / window.innerHeight;
+
+
     for(let i = 0; i < document.getElementsByClassName('modal-video').length; i++){
         let videoplayer = document.getElementsByClassName('modal-video')[i].children[0];
         let w = document.getElementById('modal').offsetWidth;

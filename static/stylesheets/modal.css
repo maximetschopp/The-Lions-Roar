@@ -228,9 +228,9 @@
     margin-inline: 6vh;
     color: var(--modal-text-color-p);
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(2.2vh, 8px);
+    font-size: max(2.4vh, 8px);
     letter-spacing: 0.15vh;
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
     text-align: left;
 }
@@ -256,8 +256,6 @@
     align-items: center;
     justify-content: center;
     width: auto;
-    margin: 4vh;
-    margin-inline: 5vh;
     flex-direction: row;
 }
 
@@ -300,12 +298,36 @@
         width: 3.5vh;
         height: 3.5vh;
     }
+    .modal-video{
+        margin: 2vh;
+        margin-inline: 5vw;
+    }
+    .modal-text{
+        margin-inline: 5vw;
+        font-size: max(3.4vw, 8px);
+        letter-spacing: 0.3vw;
+    }
+    .modal-footer{
+        margin-inline: 3vw;
+    }
+    .modal-desc-title{
+        font-size: max(4.8vw, 8px);
+        letter-spacing: 0.2vw;
+    }
+    .modal-desc-sub{
+        font-size: max(2.4vw, 8px);
+        letter-spacing: 0.3vw;
+    }
 }
 
 /* at >1 : 1 Ipad view */
 @media (min-aspect-ratio: 1/1) {
     :root {
         --modal-width: 100vh;
+    }
+    .modal-video{
+        margin: 4vh;
+        margin-inline: 5vh;
     }
 }
 

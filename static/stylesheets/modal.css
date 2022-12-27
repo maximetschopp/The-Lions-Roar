@@ -267,9 +267,6 @@
     :root {
         --modal-width: 100vw;
     }
-    #modal{
-        padding-bottom: 40vh;
-    }
     #modal-quit-btn{
         right: 2vh;
     }
@@ -323,6 +320,11 @@
         font-size: max(3.4vw, 8px);
         letter-spacing: 0.3vw;
     }
+    #modal-mobile-spacer{
+        width: 100%;
+        height: 25vh;
+        transition: height 200ms ease-in-out;
+    }
 }
 
 /* at >1 : 1 Ipad view */
@@ -333,6 +335,11 @@
     .modal-video{
         margin: 4vh;
         margin-inline: 5vh;
+    }
+    #modal-mobile-spacer{
+        width: 100%;
+        height: 0;
+        transition: height 200ms ease-in-out;
     }
 }
 

@@ -28,11 +28,29 @@ function toggleModal(override) {
 }
 function updateVideoPlayerSizes(){
     let ratio = window.innerWidth / window.innerHeight;
-
+    let a; 
+    if (ratio <= 1) {
+        a = "mobile";
+    } else if (ratio > 1 && ratio <= 3 / 2) {
+        a = "tablet";
+    } else if (ratio > 3 / 2 && ratio <= 5 / 2) {
+        a = "desktop";
+    } else {
+        a = "ultrawide";
+    }
 
     for(let i = 0; i < document.getElementsByClassName('modal-video').length; i++){
         let videoplayer = document.getElementsByClassName('modal-video')[i].children[0];
-        let w = document.getElementById('modal').offsetWidth;
+        let w;
+
+        if(a === "mobile"){
+            w = document.getElementById('modal').offsetWidth - 0.1*document.body.offsetWidth;
+            // console.log('w ' + w);
+        } else {
+            w = document.getElementById('modal').offsetWidth - 0.1*document.body.offsetHeight;
+            // console.log('w ' + w);
+        }
+
         let h = (w/16) * 9;
         videoplayer.setAttribute('width', w);
         videoplayer.setAttribute('height', h);

@@ -80,22 +80,16 @@
 .hidden{
     display: none;
 }
-
-::-webkit-scrollbar{
-	width: 10px;
-}
-
-::-webkit-scrollbar-track-piece{
-	background-color: #FFF;
-}
-
+/* 
 ::-webkit-scrollbar-thumb{
-	background-color: #CBCBCB;
-	outline: 2px solid #FFF;
-	outline-offset: -2px;
-	border: .1px solid #B7B7B7;
+    border-radius: 8px;
+    background-color: rgb(179, 179, 179);
+}
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-	background-color: #909090;
-}
+    background-color: white;
+} */

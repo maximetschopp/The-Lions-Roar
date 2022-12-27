@@ -45,7 +45,8 @@
     position: relative;
     top: 0;
     margin: auto;
-    overflow-y: scroll;
+    /* overflow-y: overlay; */
+    overflow-y: auto;
     overflow-x: none;
     width: var(--modal-width);
     height: 100vh;

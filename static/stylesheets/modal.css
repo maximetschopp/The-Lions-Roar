@@ -38,6 +38,7 @@
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
     background: rgba(0, 0, 0, 0.491);
 }
 #modal{

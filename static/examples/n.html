@@ -142,16 +142,74 @@
             </footer>
         </div>
 
-        <section id = 'modal-container'>
+        <section id = 'modal-container' class="modal-container-hidden">
             <div id = 'modal-blur'></div>
             <div id = 'left-click-to-exit' class = 'click-to-exit' onclick="toggleModal(false)">Click to Exit</div>
             <div id = 'right-click-to-exit' class = 'click-to-exit' onclick="toggleModal(false)">Click to Exit</div>
-            <section id = 'modal'>
+            <section id = 'modal' class="modal-hidden">
                 <div id = 'modal-quit-btn' onclick="toggleModal(false)">
                     <svg id="modal-quit-btn-svg" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.73 57.73">
                         <path class="modal-fill" d="m47.59,42.64c1.36,1.36,1.36,3.58,0,4.95-.69.68-1.58,1.02-2.48,1.02s-1.79-.34-2.47-1.02l-13.77-13.77-13.78,13.77c-.69.68-1.58,1.02-2.48,1.02s-1.79-.34-2.47-1.02c-1.37-1.37-1.37-3.59,0-4.95l13.78-13.77-13.78-13.78c-1.37-1.37-1.37-3.59,0-4.95,1.36-1.37,3.58-1.37,4.95,0l13.78,13.78,13.77-13.78c1.36-1.37,3.58-1.37,4.95,0,1.36,1.36,1.36,3.58,0,4.95l-13.77,13.78,13.77,13.77Z"/>
                     </svg>
                 </div>
+
+                <section class = 'modal-thumbnail'>
+                </section>
+
+                <section class = 'modal-desc'>
+                    <div class = 'modal-desc-title'>Title of the publication would go here, I mean hopefully it wont be that long asidaisdui asd ausdua sduasud uasdh asdhadasud ahsd hasuud asdhu sahuashu dashas duhas</div>
+                    <div class = 'modal-desc-sub'>Subtitle of the publication would go here, I mean hopefully it wont be that long asidaisdui asd ausdua sduasud uasdh asdhadasud ahsd hasuud asdhu sahuashu dashas duhas</div>
+                    <div class = 'modal-footer'>
+                        <div class = 'modal-profile-pic'></div>
+                        <div class = 'modal-author-container'>
+                            <div class='modal-author'>Name of the Author</div>
+                            <div class='modal-date'>27th September 2023</div>
+                        </div>
+                        <div id="view-original-btn" class="modal-btn">
+                            <svg id="view-original-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36.17 36.1">
+                              <path class = 'modal-fill' d="m20.48,22.07c-.16.02-.33.02-.49.02-1.55,0-3.08-.59-4.26-1.76-1.14-1.15-1.76-2.66-1.76-4.26,0-1.61.62-3.13,1.76-4.26l7.7-7.59c1.18-1.18,2.72-1.77,4.26-1.77s3.09.59,4.26,1.77c2.35,2.35,2.35,6.17,0,8.52l-4.99,4.88-.47,3.94,7.2-7.08c3.31-3.31,3.31-8.69,0-11.99-3.31-3.31-8.68-3.31-11.99,0l-7.7,7.59c-1.65,1.65-2.48,3.82-2.48,6,0,2.18.83,4.34,2.48,6,1.19,1.19,2.67,1.96,4.21,2.28l2.28-2.28Z"/>
+                              <path class = 'modal-fill' d="m16.27,13.45c.16-.02.33-.02.49-.02,1.55,0,3.08.59,4.26,1.76,1.14,1.15,1.76,2.66,1.76,4.26s-.62,3.13-1.76,4.26l-8.28,8.17c-1.18,1.18-2.72,1.77-4.26,1.77s-3.09-.59-4.26-1.77c-2.35-2.35-2.35-6.17,0-8.52l5.57-5.46.47-3.94-7.77,7.66c-3.31,3.31-3.31,8.69,0,11.99,3.31,3.31,8.68,3.31,11.99,0l8.28-8.17c1.65-1.65,2.48-3.82,2.48-6,0-2.18-.83-4.34-2.48-6-1.19-1.19-2.67-1.96-4.21-2.28l-2.28,2.28Z"/>
+                            </svg>
+                            <div class="modal-btn-text">View Original</div>
+                        </div>
+                        <div id="share-btn" class="modal-btn">
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg id="modal-share-icon"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.92 21.06">
+                              <path class = 'modal-fill' d="m.03,21.06C-.74,3.85,12.1,7.07,12.1,7.07V0l10.82,10.29-10.82,10.77v-8.38S2.26,9.18.03,21.06Z"/>
+                            </svg>
+                            <div class="modal-btn-text">Share</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class = 'modal-text-segment'>
+                    <div class = 'modal-text'>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan 
+                    </div>
+                </section>
+
+                <section class = 'modal-text-figure'>
+                    <div class = 'modal-figure'>
+                    </div>
+                </section>
+
+
+                <section class = 'modal-text-segment'>
+                    <div class = 'modal-text'>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                    </div>
+                </section>
+
+                <section class = "modal-video">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mwDrP1FdtCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </section>
+
             </section>
         </section>
 
@@ -162,7 +220,7 @@
                 <div id = "ma-blurred-bg"> 
                     <div id="ma-blurred-bg-overlay"></div>
                 </div>
-                <a href="https://youtu.be/e-CEd6xrRQc" target="_blank">
+                <a onclick="toggleModal(true)">
                     <div class = "main-thumbnail">
                     <div class = "WV-button-mobile">
                         <img class = "WV-button-mobile-play-icon" src="../resources/Icons/video_icon_fill_black.svg">
@@ -176,7 +234,7 @@
                         <h3 class="main-article-author">Names of the Authors   •   19 October</h3>
                     </div>
                     <div class = "main-article-desktop-button-container">
-                        <a href="https://youtu.be/e-CEd6xrRQc">
+                        <a onclick="toggleModal(true)">
                             <div class = "WV-button-desktop">
                                 <img class = "WV-button-desktop-play-icon" src="../resources/Icons/video_icon_fill_black.svg">
                                 <p class = "WV-button-desktop-text">Weekly Video</p>
@@ -192,7 +250,7 @@
 
             <div class = "articles-container">
 
-                <article class = "article1">
+                <article class = "article1" onclick="toggleModal(true)">
                     <div class = "a1-blurred-bg"> 
                         <div class="a1-blurred-bg-overlay"></div>
                     </div>
@@ -210,14 +268,14 @@
                     <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="../resources/Icons/share_icon_fill.svg">
                 </article>
 
-                <article class = "article2">
+                <article class = "article2" onclick="toggleModal(true)">
                     <div class = "article2-thumbnail"></div>
                     <h2 class="article2-title">screen lock orientation portrait Title of the Main Publication will go here, sometimes it is so long that it can even span 2 line </h2>
                     <img class = "article1-share-button" onclick = "share(null, null, this)" src="../resources/Icons/share_icon_fill.svg">
                     <img class = "article1-share-button-desktop" onclick = "share(null, null, this)" src="../resources/Icons/share_icon_fill.svg">
                 </article>
 
-                <article class = "article3">
+                <article class = "article3" onclick="toggleModal(true)">
                     <article class = "article3-article">
                         <div class = "article3-desc">
                             <h2 class="article3-title">screen lock orientation portrait Title of the Main Publication will go here, sometimes it is so long that it can even span 2 line </h2>

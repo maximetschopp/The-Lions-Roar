@@ -10,12 +10,13 @@ body{
     flex-direction: row ;
     margin: 0;
     background: var(--panel-BG);
+    overflow-x: overlay;
 }
 .panel{
     width: 100px;
     height: 100%;
     background: blue;
-    overflow-y: overlay;
+    overflow-x: overlay;
 }
 .dragbar{
     cursor: col-resize;

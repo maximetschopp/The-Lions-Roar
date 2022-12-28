@@ -48,27 +48,6 @@ body{
     margin: 3vh;
 }
 
-input{
-    position: relative;
-    margin-inline: 3%;
-    width: 94%;
-    border: var(--border);
-    background: var(--window-item-BGcolor);
-    border-radius: 1vh;
-    font-family: neue-haas-grotesk-display, sans-serif;
-    text-indent: calc( var(--search-bar-height) / 2);
-    font-size: max(2vh, 10px);
-    font-weight: 400;
-    letter-spacing: 0.1vh;
-    color: var(--text-color);
-    height: 3.5vh;
-    /* box-shadow: var(--box-shadow); */
-    backdrop-filter: blur(var(--blur));
-    -webkit-backdrop-filter: blur(var(--blur));
-}
-input:focus{
-    outline: none;
-}
 .p-expand{
     position: absolute;
     top: 3.5vh;
@@ -80,14 +59,14 @@ input:focus{
     position: relative;
     margin-inline: 5%;
     width: 90%;
-    height: 3.5vh;
+    height: 4vh;
     margin-top: 1.5vh;
     display: flex;
     gap: 2vh;
 }
 .p-toolbar-icon{
-    width: 3.5vh;
-    height: 3.5vh;
+    width: 4vh;
+    height: 4vh;
 }
 .p-toolbar-icon-right{
     margin-left: auto;
@@ -98,7 +77,6 @@ input:focus{
     padding-left: 3vh;
     padding-right: 3vh;
     margin-inline: auto;
-    margin-top: 4vh;
     width: calc(100%-6vh);
     overflow: scroll !important;
 }
@@ -113,11 +91,19 @@ input:focus{
 .p-table-cell{
     width: calc(var(--p1) + var(--p2) + var(--p3));
     position: relative;
-    height: 5vh;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
     display: flex;
     flex-direction: row;
+    height: 9vh;
+    border-radius: 1vh;
+}
+.p-table-cell:hover{
+    background: rgb(66, 66, 66);
+}
+.p-selected{
+    background: gray;
+}
+.p-selected:hover{
+    background: gray;
 }
 .p-table-header-txt{
     color: var(--text-color);
@@ -154,4 +140,193 @@ input:focus{
 }
 .p-3{
     width: var(--p3);
+}
+.menu-item{
+    position: relative;
+    display: flex;
+    width: 90%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    max-height: 8%;
+    background-color: var(--window-item-BGcolor);
+    border-radius: 1rem;
+    padding-inline: 2.5%;
+    margin-inline: 2.5%;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    margin-top: 0.5rem;
+    vertical-align: center;
+    opacity: 1;
+    border: var(--window-border);
+}
+.menu-item-icon {
+    margin-right: 2vh;
+    width: 12vh;
+}
+.editor-menu-text{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: var(--text-color);
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: max(2.4vh, 8px);
+    font-weight: 500;
+    letter-spacing: 0.06vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.menu-item-icon{
+    width: 5vh;
+}
+.editor-text{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: var(--text-color);
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: max(2.4vh, 8px);
+    font-weight: 500;
+    letter-spacing: 0.06vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    margin-left: 3vh;
+    margin-top: 1.5vh;
+    margin-bottom: 0.7vh;
+}
+.editor-img{
+    width: 94%;
+    margin-inline: 3%;
+    aspect-ratio: 16/9;
+    border-radius: 4vh;
+    border: var(--border);
+    background: var(--window-item-BGcolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    transition: all 0.2s ease-in-out;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-size: max(2.4vh, 8px);
+}
+.editor-img:hover{
+    color: var(--text-color);
+    background: var(--border-color);
+    transition: all 0.2s ease-in-out;
+}
+.editor-spacer{
+    width: 100%;
+    height: 2vh;
+}
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    height: 4vh;
+    width: 7vh;
+    margin-left: auto;
+    margin-right: 0;
+}
+.switch-hidden{
+    width: 0px;
+}
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 3vh;
+    width: 3vh;
+    /* left: 4px;
+    bottom: 4px; */
+    left: calc(var(--sm-width) * 0.011);
+    top: 50%;
+    transform: translateX(0.5vh) translateY(-50%);
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+} 
+input:checked + .slider {
+    background-color: #09bf49;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(3.5vh) translateY(-50%);
+    -ms-transform: translateX(3.5vh) translateY(-50%);
+    transform: translateX(3.5vh) translateY(-50%);
+    top: 50%;
+}
+.slider.round {
+    border-radius: 10vh;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+input{
+    position: relative;
+    margin-inline: 3%;
+    padding-left: 1vh;
+    width: 94%;
+    border: var(--border);
+    background: var(--window-item-BGcolor);
+    border-radius: 1vh;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    text-indent: calc( var(--search-bar-height) / 2);
+    font-size: max(2vh, 10px);
+    font-weight: 400;
+    letter-spacing: 0.1vh;
+    color: var(--text-color);
+    height: 5vh;
+    /* box-shadow: var(--box-shadow); */
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+}
+input:focus{
+    outline: none;
+}
+
+textarea{
+    position: relative;
+    margin-inline: 3%;
+    padding-left: 1vh;
+    resize: vertical;
+    max-height: 20vh;
+    min-height: 15vh;
+    width: 94%;
+    border: var(--border);
+    background: var(--window-item-BGcolor);
+    border-radius: 1vh;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    text-indent: calc( var(--search-bar-height) / 2);
+    font-size: max(2vh, 10px);
+    font-weight: 400;
+    letter-spacing: 0.1vh;
+    color: var(--text-color);
+    height: 5vh;
+    /* box-shadow: var(--box-shadow); */
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
 }

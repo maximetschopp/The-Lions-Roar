@@ -14,7 +14,7 @@ function dragstart(e, dragbarNumber) {
 function dragmove(e) {
   if (dragging) 
   {  
-    var percentage = (e.pageX / window.innerWidth) * 100;
+    var percentage = ((e.pageX-document.getElementsByClassName("panel")[dragBarSelected].getBoundingClientRect()['x']) / window.innerWidth) * 100;
     console.log(e.pageX);
     if (percentage > 5 && percentage < 98) {
       document.getElementsByClassName("panel")[dragBarSelected].style.width = percentage + "%";

@@ -16,6 +16,8 @@
     --window-BGcolor-flat: #1b1b1b;
     --window-item-BGflat: rgb(68, 68, 68);
     --window-footer-BGflat: rgb(68, 68, 68);
+    --red1: rgb(181, 54, 54);
+    --red2: rgba(81, 41, 41, 0.432);
 
     /* DROP SHADOWS*/
     --box-shadow: 0 0 50px black;
@@ -42,6 +44,8 @@
     --window-BGcolor-flat: rgb(243, 243, 243);
     --window-item-BGflat: rgb(255, 255, 255);
     --window-footer-BGflat: rgb(255, 255, 255);
+    --red1: rgb(255, 68, 68);
+    --red2: rgba(226, 165, 165, 0.432);
 
     /* DROP SHADOWS */
     --box-shadow-downscale-factor: 2;

@@ -13,13 +13,13 @@
     --sm-anim-speed: 0.3s;
     --sm-inner-anim-speed: 0.2s;
     
-    --sm-admin-color: rgb(181, 54, 54);
-    --sm-admin-bgcolor: rgba(81, 41, 41, 0.432);
+    --sm-admin-color: var(--red1);
+    --sm-admin-bgcolor: var(--red2);
 
 }
 .lightmode{
-    --sm-admin-color: rgb(255, 68, 68);
-    --sm-admin-bgcolor: rgba(226, 165, 165, 0.432);
+    --sm-admin-color: var(--red1);
+    --sm-admin-bgcolor: var(--red2);
 }
 
 .sm-fill{

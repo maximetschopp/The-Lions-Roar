@@ -1,17 +1,5 @@
 console.log("hello world!");
 
-function togglePublicationPreview(element){
-    if(element.classList.contains('panel-toggle-button-enabled')){
-        element.classList.remove('panel-toggle-button-enabled');
-        element.innerHTML = 'Preview Publication';
-        document.getElementById('publication-preview').style.display = 'none';
-    } else {
-        element.classList.add('panel-toggle-button-enabled');
-        document.getElementById('publication-preview').style.display = 'block';
-        element.innerHTML = 'Cancel Preview';
-    }
-}
-
 function expandPanel(element){
     let panel = element.parentNode;
     let minWidth = getComputedStyle(panel).getPropertyValue('--panel-min-width');
@@ -32,16 +20,55 @@ function expandPanel(element){
     }
 }
 
+function togglePublicationsList(element){
+    if(element.classList.contains('panel-toggle-button-enabled')){
+        element.classList.remove('panel-toggle-button-enabled');
+        element.innerHTML = 'Edit Publications';
+        document.getElementById('publications-list').style.display = 'none';
+        document.getElementById('publication-info').style.display = 'none';
+    } else {
+        element.classList.add('panel-toggle-button-enabled');
+        document.getElementById('publications-list').style.display = 'block';
+        document.getElementById('publication-info').style.display = 'block';
+        element.innerHTML = 'Done';
+    }
+    
+}
+
+function togglePublicationPreview(element){
+    if(element.classList.contains('panel-toggle-button-enabled')){
+        element.classList.remove('panel-toggle-button-enabled');
+        element.innerHTML = 'Preview Publication';
+        document.getElementById('publication-preview').style.display = 'none';
+    } else {
+        element.classList.add('panel-toggle-button-enabled');
+        document.getElementById('publication-preview').style.display = 'block';
+        element.innerHTML = 'Cancel Preview';
+    }
+}
+
+
 function toggleSubArticles(element){
     if(element.classList.contains('panel-toggle-button-enabled')){
         element.classList.remove('panel-toggle-button-enabled');
         element.innerHTML = 'Edit Sub-articles';
         document.getElementById('articles-list').style.display = 'none';
+        document.getElementById('article-info').style.display = 'none';
     } else {
         element.classList.add('panel-toggle-button-enabled');
         document.getElementById('articles-list').style.display = 'block';
+        document.getElementById('article-info').style.display = 'block';
         element.innerHTML = 'Done';
     }
+}
+
+
+function toggleArticlePreview(element){
+
+}
+
+function toggleModalEditor(element){
+
 }
 
 function cssUnitsToPx(j){

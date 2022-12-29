@@ -88,6 +88,9 @@
                 <span class="slider round"></span>
             </label>
         </div>
+        
+        <div class = 'panel-toggle-button' onclick = 'togglePublicationPreview(this)'>Preview Publication</div>
+        <div class = 'panel-toggle-button' onclick = 'toggleSubArticles(this)'>Edit Sub-articles</div>
 
         <div class = 'editor-spacer'></div>
         <div class = 'editor-spacer'></div>
@@ -125,7 +128,8 @@
         <div class = 'editor-spacer'></div>
         <div class = 'editor-spacer'></div>
 
-        <div class = 'panel-toggle-button' onclick = 'togglePublicationPreview(this)'>Preview Publication</div>
+        <div class = 'editor-spacer'></div>
+        <div class = 'editor-spacer'></div>
 
         <div class = 'menu-item'>Save Changes</div>
         <div class = 'menu-item hover-red'>Revert Changes</div>
@@ -135,7 +139,7 @@
         <div class = 'editor-spacer'></div>
 
         </section>
-        <section id = 'publication-preview' class="resizable panel" style="display: none;">
+        <section id = 'publication-preview' class="resizable panel" style="display: none">
             <div class="p-title">Preview</div>
             <svg class = 'p-expand' onclick = 'expandPanel(this)' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.83 20.24">
                 <path class="icon-fill" d="m20.99,7.73h-12.14s4.03-3.52,4.03-3.52c1-.87,1.11-2.39.24-3.39-.87-1-2.39-1.11-3.39-.24L.83,8.33c-.52.46-.83,1.12-.83,1.81s.3,1.36.83,1.81l8.85,7.69c.46.4,1.02.59,1.58.59.67,0,1.34-.28,1.81-.83.87-1,.76-2.52-.24-3.39l-4.03-3.5h12.19s0,.01,0,.01c1.33,0,2.4-1.07,2.4-2.4,0-1.33-1.07-2.4-2.4-2.4Z"/>
@@ -145,5 +149,6 @@
             <iframe src="https://thelionsroar.ch/static/examples/n.html" frameborder="none">
             </iframe>
         </section>
+        <section id = 'articles-list' class="resizable panel" style="display: none"></section>
     </body>
 </html>

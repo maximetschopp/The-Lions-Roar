@@ -11,6 +11,7 @@
     --window-footer-BGcolor: #1b1b1b;
     --window-item-BGcolor: rgba(68, 68, 68, 0.6);
     --window-border-color: #555555;
+    --dash-color: #555555;
     --window-border: 1px solid var(--window-border-color);
 
     --window-BGcolor-flat: #1b1b1b;
@@ -41,6 +42,7 @@
     --window-footer-BGcolor: #f0f0f0;
     --window-item-BGcolor: rgba(255, 255, 255, 0.6);
     --window-border-color: #cfcfcf;
+    --dash-color: #cfcfcf;
     --window-border: 1px solid var(--window-border-color);
 
     --window-BGcolor-flat: rgb(243, 243, 243);
@@ -74,6 +76,7 @@
     --window-item-BGcolor: var(--window-item-BGflat) !important;
     --window-footer-BGcolor: var(--window-footer-BGflat) !important;
     --window-border-color: rgba(255, 255, 255, 0) !important;
+    --blur: 0 !important;
 }
 
 

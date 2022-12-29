@@ -20,11 +20,10 @@ const windowTree =
         "publications-list": "publication-info",
             "publication-info": ["publication-preview", "articles-list"],
                 "articles-list": "article-info",
-                    "articleinfo": "article-preview",
-                    "article-info": "modal-editor",
+                    "articleinfo": ["article-preview","modal-editor"]
 }
 
-function expandPanel(element){
+function expandPanel(element, override){
     let panel = element.parentNode;
     let minWidth = getComputedStyle(panel).getPropertyValue('--panel-min-width');
     let maxWidth = getComputedStyle(panel).getPropertyValue('--panel-max-width');
@@ -32,6 +31,17 @@ function expandPanel(element){
     let maxWidthpx = cssUnitsToPx(maxWidth);
 
     let currWidth = cssUnitsToPx(panel.offsetWidth);
+
+    if(override){
+        if(override === 'phone'){
+            panel.style.width = minWidth; // 50vh
+        } else if (override === 'tablet'){
+            panel.style.width = '110vh';
+        } else if (override === 'desktop'){
+            panel.style.width = '200vh';
+        }
+        return;
+    }
 
     if(Math.abs(minWidthpx - currWidth) <= 50){    // if almost minWidth
         console.log("almost minWidth");
@@ -57,32 +67,31 @@ function togglePanel(id, enable){
 
     if(enable && panel.style.display === disabledDisplayType){
         panel.style.display = enabledDisplayType;
-        button.innerHTML = button.getAttribute('enabledText');
-        button.classList.add('panel-toggle-button-enabled');
+        if(button != undefined){
+            button.innerHTML = button.getAttribute('enabledText');
+            button.classList.add('panel-toggle-button-enabled');
+        }
         console.log("enabled " + panelId);
     } else {
-        panel.style.display = disabledDisplayType;
-        button.innerHTML = button.getAttribute('disabledText');
-        button.classList.remove('panel-toggle-button-enabled');
         console.log("disabled " + panelId);
         // disable 'children' panels
 
-        collapseChildrenPanel(panelId);
+        collapsePanel(panelId);
     }
 }
 
-function collapseChildrenPanel(panelId){
+function collapsePanel(panelId){
     // break condition
-    let hasChildren = panelId in windowTree;
 
-    if(hasChildren){
+    childPanelId = windowTree[panelId];
+
+    if(panelId in windowTree){ // if it has children panels
         if(typeof windowTree[panelId] === 'object'){
-    
             for (let i = 0; i < windowTree[panelId].length; i++) {
-                collapseChildrenPanel(windowTree[panelId][i]);
+                collapsePanel(windowTree[panelId][i]);
             }
         } else {
-            collapseChildrenPanel(windowTree[panelId]);
+            collapsePanel(windowTree[panelId]);
         }
     }
 

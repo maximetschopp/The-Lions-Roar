@@ -1,5 +1,29 @@
 console.log("hello world!");
 
+// const windowTree = 
+// {"root-panel": 
+//     {"publications-list":
+//         {"publication-info":
+//             ["publication-preview",
+//             {"articles-list": 
+//                 {"article-info": 
+//                     ["article-preview", "modal-editor"]
+//                 }
+//             }
+//             ]
+//         }
+//     }
+// }
+const windowTree = 
+{
+    "root-panel": "publications-list",
+        "publications-list": "publication-info",
+            "publication-info": ["publication-preview", "articles-list"],
+                "articles-list": "article-info",
+                    "articleinfo": "article-preview",
+                    "article-info": "modal-editor",
+}
+
 function expandPanel(element){
     let panel = element.parentNode;
     let minWidth = getComputedStyle(panel).getPropertyValue('--panel-min-width');
@@ -20,56 +44,112 @@ function expandPanel(element){
     }
 }
 
-function togglePublicationsList(element){
-    if(element.classList.contains('panel-toggle-button-enabled')){
-        element.classList.remove('panel-toggle-button-enabled');
-        element.innerHTML = 'Edit Publications';
-        document.getElementById('publications-list').style.display = 'none';
-        document.getElementById('publication-info').style.display = 'none';
-    } else {
-        element.classList.add('panel-toggle-button-enabled');
-        document.getElementById('publications-list').style.display = 'block';
-        document.getElementById('publication-info').style.display = 'block';
-        element.innerHTML = 'Done';
+function togglePanel(id, enable){
+    let panelId = id.replace('-button', '');
+    let panel = document.getElementById(panelId);
+    let button = document.getElementById(panelId + '-button');
+    let enabledDisplayType = 'block';
+    let disabledDisplayType = 'none';
+
+    if (typeof enable == 'undefined'){
+        enable = !(panel.classList.contains('panel-toggle-button-enabled'));
     }
+
+    if(enable && panel.style.display === disabledDisplayType){
+        panel.style.display = enabledDisplayType;
+        button.innerHTML = button.getAttribute('enabledText');
+        button.classList.add('panel-toggle-button-enabled');
+        console.log("enabled " + panelId);
+    } else {
+        panel.style.display = disabledDisplayType;
+        button.innerHTML = button.getAttribute('disabledText');
+        button.classList.remove('panel-toggle-button-enabled');
+        console.log("disabled " + panelId);
+        // disable 'children' panels
+
+        collapseChildrenPanel(panelId);
+    }
+}
+
+function collapseChildrenPanel(panelId){
+    // break condition
+    let hasChildren = panelId in windowTree;
+
+    if(hasChildren){
+        if(typeof windowTree[panelId] === 'object'){
     
-}
-
-function togglePublicationPreview(element){
-    if(element.classList.contains('panel-toggle-button-enabled')){
-        element.classList.remove('panel-toggle-button-enabled');
-        element.innerHTML = 'Preview Publication';
-        document.getElementById('publication-preview').style.display = 'none';
-    } else {
-        element.classList.add('panel-toggle-button-enabled');
-        document.getElementById('publication-preview').style.display = 'block';
-        element.innerHTML = 'Cancel Preview';
+            for (let i = 0; i < windowTree[panelId].length; i++) {
+                collapseChildrenPanel(windowTree[panelId][i]);
+            }
+        } else {
+            collapseChildrenPanel(windowTree[panelId]);
+        }
     }
-}
 
+    let panel = document.getElementById(panelId);
+    let button = document.getElementById(panelId + '-button');
+    let disabledDisplayType = 'none';
 
-function toggleSubArticles(element){
-    if(element.classList.contains('panel-toggle-button-enabled')){
-        element.classList.remove('panel-toggle-button-enabled');
-        element.innerHTML = 'Edit Sub-articles';
-        document.getElementById('articles-list').style.display = 'none';
-        document.getElementById('article-info').style.display = 'none';
-    } else {
-        element.classList.add('panel-toggle-button-enabled');
-        document.getElementById('articles-list').style.display = 'block';
-        document.getElementById('article-info').style.display = 'block';
-        element.innerHTML = 'Done';
+    panel.style.display = disabledDisplayType;
+    if(button != undefined){
+        button.innerHTML = button.getAttribute('disabledText');
+        button.classList.remove('panel-toggle-button-enabled');
     }
-}
 
-
-function toggleArticlePreview(element){
+    console.log("disabled " + panelId);
 
 }
 
-function toggleModalEditor(element){
+// function togglePublicationsList(element){
+//     if(element.classList.contains('panel-toggle-button-enabled')){
+//         element.classList.remove('panel-toggle-button-enabled');
+//         element.innerHTML = 'Edit Publications';
+//         document.getElementById('publications-list').style.display = 'none';
+//         document.getElementById('publication-info').style.display = 'none';
+//     } else {
+//         element.classList.add('panel-toggle-button-enabled');
+//         document.getElementById('publications-list').style.display = 'block';
+//         document.getElementById('publication-info').style.display = 'block';
+//         element.innerHTML = 'Done';
+//     }
+    
+// }
 
-}
+// function togglePublicationPreview(element){
+//     if(element.classList.contains('panel-toggle-button-enabled')){
+//         element.classList.remove('panel-toggle-button-enabled');
+//         element.innerHTML = 'Preview Publication';
+//         document.getElementById('publication-preview').style.display = 'none';
+//     } else {
+//         element.classList.add('panel-toggle-button-enabled');
+//         document.getElementById('publication-preview').style.display = 'block';
+//         element.innerHTML = 'Cancel Preview';
+//     }
+// }
+
+
+// function toggleSubArticles(element){
+//     if(element.classList.contains('panel-toggle-button-enabled')){
+//         element.classList.remove('panel-toggle-button-enabled');
+//         element.innerHTML = 'Edit Sub-articles';
+//         document.getElementById('articles-list').style.display = 'none';
+//         document.getElementById('article-info').style.display = 'none';
+//     } else {
+//         element.classList.add('panel-toggle-button-enabled');
+//         document.getElementById('articles-list').style.display = 'block';
+//         document.getElementById('article-info').style.display = 'block';
+//         element.innerHTML = 'Done';
+//     }
+// }
+
+
+// function toggleArticlePreview(element){
+
+// }
+
+// function toggleModalEditor(element){
+
+// }
 
 function cssUnitsToPx(j){
     let result = j;

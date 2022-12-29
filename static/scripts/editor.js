@@ -20,7 +20,7 @@ const windowTree =
         "publications-list": "publication-info",
             "publication-info": ["publication-preview", "articles-list"],
                 "articles-list": "article-info",
-                    "articleinfo": ["article-preview","modal-editor"]
+                    "article-info": ["article-preview","modal-editor"]
 }
 
 function expandPanel(element, override){

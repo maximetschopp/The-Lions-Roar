@@ -408,4 +408,5 @@ textarea{
 iframe{
   width: 100%;
   height: calc(100% - 11vh);
+  overflow-x: hidden;
 }

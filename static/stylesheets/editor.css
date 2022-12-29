@@ -7,12 +7,22 @@
     --p3: 60vh;
     --editor-hover: rgb(66, 66, 66);
     --editor-selected: gray;
+    --panel-min-width: 40vh;
+    --panel-max-width: 110vh;
 }
 .lightmode{
     --e-BG: rgb(230, 230, 230);
     --e-border: rgb(255, 255, 255);
     --editor-hover: rgb(217, 217, 217);
     --editor-selected: rgb(255, 255, 255);
+}
+
+#publication-preview{
+    --panel-max-width: 100vw !important;
+}
+#publication-info{
+    --panel-min-width: 50vh;
+    --panel-max-width: 70vh;
 }
 
 body{
@@ -33,8 +43,8 @@ body{
 .panel{
     position: relative;
     height: 100vh;
-    min-width: 40vh;
-    max-width: 110vh;
+    min-width: var(--panel-min-width);
+    max-width: var(--panel-max-width);
     background: var(--e-BG); 
     color: var(--e-text);
     border-right: 2px solid var(--e-border);
@@ -256,7 +266,6 @@ body{
 }
 
 
-
 .panel-toggle-button{
     position: relative;
     display: flex;
@@ -395,4 +404,8 @@ textarea{
     /* box-shadow: var(--box-shadow); */
     backdrop-filter: blur(var(--blur));
     -webkit-backdrop-filter: blur(var(--blur));
+}
+iframe{
+  width: 100%;
+  height: calc(100% - 11vh);
 }

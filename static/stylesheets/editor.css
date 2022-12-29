@@ -328,8 +328,20 @@ body{
     border: 0px;
     transition: all 0.2s ease-in-out;
 }
-#unsaved-changes{
+#notif-container{
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 1vh;
+    left: 0;
+    width: 100vw;
+    z-index: 9999;
+}
+.notif{
+    position: relative;
+    margin-bottom: 1vh;
     font-family: neue-haas-grotesk-display, sans-serif;
     font-size: max(2.4vh, 8px);
     color: var(--text-color);
@@ -337,42 +349,25 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border-radius: 2vh;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    padding: 1vh;
+    width: fit-content;
+}
+.red-notif{
     background: var(--red2);
     border: 1px solid var(--red1);
     color: var(--red1) !important;
-    backdrop-filter: blur(var(--blur));
-    -webkit-backdrop-filter: blur(var(--blur));
-    border-radius: 2vh;
-    margin: 2vh;
-    z-index: 999;
-    bottom: 0;
-    left: 0;
-    padding: 2vh;
 }
-#saved-changes{
-    position: fixed;
-    font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: max(2.4vh, 8px);
-    color: var(--text-color);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.green-notif{
     background: var(--green2);
     border: 1px solid var(--green1);
     color: var(--green1) !important;
-    backdrop-filter: blur(var(--blur));
-    -webkit-backdrop-filter: blur(var(--blur));
-    border-radius: 2vh;
-    margin: 2vh;
-    margin-bottom: 10vh;
-    z-index: 999;
-    bottom: 0;
-    left: 0;
-    padding: 2vh;
 }
-
-
 
 
 

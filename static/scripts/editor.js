@@ -1,4 +1,4 @@
-console.log("TLR Editor   Version 0.61");
+console.log("TLR Editor   Version 0.62");
 
 // const windowTree = 
 // {"root-panel": 
@@ -107,6 +107,18 @@ function collapsePanel(panelId){
 
     console.log("disabled " + panelId);
 
+}
+
+function notify(message, color, displayMS){
+    let notif = document.createElement('div');
+    notif.classList.add('notif', color +'-notif');
+    notif.innerHTML = message;
+    let notifId = 'notif-' + Math.floor(Math.random() * 99999999999)
+    notif.id = notifId;
+    document.getElementById('notif-container').appendChild(notif);
+    setTimeout(() => {
+        document.getElementById(notifId).remove()
+    }, displayMS);
 }
 
 function cssUnitsToPx(j){

@@ -49,7 +49,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    filter: blur(15px);
+    filter: blur(35px);
     background-color: var(--ma-bg-color);
     background-repeat: no-repeat;
     background-size: cover;

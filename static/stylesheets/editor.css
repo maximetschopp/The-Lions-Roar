@@ -357,6 +357,9 @@ body{
     left: 0;
     padding: 1vh;
     width: fit-content;
+    background: var(--window-BG);
+    border: 1px solid var(--window-border-color);
+    color: var(--text-color);
 }
 .red-notif{
     background: var(--red2);

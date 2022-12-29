@@ -1,4 +1,4 @@
-setTimeout(notify, 1000, "TLR Editor   Version 0.63", '', 3000);
+setTimeout(notify, 1000, "TLR Editor   Version 0.64", '', 3000);
 
 // const windowTree = 
 // {"root-panel": 

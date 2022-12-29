@@ -1,4 +1,4 @@
-console.log("TLR Editor   Version 0.6");
+console.log("TLR Editor   Version 0.61");
 
 // const windowTree = 
 // {"root-panel": 

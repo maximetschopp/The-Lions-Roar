@@ -91,6 +91,11 @@
 .hidden{
     display: none;
 }
+
+html{
+    background: var(--background-color);
+}
+
 /* 
 ::-webkit-scrollbar-thumb{
     border-radius: 8px;

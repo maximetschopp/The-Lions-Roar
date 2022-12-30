@@ -92,9 +92,6 @@
     display: none;
 }
 
-html{
-    background: var(--background-color);
-}
 
 /* 
 ::-webkit-scrollbar-thumb{
